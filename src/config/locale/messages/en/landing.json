@@ -2,49 +2,101 @@
   "header": {
     "id": "header",
     "brand": {
-      "title": "ShipAny Two",
       "logo": {
-        "src": "/logo.png",
-        "alt": "ShipAny Two",
-        "width": 100,
-        "height": 100
+        "src": "/logo.webp",
+        "alt": "Bizarre Lineage Wiki",
+        "width": 160,
+        "height": 160,
+        "className": "h-12 w-auto rounded-lg sm:h-14"
       },
       "url": "/"
     },
     "nav": {
       "items": [
         {
-          "title": "Features",
-          "url": "/#features",
-          "icon": "Sparkles"
+          "title": "Codes",
+          "url": "/codes",
+          "icon": "BadgePercent"
         },
         {
-          "title": "Showcases",
-          "url": "/showcases",
-          "icon": "Box"
+          "title": "Tier List",
+          "url": "/tier-list",
+          "icon": "Trophy"
         },
         {
-          "title": "Content",
-          "icon": "FileText",
+          "title": "Stands",
+          "url": "/stands",
+          "icon": "Shield"
+        },
+        {
+          "title": "Guides",
+          "icon": "BookOpenText",
           "children": [
             {
-              "title": "Blog",
-              "description": "Read Blog Posts",
-              "url": "/blog",
-              "icon": "Newspaper"
+              "title": "Beginner Guide",
+              "description": "Get a usable first stand and a cleaner opening route",
+              "url": "/guides/beginner-guide",
+              "icon": "Map"
             },
             {
-              "title": "Updates",
-              "description": "Read Update Logs",
-              "url": "/updates",
-              "icon": "Clock"
+              "title": "Stats Guide",
+              "description": "Fix your build logic before bad stat habits slow you down",
+              "url": "/guides/stats",
+              "icon": "ChartColumn"
             },
             {
-              "title": "Docs",
-              "description": "Read Documentation",
-              "url": "/docs",
-              "target": "_blank",
-              "icon": "BookOpenText"
+              "title": "Prestige Guide",
+              "description": "Plan when prestige helps and what to prepare first",
+              "url": "/guides/prestige",
+              "icon": "RotateCcw"
+            },
+            {
+              "title": "Stands Hub",
+              "description": "Compare chase targets, roles, and quick verdicts first",
+              "url": "/stands",
+              "icon": "Sparkles"
+            }
+          ]
+        },
+        {
+          "title": "Terms",
+          "icon": "ScrollText",
+          "children": [
+            {
+              "title": "Raid",
+              "description": "Team-based encounters and rewards",
+              "url": "/terms/raid",
+              "icon": "Swords"
+            },
+            {
+              "title": "Prestige",
+              "description": "Reset timing and progression value",
+              "url": "/terms/prestige",
+              "icon": "RotateCcw"
+            },
+            {
+              "title": "Awakening",
+              "description": "Late-game power upgrade path",
+              "url": "/terms/awakening",
+              "icon": "Zap"
+            },
+            {
+              "title": "Stand Arrow",
+              "description": "Core item for gaining stands",
+              "url": "/terms/stand-arrow",
+              "icon": "ArrowRight"
+            },
+            {
+              "title": "Sub-Abilities",
+              "description": "Extra skills layered onto builds",
+              "url": "/terms/sub-abilities",
+              "icon": "Sparkles"
+            },
+            {
+              "title": "Fighting Styles",
+              "description": "Combat styles paired with stands",
+              "url": "/terms/fighting-styles",
+              "icon": "Shield"
             }
           ]
         }
@@ -67,11 +119,11 @@
   "footer": {
     "id": "footer",
     "brand": {
-      "title": "ShipAny Two",
-      "description": "ShipAny is a NextJS boilerplate for building AI SaaS startups. Ship Fast with a variety of templates and components.",
+      "title": "Bizarre Lineage Wiki",
+      "description": "Unofficial Bizarre Lineage guide hub for codes, stand rankings, stats advice, and progression routes.",
       "logo": {
-        "src": "/logo.png",
-        "alt": "ShipAny Two",
+        "src": "/logo.webp",
+        "alt": "Bizarre Lineage Wiki",
         "width": 1024,
         "height": 1024
       },
@@ -80,85 +132,86 @@
     "nav": {
       "items": [
         {
-          "title": "About",
+          "title": "Core Pages",
           "children": [
             {
-              "title": "Features",
-              "url": "/#features",
+              "title": "Codes",
+              "url": "/codes",
               "target": "_self"
             },
             {
-              "title": "Showcases",
-              "url": "/showcases",
+              "title": "Tier List",
+              "url": "/tier-list",
+              "target": "_self"
+            },
+            {
+              "title": "Beginner Guide",
+              "url": "/guides/beginner-guide",
+              "target": "_self"
+            },
+            {
+              "title": "Stats Guide",
+              "url": "/guides/stats",
+              "target": "_self"
+            },
+            {
+              "title": "Prestige Guide",
+              "url": "/guides/prestige",
               "target": "_self"
             }
           ]
         },
         {
-          "title": "Resources",
+          "title": "Database",
           "children": [
             {
-              "title": "Documents",
-              "url": "/docs",
-              "target": "_self"
-            },
-            {
-              "title": "Blog",
-              "url": "/blog",
+              "title": "Stands Hub",
+              "url": "/stands",
               "target": "_self"
             }
           ]
         },
         {
-          "title": "Friends",
+          "title": "Terms",
           "children": [
             {
-              "title": "ShipAny",
-              "url": "https://shipany.ai",
-              "target": "_blank"
+              "title": "Raid",
+              "url": "/terms/raid",
+              "target": "_self"
             },
             {
-              "title": "ThinkAny",
-              "url": "https://thinkany.ai",
-              "target": "_blank"
+              "title": "Prestige",
+              "url": "/terms/prestige",
+              "target": "_self"
             },
             {
-              "title": "MCP.so",
-              "url": "https://mcp.so",
-              "target": "_blank"
+              "title": "Awakening",
+              "url": "/terms/awakening",
+              "target": "_self"
+            },
+            {
+              "title": "Stand Arrow",
+              "url": "/terms/stand-arrow",
+              "target": "_self"
+            },
+            {
+              "title": "Sub-Abilities",
+              "url": "/terms/sub-abilities",
+              "target": "_self"
+            },
+            {
+              "title": "Fighting Styles",
+              "url": "/terms/fighting-styles",
+              "target": "_self"
             }
           ]
         }
       ]
     },
     "social": {
-      "items": [
-        {
-          "title": "X",
-          "icon": "RiTwitterXFill",
-          "url": "https://x.com/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "Github",
-          "url": "https://github.com/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/your-app-name",
-          "target": "_blank"
-        },
-        {
-          "title": "Email",
-          "icon": "Mail",
-          "url": "mailto:support@your-domain.com",
-          "target": "_self"
-        }
-      ]
+      "items": []
     },
+    "show_built_with": false,
     "agreement": {
       "items": [
         {

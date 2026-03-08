@@ -60,7 +60,7 @@ export function Hero({
         {texts && texts.length > 0 ? (
           <h1 className="text-foreground text-4xl font-semibold text-balance sm:mt-12 sm:text-6xl">
             {texts[0]}
-            <Highlighter action="underline" color="#FF9800">
+            <Highlighter action="underline" color="var(--color-primary)">
               {highlightText}
             </Highlighter>
             {texts[1]}

@@ -18,7 +18,7 @@ Make app URL/name/description/logo consistent via env files (ShipAny Two follows
   - `NEXT_PUBLIC_APP_NAME` = **projectName**
   - `NEXT_PUBLIC_APPEARANCE` = `system` (unless user asks)
   - `NEXT_PUBLIC_THEME` = `default` (unless user uses a different theme folder)
-  - `NEXT_PUBLIC_APP_LOGO` = `/logo.svg` or `/logo.png`
+  - `NEXT_PUBLIC_APP_LOGO` = `/logo.svg` or `/logo.webp`
   - `NEXT_PUBLIC_APP_PREVIEW_IMAGE` = `/preview.png` (unless replaced)
 
 ## Notes

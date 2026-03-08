@@ -45,7 +45,7 @@ Hard rule:
   - `/imgs/features/admin-dark.png`
   - `/imgs/features/landing-page.png`
   - any other `/imgs/features/*` ShipAny screenshots
-- Also do **not** keep template default `public/logo.png` / `public/favicon.ico` as-is; they must be replaced (see logo step).
+- Also do **not** keep template default `public/logo.webp` / `public/favicon.ico` as-is; they must be replaced (see logo step).
 
 ## Where images are configured (ShipAny Two)
 
@@ -64,7 +64,7 @@ Images are typically served from `public/`.
 
 - All enabled landing sections have **non-template** images (either extracted real images or Picsum placeholders), and **default template screenshots are removed**.
 - `pages/index.json` contains **no** `/imgs/features/*` references.
-- `public/logo.png` and `public/favicon.ico` are **new** and match the **brandName** (see `references/05-logo-favicon.md`).
+- `public/logo.webp` and `public/favicon.ico` are **new** and match the **brandName** (see `references/05-logo-favicon.md`).
 
 ## Option A — Extract images from reference links/content (preferred)
 

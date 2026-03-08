@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate `public/logo.png` and `public/favicon.ico` for ShipAny Quick Start.
+Generate `public/logo.webp` and `public/favicon.ico` for ShipAny Quick Start.
 
 Primary path:
 - Uses Pillow (PIL) to render a simple text mark: first character of brand name.
@@ -193,7 +193,7 @@ def main() -> int:
         public_dir = (repo_root / public_dir).resolve()
     public_dir.mkdir(parents=True, exist_ok=True)
 
-    out_logo = public_dir / "logo.png"
+    out_logo = public_dir / "logo.webp"
     out_favicon = public_dir / "favicon.ico"
 
     try:

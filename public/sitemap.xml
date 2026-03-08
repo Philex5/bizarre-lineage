@@ -1,15 +1,43 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://your-domain.com/</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://bizarrelineage.info/</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://your-domain.com/blog</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://bizarrelineage.info/codes</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url>
   <url>
-    <loc>https://your-domain.com/showcases</loc>
-    <lastmod>2025-11-15T10:00:00+00:00</lastmod>
+    <loc>https://bizarrelineage.info/tier-list</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/guides/beginner-guide</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/guides/stats</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/guides/prestige</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/stands</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/stands/star-platinum</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/privacy-policy</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/terms-of-service</loc>
+    <lastmod>2026-03-08T00:00:00+00:00</lastmod>
   </url>
 </urlset>

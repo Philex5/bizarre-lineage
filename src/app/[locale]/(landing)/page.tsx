@@ -1,9 +1,26 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-
-import { getThemePage } from '@/core/theme';
-import { DynamicPage } from '@/shared/types/blocks/landing';
+import { Metadata } from 'next';
+import { buildMetadata, HomePage } from '@/features/wiki/pages';
+import { setRequestLocale } from 'next-intl/server';
 
 export const revalidate = 3600;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return buildMetadata({
+    locale,
+    path: '/',
+    title: 'Bizarre Lineage Wiki: Codes, Tier List, and Stand Guides',
+    description:
+      'Master Bizarre Lineage with our complete wiki. Get the latest active codes, updated tier lists, stand evolution guides, and pro strategies to dominate Roblox.',
+    keywords: [
+    ],
+  });
+}
 
 export default async function LandingPage({
   params,
@@ -13,13 +30,5 @@ export default async function LandingPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('pages.index');
-
-  // get page data
-  const page: DynamicPage = t.raw('page');
-
-  // load page component
-  const Page = await getThemePage('dynamic-page');
-
-  return <Page locale={locale} page={page} />;
+  return <HomePage />;
 }

@@ -1,0 +1,18 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="32" fill="#1A1620"/>
+  <rect x="42" y="42" width="1116" height="816" rx="28" fill="url(#bg)"/>
+  <circle cx="878" cy="316" r="198" fill="#F2C55F" fill-opacity="0.16"/>
+  <circle cx="878" cy="316" r="136" fill="#F7E5BA" fill-opacity="0.24"/>
+  <path d="M392 654C392 510.406 508.406 394 652 394H756V798H652C508.406 798 392 681.594 392 538V654Z" fill="#F5EEE1" fill-opacity="0.09" stroke="#F5EEE1" stroke-opacity="0.22"/>
+  <path d="M302 706L622 178H726L405 706H302Z" fill="#E96B32" fill-opacity="0.86"/>
+  <path d="M456 706L734 250H824L545 706H456Z" fill="#F2C55F" fill-opacity="0.86"/>
+  <rect x="120" y="122" width="272" height="36" rx="18" fill="#F5EEE1" fill-opacity="0.12"/>
+  <text x="124" y="818" fill="#F5EEE1" fill-opacity="0.78" font-family="Georgia, serif" font-size="62">Stand Art Placeholder</text>
+  <text x="124" y="856" fill="#F5EEE1" fill-opacity="0.48" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">USE CHARACTER OR STAND RENDER HERE</text>
+  <defs>
+    <linearGradient id="bg" x1="42" y1="42" x2="1158" y2="858" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#231A20"/>
+      <stop offset="1" stop-color="#121015"/>
+    </linearGradient>
+  </defs>
+</svg>

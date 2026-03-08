@@ -10,7 +10,7 @@ For the first version, **only edit the files in the allowlist below**. Do not to
 
 - Before starting: `pnpm install`
 - After finishing:
-  - Clear Next.js cache first (prevents stale `public/logo.png`/favicon during validation):
+  - Clear Next.js cache first (prevents stale `public/logo.webp`/favicon during validation):
     - macOS/Linux: `rm -rf .next`
     - Windows (PowerShell): `Remove-Item -Recurse -Force .next`
     - Windows (cmd): `rmdir /s /q .next`

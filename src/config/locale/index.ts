@@ -24,4 +24,10 @@ export const localeMessagesPaths = [
   'pages/showcases',
   'pages/blog',
   'pages/updates',
+  'pages/codes',
+  'pages/tier-list',
+  'pages/guides/beginner-guide',
+  'pages/guides/stats',
+  'pages/guides/prestige',
+  'pages/stands/star-platinum',
 ];

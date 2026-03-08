@@ -6,7 +6,7 @@ Replace template visuals with minimal surface area changes (v1 hard limit).
 
 ## Files (typical)
 
-- `public/logo.png` (existing)
+- `public/logo.webp` (existing)
 - `public/favicon.ico` (existing)
 
 ## v1 rule (do not expand scope)
@@ -16,28 +16,28 @@ For the first version, **do not change asset formats** and **do not update code 
 ## If user provides assets
 
 - Copy/replace into `public/`.
-- Keep filenames stable (`logo.png`, `favicon.ico`) to avoid code changes.
+- Keep filenames stable (`logo.webp`, `favicon.ico`) to avoid code changes.
 
 ## If user does not provide assets
 
 - **Do not reuse the template default files.** You must generate **new** assets while keeping filenames stable:
-  - Replace `public/logo.png`
+  - Replace `public/logo.webp`
   - Replace `public/favicon.ico`
 
 ### Scheduling (use the bundled generator script)
 
-Use the bundled script to generate **both** `public/logo.png` and `public/favicon.ico`:
+Use the bundled script to generate **both** `public/logo.webp` and `public/favicon.ico`:
 
 - macOS/Linux:
   - `python3 ".claude/skills/shipany-quick-start/scripts/generate-logo.py" --brand-name "<brandName>" --primary-color "<#RRGGBB>" --public-dir "public"`
 - Windows (PowerShell / cmd):
   - `py ".claude\\skills\\shipany-quick-start\\scripts\\generate-logo.py" --brand-name "<brandName>" --primary-color "<#RRGGBB>" --public-dir "public"`
 
-**Compatibility rule:** This script is best-effort. On some systems (commonly Windows) Pillow/fonts may be unavailable. The script will automatically fall back to writing **placeholder** `logo.png` / `favicon.ico` so we still avoid keeping template defaults.
+**Compatibility rule:** This script is best-effort. On some systems (commonly Windows) Pillow/fonts may be unavailable. The script will automatically fall back to writing **placeholder** `logo.webp` / `favicon.ico` so we still avoid keeping template defaults.
 
 Validation (required):
 
-- Ensure `public/logo.png` and `public/favicon.ico` exist after running the script.
+- Ensure `public/logo.webp` and `public/favicon.ico` exist after running the script.
 - If they do not exist, treat it as generation failure and manually replace them with **any non-template placeholder images** (do not keep the defaults).
 
 ### Text logo + favicon rule (default fallback)
@@ -51,7 +51,7 @@ If the user does not provide brand files, generate a simple **text-based** mark 
 
 Recommended outputs (still saved to the required filenames):
 
-- `public/logo.png`: 512×512 (or 400×400), square, transparent optional but not required
+- `public/logo.webp`: 512×512 (or 400×400), square, transparent optional but not required
 - `public/favicon.ico`: multi-size ICO (at least 16×16 + 32×32; ideally include 48×48)
 
 After generating/replacing the files, update text/alt/brand copy in `src/config/locale/messages/{locale}/landing.json`:
@@ -63,7 +63,7 @@ After generating/replacing the files, update text/alt/brand copy in `src/config/
 
 In v1, only update branding references inside the allowlist:
 
-- `src/config/locale/messages/{locale}/landing.json` brand logo fields should continue to point to `/logo.png` unless the user explicitly expands scope.
+- `src/config/locale/messages/{locale}/landing.json` brand logo fields should continue to point to `/logo.webp` unless the user explicitly expands scope.
 
 ## Rule
 

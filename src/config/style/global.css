@@ -9,8 +9,46 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings:
+      'liga' 1,
+      'calt' 1,
+      'ss01' 1;
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(
+        circle at top left,
+        color-mix(in oklab, var(--color-primary) 12%, transparent) 0,
+        transparent 26%
+      ),
+      radial-gradient(
+        circle at top right,
+        color-mix(in oklab, var(--color-accent) 10%, transparent) 0,
+        transparent 22%
+      ),
+      radial-gradient(
+        circle at 50% 0%,
+        color-mix(in oklab, black 4%, transparent) 0,
+        transparent 38%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--color-background) 94%, white) 0%,
+        var(--color-background) 100%
+      );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-primary/25 text-foreground;
+  }
+
+  a {
+    @apply transition-colors duration-200;
   }
 }
 
@@ -37,6 +75,12 @@ textarea {
 
 button {
   @apply border-border outline-ring/50 cursor-pointer;
+}
+
+button,
+[data-slot='button'],
+[data-slot='badge'] {
+  letter-spacing: 0.01em;
 }
 
 pre {

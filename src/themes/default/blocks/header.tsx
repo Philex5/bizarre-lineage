@@ -94,9 +94,9 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     target={item.target || '_self'}
-                    className={`flex flex-row items-center gap-2 px-4 py-1.5 text-sm ${
+                    className={`flex flex-row items-center gap-2 rounded-full px-4 py-1.5 text-sm transition-colors ${
                       item.is_active || pathname.endsWith(item.url as string)
-                        ? 'bg-muted/40 text-muted-foreground'
+                        ? 'bg-muted text-foreground shadow-sm'
                         : ''
                     }`}
                   >
@@ -116,7 +116,7 @@ export function Header({ header }: { header: HeaderType }) {
                   {item.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-2xs origin-top p-0.5">
-                  <div className="border-foreground/5 bg-card ring-foreground/5 rounded-[calc(var(--radius)-2px)] border border-transparent p-2 shadow ring-1">
+                  <div className="border-border/70 bg-card/96 ring-primary/10 rounded-[calc(var(--radius)+0.1rem)] border p-2 shadow-lg ring-1 backdrop-blur-xl">
                     <ul className="mt-1 space-y-2">
                       {item.children?.map((subItem: NavItem, index: number) => (
                         <ListItem
@@ -163,7 +163,7 @@ export function Header({ header }: { header: HeaderType }) {
               >
                 {item.children && item.children.length > 0 ? (
                   <>
-                    <AccordionTrigger className="data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg **:!font-normal">
+                    <AccordionTrigger className="data-[state=open]:bg-muted/85 flex items-center justify-between rounded-2xl px-4 py-3 text-lg **:!font-normal">
                       {item.title}
                     </AccordionTrigger>
                     <AccordionContent className="pb-5">
@@ -194,7 +194,7 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     onClick={closeMenu}
-                    className="data-[state=open]:bg-muted flex items-center justify-between px-4 py-3 text-lg **:!font-normal"
+                    className="data-[state=open]:bg-muted/85 flex items-center justify-between rounded-2xl px-4 py-3 text-lg **:!font-normal"
                   >
                     {item.title}
                   </Link>
@@ -229,7 +229,7 @@ export function Header({ header }: { header: HeaderType }) {
             target={target || '_self'}
             className="grid grid-cols-[auto_1fr] gap-3.5"
           >
-            <div className="bg-background ring-foreground/10 relative flex size-9 items-center justify-center rounded border border-transparent shadow-sm ring-1">
+            <div className="bg-background/90 ring-primary/10 border-border/70 relative flex size-9 items-center justify-center rounded-2xl border shadow-sm ring-1 backdrop-blur">
               {children}
             </div>
             <div className="space-y-0.5">
@@ -254,14 +254,14 @@ export function Header({ header }: { header: HeaderType }) {
         <div
           className={cn(
             'absolute inset-x-0 top-0 z-50 h-18 border-transparent ring-1 ring-transparent transition-all duration-300',
-            'in-data-scrolled:border-foreground/5 in-data-scrolled:bg-background/75 in-data-scrolled:border-b in-data-scrolled:backdrop-blur',
-            'has-data-[state=open]:ring-foreground/5 has-data-[state=open]:bg-card/75 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)] has-data-[state=open]:border-b has-data-[state=open]:shadow-lg has-data-[state=open]:shadow-black/10 has-data-[state=open]:backdrop-blur',
-            'max-lg:in-data-[state=active]:bg-background/75 max-lg:h-14 max-lg:overflow-hidden max-lg:border-b max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:backdrop-blur'
+            'in-data-scrolled:border-border/80 in-data-scrolled:bg-background/78 in-data-scrolled:border-b in-data-scrolled:shadow-md in-data-scrolled:backdrop-blur-xl',
+            'has-data-[state=open]:ring-primary/10 has-data-[state=open]:bg-card/78 has-data-[state=open]:border-border/80 has-data-[state=open]:h-[calc(var(--navigation-menu-viewport-height)+3.4rem)] has-data-[state=open]:border-b has-data-[state=open]:shadow-lg has-data-[state=open]:backdrop-blur-xl',
+            'max-lg:in-data-[state=active]:bg-background/82 max-lg:border-border/80 max-lg:h-14 max-lg:overflow-hidden max-lg:border-b max-lg:in-data-[state=active]:h-screen max-lg:in-data-[state=active]:backdrop-blur-xl'
           )}
         >
           <div className="container">
             <div className="relative flex flex-wrap items-center justify-between lg:py-5">
-              <div className="flex justify-between gap-8 max-lg:h-14 max-lg:w-full max-lg:border-b">
+              <div className="max-lg:border-border/70 flex justify-between gap-8 max-lg:h-14 max-lg:w-full max-lg:border-b">
                 {/* Brand Logo */}
                 {header.brand && <BrandLogo brand={header.brand} />}
 
@@ -296,10 +296,10 @@ export function Header({ header }: { header: HeaderType }) {
                         target={button.target || '_self'}
                         className={cn(
                           'focus-visible:ring-ring inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-1 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
-                          'h-7 px-3 ring-0',
+                          'h-9 rounded-full px-4 tracking-[0.12em] uppercase ring-0',
                           button.variant === 'outline'
-                            ? 'bg-background border-primary ring-foreground/10 hover:bg-muted/50 dark:ring-foreground/15 dark:hover:bg-muted/50 border border-transparent shadow-sm ring-1 shadow-black/15 duration-200'
-                            : 'bg-primary text-primary-foreground hover:bg-primary/90 border-[0.5px] border-white/25 shadow-md ring-1 shadow-black/20 ring-(--ring-color) [--ring-color:color-mix(in_oklab,var(--color-foreground)15%,var(--color-primary))]'
+                            ? 'bg-background/82 border-border/80 text-foreground ring-primary/10 hover:bg-muted/70 border shadow-sm ring-1 backdrop-blur duration-200'
+                            : 'bg-primary text-primary-foreground hover:bg-primary/92 ring-primary/25 border border-white/20 shadow-md ring-1'
                         )}
                       >
                         {button.icon && (

@@ -17,7 +17,7 @@ For the first pass, **only modify the files listed in** `references/09-checklist
 ## Dev workflow (required)
 
 - Before starting edits: run `pnpm install` (once) to ensure dependencies are installed.
-- After finishing all edits: **clear Next.js cache** before validation, otherwise you may see stale assets (e.g. old `logo.png`):
+- After finishing all edits: **clear Next.js cache** before validation, otherwise you may see stale assets (e.g. old `logo.webp`):
   - macOS/Linux: `rm -rf .next`
   - Windows (PowerShell): `Remove-Item -Recurse -Force .next`
   - Windows (cmd): `rmdir /s /q .next`

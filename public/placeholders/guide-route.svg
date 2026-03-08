@@ -1,0 +1,16 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="32" fill="#F3EAD8"/>
+  <rect x="36" y="36" width="1128" height="828" rx="26" fill="#FFF9EE" stroke="#2A2520" stroke-opacity="0.12"/>
+  <path d="M186 724C186 566.047 314.047 438 472 438H542V794H472C314.047 794 186 665.953 186 508V724Z" fill="#20242B"/>
+  <path d="M296 654L528 402L654 526L432 744L296 654Z" fill="#F2C55F"/>
+  <path d="M568 520L730 362L848 476L692 632L568 520Z" fill="#E86B32"/>
+  <path d="M798 406L920 288L1012 378L888 502L798 406Z" fill="#20242B" fill-opacity="0.88"/>
+  <circle cx="310" cy="220" r="64" fill="#20242B"/>
+  <circle cx="310" cy="220" r="24" fill="#FFF9EE"/>
+  <rect x="616" y="154" width="388" height="198" rx="24" fill="#20242B" fill-opacity="0.06" stroke="#20242B" stroke-opacity="0.16"/>
+  <rect x="652" y="196" width="182" height="16" rx="8" fill="#20242B" fill-opacity="0.84"/>
+  <rect x="652" y="234" width="290" height="14" rx="7" fill="#20242B" fill-opacity="0.32"/>
+  <rect x="652" y="268" width="240" height="14" rx="7" fill="#20242B" fill-opacity="0.2"/>
+  <text x="122" y="834" fill="#20242B" fill-opacity="0.82" font-family="Georgia, serif" font-size="58">Guide Visual Placeholder</text>
+  <text x="124" y="870" fill="#20242B" fill-opacity="0.54" font-family="Arial, sans-serif" font-size="20" letter-spacing="3">REPLACE WITH MAP, UI, OR PROGRESSION IMAGE</text>
+</svg>

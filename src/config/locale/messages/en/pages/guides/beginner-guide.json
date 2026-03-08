@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Beginner Guide - First Session Route",
+    "description": "A beginner-first Bizarre Lineage guide covering the first session checklist, common mistakes, and the progression decisions that matter early."
+  },
+  "page": {
+    "title": "Bizarre Lineage Beginner Guide",
+    "show_sections": [
+      "hero",
+      "introduce",
+      "benefits",
+      "features",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Bizarre Lineage Beginner Guide for a clean first session",
+        "description": "This page is written for players who want a usable route, not a lore dump. Start with the checklist, avoid common early waste, and branch into the pages that answer your next decision.",
+        "buttons": [
+          {
+            "title": "Open Codes First",
+            "url": "/codes",
+            "icon": "BookOpenText"
+          }
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/guides-beginner-guide-hero/1200/800",
+          "alt": "Bizarre Lineage beginner guide",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "https://picsum.photos/seed/guides-beginner-guide-bg/1600/900",
+          "alt": "Guide background"
+        }
+      },
+      "introduce": {
+        "block": "features-list",
+        "id": "introduce",
+        "title": "Fast start checklist",
+        "description": "The first-time player experience should be broken into short, low-risk actions. Each step below exists to reduce wasted time in the opening stretch.",
+        "image": {
+          "src": "https://picsum.photos/seed/guides-beginner-guide-introduce/1200/800",
+          "alt": "Beginner route"
+        },
+        "items": [
+          {
+            "title": "Check codes before grinding",
+            "description": "Free rewards can change your early route, so the Codes page is often the fastest first stop.",
+            "icon": "BadgePercent",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-0/800/600",
+              "alt": "Check codes"
+            }
+          },
+          {
+            "title": "Learn the current progression loop",
+            "description": "Do not assume old routes still hold after patches. Use the current MVP guide as the baseline and update details after in-game checks.",
+            "icon": "Map",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-1/800/600",
+              "alt": "Progression loop"
+            }
+          },
+          {
+            "title": "Pick early goals, not long-term fantasies",
+            "description": "The first session should focus on consistency, survivability, and learning the game loop instead of chasing rare outcomes immediately.",
+            "icon": "Target",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-2/800/600",
+              "alt": "Early goals"
+            }
+          },
+          {
+            "title": "Use the tier list as context",
+            "description": "A tier list helps you decide what is strong, but the beginner route still needs to match what you can realistically access early.",
+            "icon": "Trophy",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-3/800/600",
+              "alt": "Tier list context"
+            }
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "benefits": {
+        "block": "features-accordion",
+        "id": "benefits",
+        "title": "What beginners usually get wrong",
+        "description": "Most early friction comes from committing too soon, ignoring current information, or copying endgame advice too early.",
+        "items": [
+          {
+            "title": "Grinding without checking free rewards",
+            "description": "If a code grants resources or rerolls, it can change your first decisions immediately.",
+            "icon": "TriangleAlert",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-10/800/600",
+              "alt": "Missing free rewards"
+            }
+          },
+          {
+            "title": "Copying advanced builds too early",
+            "description": "A beginner route should emphasize stability and clarity before it emphasizes high-ceiling optimization.",
+            "icon": "ShieldCheck",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-11/800/600",
+              "alt": "Advanced build trap"
+            }
+          },
+          {
+            "title": "Playing without a next-page handoff",
+            "description": "A good guide points you toward the codes page, the tier list, and a stand page when each one becomes useful.",
+            "icon": "ArrowRightLeft",
+            "image": {
+              "src": "https://picsum.photos/seed/guides-beginner-guide-item-12/800/600",
+              "alt": "Connected guide flow"
+            }
+          }
+        ]
+      },
+      "features": {
+        "id": "features",
+        "title": "First-session route",
+        "description": "This is the action-oriented structure the full guide should keep even after the content becomes more detailed.",
+        "items": [
+          {
+            "title": "Step 1: Claim any currently verified rewards",
+            "description": "Open the Codes page before committing time to farming if free resources are available.",
+            "icon": "BadgePercent"
+          },
+          {
+            "title": "Step 2: Stabilize your early gameplay loop",
+            "description": "Learn the basic quest or farming cycle that keeps progress moving instead of chasing rare outcomes immediately.",
+            "icon": "Repeat"
+          },
+          {
+            "title": "Step 3: Use the tier list for direction, not blind copying",
+            "description": "The ranking page should help you compare goals, but your route still depends on what you can actually access now.",
+            "icon": "Trophy"
+          },
+          {
+            "title": "Step 4: Research one stand page before investing heavily",
+            "description": "Read the sample Star Platinum page to see how the wiki frames strengths, weaknesses, and time investment.",
+            "icon": "Sparkles"
+          },
+          {
+            "title": "Step 5: Recheck assumptions after updates",
+            "description": "Roblox games shift quickly. Early routes should always note when they need a fresh pass.",
+            "icon": "RefreshCw"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "FAQ",
+        "description": "Simple answers for early-game questions.",
+        "items": [
+          {
+            "question": "What page should a brand-new player open first?",
+            "answer": "Open the Codes page first for any free rewards, then return here for the first-session route."
+          },
+          {
+            "question": "Should beginners follow the tier list immediately?",
+            "answer": "Use it as context, but do not over-commit to advanced rankings before you understand the early gameplay loop and what resources you actually have."
+          },
+          {
+            "question": "Why is the guide short instead of exhaustive?",
+            "answer": "The MVP is built around fast decisions. It keeps the opening route readable and hands off to more specific pages when needed."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Ready for the next choice?",
+        "description": "Move into the Tier List for meta context or open the Star Platinum page to see the stand template in action.",
+        "buttons": [
+          {
+            "title": "View Tier List",
+            "url": "/tier-list",
+            "icon": "Trophy"
+          },
+          {
+            "title": "View Star Platinum",
+            "url": "/stands/star-platinum",
+            "icon": "Sparkles"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

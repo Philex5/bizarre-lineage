@@ -6,10 +6,10 @@ import packageJson from '../../package.json';
 export type ConfigMap = Record<string, string>;
 
 export const envConfigs: ConfigMap = {
-  app_url: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000',
+  app_url: process.env.NEXT_PUBLIC_APP_URL ?? 'https://bizarrelineage.info',
   app_name: process.env.NEXT_PUBLIC_APP_NAME ?? 'ShipAny App',
   app_description: process.env.NEXT_PUBLIC_APP_DESCRIPTION ?? '',
-  app_logo: process.env.NEXT_PUBLIC_APP_LOGO ?? '/logo.png',
+  app_logo: process.env.NEXT_PUBLIC_APP_LOGO ?? '/logo.webp',
   app_favicon: process.env.NEXT_PUBLIC_APP_FAVICON ?? '/favicon.ico',
   app_preview_image:
     process.env.NEXT_PUBLIC_APP_PREVIEW_IMAGE ?? '/preview.png',
@@ -38,4 +38,7 @@ export const envConfigs: ConfigMap = {
   version: packageJson.version,
   locale_detect_enabled:
     process.env.NEXT_PUBLIC_LOCALE_DETECT_ENABLED ?? 'false',
+  google_analytics_id: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?? '',
+  plausible_domain: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ?? '',
+  plausible_src: process.env.NEXT_PUBLIC_PLAUSIBLE_SRC ?? '',
 };

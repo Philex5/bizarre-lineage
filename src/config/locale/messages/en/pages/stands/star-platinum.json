@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "title": "Star Platinum in Bizarre Lineage - Sample Stand Page",
+    "description": "A sample stand page for Star Platinum in Bizarre Lineage covering quick verdict, investment logic, strengths, weaknesses, and where it fits in the MVP meta structure."
+  },
+  "page": {
+    "title": "Star Platinum in Bizarre Lineage",
+    "show_sections": [
+      "hero",
+      "introduce",
+      "benefits",
+      "features",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Star Platinum: strong sample page, provisional live judgment",
+        "description": "This page is the MVP blueprint for future stand coverage. It is designed to answer whether a stand is worth the time investment before the reader commits to the grind.",
+        "buttons": [
+          {
+            "title": "Compare With Tier List",
+            "url": "/tier-list",
+            "icon": "Sparkles"
+          }
+        ],
+        "image": {
+          "src": "https://picsum.photos/seed/stands-star-platinum-hero/1200/800",
+          "alt": "Star Platinum page hero",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "https://picsum.photos/seed/stands-star-platinum-bg/1600/900",
+          "alt": "Star Platinum background"
+        }
+      },
+      "introduce": {
+        "block": "features-list",
+        "id": "introduce",
+        "title": "Quick verdict",
+        "description": "Star Platinum is a natural sample stand because players instantly understand the fantasy. The page should frame it as a dependable benchmark, while leaving room for balance rechecks.",
+        "image": {
+          "src": "https://picsum.photos/seed/stands-star-platinum-introduce/1200/800",
+          "alt": "Star Platinum quick verdict"
+        },
+        "items": [
+          {
+            "title": "Why players care",
+            "description": "It is a recognizable, high-interest stand that makes a strong test case for a searchable database page.",
+            "icon": "Sparkles",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-0/800/600",
+              "alt": "Why players care"
+            }
+          },
+          {
+            "title": "What this page should decide",
+            "description": "Is Star Platinum worth pursuing for your current goals, or should you move toward another option first?",
+            "icon": "Scale",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-1/800/600",
+              "alt": "Decision framing"
+            }
+          },
+          {
+            "title": "What stays provisional",
+            "description": "Exact move values, unlock conditions, and matchup edges should be refreshed whenever the game balance shifts.",
+            "icon": "ShieldAlert",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-2/800/600",
+              "alt": "Provisional data"
+            }
+          },
+          {
+            "title": "Where it connects",
+            "description": "This page should link back to the tier list for meta context and the beginner guide for players still in early progression.",
+            "icon": "Link",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-3/800/600",
+              "alt": "Internal links"
+            }
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "benefits": {
+        "block": "features-accordion",
+        "id": "benefits",
+        "title": "Strengths and weaknesses structure",
+        "description": "A stand page only works if it tells the reader what they gain and what they tolerate in return.",
+        "items": [
+          {
+            "title": "Strengths",
+            "description": "Frame Star Platinum as a strong all-rounder style sample, especially when a player values straightforward pressure and clean decision-making.",
+            "icon": "ShieldCheck",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-10/800/600",
+              "alt": "Strengths"
+            }
+          },
+          {
+            "title": "Weaknesses",
+            "description": "Call out the opportunity cost, matchup limits, or execution demands that stop it from being an automatic answer for every player.",
+            "icon": "TriangleAlert",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-11/800/600",
+              "alt": "Weaknesses"
+            }
+          },
+          {
+            "title": "Best use cases",
+            "description": "Explain whether the stand feels better for general progression, PvP pressure, or targeted goals so the reader can judge fit quickly.",
+            "icon": "Target",
+            "image": {
+              "src": "https://picsum.photos/seed/stands-star-platinum-item-12/800/600",
+              "alt": "Use cases"
+            }
+          }
+        ]
+      },
+      "features": {
+        "id": "features",
+        "title": "What a scalable stand template should contain",
+        "description": "These are the durable content blocks that future stand pages can reuse without turning thin or repetitive.",
+        "items": [
+          {
+            "title": "Hero summary with role and current tier context",
+            "description": "Tell the reader what the stand is for before moving into detail.",
+            "icon": "UserRound"
+          },
+          {
+            "title": "How to get it, only if verified",
+            "description": "Acquisition details should be updated only when they have been checked recently.",
+            "icon": "MapPinned"
+          },
+          {
+            "title": "Skill or move overview without made-up precision",
+            "description": "Describe what the kit enables before listing numbers that may already be outdated.",
+            "icon": "Swords"
+          },
+          {
+            "title": "Strengths, weaknesses, and alternatives",
+            "description": "This is where the page earns trust by helping the reader compare options honestly.",
+            "icon": "Scale"
+          },
+          {
+            "title": "Internal links to next decisions",
+            "description": "Send the player to the tier list, the beginner guide, or the codes page depending on where they are in progression.",
+            "icon": "ArrowRightLeft"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "FAQ",
+        "description": "Short answers to common stand-page questions.",
+        "items": [
+          {
+            "question": "Is Star Platinum the best stand in the game?",
+            "answer": "This page treats it as a strong sample candidate, not an automatic universal best choice. The correct judgment depends on patch state, goals, and what the tier list currently supports."
+          },
+          {
+            "question": "Why does this page avoid exact skill numbers?",
+            "answer": "Because the MVP is prioritizing trustworthy structure over unverified precision. Exact values should be added only after a fresh check."
+          },
+          {
+            "question": "What should I open after this page?",
+            "answer": "Use the Tier List for broader context or the Beginner Guide if you still need a cleaner path through early progression."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Compare before you commit",
+        "description": "Use the tier list for the big picture, then return to stand pages when you need a more specific investment decision.",
+        "buttons": [
+          {
+            "title": "Back to Tier List",
+            "url": "/tier-list",
+            "icon": "Trophy"
+          },
+          {
+            "title": "Open Beginner Guide",
+            "url": "/guides/beginner-guide",
+            "icon": "BookOpenText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}
