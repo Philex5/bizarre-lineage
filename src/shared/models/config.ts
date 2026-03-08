@@ -91,9 +91,12 @@ export async function getAllConfigs(): Promise<Configs> {
   const settingNames = await getAllSettingNames();
   settingNames.forEach((key) => {
     const upperKey = key.toUpperCase();
+    const nextPublicKey = `NEXT_PUBLIC_${upperKey}`;
     // use env configs if available
     if (process.env[upperKey]) {
       dbConfigs[key] = process.env[upperKey] ?? '';
+    } else if (process.env[nextPublicKey]) {
+      dbConfigs[key] = process.env[nextPublicKey] ?? '';
     } else if (process.env[key]) {
       dbConfigs[key] = process.env[key] ?? '';
     }

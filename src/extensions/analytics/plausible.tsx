@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Script from 'next/script';
 
 import { AnalyticsConfigs, AnalyticsProvider } from '.';
 
@@ -26,24 +25,31 @@ export class PlausibleAnalyticsProvider implements AnalyticsProvider {
   }
 
   getHeadScripts(): ReactNode {
+    // Plausible domain should not include protocol (http:// or https://) or trailing slash
+    const domain = (this.configs.domain || '')
+      .trim()
+      .replace(/^https?:\/\//, '')
+      .replace(/\/$/, '');
+    
+    if (!domain || !this.configs.src) {
+      return null;
+    }
+
     return (
       <>
         {/* Plausible Analytics */}
-        <Script
-          id={this.name}
-          strategy="afterInteractive"
+        <script
+          id="plausible-init"
           dangerouslySetInnerHTML={{
             __html: `
               window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
             `,
           }}
         />
-        <Script
-          data-domain={this.configs.domain}
-          src={this.configs.src}
-          strategy="afterInteractive"
+        <script
           defer
-          async
+          data-domain={domain}
+          src={this.configs.src}
         />
       </>
     );
