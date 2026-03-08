@@ -17,7 +17,7 @@ const DISMISSED_EXPIRY_DAYS = 1; // Expiry in days
 const PREFERRED_LOCALE_KEY = 'locale';
 
 export function LocaleDetector() {
-  if (envConfigs.locale_detect_enabled !== 'true') {
+  if (envConfigs.locale_detect_enabled !== 'true' || locales.length < 2) {
     return null;
   }
 
