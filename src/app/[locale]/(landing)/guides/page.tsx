@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { buildMetadata, HomePage } from '@/features/wiki/pages';
+import { buildMetadata, GuidesHubPage } from '@/features/wiki/pages';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export const revalidate = 3600;
@@ -10,18 +10,18 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'pages.index' });
+  const t = await getTranslations({ locale, namespace: 'pages.guides' });
 
   return buildMetadata({
     locale,
-    path: '/',
+    path: '/guides',
     title: t('metadata.title'),
     description: t('metadata.description'),
     keywords: t('metadata.keywords').split(', '),
   });
 }
 
-export default async function LandingPage({
+export default async function GuidesPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -29,5 +29,5 @@ export default async function LandingPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HomePage />;
+  return <GuidesHubPage />;
 }

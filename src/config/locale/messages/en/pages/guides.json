@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Guides Hub: Master Progression & Builds",
+    "description": "Access all Bizarre Lineage guides in one place. From beginner routes and stat builds to prestige timing and stand evolution, our wiki has the pro strategies you need.",
+    "keywords": "bizarre lineage guides, bizarre lineage beginner guide, bizarre lineage stats guide, bizarre lineage prestige guide, bizarre lineage wiki"
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Guides Hub",
+        "title": "Complete Bizarre Lineage Guide Directory",
+        "description": "Master every system in Bizarre Lineage with our focused guides. Whether you need a cleaner opening route, better stat logic, or a plan for your first prestige, start here.",
+        "stats": {
+          "total_guides": "Total Guides",
+          "total_guides_value": "4",
+          "reading_time": "Est. Reading",
+          "reading_time_value": "20 min",
+          "updated": "Last Updated",
+          "updated_value": "2026-03-08"
+        }
+      },
+      "directory": {
+        "eyebrow": "Browse Guides",
+        "title": "All Available Bizarre Lineage Guides",
+        "description": "Each guide is built to solve one specific progression blocker. Pick the one that matches your current goal.",
+        "items": {
+          "beginner": {
+            "title": "Beginner Guide",
+            "meta": "Core Progression",
+            "description": "The definitive opening route. Get a usable first stand and stabilize your early-game resources without wasted detours."
+          },
+          "stats": {
+            "title": "Stats Guide",
+            "meta": "Build Logic",
+            "description": "Fix your point allocation. Learn how power, durability, and mobility stats shape your build before bad habits slow you down."
+          },
+          "prestige": {
+            "title": "Prestige Guide",
+            "meta": "Reset Timing",
+            "description": "Plan your character reset. Know exactly when to prestige, what you gain, and what to bank before hitting the button."
+          },
+          "codes": {
+            "title": "Codes Guide",
+            "meta": "Reward Archive",
+            "description": "Claim every active reward. A complete list of live and expired codes with status monitoring and archive notes."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "How to use these guides",
+        "items": [
+          {
+            "question": "Which guide should I read first?",
+            "answer": "If you are new, start with the Beginner Guide. If you already have a stand and want to optimize it, check the Stats Guide."
+          },
+          {
+            "question": "Are these guides kept up to date?",
+            "answer": "Yes. We monitor game updates and patch notes to ensure our progression advice and build logic remain accurate for the current meta."
+          },
+          {
+            "question": "Do I need to read every guide?",
+            "answer": "No. These are modular. Open the one that solves your current problem, then return here when you hit the next progression milestone."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,193 +1,120 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Codes - Verified Reward Tracker",
-    "description": "Track Bizarre Lineage codes with a verification-first format covering active status, expired rewards, redemption steps, and troubleshooting notes."
+    "title": "Bizarre Lineage Codes: Active & Expired Reward List",
+    "description": "Get the latest Bizarre Lineage codes for Roblox. Our verified tracker lists all active codes, expired rewards, and a step-by-step redemption guide."
   },
   "page": {
-    "title": "Bizarre Lineage Codes",
-    "show_sections": [
-      "hero",
-      "introduce",
-      "benefits",
-      "features",
-      "faq",
-      "cta"
-    ],
     "sections": {
       "hero": {
-        "id": "hero",
-        "title": "Bizarre Lineage Codes with verification-first notes",
-        "description": "This MVP page is designed to surface usable rewards quickly. When a code is not freshly verified, the page says so instead of pretending it is current.",
-        "buttons": [
-          {
-            "title": "Jump to Redemption Tips",
-            "url": "#features",
-            "icon": "BadgePercent"
+        "eyebrow": "Codes tracker",
+        "title": "Bizarre Lineage codes should resolve the main question immediately: what is still worth redeeming.",
+        "description": "This page skips the oversized hero and opens with the verification model instead. Active entries stay first, monitor labels explain uncertainty, and the expired archive remains visible without slowing down urgent checks."
+      },
+      "notes": {
+        "eyebrow": "Page notes",
+        "title": "The layout is built for fast scans, not filler.",
+        "items": {
+          "last_verified": {
+            "title": "Last verified",
+            "meta": "Freshness signal"
+          },
+          "tracked_active": {
+            "title": "Tracked active entries",
+            "meta": "Current table size"
+          },
+          "best_next_move": {
+            "title": "Best next move",
+            "meta": "After redeeming",
+            "description": "Jump into the tier list, beginner guide, or stand index instead of stopping at the reward claim."
           }
-        ],
-        "image": {
-          "src": "https://picsum.photos/seed/codes-hero/1200/800",
-          "alt": "Bizarre Lineage codes page",
-          "width": 1200,
-          "height": 800
-        },
-        "background_image": {
-          "src": "https://picsum.photos/seed/codes-bg/1600/900",
-          "alt": "Bizarre Lineage codes background"
         }
       },
-      "introduce": {
-        "block": "features-list",
-        "id": "introduce",
-        "title": "Current page structure",
-        "description": "The live content model is built for fast scans first. Replace the placeholder entries below with fresh checks as soon as you validate them in game.",
-        "image": {
-          "src": "https://picsum.photos/seed/codes-introduce/1200/800",
-          "alt": "Codes table preview"
-        },
-        "items": [
-          {
-            "title": "Active code slot",
-            "description": "No newly verified code is published in this MVP seed yet. Add a real code only after confirming reward and expiry behavior.",
-            "icon": "CheckCheck",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-0/800/600",
-              "alt": "Active code slot"
-            }
-          },
-          {
-            "title": "Reward field",
-            "description": "Record the exact reward text players receive instead of broad guesses like free items or boosts.",
-            "icon": "Gift",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-1/800/600",
-              "alt": "Reward field"
-            }
-          },
-          {
-            "title": "Status field",
-            "description": "Use clear labels such as Verified Active, Unconfirmed, or Expired so players know how much to trust the entry.",
-            "icon": "ShieldCheck",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-2/800/600",
-              "alt": "Status field"
-            }
-          },
-          {
-            "title": "Last checked field",
-            "description": "Show the review date whenever you update the page so the reader understands page freshness immediately.",
-            "icon": "CalendarClock",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-3/800/600",
-              "alt": "Last checked field"
-            }
-          }
-        ],
-        "className": "bg-muted"
+      "active": {
+        "eyebrow": "Active codes",
+        "title": "Start with the entries players can act on right now.",
+        "description": "The table keeps the required fields stable: Code, Reward, Status, and Last Verified. That consistency matters more than decorative noise.",
+        "table": {
+          "code": "Code",
+          "reward": "Reward",
+          "status": "Status",
+          "last_verified": "Last Verified"
+        }
       },
-      "benefits": {
-        "block": "features-accordion",
-        "id": "benefits",
-        "title": "What this page should answer fast",
-        "description": "The codes page exists for urgency. A player should know what works, what failed, and what to try next without scrolling through generic filler.",
-        "items": [
-          {
-            "title": "Which codes are worth trying right now",
-            "description": "Keep valid rewards at the top and move expired entries out of the way instead of mixing everything together.",
-            "icon": "BadgePercent",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-10/800/600",
-              "alt": "Useful codes first"
-            }
-          },
-          {
-            "title": "How to redeem without guessing",
-            "description": "Explain the in-game entry point in short steps and note that capitalization or spacing can matter.",
-            "icon": "ListChecks",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-11/800/600",
-              "alt": "Redeem guide"
-            }
-          },
-          {
-            "title": "Why a code may fail",
-            "description": "Common failure causes include expiry, syntax mismatch, one-time use limits, or patch-related disablement.",
-            "icon": "TriangleAlert",
-            "image": {
-              "src": "https://picsum.photos/seed/codes-item-12/800/600",
-              "alt": "Troubleshooting"
-            }
-          }
-        ]
+      "redeem": {
+        "eyebrow": "Redeem flow",
+        "title": "How to redeem without wasting time."
       },
-      "features": {
-        "id": "features",
-        "title": "Redemption and troubleshooting checklist",
-        "description": "Use this section as the durable part of the page even when no new code is verified that day.",
-        "items": [
-          {
-            "title": "Launch the game and open the code entry interface",
-            "description": "If the interface moves after an update, revise this step instead of leaving old directions live.",
-            "icon": "Play"
+      "expired": {
+        "eyebrow": "Expired archive",
+        "title": "Old entries stay visible, but they do not lead the page.",
+        "table": {
+          "code": "Code",
+          "reward": "Reward",
+          "status": "Status",
+          "archive_note": "Archive note"
+        }
+      },
+      "troubleshooting": {
+        "eyebrow": "Troubleshooting",
+        "title": "Most code failures fall into a few predictable buckets."
+      },
+      "related": {
+        "eyebrow": "Related reads",
+        "title": "What to open after the code check.",
+        "items": {
+          "tier_list": {
+            "title": "Tier List",
+            "description": "Move to the stand rankings if you are deciding where those rewards should actually be spent."
           },
-          {
-            "title": "Paste the code exactly as shown",
-            "description": "Do not normalize capitalization or spacing unless you have confirmed the game ignores formatting differences.",
-            "icon": "ClipboardPaste"
-          },
-          {
-            "title": "Redeem one code at a time",
-            "description": "This makes it easier to confirm which reward succeeded and which code has already expired.",
-            "icon": "ScanLine"
-          },
-          {
-            "title": "Move failed entries into the expired section only after a recheck",
-            "description": "Treat a single failure report as a signal, not final proof, until you test it again.",
-            "icon": "Archive"
-          },
-          {
-            "title": "Link out to Tier List and Beginner Guide",
-            "description": "Codes are usually a starting point. Users often need progression and stand advice immediately after redeeming rewards.",
-            "icon": "ArrowRightLeft"
+          "beginner_guide": {
+            "title": "Beginner Guide",
+            "description": "Open the guide if you need a stronger first-session route after collecting rewards."
           }
-        ]
+        }
       },
       "faq": {
-        "id": "faq",
-        "title": "FAQ",
-        "description": "Short answers to typical code-page questions.",
+        "eyebrow": "FAQ",
+        "title": "Questions readers usually ask after checking Bizarre Lineage codes.",
         "items": [
           {
-            "question": "Why does this page not list many codes yet?",
-            "answer": "The MVP prefers verified entries over filler. Real codes should be added only after they are checked in game."
+            "question": "What are the active Bizarre Lineage codes right now?",
+            "answer": "Use the active table first. It keeps the current tracked entries separate from expired rows so you can test the shortest useful list."
           },
           {
-            "question": "How often should the codes page be updated?",
-            "answer": "Update it whenever the game receives an event, patch, or community-reported code drop, and stamp the page with the last review date."
+            "question": "Why does a code show monitor instead of active?",
+            "answer": "Monitor means the code still needs another live verification pass after a patch, reset, or event change. It may still work, but the page should not overstate confidence."
           },
           {
-            "question": "What should happen to expired codes?",
-            "answer": "Keep them in a clearly separated expired section so players can confirm they are old without polluting the active list."
+            "question": "Why keep expired codes on the page at all?",
+            "answer": "Because players often arrive from old videos, Discord posts, or search snippets. A visible archive helps them confirm a code is old without mixing it into the live list."
+          },
+          {
+            "question": "What should I read after redeeming codes?",
+            "answer": "Most players need the next decision fast: open the tier list for meta context, the beginner guide for route planning, or the stand index for deeper build research."
           }
         ]
       },
       "cta": {
-        "id": "cta",
-        "title": "Need the next decision after codes?",
-        "description": "Most players redeem rewards and then ask what to build or farm next. Continue into the Tier List or Beginner Guide.",
-        "buttons": [
-          {
-            "title": "Open Tier List",
-            "url": "/tier-list",
-            "icon": "Trophy"
+        "eyebrow": "CTA",
+        "title": "Turn the reward claim into a better next decision.",
+        "description": "Codes rarely end the session. Use the pages below to decide what to build, farm, or compare once the freebies are claimed.",
+        "items": {
+          "tier_list": {
+            "eyebrow": "Meta context",
+            "title": "Open the tier list",
+            "description": "Check where current stands land before you spend spins, resources, or event rewards."
           },
-          {
-            "title": "Open Beginner Guide",
-            "url": "/guides/beginner-guide",
-            "icon": "BookOpenText"
+          "beginner_guide": {
+            "eyebrow": "Progression",
+            "title": "Follow the beginner guide",
+            "description": "Use a cleaner early-game route if you need levels, farming priorities, and fewer wasted resets."
+          },
+          "stand_index": {
+            "eyebrow": "Build research",
+            "title": "Browse the stand index",
+            "description": "Compare strengths, weaknesses, and obtainment notes before you commit to a longer grind."
           }
-        ],
-        "className": "bg-muted"
+        }
       }
     }
   }

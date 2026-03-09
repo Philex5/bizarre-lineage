@@ -1,11 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  stands,
-  type StandEntry,
-  type StandTier,
-} from '@/content-data/stands';
+import { stands, type StandEntry, type StandTier } from '@/content-data/stands';
 import { ArrowRight } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
@@ -159,11 +155,12 @@ function DetailCard({ stand }: { stand: StandEntry }) {
               Reading note
             </div>
             <p className="mt-3">
-              Use the chart for the quick tier signal, then compare obtainment,
-              strengths, and weaknesses here without leaving the site.
+              Use the tier letter for the first pass, then read this card like a
+              reroll decision. The useful question is whether the stand fits
+              your route, grind, and actual skill level.
             </p>
             <p className="text-muted-foreground mt-2 text-xs tracking-[0.14em] uppercase">
-              Built for fast stand comparisons
+              Built for real keep or skip decisions
             </p>
           </div>
         </aside>
@@ -186,11 +183,14 @@ export function StandsTierBoard() {
             Stand tiers
           </div>
           <h1 className="text-foreground mt-2 font-serif text-4xl leading-none tracking-[-0.05em]">
-            Click a stand in the chart.
+            Bizarre Lineage tier list: click a stand to see whether it is worth
+            your next grind.
           </h1>
           <p className="text-muted-foreground mt-3 max-w-2xl text-sm leading-7">
-            Tier order follows the chart you provided. Selecting a stand opens
-            its full card below.
+            Tier order follows the current chart. Selecting a stand opens a
+            player-focused card below with obtainment notes, strengths,
+            weaknesses, and a faster read on whether you should keep, chase, or
+            skip it.
           </p>
         </div>
 

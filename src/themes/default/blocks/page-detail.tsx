@@ -8,9 +8,11 @@ import '@/config/style/docs.css';
 export async function PageDetail({ post }: { post: PostType }) {
   const isTermsHub = post.slug === 'terms';
   const isTermsChildPage = Boolean(post.slug?.startsWith('terms/'));
-  const sectionSpacingClass = isTermsChildPage
-    ? 'pt-8 pb-24 md:pt-10 md:pb-32'
-    : 'py-24 md:py-32';
+  const sectionSpacingClass = isTermsHub
+    ? 'pt-4 pb-24 md:pt-5 md:pb-32'
+    : isTermsChildPage
+      ? 'pt-4 pb-24 md:pt-6 md:pb-32'
+      : 'py-24 md:py-32';
 
   return (
     <section id={post.id}>
@@ -19,9 +21,9 @@ export async function PageDetail({ post }: { post: PostType }) {
           <div
             className={
               isTermsHub
-                ? 'mt-3 text-center'
+                ? 'mt-0 text-center'
                 : isTermsChildPage
-                  ? 'mt-6 text-center'
+                  ? 'mt-2 text-center'
                   : 'mt-16 text-center'
             }
           >

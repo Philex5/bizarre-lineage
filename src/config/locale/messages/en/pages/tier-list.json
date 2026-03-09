@@ -1,193 +1,44 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Tier List - Practical Meta Guide",
-    "description": "A practical Bizarre Lineage tier list page built around PvP pressure, PvE value, consistency, and how much investment a stand needs before it feels good."
+    "title": "Bizarre Lineage Tier List: Best Stands for PvP & PvE",
+    "description": "Master the Bizarre Lineage meta with our updated tier list. Compare the best stands for competitive PvP and efficient PvE farming in Morioh."
   },
   "page": {
-    "title": "Bizarre Lineage Tier List",
-    "show_sections": [
-      "hero",
-      "introduce",
-      "benefits",
-      "features",
-      "faq",
-      "cta"
-    ],
     "sections": {
-      "hero": {
-        "id": "hero",
-        "title": "Bizarre Lineage Tier List built for judgment, not noise",
-        "description": "The goal of this page is to explain why a stand belongs in a tier, not just throw labels at the reader. Rankings should stay tied to real use cases and be revised after balance changes.",
-        "buttons": [
-          {
-            "title": "View Sample Stand Page",
-            "url": "/stands/star-platinum",
-            "icon": "Trophy"
-          }
-        ],
-        "image": {
-          "src": "https://picsum.photos/seed/tier-list-hero/1200/800",
-          "alt": "Bizarre Lineage tier list page",
-          "width": 1200,
-          "height": 800
-        },
-        "background_image": {
-          "src": "https://picsum.photos/seed/tier-list-bg/1600/900",
-          "alt": "Tier list background"
-        }
+      "representative": {
+        "eyebrow": "Representative stands",
+        "title": "The cards explain why a stand earns attention, not just where it lands.",
+        "tier_suffix": "tier"
       },
-      "introduce": {
-        "block": "features-list",
-        "id": "introduce",
-        "title": "How to read this MVP tier list",
-        "description": "Treat the page as a framework for ranking decisions. Early entries can be conservative until more in-game validation is added.",
-        "image": {
-          "src": "https://picsum.photos/seed/tier-list-introduce/1200/800",
-          "alt": "Tier list methodology"
-        },
-        "items": [
-          {
-            "title": "S Tier",
-            "description": "Reserved for options that stay strong across multiple scenarios instead of dominating only one niche.",
-            "icon": "Crown",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-0/800/600",
-              "alt": "S tier"
-            }
-          },
-          {
-            "title": "A Tier",
-            "description": "Reliable stands with strong upside, but with clearer tradeoffs in matchup spread, execution, or farming comfort.",
-            "icon": "Medal",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-1/800/600",
-              "alt": "A tier"
-            }
-          },
-          {
-            "title": "B Tier",
-            "description": "Usable choices that can work well in the right hands, but usually need more commitment or specific context.",
-            "icon": "Shield",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-2/800/600",
-              "alt": "B tier"
-            }
-          },
-          {
-            "title": "Sample anchor",
-            "description": "Star Platinum is linked as the first stand sample page so readers can move from ranking to detailed judgment.",
-            "icon": "Sparkles",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-3/800/600",
-              "alt": "Star Platinum"
-            }
-          }
-        ],
-        "className": "bg-muted"
+      "methodology": {
+        "eyebrow": "Methodology",
+        "title": "A useful list states its evaluation frame."
       },
-      "benefits": {
-        "block": "features-accordion",
-        "id": "benefits",
-        "title": "Ranking dimensions that matter",
-        "description": "Each tier decision should be defensible. If a page cannot explain the criteria, the ranking is not useful.",
-        "items": [
-          {
-            "title": "PvP pressure",
-            "description": "How often the stand can force mistakes, convert openings, and stay threatening in common fights.",
-            "icon": "Swords",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-10/800/600",
-              "alt": "PvP pressure"
-            }
-          },
-          {
-            "title": "PvE value",
-            "description": "How comfortable the stand feels while clearing routine content, grinding progress, or handling bosses.",
-            "icon": "ShieldPlus",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-11/800/600",
-              "alt": "PvE value"
-            }
-          },
-          {
-            "title": "Investment efficiency",
-            "description": "How much time, matchup knowledge, or supporting setup is needed before the stand starts paying off.",
-            "icon": "Gauge",
-            "image": {
-              "src": "https://picsum.photos/seed/tier-list-item-12/800/600",
-              "alt": "Investment efficiency"
-            }
-          }
-        ]
-      },
-      "features": {
-        "id": "features",
-        "title": "MVP ranking notes",
-        "description": "These notes define the structure the full tier table should follow as more stands are added.",
-        "items": [
-          {
-            "title": "Lead with the quick conclusion",
-            "description": "Put the highest-level takeaway near the top so players do not have to scroll through justification before seeing the result.",
-            "icon": "ArrowUp"
-          },
-          {
-            "title": "Link each highlighted stand to a deeper page",
-            "description": "The tier list should act as a decision hub, not a dead end.",
-            "icon": "ExternalLink"
-          },
-          {
-            "title": "Separate PvP and PvE comments when they diverge",
-            "description": "Some stands are much better in one mode than the other, and the page should say that plainly.",
-            "icon": "Split"
-          },
-          {
-            "title": "Update tiers after balance shifts",
-            "description": "A tier list without version-awareness becomes stale fast, especially for Roblox games with active tuning.",
-            "icon": "RefreshCw"
-          },
-          {
-            "title": "Keep unsupported claims out",
-            "description": "If the page cannot verify a detail, label it as provisional instead of presenting it as settled fact.",
-            "icon": "ShieldAlert"
-          }
-        ]
+      "role_picks": {
+        "eyebrow": "Role picks",
+        "title": "Some readers only want the best option for a specific situation."
       },
       "faq": {
-        "id": "faq",
-        "title": "FAQ",
-        "description": "Common questions about how to use the ranking page.",
+        "eyebrow": "FAQ",
+        "title": "What the ranking page should clarify.",
         "items": [
           {
-            "question": "Does one tier list work for both PvP and PvE?",
-            "answer": "It can, but only if the page explains when those judgments split. If a stand is excellent in one mode and average in the other, the write-up should say so directly."
+            "question": "Why link the tier list to a stand page?",
+            "answer": "Because the ranking page should hand off to a database-style article when a stand deserves deeper research."
           },
           {
-            "question": "Why is the tier list still conservative?",
-            "answer": "This is an MVP template. It favors defensible structure and linked sample pages before scaling to a full roster."
+            "question": "Why is methodology so visible here?",
+            "answer": "Without methodology, a tier list becomes a subjective chart that is hard to trust and hard to differentiate in search."
           },
           {
-            "question": "What should a reader open after the tier list?",
-            "answer": "A detailed stand page such as Star Platinum, or the Beginner Guide if the player still needs a first-session route."
+            "question": "Should every stand be in the MVP?",
+            "answer": "No. The MVP uses a representative set and one strong sample page before scaling coverage."
+          },
+          {
+            "question": "What should new players read after this page?",
+            "answer": "The beginner guide, especially if they understand the meta but still need an early progression route."
           }
         ]
-      },
-      "cta": {
-        "id": "cta",
-        "title": "Need a stand-level breakdown?",
-        "description": "Open the first stand sample page to see how the wiki turns a ranking into a clearer investment decision.",
-        "buttons": [
-          {
-            "title": "Open Star Platinum",
-            "url": "/stands/star-platinum",
-            "icon": "Sparkles"
-          },
-          {
-            "title": "Open Beginner Guide",
-            "url": "/guides/beginner-guide",
-            "icon": "BookOpenText"
-          }
-        ],
-        "className": "bg-muted"
       }
     }
   }

@@ -1,56 +1,121 @@
 import { Metadata } from 'next';
+import { siteName } from '@/content-data/site';
+import { buildMetadata } from '@/features/wiki/pages';
 import { setRequestLocale } from 'next-intl/server';
 
-import { siteName } from '@/content-data/site';
-import { statsGuide } from '@/content-data/guides';
 import { Link } from '@/core/i18n/navigation';
-import { buildMetadata } from '@/features/wiki/pages';
+import { Crumb } from '@/shared/blocks/common/crumb';
 
 export const revalidate = 3600;
+const pageUpdatedAt = '2026-03-09';
+
+const heroBadges = [
+  '6 core stats',
+  'Beginner-safe route',
+  'Stand build context',
+  'Checked March 2026',
+] as const;
 
 const guideFaq = [
   {
     question: 'What should beginners prioritize with stats?',
     answer:
-      'Stable progression, survivability, and a build that supports the stand they are actually using right now.',
+      'Health first so the route stops collapsing, then Strength and Power for cleaner early progression, then a harder pivot into Stand damage once the Stand is clearly your real build.',
   },
   {
     question: 'Should PvP and PvE use the same stat logic?',
     answer:
-      'Not always. PvP rewards sharper specialization, while PvE usually rewards smoother consistency and fewer dead points.',
+      'Not usually. PvP can justify sharper specialization, while PvE and progression routes usually reward more survivability and cleaner repeat clears.',
   },
   {
     question: 'When should I read the stats guide?',
     answer:
-      'Read it once your first real build choices start to matter. If bad stat decisions are making your route slower, this page becomes relevant immediately.',
+      'As soon as point allocation starts slowing your farm, boss attempts, or quest loop. That usually happens long before endgame min-maxing matters.',
   },
   {
-    question: 'Why does this guide avoid exact numbers?',
+    question: 'Why does Conjuration keep coming up in a stats guide?',
     answer:
-      'Because the goal is to explain stat thinking that still works after updates instead of locking the page to fragile patch-specific details.',
+      'Because Conjuration is part of build context. It is not one of the six main stats, but current public guides tie it to Stand abilities, Stand scaling, and Awakening progression.',
   },
 ] as const;
 
 const statSections = [
   {
-    title: 'Power stats',
+    title: 'Health and survival',
     description:
-      'These decide how much direct pressure your build can create and whether your stand can actually convert openings into damage.',
+      'Health buys margin for mistakes. If your route is still unstable, more survivability usually creates more progress than trying to force a specialist build too early.',
   },
   {
-    title: 'Durability stats',
+    title: 'Strength and Power',
     description:
-      'These matter when your route values consistency, survivability, and the ability to finish PvE grinds without collapsing.',
+      'These are the easiest early damage stats to feel in normal grinding. They help your route clear mobs, pressure bosses, and keep general progression moving.',
   },
   {
-    title: 'Mobility and tempo stats',
+    title: 'Destructive Power and Destructive Energy',
     description:
-      'These affect how often you can start or escape fights, not just how hard you hit once you are already in range.',
+      'These matter much more when your Stand is doing the heavy lifting. If your build is genuinely Stand-centered, these become the stats that deserve the bigger share of your points.',
   },
   {
-    title: 'Utility allocation',
+    title: 'Weapon as a specialist stat',
     description:
-      'Some points are there to make the route smoother. They are not flashy, but they can keep a weak opener playable.',
+      'Weapon is usually delayed unless you already know you are committing to a weapon-focused setup. It is strong in the right build and wasteful in the wrong one.',
+  },
+] as const;
+
+const earlyGamePriorities = [
+  {
+    title: 'Start with Health so your route stops breaking on simple mistakes',
+    description:
+      'The first job of your build is to stay playable. Early quests and boss attempts are worth more when you can repeat them cleanly instead of dying to every small error.',
+  },
+  {
+    title: 'Add Strength and Power once survival feels stable',
+    description:
+      'Once the route is no longer fragile, these two stats usually give the cleanest improvement to mob clears, quest speed, and baseline damage.',
+  },
+  {
+    title: 'Pivot harder into Stand damage when the Stand is the real build',
+    description:
+      'When your actual plan is Stand pressure, Destructive Power and Destructive Energy should stop being afterthoughts and start becoming the main scaling path.',
+  },
+  {
+    title: 'Leave Weapon for later unless the build is clearly weapon-first',
+    description:
+      'Weapon can be excellent, but it is not a safe default. Most beginners lose more progress by investing in it too early than by waiting until their build clearly needs it.',
+  },
+] as const;
+
+const commonMistakes = [
+  'Skipping Health and then wondering why every boss attempt feels unstable.',
+  'Copying a PvP or endgame setup onto a fresh progression route.',
+  'Putting points into Weapon before the build has any reason to be weapon-first.',
+  'Treating Conjuration like irrelevant side progress even though it affects Stand growth and Awakening timing.',
+] as const;
+
+const youtubeEmbeds = [
+  {
+    title: 'BEST STAT BUILD FOR EACH STAND In Bizarre Lineage! (STATS FULL GUIDE) Roblox',
+    videoUrl: 'https://www.youtube.com/watch?v=_1ez2dWIuH4',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/_1ez2dWIuH4',
+    note: 'Best starting point if you want one broad pass over stat logic across multiple Stand choices.',
+    whyWatch:
+      'Use this first to map your Stand choice to a likely stat direction before you start spending points blindly.',
+  },
+  {
+    title: 'The TRUTH About Destructive Power and Destructive Energy | Bizzare Lineage',
+    videoUrl: 'https://www.youtube.com/watch?v=GvSIpmfyMRw',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/GvSIpmfyMRw',
+    note: 'Best follow-up once you need the difference between general early damage and Stand-heavy scaling.',
+    whyWatch:
+      'Watch this second if your build is moving away from generic progression stats and toward a real Stand damage profile.',
+  },
+  {
+    title: 'How to MAX CONJURATION (Fastest Way) | Bizarre Lineage',
+    videoUrl: 'https://www.youtube.com/watch?v=k7pSdZ2T8Bo',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/k7pSdZ2T8Bo',
+    note: 'Useful because Conjuration is not one of the six main stats but still changes when a Stand-focused build actually comes online.',
+    whyWatch:
+      'Watch this after your stat plan is clear and you want the follow-through for ability unlocks and Awakening prep.',
   },
 ] as const;
 
@@ -91,13 +156,15 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: '/guides/stats',
-    title: 'Bizarre Lineage Stats Guide - Build Logic, Priorities, Mistakes',
+    title:
+      'Bizarre Lineage Stats Guide - What to Level First, Build Logic, Mistakes',
     description:
-      'Use this Bizarre Lineage stats guide to understand what each stat affects, how early-game priorities differ from PvP builds, and which allocation mistakes are most costly.',
+      'Use this Bizarre Lineage stats guide to learn the 6 main stats, what to level first, when to pivot into Stand damage, and how Conjuration changes later build planning.',
     keywords: [
       'bizarre lineage stats guide',
       'bizarre lineage stats',
       'bizarre lineage build guide',
+      'bizarre lineage what stat to level first',
     ],
   });
 }
@@ -121,14 +188,23 @@ export default async function StatsGuideRoute({
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 pt-24 pb-16 sm:px-6 lg:px-8 lg:pt-28">
+      <div className="mb-6">
+        <Crumb
+          items={[
+            { title: 'Home', url: '/' },
+            { title: 'Guides', url: '/guides' },
+            { title: 'Stats Guide', url: '/guides/stats', is_active: true },
+          ]}
+        />
+      </div>
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline:
-            'Bizarre Lineage Stats Guide: Build Logic, Priorities, and Mistakes',
+            'Bizarre Lineage Stats Guide: What to Level First, Build Logic, and Mistakes',
           description:
-            'A practical stats guide for Bizarre Lineage focused on build logic, early priorities, and common allocation mistakes.',
+            'A practical Bizarre Lineage stats guide covering the 6 main stats, early priorities, Conjuration context, and common allocation mistakes.',
           author: {
             '@type': 'Organization',
             name: siteName,
@@ -137,7 +213,7 @@ export default async function StatsGuideRoute({
             '@type': 'Organization',
             name: siteName,
           },
-          dateModified: statsGuide.updatedAt,
+          dateModified: pageUpdatedAt,
           mainEntityOfPage: 'https://bizarrelineage.info/guides/stats',
         }}
       />
@@ -157,52 +233,67 @@ export default async function StatsGuideRoute({
       />
 
       <article className="prose prose-neutral dark:prose-invert max-w-none">
-        <header className="not-prose border-border mb-10 rounded-3xl border bg-background/70 p-6 sm:p-8">
+        <header className="not-prose border-border bg-background/70 mb-10 rounded-3xl border p-6 sm:p-8">
           <p className="text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase">
             Stats Guide
           </p>
           <h1 className="text-foreground mt-3 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">
-            Bizarre Lineage stats should support your route, not trap you in
-            bad build habits
+            Bizarre Lineage stats should fix your route before they try to
+            optimize it
           </h1>
           <p className="text-muted-foreground mt-4 max-w-3xl text-base leading-7">
-            This guide explains how to think about stats as a beginner or
-            mid-game player. The goal is not fake precision. The goal is to
-            spend points in ways that support your stand, your progression, and
-            the mode you are actually playing.
+            Current public guides broadly agree on the same six main stats:
+            Strength, Health, Power, Weapon, Destructive Power, and
+            Destructive Energy. The useful question is not perfect numbers. It
+            is which stats stabilize early progression, when Stand scaling
+            should take over, and how Conjuration changes the value of a
+            Stand-focused build later on.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
+            {heroBadges.map((badge) => (
+              <span
+                key={badge}
+                className="border-border rounded-full border px-4 py-2"
+              >
+                {badge}
+              </span>
+            ))}
             <span className="border-border rounded-full border px-4 py-2">
-              Build logic
-            </span>
-            <span className="border-border rounded-full border px-4 py-2">
-              Updated {statsGuide.updatedAt}
+              Updated {pageUpdatedAt}
             </span>
           </div>
         </header>
 
         <section>
-          <h2>How to think about stats</h2>
-          <p>{statsGuide.overview}</p>
+          <h2>How to think about stats in the current public build</h2>
           <p>
-            A bad build is rarely bad because one number is slightly off. It is
-            usually bad because the player is investing points for a role they
-            are not actually playing. Your stats should serve your current stand
-            and current route first.
+            Recent public guides point to the same basic picture: the six main
+            stats do not solve the same problem, so they should not be treated
+            like equal-value point dumps. Health keeps unstable routes alive.
+            Strength and Power are the easiest early general-purpose damage
+            layer. Destructive Power and Destructive Energy matter more when
+            your Stand is clearly carrying the build. Weapon only becomes a
+            real priority when the build is deliberately weapon-led.
+          </p>
+          <p>
+            The real mistake is not being a few points off. It is building for
+            a role you are not actually playing yet. If your route is still
+            shaky, survivability and clean PvE value usually beat specialist
+            theorycrafting.
           </p>
         </section>
 
         <section>
-          <h2>What each stat category is trying to do</h2>
+          <h2>What each stat group is really doing for you</h2>
           <p>
-            Different stat groups answer different questions. If you mix those
-            questions together, you end up with a build that looks active on
-            paper but feels weak in practice.
+            Different stats answer different progression problems. If you mix
+            them together too early, the build can look active on paper but
+            still feel weak in real content.
           </p>
           {statSections.map((item) => (
             <div
               key={item.title}
-              className="not-prose border-border mt-4 rounded-2xl border bg-background/60 p-5"
+              className="not-prose border-border bg-background/60 mt-4 rounded-2xl border p-5"
             >
               <h3 className="text-foreground text-lg font-semibold">
                 {item.title}
@@ -215,14 +306,14 @@ export default async function StatsGuideRoute({
         </section>
 
         <section>
-          <h2>Early-game stat priorities</h2>
+          <h2>What to level first in the early game</h2>
           <p>
-            Early progression should be biased toward stable results. That means
-            making PvE and general grinding easier before you start overbuilding
-            for narrow PvP scenarios.
+            The beginner-safe route is simple: stabilize survival first,
+            improve general damage second, and only then lean harder into
+            Stand-focused scaling when your actual build supports it.
           </p>
           <ol>
-            {statsGuide.priorities.map((item) => (
+            {earlyGamePriorities.map((item) => (
               <li key={item.title}>
                 <strong>{item.title}.</strong> {item.description}
               </li>
@@ -233,10 +324,8 @@ export default async function StatsGuideRoute({
         <section>
           <h2>Common stat mistakes</h2>
           <ul>
-            {statsGuide.mistakes.map((item) => (
-              <li key={item.title}>
-                <strong>{item.title}.</strong> {item.description}
-              </li>
+            {commonMistakes.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
@@ -245,15 +334,65 @@ export default async function StatsGuideRoute({
           <h2>Beginner rule of thumb</h2>
           <p>
             If you are still learning the game, do not build as if you are
-            already at endgame. Stable progression, survivability, and useful
-            support for your actual stand will outperform a copied specialist
-            setup most of the time.
+            already on a polished endgame account. Health plus reliable
+            early-route damage usually outperforms copied specialist setups
+            that assume better gear, cleaner execution, or a different Stand.
           </p>
           <p>
-            If you are unsure, leave yourself room to correct later. Extreme
-            allocation too early is one of the easiest ways to make an otherwise
-            good route feel worse than it should.
+            Also do not ignore Conjuration just because it is not listed as one
+            of the six main stats. Current public guides tie it to Stand
+            ability unlocks and Awakening progression, with Awakening planning
+            commonly starting around Level 50 and Conjuration 100. That means
+            Conjuration changes how quickly a Stand-focused build actually pays
+            off.
           </p>
+        </section>
+
+        <section>
+          <h2>Watch the stat logic before you copy a build</h2>
+          <p>
+            These videos are most useful when watched in order. Start with the
+            broad stat overview, then the destructive-stat breakdown, then the
+            Conjuration follow-up once your Stand plan is real.
+          </p>
+          <div className="not-prose mt-8 grid gap-6 lg:grid-cols-3">
+            {youtubeEmbeds.map((item) => (
+              <div
+                key={item.embedUrl}
+                className="border-border bg-background/50 overflow-hidden rounded-2xl border"
+              >
+                <div className="aspect-video">
+                  <iframe
+                    src={item.embedUrl}
+                    title={item.title}
+                    className="h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-foreground text-base font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground mt-2 text-sm leading-6">
+                    {item.note}
+                  </p>
+                  <p className="text-muted-foreground mt-2 text-sm leading-6">
+                    {item.whyWatch}
+                  </p>
+                  <a
+                    href={item.videoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary mt-4 inline-block text-sm font-medium"
+                  >
+                    Watch on YouTube
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section>
@@ -271,7 +410,7 @@ export default async function StatsGuideRoute({
         </section>
       </article>
 
-      <aside className="border-border mt-12 rounded-3xl border bg-background/70 p-6 sm:p-8">
+      <aside className="border-border bg-background/70 mt-12 rounded-3xl border p-6 sm:p-8">
         <div className="mb-6">
           <p className="text-muted-foreground text-xs font-medium tracking-[0.18em] uppercase">
             Recommended Guides
@@ -285,7 +424,7 @@ export default async function StatsGuideRoute({
             <Link
               key={item.href}
               href={item.href}
-              className="border-border rounded-2xl border bg-background p-5 transition-colors hover:border-primary/50"
+              className="border-border bg-background hover:border-primary/50 rounded-2xl border p-5 transition-colors"
             >
               <p className="text-foreground text-lg font-semibold">
                 {item.title}

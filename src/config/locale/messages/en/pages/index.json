@@ -1,216 +1,173 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Wiki - Codes, Tier List, Beginner Guide",
-    "description": "Bizarre Lineage Wiki is a focused guide hub for Roblox players looking for verified codes, practical tier list decisions, starter progression, and stand pages.",
+    "title": "Bizarre Lineage Wiki: Codes, Tier List, and Stand Guides",
+    "description": "Master Bizarre Lineage with our complete wiki. Get the latest active codes, updated tier lists, stand evolution guides, and pro strategies to dominate Roblox.",
     "keywords": "bizarre lineage wiki, bizarre lineage codes, bizarre lineage tier list, bizarre lineage beginner guide"
   },
   "page": {
-    "show_sections": [
-      "hero",
-      "introduce",
-      "benefits",
-      "features",
-      "faq",
-      "cta"
-    ],
     "sections": {
       "hero": {
-        "id": "hero",
-        "title": "Bizarre Lineage Wiki for fast answers and cleaner decisions",
-        "highlight_text": "fast answers",
-        "description": "A focused, English-only guide hub for Bizarre Lineage players who want current codes, a readable tier list, an actual beginner route, and stand pages that get to the point.",
-        "announcement": {
-          "badge": "MVP",
-          "title": "Five high-priority pages first. Scale later.",
-          "url": "/tier-list"
+        "eyebrow": "Bizarre Lineage Wiki",
+        "title": "Bizarre Lineage Wiki: The Ultimate Resource for Stands, Builds & Meta",
+        "dek": "Master every mechanic in Bizarre Lineage with our comprehensive wiki. Explore the Bizarre Lineage tier list, discover the best builds, and follow our detailed Bizarre Lineage leveling guide to dominate Morioh Cho. Stay updated with the latest Bizarre Lineage meta and game mechanics.",
+        "stats": {
+          "updated": "Updated",
+          "codes_tracked": "Codes Tracked",
+          "top_meta_pick": "Top Meta Pick"
         },
-        "tip": "Not affiliated with Roblox or the game developers.",
-        "buttons": [
-          {
-            "title": "Open Codes",
-            "icon": "BadgePercent",
-            "url": "/codes",
-            "target": "_self",
-            "variant": "default"
-          },
-          {
-            "title": "Start Beginner Guide",
-            "icon": "BookOpenText",
-            "url": "/guides/beginner-guide",
-            "target": "_self",
-            "variant": "outline"
-          }
-        ],
-        "show_avatars": false,
-        "show_award": false,
-        "image": {
-          "src": "/imgs/features/landing-page.png",
-          "alt": "Bizarre Lineage Wiki homepage preview",
-          "width": 1200,
-          "height": 800
+        "buttons": {
+          "tier_list": "View Tier List",
+          "leveling_guide": "Leveling Guide",
+          "code_archive": "Code Archive"
         },
-        "image_invert": {
-          "src": "/imgs/features/music-dark.png",
-          "alt": "Bizarre Lineage Wiki homepage preview dark",
-          "width": 1200,
-          "height": 800
-        },
-        "background_image": {
-          "src": "/imgs/bg/tree.jpg",
-          "alt": "Atmospheric background"
+        "tip": "The most trusted Bizarre Lineage Wiki for the Roblox community."
+      },
+      "world": {
+        "eyebrow": "Bizarre Lineage World",
+        "title": "Explore Morioh Cho in Bizarre Lineage",
+        "description": "Bizarre Lineage is more than just a roll-and-fight game; it's a full-scale recreation of Morioh Cho. From the bustling Train Station where Raids occur to the hidden alleys where NPCs teach secret Fighting Styles, every corner holds a secret. Whether you're a Part 3 classicist or a Part 8 fan, our wiki provides the maps, spawn locations, and combat guides to help you dominate both PvE events and the competitive PvP ladder.",
+        "buttons": {
+          "explore_stands": "Explore All Stands",
+          "master_basics": "Master the Basics"
         }
       },
-      "introduce": {
-        "block": "features-list",
-        "id": "introduce",
-        "title": "Start from the four search intents that matter most",
-        "label": "Core Pages",
-        "description": "The MVP does not try to cover every system in the game. It focuses on the pages players search for first and the templates worth expanding later.",
-        "image": {
-          "src": "/imgs/features/landing-page.png",
-          "alt": "Core pages overview"
-        },
-        "items": [
-          {
-            "title": "Codes",
-            "description": "Check verified rewards, redemption steps, and expired codes without digging through filler.",
-            "icon": "BadgePercent",
-            "image": {
-              "src": "/imgs/features/1.png",
-              "alt": "Codes page"
-            }
-          },
-          {
+      "database": {
+        "eyebrow": "Bizarre Lineage Wiki Quick Access",
+        "title": "Bizarre Lineage Database & Tools",
+        "description": "Quickly navigate the Bizarre Lineage Wiki to find the best Stands, Fighting Styles, and leveling routes for your Roblox character.",
+        "items": {
+          "tier_list": {
             "title": "Tier List",
-            "description": "See the current judgment criteria first, then scan the tier breakdown and sample stand links.",
-            "icon": "Trophy",
-            "image": {
-              "src": "/imgs/features/2.png",
-              "alt": "Tier list page"
-            }
+            "meta": "Bizarre Lineage Meta",
+            "description": "Compare the best Stands in the current Bizarre Lineage meta for both PvP and PvE."
           },
-          {
-            "title": "Beginner Guide",
-            "description": "Use a short first-session route instead of learning through trial and error.",
-            "icon": "Map",
-            "image": {
-              "src": "/imgs/features/3.png",
-              "alt": "Beginner guide page"
-            }
+          "stand_db": {
+            "title": "Stand Database",
+            "meta": "Bizarre Lineage Stands",
+            "description": "Detailed breakdown of every Bizarre Lineage Stand, movesets, and how to get them."
           },
-          {
-            "title": "Stand Sample Page",
-            "description": "Open Star Platinum to preview the database-style page format we can scale later.",
-            "icon": "Sparkles",
-            "image": {
-              "src": "/imgs/features/4.png",
-              "alt": "Stand page"
-            }
+          "fighting_styles": {
+            "title": "Fighting Styles",
+            "meta": "Sub-Abilities",
+            "description": "Master Hamon, Vampire, or Sword styles to finish your Bizarre Lineage build."
+          },
+          "stats_guide": {
+            "title": "Stats Guide",
+            "meta": "Best Build",
+            "description": "Optimal point allocation to create the best Bizarre Lineage build."
+          },
+          "leveling_path": {
+            "title": "Leveling Path",
+            "meta": "Progression",
+            "description": "Follow the definitive Bizarre Lineage leveling guide from level 1 to prestige."
+          },
+          "raids_bosses": {
+            "title": "Raids & Bosses",
+            "meta": "Endgame loops",
+            "description": "Guide to Bizarre Lineage world bosses and Morioh Train station raids."
+          },
+          "prestige_system": {
+            "title": "Prestige System",
+            "meta": "Reset rewards",
+            "description": "Everything about the Bizarre Lineage Roblox prestige system and rewards."
+          },
+          "codes_archive": {
+            "title": "Codes Archive",
+            "meta": "Status: Monitoring",
+            "description": "Historical record of Bizarre Lineage codes. Check here for status updates and archive notes."
+          },
+          "mechanics": {
+            "title": "Wiki Mechanics",
+            "meta": "General Info",
+            "description": "Complete breakdown of Bizarre Lineage items, NPCs, and hidden game systems."
           }
-        ],
-        "className": "bg-muted"
+        }
       },
-      "benefits": {
-        "block": "features-accordion",
-        "id": "benefits",
-        "title": "Why this wiki is intentionally small right now",
-        "label": "Why Trust This Wiki",
-        "description": "The site favors decision speed, clear page structure, and verification-first notes over mass-produced filler pages.",
-        "items": [
+      "progression": {
+        "eyebrow": "Bizarre Lineage Leveling Guide",
+        "title": "The Bizarre Lineage Progression Route",
+        "description": "A structured path through the Bizarre Lineage Wiki, from your first Stand to the final prestige.",
+        "steps": [
           {
-            "title": "Search intent first",
-            "description": "Every MVP page maps to a real player need: codes, ranking decisions, first-hour progression, or a stand lookup.",
-            "icon": "Search",
-            "image": {
-              "src": "/imgs/features/5.png",
-              "alt": "Search intent first"
-            }
+            "title": "Starter: The First Arrow",
+            "description": "Level 1-10. Claim your first Bizarre Lineage Stand using arrows. Focus on completing basic quests in Morioh to stabilize your early-game resource flow.",
+            "meta": "Goal: Secure a Tier A/S Stand",
+            "hrefLabel": "Beginner Guide"
           },
           {
-            "title": "Verification-first updates",
-            "description": "Pages are written to surface what is checked, what is provisional, and what still needs in-game confirmation.",
-            "icon": "ShieldCheck",
-            "image": {
-              "src": "/imgs/features/6.png",
-              "alt": "Verification notes"
-            }
+            "title": "Build: Style & Specialization",
+            "description": "Level 10-30. Optimize your Bizarre Lineage build by learning Hamon, Vampire, or Boxing. Invest stat points to unlock your Stand’s unique sub-abilities.",
+            "meta": "Goal: Unlock Fighting Styles",
+            "hrefLabel": "Stat Guide"
           },
           {
-            "title": "Templates built to scale",
-            "description": "If these five pages earn impressions and clicks, the same format can extend to more stands, items, and guides.",
-            "icon": "LayoutGrid",
-            "image": {
-              "src": "/imgs/features/7.png",
-              "alt": "Template system"
-            }
+            "title": "Evolution: The Mid-Game Grind",
+            "description": "Level 30-50. This is the peak Bizarre Lineage leveling phase. Farm World Bosses and Raids to collect evolution items like the Diary or Green Baby.",
+            "meta": "Goal: Start Stand Evolution",
+            "hrefLabel": "Raid Guide"
+          },
+          {
+            "title": "Ascension: Stand Awakening",
+            "description": "Level 50. Reach the first major power spike in Bizarre Lineage. Complete the specialized awakening quest to unlock massive damage buffs.",
+            "meta": "Goal: Level 50 Awakening",
+            "hrefLabel": "Awakening Path"
+          },
+          {
+            "title": "Endgame: The Prestige Cycle",
+            "description": "Max Level. Reset your Bizarre Lineage character to gain Prestige. This unlocks the Prestige Shop, exclusive skins, and higher level caps.",
+            "meta": "Goal: Unlock Prestige Rewards",
+            "hrefLabel": "Prestige Guide"
           }
         ]
       },
-      "features": {
-        "id": "features",
-        "title": "Recently verified structure",
-        "description": "The homepage acts as a navigation hub and highlights what each page is designed to answer quickly.",
-        "items": [
-          {
-            "title": "Open `/codes` for reward checks",
-            "description": "See active and expired code handling, plus redemption troubleshooting.",
-            "icon": "BadgePercent"
-          },
-          {
-            "title": "Open `/tier-list` for ranking context",
-            "description": "Read the evaluation dimensions before trusting any tier placement.",
-            "icon": "Trophy"
-          },
-          {
-            "title": "Open `/guides/beginner-guide` for the first session route",
-            "description": "Use a checklist-led path instead of long-form filler.",
-            "icon": "Map"
-          },
-          {
-            "title": "Open `/stands/star-platinum` for a sample database page",
-            "description": "Judge whether the stand is worth your time before grinding for it.",
-            "icon": "Sparkles"
-          }
-        ]
+      "meta_preview": {
+        "eyebrow": "Stand & Meta Preview",
+        "title": "Top Stand Picks Right Now",
+        "description": "Use this preview when you need a fast read on the Bizarre Lineage stands conversation before opening the full Bizarre Lineage tier list or deciding what counts as a practical Bizarre Lineage best stand for your route.",
+        "subtitle": "These are strong reference picks when you want a quick read on the current stand conversation before opening the full tier list.",
+        "tier_list_link": "Tier List",
+        "all_stands_link": "All Stands"
+      },
+      "start_here": {
+        "eyebrow": "Start Here",
+        "title": "Pick the guide you need",
+        "description": "Jump straight to the page for codes, stats, prestige, stands, or your first progression route.",
+        "all_guides_link": "View all guides"
       },
       "faq": {
-        "id": "faq",
-        "title": "FAQ",
-        "description": "Short answers to the most important site-level questions.",
+        "eyebrow": "Common Questions",
+        "title": "Common Questions",
+        "description": "These are the questions new and returning players usually need answered before choosing their next page, especially after searching Bizarre Lineage wiki, Bizarre Lineage best stand, or Bizarre Lineage Roblox help terms.",
         "items": [
           {
-            "question": "Is this an official Bizarre Lineage wiki?",
-            "answer": "No. This is an independent community guide site and it is not affiliated with Roblox or the game developers."
+            "question": "What is the best stand for beginners?",
+            "answer": "The best beginner stand is usually the one that is stable, easy to use, and does not force a costly reroll chase too early."
           },
           {
-            "question": "Why are there only a few pages right now?",
-            "answer": "The MVP focuses on a small set of high-intent pages so the content quality, layout, and SEO performance can be validated before expanding."
+            "question": "When should you prestige?",
+            "answer": "Prestige when your route is slowing down, important value is already secured, and you know what the reset is helping you unlock."
           },
           {
-            "question": "What should I read first as a new player?",
-            "answer": "Start with the Beginner Guide, then check the Tier List and the Star Platinum page if you are comparing early goals."
+            "question": "Should beginners chase an S-tier stand immediately?",
+            "answer": "Usually no. A strong route starts with a stand you can actually use well, then upgrades into premium targets once your resources and progression are more stable."
+          },
+          {
+            "question": "Why do stats matter so early in Bizarre Lineage?",
+            "answer": "Because bad early stat spending can slow both PvE progress and later build options. Even a strong stand feels worse if the build around it is inefficient."
+          },
+          {
+            "question": "Do codes matter after the first session?",
+            "answer": "Yes. Codes are useful whenever they give spins, arrows, or progression value that saves time on your current route."
+          },
+          {
+            "question": "Is prestige always worth taking as soon as it unlocks?",
+            "answer": "No. Prestige is strongest when you understand what you gain, what you might lose, and what your next route looks like after resetting."
+          },
+          {
+            "question": "What should I read after checking the homepage?",
+            "answer": "Most players move next to the codes page, the tier list, the beginner guide, or a stand page depending on whether they need rewards, rankings, route help, or a specific stand answer."
           }
         ]
-      },
-      "cta": {
-        "id": "cta",
-        "title": "Start with the page that matches your problem",
-        "description": "Need rewards now, meta context, or a first-session route? The MVP is built to get you there in one click.",
-        "buttons": [
-          {
-            "title": "View Tier List",
-            "url": "/tier-list",
-            "variant": "default",
-            "target": "_self"
-          },
-          {
-            "title": "View Star Platinum",
-            "url": "/stands/star-platinum",
-            "variant": "outline",
-            "target": "_self"
-          }
-        ],
-        "className": "bg-muted"
       }
     }
   }

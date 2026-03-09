@@ -11,6 +11,7 @@
 
 - wiki 大站：https://bloxinformer.com/wikis/bizarre-lineage/
 - 官方 trello: https://trello.com/c/F0qns8wY/24-golden-experience
+- ign 相关文章
 
 ### 竞品
 

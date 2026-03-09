@@ -19,6 +19,7 @@
 - `settings`, `activity`, and `admin` route groups are intentionally hard-disabled with `notFound()`.
 - `next-intl` is configured for `en` only; do not add `zh` back unless the product explicitly needs multilingual support.
 - Keep the underlying content and theme system intact unless a later task explicitly removes unused dependencies.
+- Static media should be hosted in Cloudflare R2, not committed into `public/` as the long-term source of truth.
 
 ## Content Architecture
 - MVP content should use a file-first architecture: `MDX` for pages and articles, plus local structured data files for reusable game data.
@@ -64,6 +65,23 @@
 ## Future Work Bias
 - Prefer building guide hubs, game pages, strategy articles, walkthroughs, tier lists, and update/news pages.
 - Prefer static or cache-friendly public pages over account-based product flows.
+
+## R2 Asset Policy
+- Upload new public media to Cloudflare R2 and serve it through `NEXT_PUBLIC_STORAGE_DOMAIN` or `STORAGE_DOMAIN`.
+- Use [src/lib/r2-utils.ts](/Users/philex/Desktop/indie_maker/StationUp/bizarre-lineage/src/lib/r2-utils.ts) as the base URL utility for all R2 object paths.
+- Use [src/lib/asset-loader.ts](/Users/philex/Desktop/indie_maker/StationUp/bizarre-lineage/src/lib/asset-loader.ts) only for assets stored under the `assets/` prefix in R2.
+- Keep the `assets/` tree intentionally small. Default folders:
+- `assets/site`: logo, favicon, brand-level shared media.
+- `assets/pages`: page hero images, section backgrounds, screenshots, generic guide-page visuals.
+- `assets/posts`: article and update-post cover images.
+- `assets/stands`: stand-specific images and screenshots.
+- Do not add product-era folders such as `creamy/`, `email/`, `imgs/models/`, or other legacy business-domain buckets back into `asset-loader`.
+- Preferred usage examples:
+- `getAssetUrl('pages/home/hero.webp')` -> `assets/pages/home/hero.webp`
+- `getPageAssetUrl('codes/hero.webp')`
+- `getStandAssetUrl('star-platinum/card.webp')`
+- `getR2Url('uploads/raw/some-file.webp')` for non-`assets/` objects
+- If content or config needs a full URL string, store the final R2 path convention clearly and resolve it through utilities instead of hardcoding new third-party placeholder image URLs.
 
 ## Workflow Rules
 - For frontend UI development and copywriting, use the `gemini` skill.

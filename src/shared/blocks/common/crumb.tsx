@@ -6,7 +6,7 @@ import { NavItem } from '@/shared/types/blocks/common';
 
 export function Crumb({ items }: { items: NavItem[] }) {
   return (
-    <nav className="text-muted-foreground flex items-center text-sm md:px-3">
+    <nav className="text-muted-foreground flex items-center text-sm">
       {items.map((item, index) => {
         const isActive = item.is_active;
         return (

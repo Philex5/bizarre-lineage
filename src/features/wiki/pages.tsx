@@ -11,12 +11,7 @@ import {
   prestigeGuide,
   statsGuide,
 } from '@/content-data/guides';
-import {
-  homeFaq,
-  officialLinks,
-  placeholderImages,
-  siteName,
-} from '@/content-data/site';
+import { homeFaq, placeholderImages, siteName } from '@/content-data/site';
 import { stands, starPlatinum, type StandEntry } from '@/content-data/stands';
 import {
   bestForCards,
@@ -24,9 +19,11 @@ import {
   tierMethodology,
 } from '@/content-data/tier-list';
 import { ArrowUpRight, Trophy } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { Crumb } from '@/shared/blocks/common/crumb';
 import { Button } from '@/shared/components/ui/button';
 import {
   Table,
@@ -41,6 +38,7 @@ import {
   AsidePanel,
   CardGrid,
   FaqGrid,
+  GuideCard,
   HeroActions,
   HeroFrame,
   OrderedChecklist,
@@ -130,47 +128,89 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
   );
 }
 
-export function HomePage() {
+function HomeGuideStripCard({
+  guide,
+}: {
+  guide: {
+    title: string;
+    href: string;
+  };
+}) {
+  return (
+    <Link
+      href={guide.href}
+      className="bg-background/95 border-border text-foreground group hover:border-primary/40 hover:text-primary inline-flex min-h-14 items-center rounded-full border px-5 py-3 text-sm font-medium tracking-[-0.02em] shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+    >
+      <span className="truncate">{guide.title}</span>
+    </Link>
+  );
+}
+
+export async function HomePage() {
+  const t = await getTranslations('pages.index');
   const featuredStands = stands.slice(0, 3);
+  const homeGuideCards = [
+    {
+      title: 'Bizarre Lineage beginner guide',
+      href: '/guides/beginner-guide',
+    },
+    {
+      title: 'Bizarre Lineage stats guide',
+      href: '/guides/stats',
+    },
+    {
+      title: 'When to prestige in Bizarre Lineage',
+      href: '/guides/prestige',
+    },
+    {
+      title: 'Bizarre Lineage codes guide',
+      href: '/codes',
+    },
+    {
+      title: 'Bizarre Lineage tier list',
+      href: '/tier-list',
+    },
+    {
+      title: 'Bizarre Lineage stands guide',
+      href: '/stands',
+    },
+  ] as const;
   const progressionSteps = [
     {
-      title: 'Get a usable stand',
-      description:
-        'Start with something practical enough to clear content and learn the game before committing to a premium chase.',
+      title: t('page.sections.progression.steps.0.title'),
+      description: t('page.sections.progression.steps.0.description'),
+      meta: t('page.sections.progression.steps.0.meta'),
       href: '/guides/beginner-guide',
-      hrefLabel: 'Beginner Guide',
+      hrefLabel: t('page.sections.progression.steps.0.hrefLabel'),
     },
     {
-      title: 'Build around it',
-      description:
-        'Your stand gets stronger or weaker depending on stats, style choices, and how disciplined your route is.',
+      title: t('page.sections.progression.steps.1.title'),
+      description: t('page.sections.progression.steps.1.description'),
+      meta: t('page.sections.progression.steps.1.meta'),
       href: '/guides/stats',
-      hrefLabel: 'Stats Guide',
+      hrefLabel: t('page.sections.progression.steps.1.hrefLabel'),
     },
     {
-      title: 'Push progression',
-      description:
-        'Use codes, basic routing, and stable PvE progress to build momentum instead of burning resources too early.',
-      href: '/codes',
-      hrefLabel: 'Latest Codes',
+      title: t('page.sections.progression.steps.2.title'),
+      description: t('page.sections.progression.steps.2.description'),
+      meta: t('page.sections.progression.steps.2.meta'),
+      href: '/terms/raid',
+      hrefLabel: t('page.sections.progression.steps.2.hrefLabel'),
     },
     {
-      title: 'Unlock mid-game systems',
-      description:
-        'Raids, awakening paths, and stronger build decisions matter more once the first stand and stat mistakes are under control.',
+      title: t('page.sections.progression.steps.3.title'),
+      description: t('page.sections.progression.steps.3.description'),
+      meta: t('page.sections.progression.steps.3.meta'),
+      href: '/terms/awakening',
+      hrefLabel: t('page.sections.progression.steps.3.hrefLabel'),
     },
     {
-      title: 'Decide when to prestige',
-      description:
-        'Prestige works best when you already know what the reset unlocks and what value you need to bank first.',
+      title: t('page.sections.progression.steps.4.title'),
+      description: t('page.sections.progression.steps.4.description'),
+      meta: t('page.sections.progression.steps.4.meta'),
       href: '/guides/prestige',
-      hrefLabel: 'Prestige Guide',
+      hrefLabel: t('page.sections.progression.steps.4.hrefLabel'),
     },
-  ];
-  const heroStats = [
-    { label: 'Updated', value: '2026-03-08' },
-    { label: 'Codes Tracked', value: String(activeCodes.length) },
-    { label: 'Top Sample Pick', value: starPlatinum.name },
   ];
   const homeFaqSchema = [
     {
@@ -194,7 +234,7 @@ export function HomePage() {
       name: 'What is the best stand for beginners?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Beginners should usually prioritize a stand that is easy to use, stable for progression, and does not force an expensive chase immediately.',
+        text: t('page.sections.faq.items.0.answer'),
       },
     },
     {
@@ -202,7 +242,7 @@ export function HomePage() {
       name: 'When should you prestige?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Prestige when your current route is capped, you have prepared key resources, and you already know the first goal after resetting.',
+        text: t('page.sections.faq.items.1.answer'),
       },
     },
   ];
@@ -226,35 +266,45 @@ export function HomePage() {
       />
 
       <HeroFrame
-        eyebrow="Bizarre Lineage Wiki"
-        title="Bizarre Lineage Wiki for Codes, Tier List, Stands, Leveling and Progression"
-        dek="Bizarre Lineage is a Roblox RPG built around stands, fighting styles, stats, and reset-driven progression. This Bizarre Lineage wiki helps you check Bizarre Lineage codes, compare the Bizarre Lineage tier list, review Bizarre Lineage stands, and plan a cleaner route from beginner progress to prestige."
-        stats={heroStats}
+        eyebrow={t('page.sections.hero.eyebrow')}
+        title={t('page.sections.hero.title')}
+        dek={t('page.sections.hero.dek')}
         actions={
-          <div className="flex flex-wrap gap-3">
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full px-6 text-sm tracking-[0.16em] uppercase"
-            >
-              <Link href="/codes">Latest Codes</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
-            >
-              <Link href="/tier-list">Tier List</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
-            >
-              <Link href="/guides/beginner-guide">Beginner Guide</Link>
-            </Button>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-3">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full px-6 text-sm tracking-[0.16em] uppercase"
+              >
+                <Link href="/tier-list">
+                  {t('page.sections.hero.buttons.tier_list')}
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
+              >
+                <Link href="/guides/beginner-guide">
+                  {t('page.sections.hero.buttons.leveling_guide')}
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
+              >
+                <Link href="/codes">
+                  {t('page.sections.hero.buttons.code_archive')}
+                </Link>
+              </Button>
+            </div>
+            <p className="text-xs text-white/60 italic">
+              {t('page.sections.hero.tip')}
+            </p>
           </div>
         }
         backgroundImageSrc={placeholderImages.hero}
@@ -262,25 +312,24 @@ export function HomePage() {
       />
 
       <SectionFrame
-        eyebrow="What Is Bizarre Lineage"
-        title="A Bizarre Lineage wiki homepage should explain the game and get players to the right answer fast."
+        eyebrow={t('page.sections.world.eyebrow')}
+        title={t('page.sections.world.title')}
       >
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,34rem)] lg:items-center lg:gap-10">
           <div className="space-y-5">
             <p className="text-muted-foreground max-w-2xl text-sm leading-7 md:text-base">
-              Bizarre Lineage Roblox players usually need the same first
-              answers: which stand to chase, how stats affect progression, and
-              where to look for reliable update notes. This homepage works as a
-              Bizarre Lineage wiki hub instead of a thin landing page, so new
-              visitors can move directly into the page that matches their
-              search.
+              {t('page.sections.world.description')}
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild className="rounded-full">
-                <Link href="/stands">Stands</Link>
+                <Link href="/stands">
+                  {t('page.sections.world.buttons.explore_stands')}
+                </Link>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
-                <Link href="/guides/beginner-guide">Beginner Guide</Link>
+                <Link href="/guides/beginner-guide">
+                  {t('page.sections.world.buttons.master_basics')}
+                </Link>
               </Button>
             </div>
           </div>
@@ -290,7 +339,7 @@ export function HomePage() {
             <div className="relative aspect-[16/9]">
               <Image
                 src="/placeholders/introduction.webp"
-                alt="Bizarre Lineage introduction artwork"
+                alt="Bizarre Lineage Map and Introduction"
                 fill
                 sizes="(min-width: 1024px) 34rem, 100vw"
                 className="object-cover"
@@ -299,55 +348,84 @@ export function HomePage() {
           </div>
         </div>
       </SectionFrame>
-
       <SectionFrame
-        eyebrow="Quick Access"
-        title="Start With the Page You Actually Need"
-        description="Whether you searched Bizarre Lineage codes, Bizarre Lineage tier list, Bizarre Lineage best stand, or Bizarre Lineage beginner guide, these are the pages most players open first."
+        eyebrow={t('page.sections.database.eyebrow')}
+        title={t('page.sections.database.title')}
+        description={t('page.sections.database.description')}
       >
         <CardGrid
           columns={3}
           items={[
             {
-              title: 'Codes',
-              meta: `${activeCodes.length} tracked entries`,
-              description:
-                'Check live and monitored codes first so you do not slow your opener with outdated lists.',
-              href: '/codes',
-            },
-            {
-              title: 'Tier List',
-              meta: 'Meta snapshot',
-              description:
-                'Open the current stand rankings when you need route value, not just raw rarity hype.',
+              title: t('page.sections.database.items.tier_list.title'),
+              meta: t('page.sections.database.items.tier_list.meta'),
+              description: t(
+                'page.sections.database.items.tier_list.description'
+              ),
               href: '/tier-list',
             },
             {
-              title: 'Stands',
-              meta: `${stands.length} sample stand cards`,
-              description:
-                'Compare stands by tier, best use case, and quick verdict before committing resources.',
+              title: t('page.sections.database.items.stand_db.title'),
+              meta: t('page.sections.database.items.stand_db.meta'),
+              description: t(
+                'page.sections.database.items.stand_db.description'
+              ),
               href: '/stands',
             },
             {
-              title: 'Stats Guide',
-              meta: 'Build basics',
-              description:
-                'Use the stats page to avoid early point allocation mistakes that quietly ruin progression.',
+              title: t('page.sections.database.items.fighting_styles.title'),
+              meta: t('page.sections.database.items.fighting_styles.meta'),
+              description: t(
+                'page.sections.database.items.fighting_styles.description'
+              ),
+              href: '/terms/fighting-styles',
+            },
+            {
+              title: t('page.sections.database.items.stats_guide.title'),
+              meta: t('page.sections.database.items.stats_guide.meta'),
+              description: t(
+                'page.sections.database.items.stats_guide.description'
+              ),
               href: '/guides/stats',
             },
             {
-              title: 'Prestige Guide',
-              meta: 'Reset timing',
-              description:
-                'Read this before pressing prestige just because the option appears.',
+              title: t('page.sections.database.items.leveling_path.title'),
+              meta: t('page.sections.database.items.leveling_path.meta'),
+              description: t(
+                'page.sections.database.items.leveling_path.description'
+              ),
+              href: '/guides/beginner-guide',
+            },
+            {
+              title: t('page.sections.database.items.raids_bosses.title'),
+              meta: t('page.sections.database.items.raids_bosses.meta'),
+              description: t(
+                'page.sections.database.items.raids_bosses.description'
+              ),
+              href: '/terms/raid',
+            },
+            {
+              title: t('page.sections.database.items.prestige_system.title'),
+              meta: t('page.sections.database.items.prestige_system.meta'),
+              description: t(
+                'page.sections.database.items.prestige_system.description'
+              ),
               href: '/guides/prestige',
             },
             {
-              title: 'Terms',
-              meta: 'Glossary',
-              description:
-                'Use the glossary for raid, prestige, awakening, and other route terms that new players often search separately.',
+              title: t('page.sections.database.items.codes_archive.title'),
+              meta: t('page.sections.database.items.codes_archive.meta'),
+              description: t(
+                'page.sections.database.items.codes_archive.description'
+              ),
+              href: '/codes',
+            },
+            {
+              title: t('page.sections.database.items.mechanics.title'),
+              meta: t('page.sections.database.items.mechanics.meta'),
+              description: t(
+                'page.sections.database.items.mechanics.description'
+              ),
               href: '/terms',
             },
           ]}
@@ -355,30 +433,29 @@ export function HomePage() {
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="Progression Route"
-        title="From your first stand to your first prestige"
-        description="The early game gets much cleaner if you treat stands, stats, codes, leveling, and prestige as one route instead of five separate problems, which is why the homepage also points toward future Bizarre Lineage leveling guide coverage."
+        eyebrow={t('page.sections.progression.eyebrow')}
+        title={t('page.sections.progression.title')}
+        description={t('page.sections.progression.description')}
       >
         <OrderedChecklist items={progressionSteps} />
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="Stand & Meta Preview"
-        title="Top Stand Picks Right Now"
-        description="Use this preview when you need a fast read on the Bizarre Lineage stands conversation before opening the full Bizarre Lineage tier list or deciding what counts as a practical Bizarre Lineage best stand for your route."
+        eyebrow={t('page.sections.meta_preview.eyebrow')}
+        title={t('page.sections.meta_preview.title')}
+        description={t('page.sections.meta_preview.description')}
       >
         <div className="grid gap-4">
           <div className="flex items-end justify-between gap-4">
             <p className="text-muted-foreground max-w-3xl text-sm leading-7 md:text-base">
-              These are strong reference picks when you want a quick read on the
-              current stand conversation before opening the full tier list.
+              {t('page.sections.meta_preview.subtitle')}
             </p>
             <Link
               href="/tier-list"
               className="text-muted-foreground hover:text-foreground border-border bg-background/92 inline-flex shrink-0 items-center gap-2 self-end rounded-full border px-3 py-2 text-xs font-medium tracking-[0.16em] uppercase transition-colors"
             >
               <Trophy className="size-4" />
-              Tier List
+              {t('page.sections.meta_preview.tier_list_link')}
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -391,7 +468,7 @@ export function HomePage() {
               href="/stands"
               className="text-primary hover:text-primary/80 inline-flex items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
             >
-              All Stands
+              {t('page.sections.meta_preview.all_stands_link')}
               <ArrowUpRight className="size-4" />
             </Link>
           </div>
@@ -399,129 +476,64 @@ export function HomePage() {
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="Sources & Verification"
-        title="Where this Bizarre Lineage wiki checks public information first"
-        description="For live verification, the highest-value public sources are the official Bizarre Lineage Roblox page, Bizarre Lineage Discord for update chatter and code drops, and Bizarre Lineage Trello for system notes. These source links also support later Bizarre Lineage map and Bizarre Lineage NPC locations research."
+        eyebrow={t('page.sections.start_here.eyebrow')}
+        title={t('page.sections.start_here.title')}
+        description={t('page.sections.start_here.description')}
       >
-        <CardGrid
-          columns={3}
-          items={[
-            ...officialLinks.map((item) => ({
-              title: item.label,
-              meta: 'Primary source',
-              description: item.note,
-              href: item.href,
-              target: '_blank',
-            })),
-            {
-              title: 'Wiki-style coverage',
-              meta: 'Search intent',
-              description:
-                'Players often search for a Bizarre Lineage wiki before they know whether they need codes, stands, leveling help, or prestige answers.',
-              href: '/codes',
-            },
-            {
-              title: 'Map and NPC research',
-              meta: 'Planned expansion',
-              description:
-                'Bizarre Lineage map and Bizarre Lineage NPC locations queries matter because progression routes depend on navigation as much as build choices.',
-              href: '/guides/beginner-guide',
-            },
-            {
-              title: 'Progression references',
-              meta: 'Route logic',
-              description:
-                'The strongest homepage paths connect codes, tier list decisions, stats, leveling, and prestige instead of treating them as isolated articles.',
-              href: '/guides/prestige',
-            },
-          ]}
-        />
+        <div className="space-y-6">
+          <div className="flex flex-wrap gap-3 md:gap-4">
+            {homeGuideCards.map((guide) => (
+              <HomeGuideStripCard key={guide.href} guide={guide} />
+            ))}
+          </div>
+          <div className="flex justify-end">
+            <Link
+              href="/guides"
+              className="text-primary hover:text-primary/80 inline-flex items-center gap-1 text-sm font-medium underline-offset-4 hover:underline"
+            >
+              {t('page.sections.start_here.all_guides_link')}
+              <ArrowUpRight className="size-4" />
+            </Link>
+          </div>
+        </div>
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="Sources & Verification"
-        title="Where this Bizarre Lineage wiki checks public information first"
-        description="For live verification, the highest-value public sources are the official Bizarre Lineage Roblox page, Bizarre Lineage Discord for update chatter and code drops, and Bizarre Lineage Trello for system notes. These source links also support later Bizarre Lineage map and Bizarre Lineage NPC locations research."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            ...officialLinks.map((item) => ({
-              title: item.label,
-              meta: 'Primary source',
-              description: item.note,
-              href: item.href,
-              target: '_blank',
-            })),
-            {
-              title: 'Wiki-style coverage',
-              meta: 'Search intent',
-              description:
-                'Players often search for a Bizarre Lineage wiki before they know whether they need codes, stands, leveling help, or prestige answers.',
-              href: '/codes',
-            },
-            {
-              title: 'Map and NPC research',
-              meta: 'Planned expansion',
-              description:
-                'Bizarre Lineage map and Bizarre Lineage NPC locations queries matter because progression routes depend on navigation as much as build choices.',
-              href: '/guides/beginner-guide',
-            },
-            {
-              title: 'Progression references',
-              meta: 'Route logic',
-              description:
-                'The strongest homepage paths connect codes, tier list decisions, stats, leveling, and prestige instead of treating them as isolated articles.',
-              href: '/guides/prestige',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow="Common Questions"
-        title="Common Questions"
-        description="These are the questions new and returning players usually need answered before choosing their next page, especially after searching Bizarre Lineage wiki, Bizarre Lineage best stand, or Bizarre Lineage Roblox help terms."
+        eyebrow={t('page.sections.faq.eyebrow')}
+        title={t('page.sections.faq.title')}
+        description={t('page.sections.faq.description')}
       >
         <FaqGrid
           items={[
             homeFaq[0],
             homeFaq[3],
             {
-              question: 'What is the best stand for beginners?',
-              answer:
-                'The best beginner stand is usually the one that is stable, easy to use, and does not force a costly reroll chase too early.',
+              question: t('page.sections.faq.items.0.question'),
+              answer: t('page.sections.faq.items.0.answer'),
             },
             {
-              question: 'When should you prestige?',
-              answer:
-                'Prestige when your route is slowing down, important value is already secured, and you know what the reset is helping you unlock.',
+              question: t('page.sections.faq.items.1.question'),
+              answer: t('page.sections.faq.items.1.answer'),
             },
             {
-              question: 'Should beginners chase an S-tier stand immediately?',
-              answer:
-                'Usually no. A strong route starts with a stand you can actually use well, then upgrades into premium targets once your resources and progression are more stable.',
+              question: t('page.sections.faq.items.2.question'),
+              answer: t('page.sections.faq.items.2.answer'),
             },
             {
-              question: 'Why do stats matter so early in Bizarre Lineage?',
-              answer:
-                'Because bad early stat spending can slow both PvE progress and later build options. Even a strong stand feels worse if the build around it is inefficient.',
+              question: t('page.sections.faq.items.3.question'),
+              answer: t('page.sections.faq.items.3.answer'),
             },
             {
-              question: 'Do codes matter after the first session?',
-              answer:
-                'Yes. Codes are useful whenever they give spins, arrows, or progression value that saves time on your current route.',
+              question: t('page.sections.faq.items.4.question'),
+              answer: t('page.sections.faq.items.4.answer'),
             },
             {
-              question:
-                'Is prestige always worth taking as soon as it unlocks?',
-              answer:
-                'No. Prestige is strongest when you understand what you gain, what you might lose, and what your next route looks like after resetting.',
+              question: t('page.sections.faq.items.5.question'),
+              answer: t('page.sections.faq.items.5.answer'),
             },
             {
-              question: 'What should I read after checking the homepage?',
-              answer:
-                'Most players move next to the codes page, the tier list, the beginner guide, or a stand page depending on whether they need rewards, rankings, route help, or a specific stand answer.',
+              question: t('page.sections.faq.items.6.question'),
+              answer: t('page.sections.faq.items.6.answer'),
             },
           ]}
         />
@@ -530,55 +542,30 @@ export function HomePage() {
   );
 }
 
-export function CodesPage() {
+export async function CodesPage() {
+  const t = await getTranslations('pages.codes');
   return (
     <PageShell accent="ember">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: 'What are the active Bizarre Lineage codes right now?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Use the active codes table at the top of the page first. It separates currently tracked entries from expired codes so players can test the shortest list possible.',
-              },
+          mainEntity: t.raw('page.sections.faq.items').map((item: any) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
             },
-            {
-              '@type': 'Question',
-              name: 'Why are some codes marked as monitor instead of active?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Because the page should distinguish between fully verified entries and codes that need another in-game pass after a patch or reset.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'Why are expired codes separated?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Expired codes stay visible for context, but they should not crowd out the working list that urgent visitors need first.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'What should I read after checking the codes page?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Most players move next to the tier list for meta context, the beginner guide for route planning, or the stand index for deeper build research.',
-              },
-            },
-          ],
+          })),
         }}
       />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)]">
         <SectionFrame
-          eyebrow="Codes tracker"
-          title="Bizarre Lineage codes should resolve the main question immediately: what is still worth redeeming."
-          description="This page skips the oversized hero and opens with the verification model instead. Active entries stay first, monitor labels explain uncertainty, and the expired archive remains visible without slowing down urgent checks."
+          eyebrow={t('page.sections.hero.eyebrow')}
+          title={t('page.sections.hero.title')}
+          description={t('page.sections.hero.description')}
         >
           <OrderedChecklist
             items={[
@@ -602,27 +589,28 @@ export function CodesPage() {
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Page notes"
-          title="The layout is built for fast scans, not filler."
+          eyebrow={t('page.sections.notes.eyebrow')}
+          title={t('page.sections.notes.title')}
         >
           <CardGrid
             columns={2}
             items={[
               {
-                title: 'Last verified',
-                meta: 'Freshness signal',
+                title: t('page.sections.notes.items.last_verified.title'),
+                meta: t('page.sections.notes.items.last_verified.meta'),
                 description: '2026-03-08',
               },
               {
-                title: 'Tracked active entries',
-                meta: 'Current table size',
+                title: t('page.sections.notes.items.tracked_active.title'),
+                meta: t('page.sections.notes.items.tracked_active.meta'),
                 description: String(activeCodes.length),
               },
               {
-                title: 'Best next move',
-                meta: 'After redeeming',
-                description:
-                  'Jump into the tier list, beginner guide, or stand index instead of stopping at the reward claim.',
+                title: t('page.sections.notes.items.best_next_move.title'),
+                meta: t('page.sections.notes.items.best_next_move.meta'),
+                description: t(
+                  'page.sections.notes.items.best_next_move.description'
+                ),
               },
             ]}
           />
@@ -631,18 +619,22 @@ export function CodesPage() {
 
       <SectionFrame
         id="active-codes"
-        eyebrow="Active codes"
-        title="Start with the entries players can act on right now."
-        description="The table keeps the required fields stable: Code, Reward, Status, and Last Verified. That consistency matters more than decorative noise."
+        eyebrow={t('page.sections.active.eyebrow')}
+        title={t('page.sections.active.title')}
+        description={t('page.sections.active.description')}
       >
         <div className="border-foreground/10 bg-background/75 overflow-hidden rounded-[1.6rem] border">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="px-4">Code</TableHead>
-                <TableHead>Reward</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead className="px-4">Last Verified</TableHead>
+                <TableHead className="px-4">
+                  {t('page.sections.active.table.code')}
+                </TableHead>
+                <TableHead>{t('page.sections.active.table.reward')}</TableHead>
+                <TableHead>{t('page.sections.active.table.status')}</TableHead>
+                <TableHead className="px-4">
+                  {t('page.sections.active.table.last_verified')}
+                </TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -663,24 +655,32 @@ export function CodesPage() {
 
       <div className="grid gap-6 lg:grid-cols-2">
         <SectionFrame
-          eyebrow="Redeem flow"
-          title="How to redeem without wasting time."
+          eyebrow={t('page.sections.redeem.eyebrow')}
+          title={t('page.sections.redeem.title')}
         >
           <OrderedChecklist items={[...redeemSteps]} />
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Expired archive"
-          title="Old entries stay visible, but they do not lead the page."
+          eyebrow={t('page.sections.expired.eyebrow')}
+          title={t('page.sections.expired.title')}
         >
           <div className="border-foreground/10 bg-background/75 overflow-hidden rounded-[1.6rem] border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="px-4">Code</TableHead>
-                  <TableHead>Reward</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="px-4">Archive note</TableHead>
+                  <TableHead className="px-4">
+                    {t('page.sections.expired.table.code')}
+                  </TableHead>
+                  <TableHead>
+                    {t('page.sections.expired.table.reward')}
+                  </TableHead>
+                  <TableHead>
+                    {t('page.sections.expired.table.status')}
+                  </TableHead>
+                  <TableHead className="px-4">
+                    {t('page.sections.expired.table.archive_note')}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -701,29 +701,31 @@ export function CodesPage() {
       </div>
 
       <SectionFrame
-        eyebrow="Troubleshooting"
-        title="Most code failures fall into a few predictable buckets."
+        eyebrow={t('page.sections.troubleshooting.eyebrow')}
+        title={t('page.sections.troubleshooting.title')}
       >
         <CardGrid columns={3} items={[...codeFailureReasons]} />
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="Related reads"
-        title="What to open after the code check."
+        eyebrow={t('page.sections.related.eyebrow')}
+        title={t('page.sections.related.title')}
       >
         <CardGrid
           columns={2}
           items={[
             {
-              title: 'Tier List',
-              description:
-                'Move to the stand rankings if you are deciding where those rewards should actually be spent.',
+              title: t('page.sections.related.items.tier_list.title'),
+              description: t(
+                'page.sections.related.items.tier_list.description'
+              ),
               href: '/tier-list',
             },
             {
-              title: 'Beginner Guide',
-              description:
-                'Open the guide if you need a stronger first-session route after collecting rewards.',
+              title: t('page.sections.related.items.beginner_guide.title'),
+              description: t(
+                'page.sections.related.items.beginner_guide.description'
+              ),
               href: '/guides/beginner-guide',
             },
           ]}
@@ -731,39 +733,17 @@ export function CodesPage() {
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="FAQ"
-        title="Questions readers usually ask after checking Bizarre Lineage codes."
+        eyebrow={t('page.sections.faq.eyebrow')}
+        title={t('page.sections.faq.title')}
+        description={t('page.sections.faq.description')}
       >
-        <FaqGrid
-          items={[
-            {
-              question: 'What are the active Bizarre Lineage codes right now?',
-              answer:
-                'Use the active table first. It keeps the current tracked entries separate from expired rows so you can test the shortest useful list.',
-            },
-            {
-              question: 'Why does a code show monitor instead of active?',
-              answer:
-                'Monitor means the code still needs another live verification pass after a patch, reset, or event change. It may still work, but the page should not overstate confidence.',
-            },
-            {
-              question: 'Why keep expired codes on the page at all?',
-              answer:
-                'Because players often arrive from old videos, Discord posts, or search snippets. A visible archive helps them confirm a code is old without mixing it into the live list.',
-            },
-            {
-              question: 'What should I read after redeeming codes?',
-              answer:
-                'Most players need the next decision fast: open the tier list for meta context, the beginner guide for route planning, or the stand index for deeper build research.',
-            },
-          ]}
-        />
+        <FaqGrid items={t.raw('page.sections.faq.items')} />
       </SectionFrame>
 
       <SectionFrame
-        eyebrow="CTA"
-        title="Turn the reward claim into a better next decision."
-        description="Codes rarely end the session. Use the pages below to decide what to build, farm, or compare once the freebies are claimed."
+        eyebrow={t('page.sections.cta.eyebrow')}
+        title={t('page.sections.cta.title')}
+        description={t('page.sections.cta.description')}
       >
         <div className="grid gap-4 md:grid-cols-3">
           <Link
@@ -771,14 +751,13 @@ export function CodesPage() {
             className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Meta context
+              {t('page.sections.cta.items.tier_list.eyebrow')}
             </div>
             <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Open the tier list
+              {t('page.sections.cta.items.tier_list.title')}
             </h3>
             <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Check where current stands land before you spend spins, resources,
-              or event rewards.
+              {t('page.sections.cta.items.tier_list.description')}
             </p>
           </Link>
 
@@ -787,14 +766,13 @@ export function CodesPage() {
             className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Progression
+              {t('page.sections.cta.items.beginner_guide.eyebrow')}
             </div>
             <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Follow the beginner guide
+              {t('page.sections.cta.items.beginner_guide.title')}
             </h3>
             <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Use a cleaner early-game route if you need levels, farming
-              priorities, and fewer wasted resets.
+              {t('page.sections.cta.items.beginner_guide.description')}
             </p>
           </Link>
 
@@ -803,14 +781,13 @@ export function CodesPage() {
             className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Build research
+              {t('page.sections.cta.items.stand_index.eyebrow')}
             </div>
             <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Browse the stand index
+              {t('page.sections.cta.items.stand_index.title')}
             </h3>
             <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Compare strengths, weaknesses, and obtainment notes before you
-              commit to a longer grind.
+              {t('page.sections.cta.items.stand_index.description')}
             </p>
           </Link>
         </div>
@@ -819,21 +796,22 @@ export function CodesPage() {
   );
 }
 
-export function TierListPage() {
+export async function TierListPage() {
+  const t = await getTranslations('pages.tier-list');
   return (
     <PageShell accent="violet">
       <StandsTierBoard />
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <SectionFrame
-          eyebrow="Representative stands"
-          title="The cards explain why a stand earns attention, not just where it lands."
+          eyebrow={t('page.sections.representative.eyebrow')}
+          title={t('page.sections.representative.title')}
         >
           <CardGrid
             columns={2}
             items={tierListEntries.map((entry) => ({
               title: entry.name,
-              meta: `${entry.tier} tier`,
+              meta: `${entry.tier} ${t('page.sections.representative.tier_suffix')}`,
               description: entry.summary,
               href:
                 entry.key === 'star-platinum'
@@ -844,111 +822,165 @@ export function TierListPage() {
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Methodology"
-          title="A useful list states its evaluation frame."
+          eyebrow={t('page.sections.methodology.eyebrow')}
+          title={t('page.sections.methodology.title')}
         >
           <OrderedChecklist items={[...tierMethodology]} />
         </SectionFrame>
       </div>
 
       <SectionFrame
-        eyebrow="Role picks"
-        title="Some readers only want the best option for a specific situation."
+        eyebrow={t('page.sections.role_picks.eyebrow')}
+        title={t('page.sections.role_picks.title')}
       >
         <CardGrid columns={3} items={[...bestForCards]} />
       </SectionFrame>
 
-      <SectionFrame eyebrow="FAQ" title="What the ranking page should clarify.">
-        <FaqGrid
-          items={[
-            {
-              question: 'Why link the tier list to a stand page?',
-              answer:
-                'Because the ranking page should hand off to a database-style article when a stand deserves deeper research.',
-            },
-            {
-              question: 'Why is methodology so visible here?',
-              answer:
-                'Without methodology, a tier list becomes a subjective chart that is hard to trust and hard to differentiate in search.',
-            },
-            {
-              question: 'Should every stand be in the MVP?',
-              answer:
-                'No. The MVP uses a representative set and one strong sample page before scaling coverage.',
-            },
-            {
-              question: 'What should new players read after this page?',
-              answer:
-                'The beginner guide, especially if they understand the meta but still need an early progression route.',
-            },
-          ]}
-        />
+      <SectionFrame
+        eyebrow={t('page.sections.faq.eyebrow')}
+        title={t('page.sections.faq.title')}
+      >
+        <FaqGrid items={t.raw('page.sections.faq.items')} />
       </SectionFrame>
     </PageShell>
   );
 }
 
-export function BeginnerGuidePage() {
+export async function GuidesHubPage() {
+  const t = await getTranslations('pages.guides');
+  return (
+    <PageShell accent="jade">
+      <div className="px-1 pt-2">
+        <Crumb
+          items={[
+            { title: 'Home', url: '/' },
+            { title: 'Guides', url: '/guides', is_active: true },
+          ]}
+        />
+      </div>
+      <SectionFrame
+        eyebrow={t('page.sections.directory.eyebrow')}
+        title={t('page.sections.directory.title')}
+        description={t('page.sections.directory.description')}
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <GuideCard
+            title={t('page.sections.directory.items.beginner.title')}
+            meta={t('page.sections.directory.items.beginner.meta')}
+            description={t(
+              'page.sections.directory.items.beginner.description'
+            )}
+            href="/guides/beginner-guide"
+          />
+          <GuideCard
+            title={t('page.sections.directory.items.stats.title')}
+            meta={t('page.sections.directory.items.stats.meta')}
+            description={t('page.sections.directory.items.stats.description')}
+            href="/guides/stats"
+          />
+          <GuideCard
+            title={t('page.sections.directory.items.prestige.title')}
+            meta={t('page.sections.directory.items.prestige.meta')}
+            description={t(
+              'page.sections.directory.items.prestige.description'
+            )}
+            href="/guides/prestige"
+          />
+          <GuideCard
+            title={t('page.sections.directory.items.codes.title')}
+            meta={t('page.sections.directory.items.codes.meta')}
+            description={t('page.sections.directory.items.codes.description')}
+            href="/codes"
+          />
+        </div>
+      </SectionFrame>
+
+      <SectionFrame
+        eyebrow={t('page.sections.faq.eyebrow')}
+        title={t('page.sections.faq.title')}
+      >
+        <FaqGrid items={t.raw('page.sections.faq.items')} />
+      </SectionFrame>
+    </PageShell>
+  );
+}
+
+export async function BeginnerGuidePage() {
+  const t = await getTranslations('pages.guides.beginner-guide');
   return (
     <PageShell accent="jade">
       <HeroFrame
-        eyebrow="Beginner guide"
-        title="New players need a route for the first 30 minutes, not a wall of lore."
-        dek="This guide is structured around anxiety reduction: checklist first, mistakes second, progression path third. It should feel like a field manual you can skim between play sessions."
+        eyebrow={t('page.sections.hero.eyebrow')}
+        title={t('page.sections.hero.title')}
+        dek={t('page.sections.hero.description')}
         stats={[
-          { label: 'Audience', value: 'First-time players' },
-          { label: 'Reading mode', value: 'Checklist first' },
-          { label: 'Reading time', value: beginnerGuide.readingTime },
-          { label: 'Updated', value: beginnerGuide.updatedAt },
+          {
+            label: t('page.sections.hero.stats.audience'),
+            value: t('page.sections.hero.stats.audience_value'),
+          },
+          {
+            label: t('page.sections.hero.stats.reading_mode'),
+            value: t('page.sections.hero.stats.reading_mode_value'),
+          },
+          {
+            label: t('page.sections.hero.stats.reading_time'),
+            value: beginnerGuide.readingTime,
+          },
+          {
+            label: t('page.sections.hero.stats.updated'),
+            value: beginnerGuide.updatedAt,
+          },
         ]}
         actions={
           <HeroActions
-            primary={{ href: '/codes', label: 'Check codes first' }}
-            secondary={{ href: '/tier-list', label: 'Review tier list' }}
+            primary={{
+              href: '/codes',
+              label: t('page.sections.hero.actions.primary'),
+            }}
+            secondary={{
+              href: '/tier-list',
+              label: t('page.sections.hero.actions.secondary'),
+            }}
           />
         }
         backgroundImageSrc={placeholderImages.guide}
         backgroundImageAlt="Beginner guide placeholder visual"
-        mediaLabel="Route visual placeholder"
+        mediaLabel={t('page.sections.hero.media_label')}
         aside={
           <AsidePanel
-            title="Fast-start brief"
-            description="The page is optimized for overwhelmed readers. Every section exists to reduce uncertainty and point to the next useful page."
-            items={[
-              { label: 'Opens with', value: 'Fast Start Checklist' },
-              { label: 'Avoids', value: 'Long paragraphs and fluff' },
-              { label: 'Links outward', value: 'Codes, tier list, stand page' },
-            ]}
+            title={t('page.sections.hero.aside.title')}
+            description={t('page.sections.hero.aside.description')}
+            items={t.raw('page.sections.hero.aside.items')}
           />
         }
       />
 
       <SectionFrame
-        eyebrow="Fast start checklist"
-        title="Give the reader a short route they can execute immediately."
+        eyebrow={t('page.sections.checklist.eyebrow')}
+        title={t('page.sections.checklist.title')}
       >
         <OrderedChecklist items={[...beginnerGuide.checklist]} />
       </SectionFrame>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <SectionFrame
-          eyebrow="First 30 minutes"
-          title="The opening loop should stay practical."
+          eyebrow={t('page.sections.first_30.eyebrow')}
+          title={t('page.sections.first_30.title')}
         >
           <CardGrid columns={2} items={[...beginnerGuide.firstThirtyMinutes]} />
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Mistakes to avoid"
-          title="The guide should call out the most expensive beginner errors."
+          eyebrow={t('page.sections.mistakes.eyebrow')}
+          title={t('page.sections.mistakes.title')}
         >
           <CardGrid columns={2} items={[...beginnerGuide.mistakes]} />
         </SectionFrame>
       </div>
 
       <SectionFrame
-        eyebrow="Progression path"
-        title="Once the checklist is done, the player needs a calmer medium-term route."
+        eyebrow={t('page.sections.progression.eyebrow')}
+        title={t('page.sections.progression.title')}
       >
         <OrderedChecklist items={[...beginnerGuide.goals]} />
       </SectionFrame>

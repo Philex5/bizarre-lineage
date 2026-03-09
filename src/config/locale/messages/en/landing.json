@@ -33,6 +33,12 @@
           "icon": "BookOpenText",
           "children": [
             {
+              "title": "All Guides",
+              "description": "Browse the complete directory of Bizarre Lineage guides",
+              "url": "/guides",
+              "icon": "Library"
+            },
+            {
               "title": "Beginner Guide",
               "description": "Get a usable first stand and a cleaner opening route",
               "url": "/guides/beginner-guide",
@@ -49,12 +55,6 @@
               "description": "Plan when prestige helps and what to prepare first",
               "url": "/guides/prestige",
               "icon": "RotateCcw"
-            },
-            {
-              "title": "Stands Hub",
-              "description": "Compare chase targets, roles, and quick verdicts first",
-              "url": "/stands",
-              "icon": "Sparkles"
             }
           ]
         },
@@ -142,6 +142,11 @@
             {
               "title": "Tier List",
               "url": "/tier-list",
+              "target": "_self"
+            },
+            {
+              "title": "Guides Hub",
+              "url": "/guides",
               "target": "_self"
             },
             {

@@ -263,7 +263,12 @@ export function Header({ header }: { header: HeaderType }) {
             <div className="relative flex flex-wrap items-center justify-between lg:py-5">
               <div className="max-lg:border-border/70 flex justify-between gap-8 max-lg:h-14 max-lg:w-full max-lg:border-b">
                 {/* Brand Logo */}
-                {header.brand && <BrandLogo brand={header.brand} />}
+                {header.brand && (
+                  <BrandLogo
+                    brand={header.brand}
+                    logoClassName="h-6 w-auto rounded-lg md:h-7"
+                  />
+                )}
 
                 {/* Desktop Navigation Menu */}
                 {isLarge && <NavMenu />}

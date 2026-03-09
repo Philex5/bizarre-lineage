@@ -268,12 +268,6 @@ export function CardGrid({
             <p className="text-muted-foreground mt-3 text-sm leading-7">
               {item.description}
             </p>
-            {item.href ? (
-              <div className="text-primary mt-5 inline-flex items-center gap-2 text-sm font-medium tracking-[0.18em] uppercase">
-                Open page
-                <ArrowRight className="size-4" />
-              </div>
-            ) : null}
           </div>
         );
 
@@ -292,6 +286,53 @@ export function CardGrid({
       })}
     </div>
   );
+}
+
+export function GuideCard({
+  title,
+  description,
+  meta,
+  href,
+}: {
+  title: string;
+  description: string;
+  meta?: string;
+  href?: string;
+}) {
+  const content = (
+    <div className="group bg-background/92 border-border relative flex aspect-[3/4] flex-col overflow-hidden rounded-[2rem] border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-background/98 md:p-8">
+      <div className="absolute inset-x-8 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-primary),var(--color-accent),transparent)]" />
+      
+      {meta && (
+        <div className="text-muted-foreground mb-4 text-[0.68rem] font-medium tracking-[0.24em] uppercase opacity-80">
+          {meta}
+        </div>
+      )}
+      
+      <h3 className="text-foreground font-serif text-2xl font-bold leading-[1.1] tracking-[-0.04em] group-hover:text-primary transition-colors md:text-3xl">
+        {title}
+      </h3>
+      
+      <p className="text-muted-foreground mt-6 text-sm leading-7 line-clamp-6 md:text-base">
+        {description}
+      </p>
+
+      <div className="mt-auto flex justify-end pt-6">
+         <div className="bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300">
+            <ArrowRight className="size-6" />
+         </div>
+      </div>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className="block">
+        {content}
+      </Link>
+    );
+  }
+  return content;
 }
 
 export function OrderedChecklist({
