@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 
+import { resolveAssetUrl } from '@/lib/asset-loader';
 import { LazyImage, SmartIcon } from '@/shared/blocks/common';
 import { BorderBeam } from '@/shared/components/magicui/border-beam';
 import {
@@ -27,7 +28,7 @@ export function FeaturesAccordion({
   const images: any = {};
   section.items?.forEach((item, idx) => {
     images[`item-${idx + 1}`] = {
-      image: item.image?.src ?? '',
+      image: resolveAssetUrl(item.image?.src ?? ''),
       alt: item.image?.alt || item.title || '',
     };
   });

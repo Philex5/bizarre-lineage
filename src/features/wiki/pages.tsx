@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import {
@@ -11,7 +12,12 @@ import {
   prestigeGuide,
   statsGuide,
 } from '@/content-data/guides';
-import { homeFaq, placeholderImages, siteName } from '@/content-data/site';
+import {
+  homeFaq,
+  officialLinks,
+  placeholderImages,
+  siteName,
+} from '@/content-data/site';
 import { stands, type StandEntry } from '@/content-data/stands';
 import {
   bestForCards,
@@ -19,12 +25,20 @@ import {
   tierMethodology,
 } from '@/content-data/tier-list';
 import { toImageUrl } from '@/lib/r2-utils';
-import { ArrowUpRight, Trophy } from 'lucide-react';
+import {
+  ArrowUpRight,
+  Castle,
+  Flame,
+  Swords,
+  Ticket,
+  Trophy,
+  WandSparkles,
+} from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
+import { SiDiscord, SiRoblox, SiTrello } from 'react-icons/si';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
-import { cn } from '@/shared/lib/utils';
 import { Crumb } from '@/shared/blocks/common/crumb';
 import { Button } from '@/shared/components/ui/button';
 import {
@@ -35,7 +49,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/shared/components/ui/table';
+import { cn } from '@/shared/lib/utils';
 
+import { HomeCodeCopyButton } from './home-code-copy-button';
 import {
   AsidePanel,
   CardGrid,
@@ -55,7 +71,6 @@ type MetadataInput = {
   path: string;
   title: string;
   description: string;
-  keywords: string[];
 };
 
 function canonicalUrl(locale: string, path: string) {
@@ -70,7 +85,6 @@ export function buildMetadata(input: MetadataInput): Metadata {
   return {
     title: input.title,
     description: input.description,
-    keywords: input.keywords,
     alternates: {
       canonical,
     },
@@ -124,7 +138,7 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
       )}
       <div
         className={cn(
-          'absolute top-0 right-0 z-20 rounded-bl-2xl border-b border-l px-5 pt-5 pb-1 text-xl font-normal tracking-wider uppercase shadow-lg transition-transform group-hover:scale-110 origin-top-right font-anime',
+          'font-anime absolute top-0 right-0 z-20 origin-top-right rounded-bl-2xl border-b border-l px-5 pt-5 pb-1 text-xl font-normal tracking-wider uppercase shadow-lg transition-transform group-hover:scale-110',
           tierClasses[stand.tier] || 'bg-primary text-primary-foreground'
         )}
       >
@@ -174,9 +188,88 @@ function HomeGuideStripCard({
   );
 }
 
+function HomeQuickAccessCard({
+  title,
+  href,
+  icon,
+}: {
+  title: string;
+  href: string;
+  icon: ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="border-border bg-background/70 hover:border-primary/35 hover:bg-background/92 group flex min-h-24 flex-col justify-between rounded-[1.25rem] border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+    >
+      <span className="text-primary/90 flex size-10 items-center justify-center rounded-2xl bg-white/6 text-lg shadow-inner ring-1 ring-white/8 transition-transform duration-300 group-hover:scale-105">
+        {icon}
+      </span>
+      <span className="text-foreground text-sm font-semibold tracking-[-0.02em]">
+        {title}
+      </span>
+    </Link>
+  );
+}
+
 export async function HomePage() {
   const t = await getTranslations('pages.index');
   const featuredStands = stands.slice(0, 3);
+  const featuredCodes = activeCodes.slice(0, 3);
+  const heroQuickAccessItems = [
+    {
+      title: 'Tier List',
+      href: '/tier-list',
+      icon: <Trophy className="size-5" />,
+    },
+    {
+      title: 'Stands',
+      href: '/stands',
+      icon: <WandSparkles className="size-5" />,
+    },
+    {
+      title: 'Beginner Guide',
+      href: '/guides/beginner-guide',
+      icon: <ArrowUpRight className="size-5" />,
+    },
+    {
+      title: 'Raids',
+      href: '/terms/raid',
+      icon: <Castle className="size-5" />,
+    },
+    {
+      title: 'Events',
+      href: '/events',
+      icon: <Ticket className="size-5" />,
+    },
+    {
+      title: 'Fighting Styles',
+      href: '/terms/fighting-styles',
+      icon: <Swords className="size-5" />,
+    },
+    {
+      title: 'Sub-Abilities',
+      href: '/terms/sub-abilities',
+      icon: <Flame className="size-5" />,
+    },
+  ] as const;
+  const officialLinkCards = [
+    {
+      ...officialLinks[0],
+      title: 'Roblox',
+      icon: SiRoblox,
+    },
+    {
+      ...officialLinks[1],
+      title: 'Discord',
+      icon: SiDiscord,
+    },
+    {
+      ...officialLinks[2],
+      title: 'Trello',
+      icon: SiTrello,
+    },
+  ] as const;
   const homeGuideCards = [
     {
       title: 'Bizarre Lineage beginner guide',
@@ -293,51 +386,137 @@ export async function HomePage() {
         }}
       />
 
-      <HeroFrame
-        eyebrow={t('page.sections.hero.eyebrow')}
-        title={t('page.sections.hero.title')}
-        dek={t('page.sections.hero.dek')}
-        actions={
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-wrap gap-3">
-              <Button
-                asChild
-                size="lg"
-                className="rounded-full px-6 text-sm tracking-[0.16em] uppercase"
-              >
-                <Link href="/tier-list">
-                  {t('page.sections.hero.buttons.tier_list')}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
-              >
-                <Link href="/guides/beginner-guide">
-                  {t('page.sections.hero.buttons.leveling_guide')}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full border-white/16 bg-white/8 px-6 text-sm tracking-[0.16em] text-white uppercase backdrop-blur-sm hover:bg-white/14"
-              >
-                <Link href="/codes">
-                  {t('page.sections.hero.buttons.code_archive')}
-                </Link>
+      <section className="grid gap-6 lg:grid-cols-[minmax(0,1.45fr)_23rem] lg:items-start">
+        <div className="space-y-6">
+          <div className="relative overflow-hidden rounded-[2.2rem]">
+            <div className="absolute inset-0">
+              <Image
+                src={placeholderImages.hero}
+                alt="Bizarre Lineage hero key art placeholder"
+                fill
+                className="object-cover object-center"
+                priority
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_oklab,var(--color-foreground)_92%,black)_0%,color-mix(in_oklab,var(--color-foreground)_84%,transparent)_34%,color-mix(in_oklab,var(--color-foreground)_56%,transparent)_62%,color-mix(in_oklab,var(--color-foreground)_84%,black)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,black_18%,transparent)_0%,transparent_20%,color-mix(in_oklab,black_44%,transparent)_100%)]" />
+            </div>
+            <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)]" />
+
+            <div className="relative flex min-h-[68vh] items-end px-6 py-10 md:px-10 md:py-14 lg:px-14 lg:py-18">
+              <div className="max-w-2xl">
+                <div className="mb-5 inline-flex rounded-full border border-white/18 bg-black/18 px-3 py-1 text-[0.68rem] tracking-[0.24em] text-white uppercase backdrop-blur-sm">
+                  {t('page.sections.hero.eyebrow')}
+                </div>
+                <h1 className="font-serif text-4xl leading-[0.9] tracking-[-0.05em] text-balance text-white sm:text-5xl lg:text-7xl">
+                  {t('page.sections.hero.title')}
+                </h1>
+                <p className="mt-5 max-w-xl text-base leading-7 text-white/82 md:text-lg">
+                  {t('page.sections.hero.dek')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-border bg-card/94 relative overflow-hidden rounded-[2rem] border p-6 shadow-lg backdrop-blur-sm md:p-7">
+            <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--color-primary),var(--color-accent),var(--color-primary))] opacity-90" />
+            <div className="relative">
+              <h2 className="text-foreground text-center font-serif text-2xl leading-none tracking-[-0.04em] md:text-3xl">
+                Official Bizarre Lineage links
+              </h2>
+
+              <div className="mt-6 grid gap-4 md:grid-cols-3">
+                {officialLinkCards.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex min-h-32 flex-col items-center justify-center rounded-[1.5rem] border p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                    >
+                      <span className="text-primary mb-4 flex size-12 items-center justify-center rounded-2xl bg-white/6 text-2xl ring-1 ring-white/8">
+                        <Icon />
+                      </span>
+                      <div className="text-foreground text-lg font-semibold tracking-[-0.03em]">
+                        {item.title}
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside className="border-border bg-card/96 relative overflow-hidden rounded-[2rem] border p-5 shadow-lg backdrop-blur-sm lg:self-start">
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_8%,transparent)_0%,transparent_24%),linear-gradient(color-mix(in_oklab,var(--color-foreground)_5%,transparent)_1px,transparent_1px)] bg-[length:100%_100%,18px_18px]" />
+          <div className="relative space-y-6">
+            <div>
+              <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
+                Quick Access
+              </div>
+              <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
+                Bizarre Lineage Navigation
+              </h2>
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                {heroQuickAccessItems.map((item) => (
+                  <HomeQuickAccessCard
+                    key={item.href}
+                    title={item.title}
+                    href={item.href}
+                    icon={item.icon}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="border-border border-t pt-6">
+              <div className="flex items-end justify-between gap-3">
+                <div>
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
+                    Latest Codes
+                  </div>
+                  <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
+                    Active Codes
+                  </h2>
+                </div>
+                <div className="text-muted-foreground text-right text-xs leading-5">
+                  Verified
+                  <br />
+                  2026-03-09
+                </div>
+              </div>
+
+              <div className="mt-5 space-y-3">
+                {featuredCodes.map((code) => (
+                  <div
+                    key={code.code}
+                    className="bg-background/85 border-border rounded-[1.35rem] border p-4"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="text-foreground font-mono text-sm font-semibold">
+                          {code.code}
+                        </div>
+                        <p className="text-muted-foreground mt-2 text-sm leading-6">
+                          {code.reward}
+                        </p>
+                      </div>
+                      <HomeCodeCopyButton code={code.code} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Button asChild className="mt-4 w-full rounded-xl">
+                <Link href="/codes">View More Codes</Link>
               </Button>
             </div>
-            <p className="text-xs text-white/60 italic">
-              {t('page.sections.hero.tip')}
-            </p>
           </div>
-        }
-        backgroundImageSrc={placeholderImages.hero}
-        backgroundImageAlt="Bizarre Lineage hero key art placeholder"
-      />
+        </aside>
+      </section>
 
       <SectionFrame
         eyebrow={t('page.sections.world.eyebrow')}
@@ -376,90 +555,6 @@ export async function HomePage() {
           </div>
         </div>
       </SectionFrame>
-      <SectionFrame
-        eyebrow={t('page.sections.database.eyebrow')}
-        title={t('page.sections.database.title')}
-        description={t('page.sections.database.description')}
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: t('page.sections.database.items.tier_list.title'),
-              meta: t('page.sections.database.items.tier_list.meta'),
-              description: t(
-                'page.sections.database.items.tier_list.description'
-              ),
-              href: '/tier-list',
-            },
-            {
-              title: t('page.sections.database.items.stand_db.title'),
-              meta: t('page.sections.database.items.stand_db.meta'),
-              description: t(
-                'page.sections.database.items.stand_db.description'
-              ),
-              href: '/stands',
-            },
-            {
-              title: t('page.sections.database.items.fighting_styles.title'),
-              meta: t('page.sections.database.items.fighting_styles.meta'),
-              description: t(
-                'page.sections.database.items.fighting_styles.description'
-              ),
-              href: '/terms/fighting-styles',
-            },
-            {
-              title: t('page.sections.database.items.stats_guide.title'),
-              meta: t('page.sections.database.items.stats_guide.meta'),
-              description: t(
-                'page.sections.database.items.stats_guide.description'
-              ),
-              href: '/guides/stats',
-            },
-            {
-              title: t('page.sections.database.items.leveling_path.title'),
-              meta: t('page.sections.database.items.leveling_path.meta'),
-              description: t(
-                'page.sections.database.items.leveling_path.description'
-              ),
-              href: '/guides/beginner-guide',
-            },
-            {
-              title: t('page.sections.database.items.raids_bosses.title'),
-              meta: t('page.sections.database.items.raids_bosses.meta'),
-              description: t(
-                'page.sections.database.items.raids_bosses.description'
-              ),
-              href: '/terms/raid',
-            },
-            {
-              title: t('page.sections.database.items.prestige_system.title'),
-              meta: t('page.sections.database.items.prestige_system.meta'),
-              description: t(
-                'page.sections.database.items.prestige_system.description'
-              ),
-              href: '/guides/prestige',
-            },
-            {
-              title: t('page.sections.database.items.codes_archive.title'),
-              meta: t('page.sections.database.items.codes_archive.meta'),
-              description: t(
-                'page.sections.database.items.codes_archive.description'
-              ),
-              href: '/codes',
-            },
-            {
-              title: t('page.sections.database.items.mechanics.title'),
-              meta: t('page.sections.database.items.mechanics.meta'),
-              description: t(
-                'page.sections.database.items.mechanics.description'
-              ),
-              href: '/terms',
-            },
-          ]}
-        />
-      </SectionFrame>
-
       <SectionFrame
         eyebrow={t('page.sections.progression.eyebrow')}
         title={t('page.sections.progression.title')}
@@ -1185,7 +1280,8 @@ export function StandsHubPage() {
           Bizarre Lineage Stands: Full Guide & Tier List
         </h1>
         <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed md:text-xl">
-          The complete index of stands, evolution paths, and meta-verdicts for every combat identity in Bizarre Lineage.
+          The complete index of stands, evolution paths, and meta-verdicts for
+          every combat identity in Bizarre Lineage.
         </p>
       </section>
 
@@ -1213,11 +1309,13 @@ export function StandsHubPage() {
             items={[
               {
                 title: 'Core Identity',
-                description: 'Defines your moves, pressure pattern, and role within the bizarre lineage stands meta.',
+                description:
+                  'Defines your moves, pressure pattern, and role within the bizarre lineage stands meta.',
               },
               {
                 title: 'Roll for Stands',
-                description: 'Use arrows from chests or quests to spin for new bizarre lineage stands.',
+                description:
+                  'Use arrows from chests or quests to spin for new bizarre lineage stands.',
               },
               {
                 title: 'Evolution Routes',
@@ -1282,7 +1380,9 @@ export function StandsHubPage() {
                 <Trophy size={20} />
               </div>
               <div>
-                <h4 className="text-lg font-bold">Best PvP Stand: Star Platinum</h4>
+                <h4 className="text-lg font-bold">
+                  Best PvP Stand: Star Platinum
+                </h4>
                 <p className="text-muted-foreground mt-1 text-sm">
                   The clearest current PvP benchmark. Combines pressure, burst,
                   and broad matchup value.
@@ -1294,7 +1394,9 @@ export function StandsHubPage() {
                 <Trophy size={20} />
               </div>
               <div>
-                <h4 className="text-lg font-bold">Best PvE Stand: Weather Report</h4>
+                <h4 className="text-lg font-bold">
+                  Best PvE Stand: Weather Report
+                </h4>
                 <p className="text-muted-foreground mt-1 text-sm">
                   Screen-wide AoE and mission clearing speed make this the king
                   of grinding.

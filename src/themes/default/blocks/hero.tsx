@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
+import { resolveAssetUrl } from '@/lib/asset-loader';
 import { SmartIcon } from '@/shared/blocks/common';
 import { Button } from '@/shared/components/ui/button';
 import { Highlighter } from '@/shared/components/ui/highlighter';
@@ -18,6 +19,13 @@ export function Hero({
   className?: string;
 }) {
   const highlightText = section.highlight_text ?? '';
+  const heroImageSrc = section.image?.src ? resolveAssetUrl(section.image.src) : '';
+  const heroImageInvertSrc = section.image_invert?.src
+    ? resolveAssetUrl(section.image_invert.src)
+    : '';
+  const backgroundImageSrc = section.background_image?.src
+    ? resolveAssetUrl(section.background_image.src)
+    : '';
   let texts = null;
   if (highlightText) {
     texts = section.title?.split(highlightText, 2);
@@ -115,10 +123,10 @@ export function Hero({
                 aria-hidden
                 className="h-3 w-full bg-[repeating-linear-gradient(-45deg,var(--color-foreground),var(--color-foreground)_1px,transparent_1px,transparent_4px)] opacity-5"
               />
-              {section.image_invert?.src && (
+              {section.image_invert?.src && heroImageInvertSrc && (
                 <Image
                   className="border-border/25 relative z-2 hidden w-full border dark:block"
-                  src={section.image_invert.src}
+                  src={heroImageInvertSrc}
                   alt={section.image_invert.alt || section.image?.alt || ''}
                   width={
                     section.image_invert.width || section.image?.width || 1200
@@ -130,13 +138,13 @@ export function Hero({
                   loading="lazy"
                   fetchPriority="high"
                   quality={75}
-                  unoptimized={section.image_invert.src.startsWith('http')}
+                  unoptimized={heroImageInvertSrc.startsWith('http')}
                 />
               )}
-              {section.image?.src && (
+              {section.image?.src && heroImageSrc && (
                 <Image
                   className="border-border/25 relative z-2 block w-full border dark:hidden"
-                  src={section.image.src}
+                  src={heroImageSrc}
                   alt={section.image.alt || section.image_invert?.alt || ''}
                   width={
                     section.image.width || section.image_invert?.width || 1200
@@ -148,7 +156,7 @@ export function Hero({
                   loading="lazy"
                   fetchPriority="high"
                   quality={75}
-                  unoptimized={section.image.src.startsWith('http')}
+                  unoptimized={heroImageSrc.startsWith('http')}
                 />
               )}
             </div>
@@ -156,18 +164,18 @@ export function Hero({
         </div>
       )}
 
-      {section.background_image?.src && (
+      {backgroundImageSrc && (
         <div className="absolute inset-0 -z-10 hidden h-full w-full overflow-hidden md:block">
           <div className="from-background/80 via-background/80 to-background absolute inset-0 z-10 bg-gradient-to-b" />
           <Image
-            src={section.background_image.src}
+            src={backgroundImageSrc}
             alt={section.background_image.alt || ''}
             className="object-cover opacity-60 blur-[0px]"
             fill
             loading="lazy"
             sizes="(max-width: 768px) 0vw, 100vw"
             quality={70}
-            unoptimized={section.background_image.src.startsWith('http')}
+            unoptimized={backgroundImageSrc.startsWith('http')}
           />
         </div>
       )}

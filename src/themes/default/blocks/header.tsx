@@ -50,6 +50,14 @@ export function Header({ header }: { header: HeaderType }) {
   const scrollRafRef = useRef<number | null>(null);
   const isLarge = useMedia('(min-width: 64rem)');
   const pathname = usePathname();
+  const isCodesNavItem = (url?: string | null) => url === '/codes';
+  const newBadge = (
+    <img
+      src="/new.png"
+      alt="New"
+      className="pointer-events-none absolute top-0 right-0 h-5 w-auto shrink-0 translate-x-1/3 -translate-y-1/3"
+    />
+  );
 
   useEffect(() => {
     // Listen to scroll event to enable header styles on scroll
@@ -98,7 +106,7 @@ export function Header({ header }: { header: HeaderType }) {
                       item.is_active || pathname.endsWith(item.url as string)
                         ? 'bg-muted text-foreground shadow-sm'
                         : ''
-                    }`}
+                    } ${isCodesNavItem(item.url) ? 'relative overflow-visible' : ''}`}
                   >
                     {item.icon && <SmartIcon name={item.icon as string} />}
                     {item.title}
@@ -194,9 +202,14 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     onClick={closeMenu}
-                    className="data-[state=open]:bg-muted/85 flex items-center justify-between rounded-2xl px-4 py-3 text-lg **:!font-normal"
+                    className={`data-[state=open]:bg-muted/85 flex items-center justify-between gap-3 rounded-2xl px-4 py-3 text-lg **:!font-normal ${
+                      isCodesNavItem(item.url)
+                        ? 'relative overflow-visible'
+                        : ''
+                    }`}
                   >
-                    {item.title}
+                    <span>{item.title}</span>
+                    {isCodesNavItem(item.url) ? newBadge : null}
                   </Link>
                 )}
               </AccordionItem>

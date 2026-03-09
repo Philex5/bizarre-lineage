@@ -1,6 +1,7 @@
 'use client';
 
 import { Link } from '@/core/i18n/navigation';
+import { resolveAssetUrl } from '@/lib/asset-loader';
 import { LazyImage, SmartIcon } from '@/shared/blocks/common';
 import { Button } from '@/shared/components/ui/button';
 import { ScrollAnimation } from '@/shared/components/ui/scroll-animation';
@@ -14,6 +15,8 @@ export function FeaturesList({
   section: Section;
   className?: string;
 }) {
+  const sectionImageSrc = resolveAssetUrl(section.image?.src ?? '');
+
   return (
     // Prevent horizontal scrolling
     <section
@@ -28,7 +31,7 @@ export function FeaturesList({
           <ScrollAnimation direction="left">
             <div className="mx-auto w-full max-w-[500px] flex-shrink-0 md:mx-0">
               <LazyImage
-                src={section.image?.src ?? ''}
+                src={sectionImageSrc}
                 alt={section.image?.alt ?? ''}
                 className="h-auto w-full rounded-lg object-cover"
               />

@@ -139,12 +139,6 @@ export async function generateMetadata({
       'Bizarre Lineage Beginner Guide - Hotel Start, Stands, Conjuration, Level 50',
     description:
       'Use this Bizarre Lineage beginner guide to plan your hotel start, first Stand, Conjuration training, stat priorities, and the route toward level 50 awakening.',
-    keywords: [
-      'bizarre lineage beginner guide',
-      'bizarre lineage leveling guide',
-      'bizarre lineage conjuration guide',
-      'bizarre lineage awakening guide',
-    ],
   });
 }
 

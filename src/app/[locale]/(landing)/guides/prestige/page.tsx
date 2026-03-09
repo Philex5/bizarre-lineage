@@ -134,11 +134,6 @@ export async function generateMetadata({
       'Bizarre Lineage Prestige Guide - When to Prestige, Requirements, Tradeoffs',
     description:
       'Read the Bizarre Lineage prestige guide to check current requirements, decide when to prestige, and avoid resetting before the next route is ready.',
-    keywords: [
-      'bizarre lineage prestige guide',
-      'bizarre lineage prestige',
-      'when to prestige bizarre lineage',
-    ],
   });
 }
 

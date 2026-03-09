@@ -8,6 +8,7 @@ import {
   type TermLink,
   type TermSection,
 } from '@/content-data/terms';
+import { toImageUrl } from '@/lib/r2-utils';
 import { getLocale } from 'next-intl/server';
 
 function SmartLink({ href, label }: TermLink) {
@@ -107,6 +108,7 @@ export async function TermsHubContent() {
     <div className="not-prose mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {dictionary.hub.cards.map((termKey) => {
         const term = dictionary.terms[termKey];
+        const heroImageUrl = toImageUrl(term.heroImageSrc);
 
         return (
           <a
@@ -116,7 +118,7 @@ export async function TermsHubContent() {
           >
             <div className="relative min-h-[220px]">
               <img
-                src={term.heroImageSrc}
+                src={heroImageUrl}
                 alt={term.heroImageAlt}
                 className="absolute inset-0 size-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -145,6 +147,7 @@ export async function TermsHubContent() {
 export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
   const locale = await getLocale();
   const term = getTermEntry(termKey, locale);
+  const heroImageUrl = toImageUrl(term.heroImageSrc);
 
   return (
     <>
@@ -154,7 +157,7 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
 
       <div className="not-prose border-border/70 bg-background/90 my-8 overflow-hidden rounded-3xl border shadow-sm">
         <img
-          src={term.heroImageSrc}
+          src={heroImageUrl}
           alt={term.heroImageAlt}
           className="aspect-[16/7] w-full object-cover"
         />

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { officialLinks, siteName } from '@/content-data/site';
 import {
   standResearchNotes,
@@ -17,8 +18,10 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { toImageUrl } from '@/lib/r2-utils';
 import { Crumb } from '@/shared/blocks/common/crumb';
 import { Badge } from '@/shared/components/ui/badge';
+import { cn } from '@/shared/lib/utils';
 
 export const revalidate = 3600;
 
@@ -181,18 +184,6 @@ export async function generateMetadata({
     path: '/tier-list',
     title: pageTitle,
     description: pageDescription,
-    keywords: [
-      'bizarre lineage tier list',
-      'bizarre lineage best stand',
-      'bizarre lineage best pvp stand',
-      'bizarre lineage best pve stand',
-      'bizarre lineage reroll guide',
-      'bizarre lineage whitesnake',
-      'bizarre lineage made in heaven',
-      'bizarre lineage weather report',
-      'bizarre lineage evolution route',
-      'bizarre lineage stand guide',
-    ],
   });
 }
 
@@ -311,30 +302,74 @@ export default async function TierListRoute({
         title="These are the stands most players should understand first."
         description="Each one matters for a different reason: overall strength, route value, PvE comfort, or high-skill PvP payoff."
       >
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featuredStandCards.map((stand) => (
-            <article
+            <Link
               key={stand.key}
-              className="bg-background/92 border-border rounded-[1.7rem] border p-5"
+              href={`/stands#${stand.key}`}
+              className="group relative h-full"
             >
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="outline" className="rounded-full px-3 py-1">
-                  {stand.tier} tier
-                </Badge>
-                <span className="text-muted-foreground text-xs tracking-[0.16em] uppercase">
-                  {stand.bestFor}
-                </span>
-              </div>
-              <h2 className="text-foreground mt-3 text-2xl font-semibold tracking-[-0.04em]">
-                {stand.name}
-              </h2>
-              <p className="text-primary mt-3 text-sm font-medium">
-                {stand.quickVerdict}
-              </p>
-              <p className="text-muted-foreground mt-3 text-sm leading-7">
-                {stand.intro}
-              </p>
-            </article>
+              <article className="bg-card border-border relative flex h-full flex-col overflow-hidden rounded-[2.2rem] border transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20">
+                {/* Visual Background Decor */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+                
+                {/* Image Section */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden">
+                  {stand.imageUrl ? (
+                    <>
+                      <Image
+                        src={toImageUrl(stand.imageUrl)}
+                        alt={stand.name}
+                        fill
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+                    </>
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-muted">
+                       <span className="text-muted-foreground font-serif text-4xl opacity-20">{stand.name[0]}</span>
+                    </div>
+                  )}
+                  
+                  {/* Tier Badge Overlay */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <div className="flex items-center gap-1.5 rounded-full border border-white/20 bg-black/40 px-3 py-1.5 text-[0.65rem] font-bold tracking-[0.15em] text-white uppercase backdrop-blur-md">
+                      <div className={cn(
+                        "size-2 rounded-full",
+                        stand.tier === 'S' ? "bg-primary shadow-[0_0_8px_var(--color-primary)]" : 
+                        stand.tier === 'A' ? "bg-accent shadow-[0_0_8px_var(--color-accent)]" : "bg-muted-foreground"
+                      )} />
+                      {stand.tier} Tier
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="relative flex flex-1 flex-col p-6 pt-2">
+                  <div className="text-primary text-[0.65rem] font-bold tracking-[0.2em] uppercase">
+                    {stand.bestFor}
+                  </div>
+                  <h2 className="text-foreground mt-2 font-serif text-3xl font-bold tracking-tight">
+                    {stand.name}
+                  </h2>
+                  <div className="bg-primary/10 text-primary mt-3 inline-block self-start rounded-lg px-3 py-1 text-xs font-semibold">
+                    {stand.quickVerdict}
+                  </div>
+                  <p className="text-muted-foreground mt-4 text-sm leading-relaxed line-clamp-3">
+                    {stand.intro}
+                  </p>
+                  
+                  <div className="mt-auto pt-6">
+                    <div className="flex items-center gap-2 text-[0.7rem] font-bold tracking-widest text-foreground uppercase opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1">
+                      Full Details <ArrowRight className="size-3" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Accent Border */}
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              </article>
+            </Link>
           ))}
         </div>
       </SectionFrame>

@@ -31,7 +31,7 @@ export const stands: StandEntry[] = [
     rarity: 'Special',
     part: 'Part 6',
     bestFor: 'Ultimate PvP mobility and speed-blitzing',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/made-in-heaven-stand-bizarre-lineage.jpg',
+    imageUrl: 'assets/stands/made-in-heaven/card.jpg',
     quickVerdict:
       'The current peak of the PvP meta. Unmatched speed and gap-closing make it nearly impossible to pin down.',
     summary:
@@ -72,7 +72,7 @@ export const stands: StandEntry[] = [
     rarity: 'Mythical',
     part: 'Part 6',
     bestFor: 'Control, disruption, and evolution pathing',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/White-Snake.png',
+    imageUrl: 'assets/stands/whitesnake/card.png',
     quickVerdict:
       'A top-tier all-rounder that excels in both PvE and PvP. Essential for reaching C-Moon and Made in Heaven.',
     summary:
@@ -113,7 +113,7 @@ export const stands: StandEntry[] = [
     rarity: 'Special',
     part: 'Part 6',
     bestFor: 'Gravity-based combos and area control',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/cmoon-stand-bizarre-lineage.jpg',
+    imageUrl: 'assets/stands/c-moon/card.jpg',
     quickVerdict:
       'A powerful evolution with unique gravity mechanics that can lock down even the most mobile opponents.',
     summary:
@@ -153,7 +153,7 @@ export const stands: StandEntry[] = [
     rarity: 'Legendary',
     part: 'Part 3',
     bestFor: 'Time Stop punishes and high-burst duels',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/The-World-man.png',
+    imageUrl: 'assets/stands/the-world/card.png',
     quickVerdict:
       'The classic powerhouse. While slightly edged out of S-tier by evolution stands, it remains a top-tier duelist.',
     summary:
@@ -191,7 +191,7 @@ export const stands: StandEntry[] = [
     rarity: 'Legendary',
     part: 'Part 3',
     bestFor: 'Close-range brawling and stuns',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/sacsfsfasfa.png',
+    imageUrl: 'assets/stands/star-platinum/card.png',
     quickVerdict:
       'An iconic brawler that excels at sticking to targets and landing heavy stuns.',
     summary:
@@ -229,7 +229,7 @@ export const stands: StandEntry[] = [
     rarity: 'Legendary',
     part: 'Part 5',
     bestFor: 'Outplaying opponents and counter-attacks',
-    imageUrl: 'https://destructoid.com/wp-content/uploads/2026/02/king-crimson-stand-bizarre-lineage.png',
+    imageUrl: 'assets/stands/king-crimson/card.png',
     quickVerdict:
       'A high-skill stand that can completely bypass enemy attacks with Time Erase.',
     summary:
@@ -267,7 +267,7 @@ export const stands: StandEntry[] = [
     rarity: 'Rare',
     part: 'Part 6',
     bestFor: 'PvE grinding and large-scale AoE control',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/weather-report-stand-bizarre-lineage.jpg',
+    imageUrl: 'assets/stands/weather-report/card.jpg',
     quickVerdict:
       'The king of farming. If you need to clear quests or waves, this is your best friend.',
     summary:
@@ -305,7 +305,7 @@ export const stands: StandEntry[] = [
     rarity: 'Legendary',
     part: 'Part 7',
     bestFor: 'Mixed-range pressure and stealthy resets',
-    imageUrl: 'https://destructoid.com/wp-content/uploads/2026/02/the-world-high-voltage-stand-bizarre-lineage.png',
+    imageUrl: 'assets/stands/the-world-high-voltage/card.png',
     quickVerdict:
       'A more versatile version of The World that trades some raw power for utility and ranged threat.',
     summary:
@@ -345,7 +345,7 @@ export const stands: StandEntry[] = [
     rarity: 'Rare',
     part: 'Part 4',
     bestFor: 'Area denial and defensive play',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Killer-Queen.png',
+    imageUrl: 'assets/stands/killer-queen/card.png',
     quickVerdict:
       'A strong "keep-away" stand that punishes enemies for trying to get close.',
     summary:
@@ -383,7 +383,7 @@ export const stands: StandEntry[] = [
     rarity: 'Rare',
     part: 'Part 3',
     bestFor: 'High-damage melee combos and swordplay',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Anubis.png',
+    imageUrl: 'assets/stands/anubis/card.png',
     quickVerdict:
       'A pure rushdown stand with incredible melee speed, but it lacks any form of utility or range.',
     summary:
@@ -421,7 +421,7 @@ export const stands: StandEntry[] = [
     rarity: 'Uncommon',
     part: 'Part 5',
     bestFor: 'Sustain and beginner-friendly progression',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Golden-Experience.png',
+    imageUrl: 'assets/stands/golden-experience/card.png',
     quickVerdict:
       'A reliable choice for new players who want extra survivability through self-healing.',
     summary:
@@ -459,7 +459,7 @@ export const stands: StandEntry[] = [
     rarity: 'Rare',
     part: 'Part 6',
     bestFor: 'Balanced combat and string-based traps',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/stone-free-stand-bizarre-lineage.jpg',
+    imageUrl: 'assets/stands/stone-free/card.jpg',
     quickVerdict:
       'A solid all-rounder that provides good mobility and control, but lacks a "wow" factor.',
     summary:
@@ -497,7 +497,7 @@ export const stands: StandEntry[] = [
     rarity: 'Uncommon',
     part: 'Part 3',
     bestFor: 'Early-game PvE and burning groups',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Magicians-Red.png',
+    imageUrl: 'assets/stands/magicians-red/card.png',
     quickVerdict:
       'A decent starter stand for clearing mobs, but its utility drops off sharply in PvP.',
     summary:
@@ -535,7 +535,7 @@ export const stands: StandEntry[] = [
     rarity: 'Uncommon',
     part: 'Part 4',
     bestFor: 'Healing support and defensive brawling',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Crazy-Diamond.png',
+    imageUrl: 'assets/stands/crazy-diamond/card.png',
     quickVerdict:
       'A support-focused stand that can be useful in team play but struggles in solo duels.',
     summary:
@@ -573,7 +573,7 @@ export const stands: StandEntry[] = [
     rarity: 'Uncommon',
     part: 'Part 5',
     bestFor: 'High-risk, high-reward poison play',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Purple-Haze.png',
+    imageUrl: 'assets/stands/purple-haze/card.png',
     quickVerdict:
       'Deals massive damage but can easily kill the user if not handled with care.',
     summary:
@@ -611,7 +611,7 @@ export const stands: StandEntry[] = [
     rarity: 'Uncommon',
     part: 'Part 4',
     bestFor: 'Gimmick erasure builds and raw power',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/The-Hand-man.png',
+    imageUrl: 'assets/stands/the-hand/card.png',
     quickVerdict:
       'High damage potential that is held back by slow animations and extreme predictability.',
     summary:
@@ -649,7 +649,7 @@ export const stands: StandEntry[] = [
     rarity: 'Common',
     part: 'Part 4',
     bestFor: 'Early mobility and learning the game',
-    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Red-Hot-Chilly-Pepper.png',
+    imageUrl: 'assets/stands/red-hot-chilly-pepper/card.png',
     quickVerdict:
       'Good for moving around the map early on, but its damage is outclassed by almost everything else.',
     summary:

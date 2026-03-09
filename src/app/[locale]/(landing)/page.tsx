@@ -17,7 +17,6 @@ export async function generateMetadata({
     path: '/',
     title: t('metadata.title'),
     description: t('metadata.description'),
-    keywords: t('metadata.keywords').split(', '),
   });
 }
 

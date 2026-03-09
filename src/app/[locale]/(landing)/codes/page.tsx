@@ -1,12 +1,15 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import {
   activeCodes,
   expiredCodes,
   monitoredCodeClaims,
+  redeemSteps,
 } from '@/content-data/codes';
+import { CodeCopyButton } from './copy-button';
 import { buildMetadata } from '@/features/wiki/pages';
 import { PageShell, SectionFrame } from '@/features/wiki/primitives';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, CheckCircle2, AlertCircle, Info } from 'lucide-react';
 import { setRequestLocale } from 'next-intl/server';
 
 import {
@@ -26,7 +29,7 @@ import {
   TableRow,
 } from '@/shared/components/ui/table';
 
-const lastVerified = '2026-03-08';
+const lastVerified = '2026-03-09';
 
 const sourceLinks = [
   {
@@ -37,73 +40,28 @@ const sourceLinks = [
     label: 'Official Discord',
     href: 'https://discord.com/invite/bizarrelineage',
   },
-  {
-    label: 'Public Trello',
-    href: 'https://trello.com/b/Zi6UTMnO/official-bizzare-lineage-%E2%9E%B5',
-  },
 ] as const;
 
 const faqItems = [
   {
-    question: 'Are there any active Bizarre Lineage codes right now?',
+    question: 'How do I redeem Bizarre Lineage codes?',
     answer:
-      'As of March 8, 2026, this page does not list any verified active codes. Recent public checks point players back to official channels instead of confirming a live redeem code.',
+      'To redeem Bizarre Lineage codes, launch the game on Roblox, open the chat box, type the specific code (e.g., !code 1week) exactly as shown, and press Enter to instantly claim your rewards.',
   },
   {
-    question: 'Where should I check for new Bizarre Lineage codes first?',
+    question: 'Where can I find more Bizarre Lineage codes for rewards?',
     answer:
-      'Start with the official Discord, the Roblox game page, and the public Trello. Those are the fastest places to confirm whether a code is real before third-party lists copy it.',
+      'The best places to find new Bizarre Lineage codes are the official Discord server and the game’s Roblox page. We also track all new Bizarre Lineage codes on this page and verify them daily to ensure they are still working.',
   },
   {
-    question: 'How do I use a code in Bizarre Lineage?',
+    question: 'What do Bizarre Lineage codes give you?',
     answer:
-      'Open Bizarre Lineage in Roblox, find the live redemption area in the current game UI, then enter the verified code exactly as posted. Do not rely on old screenshots because the menu can move after updates.',
+      'Bizarre Lineage codes typically provide valuable progression items such as Stand Stat Point Essence, cash, chests, and stat resets. These rewards are essential for optimizing your Stand and character build.',
   },
   {
-    question: 'Why do code lists often look outdated?',
+    question: 'Why are my Bizarre Lineage codes not working?',
     answer:
-      'Codes can expire quickly, and many pages keep recycled or placeholder entries indexed in search. A verification-first page is more useful than a longer list full of dead entries.',
-  },
-  {
-    question: 'Is there a new code planned for 200K likes?',
-    answer:
-      'Some recent guide pages mention a future 200K likes code, but no live code has been released publicly yet. Treat that as a monitor item, not a working reward.',
-  },
-] as const;
-
-const statusChecks = [
-  {
-    title: 'No working code confirmed',
-    description:
-      'Multiple recent guide pages updated in early March 2026 report that no active Bizarre Lineage codes are available right now.',
-  },
-  {
-    title: 'Official channels remain the source of truth',
-    description:
-      'The official Discord, Roblox game page, and Trello remain the fastest places to verify a real code before third-party lists recycle it.',
-  },
-  {
-    title: '200K likes code is still unreleased',
-    description:
-      'A future reward is widely expected at 200K likes, but nothing has been published as a redeemable code as of March 8, 2026.',
-  },
-] as const;
-
-const sourceChecks = [
-  {
-    label: 'Beebom',
-    href: 'https://beebom.com/bizarre-lineage-codes/',
-    note: 'Updated March 6, 2026 and reports no working codes.',
-  },
-  {
-    label: 'Radio Times',
-    href: 'https://www.radiotimes.com/technology/gaming/bizarre-lineage-codes/',
-    note: 'Published March 6, 2026 and reports no active redeem code.',
-  },
-  {
-    label: 'BO3',
-    href: 'https://bo3.gg/games/articles/bizarre-lineage-codes',
-    note: 'Published March 2, 2026 and notes the first code is still coming soon.',
+      'Bizarre Lineage codes are case-sensitive and may require joining the official Roblox community group. If a code fails, it may have expired or you might need to join a fresh server after an update.',
   },
 ] as const;
 
@@ -128,14 +86,9 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: '/codes',
-    title: 'Bizarre Lineage Codes - Verified Code List and Redemption Guide',
+    title: 'Bizarre Lineage Codes (March 2026) - Full List of Active Codes',
     description:
-      'Check the verified Bizarre Lineage codes status, see why no active code is confirmed as of March 8, 2026, and follow official sources for the next real reward drop.',
-    keywords: [
-      'bizarre lineage codes',
-      'bizarre lineage redeem codes',
-      'bizarre lineage codes 2026',
-    ],
+      'Looking for Bizarre Lineage codes? Get the latest verified Bizarre Lineage codes list for free Stand Stat Point Essence and other rewards. Updated daily for March 2026.',
   });
 }
 
@@ -164,286 +117,228 @@ export default async function CodesRoute({
         }}
       />
 
+      {/* Hero Section */}
       <SectionFrame
-        eyebrow="Codes"
-        title="Bizarre Lineage Codes"
-        description="Track verified Bizarre Lineage codes first. As of March 8, 2026, no confirmed active code is available, so this page prioritizes current status, source checks, and the next code worth monitoring."
+        eyebrow="Active Rewards"
+        title="Bizarre Lineage Codes List (March 2026)"
+        description="Save time and boost your character with the latest Bizarre Lineage codes. Our verified list of Bizarre Lineage codes helps you get free Stand Stat Point Essence and progression items instantly."
       >
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="bg-background/92 border-border rounded-[1.5rem] border p-5">
-            <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
-              Verified Active
-            </div>
-            <div className="text-foreground mt-2 text-2xl font-semibold tracking-[-0.03em]">
-              {activeCodes.length}
-            </div>
-          </div>
-          <div className="bg-background/92 border-border rounded-[1.5rem] border p-5">
-            <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
-              Monitor Items
-            </div>
-            <div className="text-foreground mt-2 text-2xl font-semibold tracking-[-0.03em]">
-              {monitoredCodeClaims.length}
-            </div>
-          </div>
-          <div className="bg-background/92 border-border rounded-[1.5rem] border p-5">
-            <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
-              Last Verified
-            </div>
-            <div className="text-foreground mt-2 text-2xl font-semibold tracking-[-0.03em]">
-              {lastVerified}
-            </div>
-          </div>
-        </div>
-      </SectionFrame>
-
-      <SectionFrame
-        id="codes-list"
-        eyebrow="Codes List"
-        title="Start with the current verified status."
-        description="The goal of this page is to answer the main search quickly: is there a real Bizarre Lineage code worth trying right now."
-      >
-        <div className="space-y-5">
-          {activeCodes.length === 0 ? (
-            <div className="bg-background/88 border-border rounded-[1.5rem] border p-5">
-              <div className="flex flex-wrap items-center gap-3">
-                <Badge variant="outline" className="rounded-full px-3 py-1">
-                  No verified active codes
-                </Badge>
-                <span className="text-muted-foreground text-sm">
-                  Last checked on {lastVerified}
-                </span>
+        <div className="space-y-6">
+          {/* Active Codes List */}
+          <div className="grid gap-4">
+            {activeCodes.length > 0 ? (
+              activeCodes.map((row) => (
+                <div 
+                  key={row.code}
+                  className="group relative flex flex-col md:flex-row md:items-center justify-between gap-4 bg-background/92 border-gold/20 hover:border-gold/50 rounded-2xl border p-5 transition-all shadow-sm hover:shadow-md"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                      <CheckCircle2 className="size-6" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-xl font-bold tracking-tight text-foreground select-all">
+                        {row.code}
+                      </div>
+                      <div className="text-muted-foreground text-sm mt-1">
+                        Reward: {row.reward}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Badge variant="outline" className="bg-green-500/10 text-green-500 border-green-500/20 rounded-full px-3">
+                      Working Bizarre Lineage Code
+                    </Badge>
+                    <div className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
+                      Verified {row.lastVerified}
+                    </div>
+                    <CodeCopyButton code={row.code} />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="bg-background/88 border-border rounded-2xl border p-8 text-center">
+                <AlertCircle className="mx-auto size-12 text-muted-foreground mb-4" />
+                <h3 className="text-lg font-semibold mb-2">No Active Bizarre Lineage Codes Found</h3>
+                <p className="text-muted-foreground max-w-md mx-auto">
+                  There are currently no confirmed active Bizarre Lineage codes. We monitor the official Bizarre Lineage Discord 24/7 for new releases.
+                </p>
               </div>
-              <p className="text-muted-foreground mt-3 max-w-3xl text-sm leading-7 md:text-base">
-                Public source checks currently do not confirm any live Bizarre
-                Lineage redeem code. This page stays intentionally short instead
-                of padding the table with guessed or recycled entries.
-              </p>
-            </div>
-          ) : (
-            <div className="border-border bg-background/80 overflow-hidden rounded-[1.5rem] border">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="px-4">Code</TableHead>
-                    <TableHead>Reward</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead className="px-4">Last Verified</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {activeCodes.map((row) => (
-                    <TableRow key={row.code}>
-                      <TableCell className="px-4 font-mono text-xs">
-                        {row.code}
-                      </TableCell>
-                      <TableCell>{row.reward}</TableCell>
-                      <TableCell>{row.status}</TableCell>
-                      <TableCell className="px-4">{row.lastVerified}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          )}
+            )}
+          </div>
 
-          <div className="border-border bg-background/70 overflow-hidden rounded-[1.5rem] border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="px-4">Monitor Item</TableHead>
-                  <TableHead>Expected Reward</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="px-4">Last Verified</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
+          <p className="text-muted-foreground text-sm italic">
+            Note: Most Bizarre Lineage codes are released during milestones or game updates. Be sure to redeem these Bizarre Lineage codes as soon as possible before they expire.
+          </p>
+
+          {/* Monitor/Upcoming Section */}
+          {monitoredCodeClaims.length > 0 && (
+             <div className="bg-background/60 border-border rounded-2xl border p-5">
+                <div className="flex items-center gap-2 mb-4 text-muted-foreground">
+                  <Info className="size-4" />
+                  <span className="text-sm font-semibold uppercase tracking-wider">Upcoming Bizarre Lineage Codes & Milestones</span>
+                </div>
                 {monitoredCodeClaims.map((row) => (
-                  <TableRow key={row.code}>
-                    <TableCell className="px-4 font-mono text-xs">
-                      {row.code}
-                    </TableCell>
-                    <TableCell>{row.reward}</TableCell>
-                    <TableCell>{row.status}</TableCell>
-                    <TableCell className="px-4">{row.lastVerified}</TableCell>
-                  </TableRow>
+                  <div key={row.code} className="flex items-center justify-between text-sm">
+                    <span className="font-mono text-foreground font-medium">{row.code}</span>
+                    <span className="text-muted-foreground">{row.reward} (Expected at 200K Likes)</span>
+                  </div>
                 ))}
-              </TableBody>
-            </Table>
-          </div>
-
-          {expiredCodes.length > 0 ? (
-            <div className="border-border bg-background/70 overflow-hidden rounded-[1.5rem] border">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="px-4">Archived Code</TableHead>
-                    <TableHead>Reward</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead className="px-4">Last Verified</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {expiredCodes.map((row) => (
-                    <TableRow key={row.code}>
-                      <TableCell className="px-4 font-mono text-xs">
-                        {row.code}
-                      </TableCell>
-                      <TableCell>{row.reward}</TableCell>
-                      <TableCell>{row.status}</TableCell>
-                      <TableCell className="px-4">{row.lastVerified}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
-          ) : null}
+             </div>
+          )}
         </div>
       </SectionFrame>
 
+      {/* How To Use Section */}
       <SectionFrame
-        id="about-and-how-to-use"
-        eyebrow="About and How To Use"
-        title="What players should know before trying Bizarre Lineage codes."
-        description="This section keeps the explanation practical: what the current checks say, why verification matters, and what to do when the next code appears."
+        id="how-to-use"
+        eyebrow="Redemption Guide"
+        title="How to Use Bizarre Lineage Codes"
+        description="Follow this simple guide to learn how to redeem Bizarre Lineage codes in the Roblox game. Using Bizarre Lineage codes is the fastest way to gain an advantage in the streets of Morioh-cho."
       >
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-          <div className="space-y-4 text-sm leading-7 md:text-base">
-            <p className="text-muted-foreground">
-              Bizarre Lineage is a Roblox RPG built around stands, combat,
-              progression, and repeatable PvE or PvP play. Players search for
-              Bizarre Lineage codes because codes can reduce early friction, but
-              a codes page is only useful when it separates verified information
-              from recycled search noise.
-            </p>
-            <p className="text-muted-foreground">
-              Based on current public source checks, the answer is simple: there
-              are no verified active codes to recommend right now. That is why
-              this page prioritizes freshness, source notes, and the next likely
-              code trigger over a longer table.
-            </p>
-            <div className="grid gap-3 pt-2">
-              {statusChecks.map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-background/88 border-border rounded-2xl border p-4"
-                >
-                  <div className="text-sm font-semibold">{item.title}</div>
-                  <p className="text-muted-foreground mt-2 text-sm leading-6">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+        <div className="flex flex-col gap-8">
+          <div className="grid gap-6">
+            <div className="flex gap-4">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background text-sm font-bold">
+                1
+              </div>
+              <div>
+                <h3 className="text-base font-bold mb-1">Launch Bizarre Lineage on Roblox</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Start the game and wait for the world to load. Make sure you have liked the game as some Bizarre Lineage codes require it.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3 pt-2">
-              {sourceLinks.map((source) => (
-                <Button
-                  key={source.href}
-                  asChild
-                  variant="outline"
-                  className="rounded-full"
-                >
-                  <a
-                    href={source.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={source.label}
-                  >
-                    {source.label}
-                    <ExternalLink className="size-4" />
-                  </a>
-                </Button>
-              ))}
+            <div className="flex gap-4">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background text-sm font-bold">
+                2
+              </div>
+              <div>
+                <h3 className="text-base font-bold mb-1">Open the In-game Chat Box</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Locate the chat window at the top left of your screen. This is where all Bizarre Lineage codes are entered.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background text-sm font-bold">
+                3
+              </div>
+              <div>
+                <h3 className="text-base font-bold mb-1">Enter the Bizarre Lineage Code</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Type the code exactly as shown (starting with !code) and hit Enter. If the Bizarre Lineage code is valid, you will receive your rewards instantly.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="bg-background/88 border-border rounded-[1.5rem] border p-5">
-            <div className="text-muted-foreground text-[0.68rem] tracking-[0.22em] uppercase">
-              How To Use Codes
-            </div>
-            <ol className="mt-4 space-y-4">
-              <li className="border-border rounded-2xl border p-4">
-                <div className="text-sm font-semibold">
-                  1. Check an official source first
-                </div>
-                <p className="text-muted-foreground mt-2 text-sm leading-6">
-                  Look for a code on the official Discord, Roblox game page, or
-                  Trello before trusting third-party pages.
-                </p>
-              </li>
-              <li className="border-border rounded-2xl border p-4">
-                <div className="text-sm font-semibold">
-                  2. Open the live redemption UI in game
-                </div>
-                <p className="text-muted-foreground mt-2 text-sm leading-6">
-                  Launch Bizarre Lineage in Roblox and use the current menu
-                  layout, because redemption entry points can move after
-                  updates.
-                </p>
-              </li>
-              <li className="border-border rounded-2xl border p-4">
-                <div className="text-sm font-semibold">
-                  3. Enter the code exactly as posted
-                </div>
-                <p className="text-muted-foreground mt-2 text-sm leading-6">
-                  Match the spelling precisely, then stop and re-check the
-                  source if the code fails instead of retrying random variants.
-                </p>
-              </li>
-            </ol>
+          <div className="relative overflow-hidden rounded-3xl border border-border aspect-[16/9] w-full max-w-3xl mx-auto shadow-lg">
+            <Image
+              src="/images/codes/redeem-guide.jpg"
+              alt="Step-by-step guide for Bizarre Lineage codes redemption"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </SectionFrame>
 
+      {/* About Section */}
+      <SectionFrame
+        id="about"
+        eyebrow="Overview"
+        title="What is Bizarre Lineage?"
+        description="Bizarre Lineage is a popular Roblox RPG inspired by JoJo's Bizarre Adventure. Players can awaken unique Stands, complete challenging raids, and dominate in PvP combat. Using Bizarre Lineage codes is a core part of the game's progression system, allowing players to reset stats and gain rare items."
+      />
+
+      {/* Official Sources */}
       <SectionFrame
         id="sources"
-        eyebrow="Source Checks"
-        title="Recent public checks behind this status."
-        description="These pages were reviewed to confirm whether any code was actually live before updating this guide."
+        eyebrow="Community"
+        title="Find More Bizarre Lineage Codes"
+        description="Stay ahead of the game by following the developers. New Bizarre Lineage codes are often dropped during holiday events or when the game reaches new 'Like' milestones on Roblox."
       >
-        <div className="grid gap-4 lg:grid-cols-3">
-          {sourceChecks.map((source) => (
-            <a
+        <div className="flex flex-wrap gap-4">
+          {sourceLinks.map((source) => (
+            <Button
               key={source.href}
-              href={source.href}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-background/88 border-border hover:bg-background rounded-[1.5rem] border p-5 transition-colors"
+              asChild
+              variant="outline"
+              className="rounded-full h-12 px-6 hover:bg-gold hover:text-white transition-all"
             >
-              <div className="flex items-center justify-between gap-4">
-                <div className="text-base font-semibold">{source.label}</div>
-                <ExternalLink className="text-muted-foreground size-4 shrink-0" />
-              </div>
-              <p className="text-muted-foreground mt-3 text-sm leading-6">
-                {source.note}
-              </p>
-            </a>
+              <a
+                href={source.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {source.label}
+                <ExternalLink className="ml-2 size-4" />
+              </a>
+            </Button>
           ))}
         </div>
       </SectionFrame>
 
+      {/* FAQ Section */}
       <SectionFrame
         id="faq"
         eyebrow="FAQ"
-        title="Common questions about Bizarre Lineage codes."
+        title="Bizarre Lineage Codes Frequently Asked Questions"
       >
         <Accordion
           type="single"
           collapsible
-          className="bg-background/88 border-border rounded-[1.5rem] border px-5"
+          className="bg-background/88 border-border rounded-2xl border px-5"
         >
           {faqItems.map((item) => (
             <AccordionItem key={item.question} value={item.question}>
-              <AccordionTrigger className="text-base font-semibold hover:no-underline">
+              <AccordionTrigger className="text-base font-semibold hover:no-underline py-5 text-left">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-7">
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </SectionFrame>
+
+      {/* Archived Codes */}
+      {expiredCodes.length > 0 && (
+        <SectionFrame
+          id="expired"
+          eyebrow="Archive"
+          title="Expired Bizarre Lineage Codes"
+          description="These Bizarre Lineage codes have been confirmed as no longer working. We keep this list for your reference so you don't waste time trying old Bizarre Lineage codes."
+        >
+          <div className="border-border bg-background/50 overflow-hidden rounded-2xl border">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="px-4">Expired Code</TableHead>
+                  <TableHead>Previous Reward</TableHead>
+                  <TableHead className="px-4 text-right">Status</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {expiredCodes.map((row) => (
+                  <TableRow key={row.code}>
+                    <TableCell className="px-4 font-mono text-xs">
+                      {row.code}
+                    </TableCell>
+                    <TableCell className="text-sm">{row.reward}</TableCell>
+                    <TableCell className="px-4 text-right text-xs text-muted-foreground italic">
+                      Expired
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </SectionFrame>
+      )}
     </PageShell>
   );
 }

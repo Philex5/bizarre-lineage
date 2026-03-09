@@ -17,13 +17,6 @@ export async function generateMetadata({
     title: 'Bizarre Lineage Stands Guide: Tier List & Acquisition',
     description:
       'The complete Bizarre Lineage stands index. Browse stand cards with current tier labels, acquisition notes, and fast verdicts for every stand in-game.',
-    keywords: [
-      'bizarre lineage stands',
-      'bizarre lineage stand guide',
-      'bizarre lineage stand tier list',
-      'bizarre lineage best stand',
-      'bizarre lineage stand acquisition',
-    ],
   });
 }
 

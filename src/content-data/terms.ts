@@ -83,7 +83,7 @@ const enTerms: TermsDictionary = {
       description:
         'Bizarre Lineage raid overview covering the 8-player raid format, raid token shops, and every listed raid reward in the current public game data.',
       heroImageSrc:
-        'https://trello.com/1/cards/69713d0671067a15e9fa2a8a/attachments/69a47d67eb1236308633c559/download/image.png',
+        'assets/pages/terms/raid/hero.png',
       heroImageAlt: 'Official Bizarre Lineage Graveyard raid-region reference',
       intro: [
         'In Bizarre Lineage, raids are 8-player cooperative content built around harder group clears, raid-specific tokens, and shop rewards that are hard to replace elsewhere.',
@@ -359,7 +359,7 @@ const enTerms: TermsDictionary = {
       description:
         'What prestige means in Bizarre Lineage, where to prestige, and why timing matters more than pressing it immediately.',
       heroImageSrc:
-        'https://trello.com/1/cards/6953030500874d0dc5346233/attachments/6975739de52649b8b02b525c/download/prestige.png',
+        'assets/pages/terms/prestige/hero.png',
       heroImageAlt: 'Official Bizarre Lineage prestige reference art',
       intro: [
         'Prestige in Bizarre Lineage is one of the official end-game mechanics, not just a random reset button.',
@@ -491,7 +491,7 @@ const enTerms: TermsDictionary = {
       description:
         'What awakening means in Bizarre Lineage, why it is a late-game term, and how it connects to prestige and evolution routes.',
       heroImageSrc:
-        'https://trello.com/1/cards/6959b48f94eb0c94a4036059/attachments/6959b48f94eb0c94a4036087/download/awakening.png',
+        'assets/pages/terms/awakening/hero.png',
       heroImageAlt: 'Official Bizarre Lineage awakening reference art',
       intro: [
         'Awakening in Bizarre Lineage is a late-game term, not a beginner mechanic.',
@@ -608,7 +608,7 @@ const enTerms: TermsDictionary = {
       description:
         'What a Stand Arrow is in Bizarre Lineage, how to get one, and why it matters for your first stand route.',
       heroImageSrc:
-        'https://trello.com/1/cards/69530cc85bf78fb14d510291/attachments/69761f762eaf03ec4ec93507/download/image.png',
+        'assets/pages/terms/stand-arrow/hero.png',
       heroImageAlt: 'Official Bizarre Lineage stand arrow reference',
       intro: [
         'The Stand Arrow is one of the core progression items in Bizarre Lineage because it is the official route into your first stand.',
@@ -734,7 +734,7 @@ const enTerms: TermsDictionary = {
       description:
         'What fighting styles are in Bizarre Lineage, how to unlock them, and where Boxing, Kendo, and Karate trainers are located.',
       heroImageSrc:
-        'https://trello.com/1/cards/69531c612fbbcef6ddae5477/attachments/6976317b4e9db678d4a643a5/download/Screenshot2026-01-25170437-ezgif.com-resize.jpg',
+        'assets/pages/terms/fighting-styles/hero.jpg',
       heroImageAlt: 'Official Bizarre Lineage fighting style trainer reference',
       intro: [
         'Fighting styles in Bizarre Lineage are trainer-based combat paths that add their own abilities and change how a build plays.',
@@ -862,7 +862,7 @@ const enTerms: TermsDictionary = {
       description:
         'What sub-abilities are in Bizarre Lineage, how to unlock them, and how trainer routes differ from the Vampire item route.',
       heroImageSrc:
-        'https://trello.com/1/cards/695946dffbe09e75b7d4b974/attachments/699bc6a9b163c27099d53663/download/image-ezgif.com-resize_(1).png',
+        'assets/pages/terms/sub-abilities/hero.png',
       heroImageAlt: 'Official Bizarre Lineage sub-ability NPC reference',
       intro: [
         'Sub-abilities in Bizarre Lineage are secondary progression layers that sit beside your main stand choice.',

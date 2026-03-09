@@ -205,7 +205,7 @@ export function SectionFrame({
   eyebrow: string;
   title: string;
   description?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <section
@@ -226,7 +226,7 @@ export function SectionFrame({
           </p>
         ) : null}
       </div>
-      <div className="mt-6">{children}</div>
+      {children ? <div className="mt-6">{children}</div> : null}
     </section>
   );
 }

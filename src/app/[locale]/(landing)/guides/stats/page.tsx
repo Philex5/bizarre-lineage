@@ -160,12 +160,6 @@ export async function generateMetadata({
       'Bizarre Lineage Stats Guide - What to Level First, Build Logic, Mistakes',
     description:
       'Use this Bizarre Lineage stats guide to learn the 6 main stats, what to level first, when to pivot into Stand damage, and how Conjuration changes later build planning.',
-    keywords: [
-      'bizarre lineage stats guide',
-      'bizarre lineage stats',
-      'bizarre lineage build guide',
-      'bizarre lineage what stat to level first',
-    ],
   });
 }
 

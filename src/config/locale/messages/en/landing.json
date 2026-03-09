@@ -81,12 +81,6 @@
               "icon": "Zap"
             },
             {
-              "title": "Stand Arrow",
-              "description": "Core item for gaining stands",
-              "url": "/terms/stand-arrow",
-              "icon": "ArrowRight"
-            },
-            {
               "title": "Sub-Abilities",
               "description": "Extra skills layered onto builds",
               "url": "/terms/sub-abilities",
@@ -207,6 +201,16 @@
             {
               "title": "Fighting Styles",
               "url": "/terms/fighting-styles",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Progression",
+          "children": [
+            {
+              "title": "FrogDR-bizarre lineage wiki",
+              "url": "https://frogdr.com/bizarrelineage.info",
               "target": "_self"
             }
           ]

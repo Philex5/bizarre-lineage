@@ -26,13 +26,13 @@
           }
         ],
         "image": {
-          "src": "https://picsum.photos/seed/stands-star-platinum-hero/1200/800",
+          "src": "assets/stands/star-platinum/hero.webp",
           "alt": "Star Platinum page hero",
           "width": 1200,
           "height": 800
         },
         "background_image": {
-          "src": "https://picsum.photos/seed/stands-star-platinum-bg/1600/900",
+          "src": "assets/stands/star-platinum/background.webp",
           "alt": "Star Platinum background"
         }
       },
@@ -42,7 +42,7 @@
         "title": "Quick verdict",
         "description": "Star Platinum is a natural sample stand because players instantly understand the fantasy. The page should frame it as a dependable benchmark, while leaving room for balance rechecks.",
         "image": {
-          "src": "https://picsum.photos/seed/stands-star-platinum-introduce/1200/800",
+          "src": "assets/stands/star-platinum/introduce.webp",
           "alt": "Star Platinum quick verdict"
         },
         "items": [
@@ -51,7 +51,7 @@
             "description": "It is a recognizable, high-interest stand that makes a strong test case for a searchable database page.",
             "icon": "Sparkles",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-0/800/600",
+              "src": "assets/stands/star-platinum/item-0.webp",
               "alt": "Why players care"
             }
           },
@@ -60,7 +60,7 @@
             "description": "Is Star Platinum worth pursuing for your current goals, or should you move toward another option first?",
             "icon": "Scale",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-1/800/600",
+              "src": "assets/stands/star-platinum/item-1.webp",
               "alt": "Decision framing"
             }
           },
@@ -69,7 +69,7 @@
             "description": "Exact move values, unlock conditions, and matchup edges should be refreshed whenever the game balance shifts.",
             "icon": "ShieldAlert",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-2/800/600",
+              "src": "assets/stands/star-platinum/item-2.webp",
               "alt": "Provisional data"
             }
           },
@@ -78,7 +78,7 @@
             "description": "This page should link back to the tier list for meta context and the beginner guide for players still in early progression.",
             "icon": "Link",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-3/800/600",
+              "src": "assets/stands/star-platinum/item-3.webp",
               "alt": "Internal links"
             }
           }
@@ -96,7 +96,7 @@
             "description": "Frame Star Platinum as a strong all-rounder style sample, especially when a player values straightforward pressure and clean decision-making.",
             "icon": "ShieldCheck",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-10/800/600",
+              "src": "assets/stands/star-platinum/item-10.webp",
               "alt": "Strengths"
             }
           },
@@ -105,7 +105,7 @@
             "description": "Call out the opportunity cost, matchup limits, or execution demands that stop it from being an automatic answer for every player.",
             "icon": "TriangleAlert",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-11/800/600",
+              "src": "assets/stands/star-platinum/item-11.webp",
               "alt": "Weaknesses"
             }
           },
@@ -114,7 +114,7 @@
             "description": "Explain whether the stand feels better for general progression, PvP pressure, or targeted goals so the reader can judge fit quickly.",
             "icon": "Target",
             "image": {
-              "src": "https://picsum.photos/seed/stands-star-platinum-item-12/800/600",
+              "src": "assets/stands/star-platinum/item-12.webp",
               "alt": "Use cases"
             }
           }
