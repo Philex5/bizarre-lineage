@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import {
   getTermEntry,
@@ -162,7 +163,7 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
       {term.sections.map((section) => {
         if (section.title === 'Other recommended terms' && term.videos && term.videos.length > 0) {
           return (
-            <>
+            <Fragment key="videos-before-recommendations">
               <h2>Watch the guide</h2>
               <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
                 {term.videos.map((item) => (
@@ -192,7 +193,7 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
                 ))}
               </div>
               <TermSectionContent key={section.title} section={section} />
-            </>
+            </Fragment>
           );
         }
         return <TermSectionContent key={section.title} section={section} />;
