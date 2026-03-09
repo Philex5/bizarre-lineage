@@ -265,10 +265,7 @@ export default async function TierListRoute({
             position: index + 1,
             name: stand.name,
             description: `${stand.tier} tier. ${stand.quickVerdict}`,
-            url:
-              stand.key === 'star-platinum'
-                ? `${envConfigs.app_url}/stands/star-platinum`
-                : `${envConfigs.app_url}/stands#${stand.key}`,
+            url: `${envConfigs.app_url}/stands#${stand.key}`,
           })),
         }}
       />

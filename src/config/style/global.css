@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import 'tailwindcss';
 @import './theme.css';
 
@@ -93,6 +94,7 @@ pre {
 }
 
 @theme inline {
+  --font-anime: 'Bangers', cursive;
   --animate-grid: grid 15s linear infinite;
   @keyframes grid {
     0% {

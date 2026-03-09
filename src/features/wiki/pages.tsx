@@ -12,17 +12,19 @@ import {
   statsGuide,
 } from '@/content-data/guides';
 import { homeFaq, placeholderImages, siteName } from '@/content-data/site';
-import { stands, starPlatinum, type StandEntry } from '@/content-data/stands';
+import { stands, type StandEntry } from '@/content-data/stands';
 import {
   bestForCards,
   tierListEntries,
   tierMethodology,
 } from '@/content-data/tier-list';
+import { toImageUrl } from '@/lib/r2-utils';
 import { ArrowUpRight, Trophy } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { cn } from '@/shared/lib/utils';
 import { Crumb } from '@/shared/blocks/common/crumb';
 import { Button } from '@/shared/components/ui/button';
 import {
@@ -97,34 +99,60 @@ function JsonLd({ data }: { data: Record<string, unknown> }) {
 }
 
 function StandSummaryCard({ stand }: { stand: StandEntry }) {
+  const imageUrl = toImageUrl(stand.imageUrl);
+
+  const tierClasses: Record<string, string> = {
+    S: 'bg-gradient-to-br from-amber-400 to-orange-600 text-white border-amber-300 shadow-[0_0_12px_rgba(251,191,36,0.6)] animate-pulse',
+    A: 'bg-gradient-to-br from-violet-500 to-purple-700 text-white border-violet-400 shadow-md',
+    B: 'bg-gradient-to-br from-blue-500 to-indigo-700 text-white border-blue-400',
+    C: 'bg-gradient-to-br from-slate-400 to-slate-600 text-white border-slate-300',
+    D: 'bg-gradient-to-br from-zinc-600 to-zinc-800 text-zinc-300 border-zinc-500',
+  };
+
   const content = (
-    <article className="bg-background/92 border-border relative overflow-hidden rounded-[1.6rem] border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-      <span className="bg-primary text-primary-foreground border-primary/20 absolute top-4 right-4 rounded-full border px-3 py-1 text-[0.72rem] font-semibold tracking-[0.18em] uppercase">
+    <article className="bg-background/92 border-border group relative overflow-hidden rounded-[1.6rem] border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+      {imageUrl && (
+        <div className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20">
+          <Image
+            src={imageUrl}
+            alt={stand.name}
+            fill
+            className="object-cover object-center grayscale"
+          />
+          <div className="from-background via-background/80 absolute inset-0 bg-gradient-to-t to-transparent" />
+        </div>
+      )}
+      <div
+        className={cn(
+          'absolute top-0 right-0 z-20 rounded-bl-2xl border-b border-l px-5 pt-5 pb-1 text-xl font-normal tracking-wider uppercase shadow-lg transition-transform group-hover:scale-110 origin-top-right font-anime',
+          tierClasses[stand.tier] || 'bg-primary text-primary-foreground'
+        )}
+      >
         {stand.tier}
-      </span>
-      <div className="pr-14">
-        <h3 className="text-foreground text-2xl font-semibold tracking-[-0.04em]">
-          {stand.name}
-        </h3>
-        <p className="text-muted-foreground mt-2 text-[0.76rem] font-medium tracking-[0.16em] uppercase">
-          {stand.rarity} · {stand.part}
+      </div>
+      <div className="relative z-10">
+        <div className="pr-10">
+          <h3 className="text-foreground text-2xl font-semibold tracking-[-0.04em]">
+            {stand.name}
+          </h3>
+          <p className="text-muted-foreground mt-2 text-[0.76rem] font-medium tracking-[0.16em] uppercase">
+            {stand.rarity} · {stand.part}
+          </p>
+        </div>
+        <p className="text-primary mt-4 text-sm font-medium tracking-[0.12em] uppercase">
+          {stand.bestFor}
+        </p>
+        <p className="text-muted-foreground mt-3 text-sm leading-7">
+          {stand.quickVerdict}
         </p>
       </div>
-      <p className="text-primary mt-4 text-sm font-medium tracking-[0.12em] uppercase">
-        {stand.bestFor}
-      </p>
-      <p className="text-muted-foreground mt-3 text-sm leading-7">
-        {stand.quickVerdict}
-      </p>
     </article>
   );
 
-  return stand.key === 'star-platinum' ? (
-    <Link href="/stands/star-platinum" className="block">
+  return (
+    <Link id={stand.key} href={`/stands#${stand.key}`} className="block">
       {content}
     </Link>
-  ) : (
-    content
   );
 }
 
@@ -813,10 +841,7 @@ export async function TierListPage() {
               title: entry.name,
               meta: `${entry.tier} ${t('page.sections.representative.tier_suffix')}`,
               description: entry.summary,
-              href:
-                entry.key === 'star-platinum'
-                  ? '/stands/star-platinum'
-                  : undefined,
+              href: `/stands#${entry.key}`,
             }))}
           />
         </SectionFrame>
@@ -1106,10 +1131,7 @@ export function StandsHubPage() {
               position: index + 1,
               name: stand.name,
               description: stand.quickVerdict,
-              url:
-                stand.key === 'star-platinum'
-                  ? `${envConfigs.app_url}/stands/star-platinum`
-                  : `${envConfigs.app_url}/stands#${stand.key}`,
+              url: `${envConfigs.app_url}/stands#${stand.key}`,
             })),
           },
         }}
@@ -1140,7 +1162,7 @@ export function StandsHubPage() {
               name: 'What is the best PvP stand in Bizarre Lineage?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'On this page, Star Platinum is the clearest all-round PvP benchmark, while other S-tier stands such as The World, Whitesnake, C-Moon, and Made in Heaven remain strong depending on matchup and execution.',
+                text: 'Made in Heaven and Whitesnake are currently the strongest PvP stands. Star Platinum remains the clearest all-round PvP benchmark, while other S-tier stands like C-Moon stay dominant in the current meta.',
               },
             },
             {
@@ -1148,16 +1170,29 @@ export function StandsHubPage() {
               name: 'What is the best PvE stand in Bizarre Lineage?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'Weather Report stands out as one of the clearest PvE-oriented options here because its area control and mission-clearing value are easier to understand than pure duel-first picks.',
+                text: "Weather Report is the best PvE stand for grinding due to its massive AoE and mission-clearing speed. Magician's Red is also a great early-game choice for farming.",
               },
             },
           ],
         }}
       />
+
+      <section className="px-4 py-16 text-center">
+        <div className="text-primary mb-4 text-sm font-bold tracking-[0.3em] uppercase">
+          Database
+        </div>
+        <h1 className="text-foreground mx-auto mb-6 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+          Bizarre Lineage Stands: Full Guide & Tier List
+        </h1>
+        <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed md:text-xl">
+          The complete index of stands, evolution paths, and meta-verdicts for every combat identity in Bizarre Lineage.
+        </p>
+      </section>
+
       <SectionFrame
-        eyebrow="Stand cards"
-        title="Browse every Bizarre Lineage stand as a quick info card."
-        description="This page is the stand index. Each card gives the stand name, current tier, role, and a fast verdict before you open deeper pages."
+        eyebrow="Index"
+        title="Bizarre Lineage Stand Cards & Tier Verdicts"
+        description="Browse the full collection of bizarre lineage stands. Click any card below to view detailed stats and acquisition paths for every stand in-game."
       >
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {stands.map((stand) => (
@@ -1166,269 +1201,156 @@ export function StandsHubPage() {
         </div>
       </SectionFrame>
 
-      <SectionFrame
-        eyebrow="Stand guide"
-        title="Use this page as a Bizarre Lineage stand guide, not just a clickable chart."
-        description="The goal is to answer the main search intents on one screen: what a stand does, how the current bizarre lineage stand tier list is organized, and whether a target is worth your next grind."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: 'What a stand does',
-              description:
-                'A bizarre lineage stand defines your core moves, pressure pattern, and whether your build leans more toward PvP burst, PvE clearing, or balanced progression.',
-            },
-            {
-              title: 'How to get a stand',
-              description:
-                'Most bizarre lineage how to get stand searches start with the bizarre lineage stand arrow path, while special cases like C-Moon and Made in Heaven require evolution routes instead.',
-            },
-            {
-              title: 'How to read the tier list',
-              description:
-                'This bizarre lineage stand tier list page lets you click a stand first, then read its role, strengths, weaknesses, and acquisition notes without opening a dozen tabs.',
-            },
-          ]}
-        />
-      </SectionFrame>
+      {/* Information sections stack vertically in a single column */}
+      <div className="space-y-12">
+        <SectionFrame
+          eyebrow="Guide"
+          title="How to Get Stands in Bizarre Lineage"
+          description="Everything you need to know about acquiring and choosing your first bizarre lineage stands. Most stands start with the Stand Arrow path, while special cases require evolution."
+        >
+          <CardGrid
+            columns={4}
+            items={[
+              {
+                title: 'Core Identity',
+                description: 'Defines your moves, pressure pattern, and role within the bizarre lineage stands meta.',
+              },
+              {
+                title: 'Roll for Stands',
+                description: 'Use arrows from chests or quests to spin for new bizarre lineage stands.',
+              },
+              {
+                title: 'Evolution Routes',
+                description:
+                  'Special cases like C-Moon require specific quests to evolve your bizarre lineage stands.',
+              },
+              {
+                title: 'Meta Evolution',
+                description:
+                  'High-tier bizarre lineage stands often trade pure power for high-utility kits.',
+              },
+            ]}
+          />
+        </SectionFrame>
 
-      <div className="grid gap-6 lg:grid-cols-2">
         <SectionFrame
           eyebrow="Acquisition"
-          title="Stand Arrow routes and stand chances matter because not every chase target costs the same."
-          description="Players searching bizarre lineage stand arrow or bizarre lineage stand chances usually want to know whether they should keep rolling or pivot to an evolution route."
+          title="Acquisition Strategy for New Players"
+          description="Follow these key rules to optimize your account progression and avoid wasting precious Stand Arrows."
         >
-          <OrderedChecklist
-            items={[
-              {
-                title: 'Use Arrow stands for the normal first-pass grind',
-                description:
-                  'Most entries on this page begin with the Stand Arrow route, which is the fastest way to understand your realistic early options.',
-              },
-              {
-                title:
-                  'Check whether the stand is evolution-only before rerolling',
-                description:
-                  'C-Moon, Made in Heaven, and The World High Voltage are not standard Arrow pulls, so chasing them like a normal roll wastes time.',
-              },
-              {
-                title: 'Read stand chances together with stand role',
-                description:
-                  'A lower-cost stand can be the smarter target if it solves your current PvE or PvP problem sooner.',
-              },
-            ]}
-          />
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
+              <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
+                01. Arrow First
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Don't waste time chasing evolutions before you have a stable
+                level 50 character. Standard arrow pulls are your best friends
+                early on.
+              </p>
+            </div>
+            <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
+              <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
+                02. Check Stats
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Top-tier evolutions require Prestige 1+ and specific Conjuring
+                stats. Plan your build before committing to a route.
+              </p>
+            </div>
+            <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
+              <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
+                03. Prioritize PvE
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Picking a high-AoE stand like Weather Report speeds up your
+                overall progression, making it easier to grind for elite PvP
+                stands.
+              </p>
+            </div>
+          </div>
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Best picks"
-          title="Best PvP and PvE stand calls should stay tied to visible use cases."
-          description="These are page-level judgments from the current chart and card notes, not permanent universal answers."
+          eyebrow="Recommendations"
+          title="Best Bizarre Lineage Stands by Role"
+          description="If you need a quick answer, these are the stands we recommend based on current community meta research."
         >
-          <CardGrid
-            columns={2}
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="bg-card border-border flex items-start gap-4 rounded-[1.5rem] border p-6">
+              <div className="shrink-0 rounded-full bg-emerald-500/10 p-3 text-emerald-500">
+                <Trophy size={20} />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold">Best PvP Stand: Star Platinum</h4>
+                <p className="text-muted-foreground mt-1 text-sm">
+                  The clearest current PvP benchmark. Combines pressure, burst,
+                  and broad matchup value.
+                </p>
+              </div>
+            </div>
+            <div className="bg-card border-border flex items-start gap-4 rounded-[1.5rem] border p-6">
+              <div className="shrink-0 rounded-full bg-blue-500/10 p-3 text-blue-500">
+                <Trophy size={20} />
+              </div>
+              <div>
+                <h4 className="text-lg font-bold">Best PvE Stand: Weather Report</h4>
+                <p className="text-muted-foreground mt-1 text-sm">
+                  Screen-wide AoE and mission clearing speed make this the king
+                  of grinding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </SectionFrame>
+
+        <SectionFrame
+          eyebrow="FAQ"
+          title="Frequently Asked Questions"
+          description="Everything you need to know about Bizarre Lineage stands, evolutions, and the current meta."
+        >
+          <FaqGrid
             items={[
               {
-                title: 'Bizarre Lineage best PvP stand',
-                description:
-                  'Star Platinum is the clearest current PvP benchmark here because it combines pressure, burst, and broad matchup value without relying on one gimmick.',
+                question: 'How do I get my first stand in Bizarre Lineage?',
+                answer:
+                  'You need a Stand Arrow, which can be found in chests spawning around the map, as a reward from quests, or by redeeming active codes. Once you have an arrow, use it from your inventory to roll for a random stand.',
               },
               {
-                title: 'Bizarre Lineage best PvE stand',
-                description:
-                  'Weather Report is one of the easiest best PvE stand calls on this page thanks to its screen-wide AoE, mission clearing, and crowd-control value.',
+                question: 'Can I change my stand after rolling it?',
+                answer:
+                  'Yes, but using a new Stand Arrow will overwrite your current stand unless you have unlocked "Stand Storage" through Prestige. It is highly recommended to store a good stand before rolling for a new one.',
               },
               {
-                title: 'Best hybrid chase targets',
-                description:
-                  'The World, Whitesnake, and Made in Heaven stay near the top when you want a stronger late-game chase with higher upside and more execution demand.',
+                question:
+                  'What is the difference between Arrow stands and Evolution stands?',
+                answer:
+                  'Arrow stands are obtained directly from using a Stand Arrow. Evolution stands (like Made in Heaven or C-Moon) cannot be rolled; they require you to own a base stand and complete specific high-level questlines.',
               },
               {
-                title: 'Best value before hard chasing',
-                description:
-                  'Golden Experience, Stone Free, and Crazy Diamond make sense when survivability, balance, or cleaner progression matter more than top-end hype.',
+                question: 'Which stand is best for fast leveling and farming?',
+                answer:
+                  'Weather Report is widely considered the best PvE stand due to its massive Area of Effect (AoE) abilities, allowing you to clear waves of NPCs much faster than single-target stands like Star Platinum.',
+              },
+              {
+                question: 'What are the requirements for evolving a stand?',
+                answer:
+                  'Most evolutions require you to be at least Prestige 1, have a specific amount of "Conjuring" stats, and often require a special item or a visit to a specific NPC like Pucci.',
+              },
+              {
+                question: 'How do Stand Tiers affect gameplay?',
+                answer:
+                  'Higher tier stands (S and A) generally have better damage scaling, more reliable crowd control, and shorter cooldowns. However, a well-played B-tier stand can still beat an S-tier if the player understands the matchups.',
+              },
+              {
+                question: 'Are there "shiny" or secret stand skins?',
+                answer:
+                  'Yes, Bizarre Lineage features stand skins that change the visual appearance of your stand without altering its power. These are typically obtained via Lucky Arrows or special events.',
               },
             ]}
           />
         </SectionFrame>
       </div>
-
-      <SectionFrame
-        eyebrow="Site advantage"
-        title="This site is more useful for stand research when it helps with the decision, not just the label."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: 'Chart plus detail card',
-              description:
-                'You can click the tier chart and immediately see the stand role, how to get it, strengths, weaknesses, and key moves in one place.',
-            },
-            {
-              title: 'Arrow vs evolution clarity',
-              description:
-                'The page separates normal Stand Arrow targets from evolution-only stands so bizarre lineage how to get stand questions are answered faster.',
-            },
-            {
-              title: 'Built for internal follow-up',
-              description:
-                'The stand hub feeds directly into the tier list, beginner guide, and sample stand page instead of leaving the reader at a dead end.',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SectionFrame
-          eyebrow="What next"
-          title="Use the chart, then open the page that matches your next decision."
-        >
-          <OrderedChecklist
-            items={[
-              {
-                title: 'Open the tier list for the broader meta frame',
-                description:
-                  'Use the ranking page when you need the overall hierarchy and methodology.',
-                href: '/tier-list',
-                hrefLabel: 'Open tier list',
-              },
-              {
-                title: 'Open Star Platinum for the long-form stand template',
-                description:
-                  'The sample stand page is still the deeper article for one target.',
-                href: '/stands/star-platinum',
-                hrefLabel: 'Open sample stand',
-              },
-              {
-                title: 'Use the beginner guide if you are still early-game',
-                description:
-                  'A fresh account often needs route clarity before a premium chase target.',
-                href: '/guides/beginner-guide',
-                hrefLabel: 'Open beginner guide',
-              },
-            ]}
-          />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow="Reading notes"
-          title="The page keeps the decision frame visible without sending readers away."
-        >
-          <CardGrid
-            columns={2}
-            items={[
-              {
-                title: 'Role on page',
-                description:
-                  'Use this article when you need one stand broken down in more detail than the chart card can provide.',
-              },
-              {
-                title: 'How to read it',
-                description:
-                  'Start with the quick verdict, then check obtainment, strengths, weaknesses, and move notes in that order.',
-              },
-              {
-                title: 'Best fit',
-                description:
-                  'This format works best when you already have a candidate stand and need a cleaner go-or-skip decision.',
-              },
-              {
-                title: 'Next step',
-                description:
-                  'Return to the tier list for broader comparisons or move into the beginner guide if progression is still the blocker.',
-              },
-            ]}
-          />
-        </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow="FAQ"
-        title="Questions readers usually ask after checking a Bizarre Lineage stand chart."
-      >
-        <FaqGrid
-          items={[
-            {
-              question: 'What is the best stand in Bizarre Lineage right now?',
-              answer:
-                'There is no permanent universal answer, but this page currently treats the S-tier row as the top bracket, with Star Platinum acting as the clearest all-round benchmark.',
-            },
-            {
-              question: 'How do you get a stand in Bizarre Lineage?',
-              answer:
-                'Most stand routes begin with the Stand Arrow, while some of the strongest late-path stands are evolution-only and should not be treated like normal rerolls.',
-            },
-            {
-              question:
-                'Why does this Bizarre Lineage stand tier list mention stand chances?',
-              answer:
-                'Because a tier letter alone does not tell you whether a stand is realistic for your current account. Acquisition cost and route difficulty affect real player decisions.',
-            },
-            {
-              question: 'What should I open after choosing a stand here?',
-              answer:
-                'Open the tier list for broader ranking context, the beginner guide for progression planning, or the Star Platinum page if you want the long-form stand article format.',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow="CTA"
-        title="Keep moving once the stand decision becomes clear."
-      >
-        <div className="grid gap-4 md:grid-cols-3">
-          <Link
-            href="/tier-list"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Meta context
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Open the full tier list
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Check the broader bizarre lineage stand tier list logic before
-              committing to one route.
-            </p>
-          </Link>
-
-          <Link
-            href="/guides/beginner-guide"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Progression
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Plan your next grind
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Use the beginner route if you still need a practical path before
-              chasing the highest tier stands.
-            </p>
-          </Link>
-
-          <Link
-            href="/stands/star-platinum"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              Deep dive
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              Read a full stand page
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              Open Star Platinum to see the long-form stand template that
-              expands beyond the chart card.
-            </p>
-          </Link>
-        </div>
-      </SectionFrame>
     </PageShell>
   );
 }
@@ -1524,190 +1446,6 @@ export function PrestigeGuidePage() {
 
       <SectionFrame eyebrow="FAQ" title="What the prestige page should settle.">
         <FaqGrid items={[...prestigeGuide.faq]} />
-      </SectionFrame>
-    </PageShell>
-  );
-}
-
-export function StarPlatinumPage() {
-  return (
-    <PageShell accent="gold">
-      <HeroFrame
-        eyebrow="Stand sample page"
-        title="Star Platinum should open with a verdict: strong, flexible, and worth serious attention."
-        dek={starPlatinum.summary}
-        stats={[
-          { label: 'Current call', value: `${starPlatinum.tier} tier sample` },
-          { label: 'Best fit', value: starPlatinum.bestFor },
-          { label: 'Decision goal', value: 'Worth the grind?' },
-        ]}
-        actions={
-          <HeroActions
-            primary={{ href: '/tier-list', label: 'Back to tier list' }}
-            secondary={{
-              href: '/guides/beginner-guide',
-              label: 'See beginner route',
-            }}
-          />
-        }
-        backgroundImageSrc={placeholderImages.stand}
-        backgroundImageAlt="Star Platinum placeholder stand art"
-        mediaLabel="Stand art placeholder"
-        aside={
-          <AsidePanel
-            title="Quick verdict"
-            description="This page is built to answer the time-investment question first, then support that answer with the data points players care about."
-            items={[
-              { label: 'Verdict', value: 'High-value chase target' },
-              {
-                label: 'Why it matters',
-                value: 'Strong pressure and versatility',
-              },
-              {
-                label: 'Best companion pages',
-                value: 'Tier list and beginner guide',
-              },
-            ]}
-          />
-        }
-      />
-
-      <SectionFrame
-        eyebrow="Quick verdict"
-        title="Why the page leads with a recommendation."
-        description="A stand page should not begin with lore or trivia. The first question is whether this stand deserves a player's time."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: 'Worth chasing',
-              meta: 'Summary',
-              description: starPlatinum.quickVerdict,
-            },
-            {
-              title: 'Best for',
-              meta: 'Use case',
-              description: starPlatinum.bestFor,
-            },
-            {
-              title: 'Main caution',
-              meta: 'Tradeoff',
-              description:
-                'A premium target still needs context from the tier list and your current progression stage.',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SectionFrame
-          eyebrow="How to get"
-          title="Acquisition notes should be concise and actionable."
-        >
-          <OrderedChecklist
-            items={starPlatinum.howToGet.map((item) => ({
-              title: item,
-              description:
-                item === starPlatinum.howToGet[0]
-                  ? 'Acquisition advice should always be tied to current live conditions and update notes.'
-                  : item === starPlatinum.howToGet[1]
-                    ? 'Players need an honest sense of the grind before they begin.'
-                    : 'If a lower-cost alternative offers similar value, the page should say so.',
-            }))}
-          />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow="Abilities"
-          title="Ability summaries should explain role, not just list names."
-        >
-          <CardGrid columns={2} items={[...starPlatinum.abilities]} />
-        </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow="Strengths vs weaknesses"
-        title="The sample page needs clear tradeoffs, not blind praise."
-      >
-        <SplitNotes
-          leftTitle="Strengths"
-          leftItems={starPlatinum.strengths}
-          rightTitle="Weaknesses"
-          rightItems={starPlatinum.weaknesses}
-        />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow="Alternatives and related links"
-        title="Every stand page should branch into the broader site structure."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: 'Tier List',
-              description:
-                'Return to the ranking page to compare Star Platinum with the current top competitors.',
-              href: '/tier-list',
-            },
-            {
-              title: 'Stand Hub',
-              description:
-                'Go back to the stand index if you want to compare Star Platinum against several quicker stand cards first.',
-              href: '/stands',
-            },
-            {
-              title: 'Beginner Guide',
-              description:
-                'Check whether Star Platinum is a smart target for your current progression stage.',
-              href: '/guides/beginner-guide',
-            },
-            {
-              title: 'Codes',
-              description:
-                'Use the codes page first if your next step depends on available rewards or starter resources.',
-              href: '/codes',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow="FAQ"
-        title="What the sample stand page should answer."
-      >
-        <FaqGrid
-          items={[
-            {
-              question: 'Why does the page start with the verdict?',
-              answer:
-                'Because the core user need is whether the stand deserves time and resources, not background flavor text.',
-            },
-            {
-              question: 'Why connect this page so heavily to the tier list?',
-              answer:
-                'Because a stand article should live inside the site decision system, not as an isolated database entry.',
-            },
-            {
-              question:
-                'Why add a stand hub before more full stand pages exist?',
-              answer:
-                'Because players often want a quick comparison layer first. A stand hub lets the site route them into deeper pages more naturally.',
-            },
-            {
-              question:
-                'Is this page meant to be the full future database format?',
-              answer:
-                'It is the MVP template. If this structure performs well, it can scale to more stands later.',
-            },
-            {
-              question: 'Should new players chase Star Platinum immediately?',
-              answer:
-                'Not automatically. The answer depends on current resources, route efficiency, and what the beginner guide recommends for that stage.',
-            },
-          ]}
-        />
       </SectionFrame>
     </PageShell>
   );

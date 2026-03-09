@@ -14,20 +14,15 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: '/stands',
-    title: 'Bizarre Lineage Stands - Stand Cards, Tiers, and Quick Verdicts',
+    title: 'Bizarre Lineage Stands Guide: Tier List & Acquisition',
     description:
-      'Browse Bizarre Lineage stands in quick info cards with current tier labels, sourced acquisition notes, and fast verdicts for comparison.',
+      'The complete Bizarre Lineage stands index. Browse stand cards with current tier labels, acquisition notes, and fast verdicts for every stand in-game.',
     keywords: [
       'bizarre lineage stands',
-      'bizarre lineage stand',
-      'bizarre lineage stand tier list',
-      'bizarre lineage how to get stand',
-      'bizarre lineage stand arrow',
-      'bizarre lineage stand chances',
-      'bizarre lineage best pvp stand',
-      'bizarre lineage best pve stand',
-      'bizarre lineage best stands',
       'bizarre lineage stand guide',
+      'bizarre lineage stand tier list',
+      'bizarre lineage best stand',
+      'bizarre lineage stand acquisition',
     ],
   });
 }

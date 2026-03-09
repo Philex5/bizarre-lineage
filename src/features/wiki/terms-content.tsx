@@ -159,9 +159,77 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
         />
       </div>
 
-      {term.sections.map((section) => (
-        <TermSectionContent key={section.title} section={section} />
-      ))}
+      {term.sections.map((section) => {
+        if (section.title === 'Other recommended terms' && term.videos && term.videos.length > 0) {
+          return (
+            <>
+              <h2>Watch the guide</h2>
+              <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
+                {term.videos.map((item) => (
+                  <div
+                    key={item.embedUrl}
+                    className="border-border bg-background/50 overflow-hidden rounded-2xl border"
+                  >
+                    <div className="aspect-video">
+                      <iframe
+                        src={item.embedUrl}
+                        title={item.title}
+                        className="h-full w-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-foreground text-base font-semibold line-clamp-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground mt-2 text-sm leading-6 line-clamp-3">
+                        {item.note}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <TermSectionContent key={section.title} section={section} />
+            </>
+          );
+        }
+        return <TermSectionContent key={section.title} section={section} />;
+      })}
+
+      {(!term.sections.some(s => s.title === 'Other recommended terms')) && term.videos && term.videos.length > 0 && (
+        <>
+          <h2>Watch the guide</h2>
+          <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
+            {term.videos.map((item) => (
+              <div
+                key={item.embedUrl}
+                className="border-border bg-background/50 overflow-hidden rounded-2xl border"
+              >
+                <div className="aspect-video">
+                  <iframe
+                    src={item.embedUrl}
+                    title={item.title}
+                    className="h-full w-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-foreground text-base font-semibold line-clamp-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground mt-2 text-sm leading-6 line-clamp-3">
+                    {item.note}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       <h2>Official references</h2>
       <ul>

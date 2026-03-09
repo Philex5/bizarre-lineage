@@ -1,4 +1,4 @@
-export type StandTier = 'S' | 'A' | 'B' | 'C';
+export type StandTier = 'S' | 'A' | 'B' | 'C' | 'D';
 
 export type StandEntry = {
   key: string;
@@ -7,6 +7,7 @@ export type StandEntry = {
   rarity: string;
   part: string;
   bestFor: string;
+  imageUrl: string;
   howToGet: string[];
   strengths: string[];
   weaknesses: string[];
@@ -16,94 +17,51 @@ export type StandEntry = {
 };
 
 export const standResearchNotes = {
-  verifiedAt: '2026-03-08',
-  tierSource: 'Provided tier chart image credited in-image to Sportskeeda.',
+  verifiedAt: '2026-03-09',
+  tierSource: 'Community research and latest tier list updates (Destructoid, March 2026).',
   methodology:
-    'Tier placements follow the supplied chart, with stand cards rewritten into on-site summaries focused on obtainment, role, strengths, and weaknesses.',
+    'Tier placements reflect the current meta where mobility, crowd control, and evolution potential define the ceiling. Rewritten to focus on player-driven "keep or skip" decisions.',
 } as const;
 
 export const stands: StandEntry[] = [
   {
-    key: 'star-platinum',
-    name: 'Star Platinum',
+    key: 'made-in-heaven',
+    name: 'Made in Heaven',
     tier: 'S',
-    rarity: 'Legendary',
-    part: 'Part 3',
-    bestFor: 'PvP burst and all-round duels',
+    rarity: 'Special',
+    part: 'Part 6',
+    bestFor: 'Ultimate PvP mobility and speed-blitzing',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/made-in-heaven-stand-bizarre-lineage.jpg',
     quickVerdict:
-      'Top-tier pressure pick with Time Stop follow-ups and strong single-target damage.',
+      'The current peak of the PvP meta. Unmatched speed and gap-closing make it nearly impossible to pin down.',
     summary:
-      'Star Platinum sits in S tier on the provided chart and stays one of the safest high-end duel picks once you can support the chase.',
+      'Made in Heaven is the final evolution of the Whitesnake line. It trades the control of its predecessors for sheer, overwhelming speed.',
     howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked fan reference cites public Trello notes for the arrow acquisition path.',
-      'Treat it as a premium reroll target rather than a guaranteed early-game route.',
+      'Evolution only: Evolve C-Moon at Prestige 1+ with 100+ Conjuring.',
+      'Requires a complex questline involving the "Way to Heaven".',
     ],
     strengths: [
-      'High single-target burst.',
-      'Time Stop creates reliable follow-ups.',
-      'Fits both quick verdict comparisons and deeper stand-page analysis.',
+      'Insane mobility and chasing potential.',
+      'Extremely difficult to counter in 1v1 PvP.',
+      'High outplay potential with speed buffs.',
     ],
     weaknesses: [
-      'Low AoE coverage.',
-      'Neutral plan can become predictable.',
-      'It is strong, but not always the correct first grind on a fresh account.',
+      'Relatively low durability.',
+      'Requires significant setup and evolution effort.',
+      'Not optimized for PvE group farming.',
     ],
     abilities: [
       {
-        title: 'Barrage',
-        description: 'Fast melee pressure starter for standard confirms.',
+        title: 'Infinite Pursuit',
+        description: 'A teleporting dash that starts high-speed combos.',
       },
       {
-        title: 'Star Finger',
-        description: 'Brief stun tool that helps convert openings into damage.',
+        title: "Heaven's Wrath",
+        description: 'A lightning-fast dash attack that punishes spacing errors.',
       },
       {
-        title: 'Time Stop',
-        description:
-          'Stops time for roughly five seconds and powers its best punish routes.',
-      },
-    ],
-  },
-  {
-    key: 'the-world',
-    name: 'The World',
-    tier: 'S',
-    rarity: 'Legendary',
-    part: 'Part 3',
-    bestFor: 'PvP burst and Time Stop punish',
-    quickVerdict:
-      'Elite duel stand with huge damage, but missed Time Stop windows are costly.',
-    summary:
-      'The World lands in S tier on the supplied chart thanks to premium burst and a punishing Time Stop threat profile.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page attributes the obtainment note to public Trello references.',
-      'The value spikes when your build can play around cooldown-heavy punish windows.',
-    ],
-    strengths: [
-      'Very high base damage.',
-      'Long Time Stop window.',
-      'Strong win-condition once it gets a clean opening.',
-    ],
-    weaknesses: [
-      'High cooldown commitment.',
-      'Punishable after a failed Time Stop.',
-      'Less forgiving when the player forces bad engages.',
-    ],
-    abilities: [
-      {
-        title: 'Hard Fight',
-        description: 'Heavy knockback punch for burst conversions.',
-      },
-      {
-        title: 'Knives',
-        description:
-          'Ranged knife throw that extends pressure from safer spacing.',
-      },
-      {
-        title: 'Time Stop',
-        description: 'Core punish mechanic that defines its S-tier ceiling.',
+        title: 'Acceleration',
+        description: 'Drastically increases movement and attack speed.',
       },
     ],
   },
@@ -113,40 +71,38 @@ export const stands: StandEntry[] = [
     tier: 'S',
     rarity: 'Mythical',
     part: 'Part 6',
-    bestFor: 'Control chains and duel disruption',
+    bestFor: 'Control, disruption, and evolution pathing',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/White-Snake.png',
     quickVerdict:
-      'One of the strongest control stands, with disc pressure and meaningful AoE threat.',
+      'A top-tier all-rounder that excels in both PvE and PvP. Essential for reaching C-Moon and Made in Heaven.',
     summary:
-      'Whitesnake is an S-tier control pick on the provided chart and a key progression branch because it also leads into evolution paths.',
+      'Whitesnake offers some of the best crowd control in the game through its disc extraction mechanics, making it a threat at any range.',
     howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked page lists it as an arrow stand and cites public Trello move and obtainment notes.',
-      'It is a premium target if you want control first and future evolution options later.',
+      'Obtained from Stand Arrow (Mythical rarity).',
+      'One of the most sought-after arrow pulls due to its evolution potential.',
     ],
     strengths: [
-      'Strong control chain potential.',
-      'Disc Extraction can swing close duels.',
-      'Has real AoE pressure for more than one matchup type.',
+      'Excellent crowd control with Disc Extraction.',
+      'High DoT (Damage over Time) with acid attacks.',
+      'Strong in both solo duels and group PvE.',
     ],
     weaknesses: [
-      'Low mobility.',
-      'Can struggle into faster stands.',
-      'Needs better spacing discipline than simpler brawlers.',
+      'Lower mobility compared to its evolutions.',
+      'Requires precise aim for disc throws.',
+      'Vulnerable to high-pressure rushdown stands.',
     ],
     abilities: [
       {
-        title: 'Disc Throw',
-        description:
-          'Burning disc toss that gives ranged pressure and chip threat.',
+        title: 'Disc Extraction',
+        description: 'Stuns the enemy and removes their abilities temporarily.',
       },
       {
-        title: 'Disc Extraction',
-        description:
-          'Signature control tool that creates its scariest duel swings.',
+        title: 'Acid Rupture',
+        description: 'Deals significant DoT and slows enemies in an area.',
       },
       {
         title: 'Revolver',
-        description: 'Fast ranged poke to check movement and force respect.',
+        description: 'A quick ranged poke to keep pressure from a distance.',
       },
     ],
   },
@@ -156,208 +112,113 @@ export const stands: StandEntry[] = [
     tier: 'S',
     rarity: 'Special',
     part: 'Part 6',
-    bestFor: 'Combo setups and gravity control',
+    bestFor: 'Gravity-based combos and area control',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/cmoon-stand-bizarre-lineage.jpg',
     quickVerdict:
-      'High-reward evolution stand with deadly combo routing, but awkward hitboxes raise execution cost.',
+      'A powerful evolution with unique gravity mechanics that can lock down even the most mobile opponents.',
     summary:
-      'C-Moon remains S tier on the supplied chart because gravity-based control and bleed give it premium conversion value once evolved.',
+      'C-Moon bridges the gap between Whitesnake and Made in Heaven, offering superior area denial and punishing combo starters.',
     howToGet: [
-      'Evolution-only stand; evolve Whitesnake instead of rerolling arrows.',
-      'The checked stand page explicitly marks it as an evolution path.',
-      'Plan the quest route first because this is not a standard Arrow pull.',
+      'Evolution only: Evolve Whitesnake at Prestige 1+ with 100+ Conjuring.',
     ],
     strengths: [
-      'Auto-combo potential with Gravity Barrier.',
-      'High bleed damage.',
-      'Strong control once gravity tools are confirmed.',
+      'Powerful gravity-based CC that ignores some defenses.',
+      'High bleed damage and combo potential.',
+      'Excellent at kiting and poking enemies.',
     ],
     weaknesses: [
-      'Awkward hitboxes.',
-      'Misses are easy to punish.',
-      'Demands cleaner execution than its tier letter suggests.',
+      'Some hitboxes can be difficult to land.',
+      'Longer cooldowns on key gravity moves.',
+      'Requires Whitesnake evolution to obtain.',
     ],
     abilities: [
       {
         title: 'Graviton Reversal',
-        description:
-          'Double-slam gravity attack that starts heavy punish routes.',
+        description: 'Inverts gravity to slam enemies into the ground.',
+      },
+      {
+        title: 'Gravity Barrier',
+        description: 'Creates a zone that slows and damages anyone inside.',
       },
       {
         title: 'Rock Barrage',
-        description: 'Ranged debris stun that helps create follow-up windows.',
-      },
-      {
-        title: 'Gravity Crusher',
-        description:
-          'Heavy gravity effect that locks targets down for conversions.',
+        description: 'Fires debris that stuns and interrupts enemy actions.',
       },
     ],
   },
   {
-    key: 'made-in-heaven',
-    name: 'Made in Heaven',
-    tier: 'S',
-    rarity: 'Special',
-    part: 'Part 6',
-    bestFor: 'Speed pressure and evasive PvP',
-    quickVerdict:
-      'S-tier mobility monster that snowballs hard once setup is active.',
-    summary:
-      'Made in Heaven closes the S-tier row on the provided chart because unmatched mobility and chase pressure can take over fights quickly.',
-    howToGet: [
-      'Evolution-only stand; evolve C-Moon instead of rerolling arrows.',
-      'The checked page marks it as a progression stand rather than an Arrow roll.',
-      'Route planning matters because its peak value only appears after the full evolution chain.',
-    ],
-    strengths: [
-      'Very high mobility.',
-      'Extremely hard to pin down when buffed.',
-      'Can run over slower opponents once momentum starts.',
-    ],
-    weaknesses: [
-      'Low durability.',
-      'Needs setup before peaking.',
-      'Less forgiving when caught before the speed advantage is online.',
-    ],
-    abilities: [
-      {
-        title: 'Infinite Pursuit',
-        description:
-          'Teleporting dash combo starter that keeps pressure flowing.',
-      },
-      {
-        title: "Heaven's Wrath",
-        description:
-          'High-speed dash-through punish for evasive burst sequences.',
-      },
-      {
-        title: 'Knife Massacre',
-        description: 'Layered knife pressure with a follow-up input.',
-      },
-    ],
-  },
-  {
-    key: 'the-world-high-voltage',
-    name: 'The World High Voltage',
+    key: 'the-world',
+    name: 'The World',
     tier: 'A',
     rarity: 'Legendary',
-    part: 'Part 7',
-    bestFor: 'Hybrid ranged/melee Time Stop play',
+    part: 'Part 3',
+    bestFor: 'Time Stop punishes and high-burst duels',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/The-World-man.png',
     quickVerdict:
-      'Strong evolution pick with flexible pressure, but it asks for more execution and setup.',
+      'The classic powerhouse. While slightly edged out of S-tier by evolution stands, it remains a top-tier duelist.',
     summary:
-      'The World High Voltage starts the A tier because its toolkit is versatile, yet the evolution requirement and skill demand keep it under the S row.',
-    howToGet: [
-      'Evolution-only stand; evolve The World through its progression route.',
-      'The checked page notes that it is not a standard Arrow roll.',
-      'It makes more sense once you already know you want a Time Stop variant with more ranged utility.',
-    ],
+      'The World is built for one thing: stopping time and deleting health bars. Its single-target DPS is among the best in the game.',
+    howToGet: ['Obtained from Stand Arrow (Legendary rarity).'],
     strengths: [
-      'Time Stop creates strong openings.',
-      'Mixes ranged and melee pressure well.',
-      'Smoke Bomb adds escape utility and reset value.',
+      'Massive burst damage during Time Stop.',
+      'Strong single-target combo potential.',
+      'Reliable ranged poke with knives.',
     ],
     weaknesses: [
-      'Needs an evolution path first.',
-      'Higher skill ceiling than simpler A-tier picks.',
-      'More setup-heavy than the cleanest top-end duel options.',
+      'Extremely reliant on Time Stop for big plays.',
+      'Small AoE makes it less ideal for large groups.',
+      'Highly predictable once Time Stop is on cooldown.',
     ],
     abilities: [
       {
-        title: 'Revolver Barrage',
-        description: 'Four-shot ranged string with stun potential.',
+        title: 'Time Stop',
+        description: 'Freezes all nearby enemies for a few seconds.',
       },
       {
         title: 'Knives',
-        description:
-          'Reliable ranged punish tool that supports spacing mixups.',
+        description: 'Throws a barrage of knives that deal high damage.',
       },
       {
-        title: 'Smoke Bomb',
-        description: 'Escape and reset option for chaotic scrambles.',
-      },
-    ],
-  },
-  {
-    key: 'weather-report',
-    name: 'Weather Report',
-    tier: 'A',
-    rarity: 'Rare',
-    part: 'Part 6',
-    bestFor: 'PvE clearing and screen control',
-    quickVerdict:
-      'Excellent for missions and zone control, though it gives up single-target speed.',
-    summary:
-      'Weather Report earns an A-tier slot on the provided chart by trading duel burst for broad AoE coverage and crowd-control utility.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page attributes the acquisition note to public Trello references.',
-      'It is one of the cleaner options if your immediate goal is farming or mission pressure.',
-    ],
-    strengths: [
-      'Screen-wide AoE coverage.',
-      'Strong mission clearing.',
-      'Heavy Weather supplies crowd control.',
-    ],
-    weaknesses: [
-      'Low single-target damage.',
-      'Long windups on ranged tools.',
-      'Feels worse when fights stay strictly duel-focused.',
-    ],
-    abilities: [
-      {
-        title: 'Howling Blitz',
-        description: 'Lightning blast with knockback for space control.',
-      },
-      {
-        title: 'Frog Downpour',
-        description: 'Poison frog AoE that punishes grouped targets.',
-      },
-      {
-        title: 'Heavy Weather',
-        description: 'Crowd-control utility that slows the pace of a fight.',
+        title: 'Kick Volley',
+        description: 'A heavy-hitting melee combo finisher.',
       },
     ],
   },
   {
-    key: 'killer-queen',
-    name: 'Killer Queen',
+    key: 'star-platinum',
+    name: 'Star Platinum',
     tier: 'A',
-    rarity: 'Rare',
-    part: 'Part 4',
-    bestFor: 'Area denial and PvE farming',
+    rarity: 'Legendary',
+    part: 'Part 3',
+    bestFor: 'Close-range brawling and stuns',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/sacsfsfasfa.png',
     quickVerdict:
-      'A strong trap-oriented option when you can keep opponents from rushing you down.',
+      'An iconic brawler that excels at sticking to targets and landing heavy stuns.',
     summary:
-      'Killer Queen sits in A tier on the supplied chart because bombs and tracking pressure make it useful beyond a single narrow matchup.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'The stand is best when your route rewards zoning, farming, and trap value over pure rushdown.',
-    ],
+      'Star Platinum is the gold standard for melee stands. It offers great survivability and consistent damage through its fast attacks.',
+    howToGet: ['Obtained from Stand Arrow (Legendary rarity).'],
     strengths: [
-      'Strong area denial.',
-      'Useful for PvE farming.',
-      'Threatens space well when opponents have to respect bombs.',
+      'High attack speed and melee pressure.',
+      'Reliable stuns with Star Finger and Inhale.',
+      'Versatile in most PvP scenarios.',
     ],
     weaknesses: [
-      'Slow combo routes.',
-      'Gets rushed down easily.',
-      'Looks much weaker when denied setup time.',
+      'Almost zero ranged presence.',
+      'Struggles against heavy zoning stands.',
+      'Requires close proximity to be effective.',
     ],
     abilities: [
       {
-        title: 'Primary Bomb',
-        description:
-          'Grab-and-detonate burst tool for punishing close mistakes.',
+        title: 'Star Finger',
+        description: 'An extended-range pole that stuns the target.',
       },
       {
-        title: 'Sheer Heart Attack',
-        description: 'Tracking explosive drone that keeps pressure active.',
+        title: 'Inhale',
+        description: 'Pulls enemies closer for a guaranteed follow-up.',
       },
       {
-        title: 'Stray Cat',
-        description: 'Invisible projectile that extends ranged threat.',
+        title: 'Time Stop',
+        description: 'The signature move to guarantee a full combo.',
       },
     ],
   },
@@ -367,79 +228,151 @@ export const stands: StandEntry[] = [
     tier: 'A',
     rarity: 'Legendary',
     part: 'Part 5',
-    bestFor: 'Outplay-heavy PvP and burst',
+    bestFor: 'Outplaying opponents and counter-attacks',
+    imageUrl: 'https://destructoid.com/wp-content/uploads/2026/02/king-crimson-stand-bizarre-lineage.png',
     quickVerdict:
-      'Deadly in practiced hands, but more demanding than the easiest top picks.',
+      'A high-skill stand that can completely bypass enemy attacks with Time Erase.',
     summary:
-      'King Crimson remains in A tier on the provided chart because Time Erase is elite utility, but its value depends more on player timing discipline.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked page cites public Trello notes for the obtainment method.',
-      'This stand pays off most when you actively want a duel-focused outplay toolkit.',
-    ],
+      'King Crimson is a technical duelist. It rewards players who can predict their opponent\'s moves and use Time Erase to reposition.',
+    howToGet: ['Obtained from Stand Arrow (Legendary rarity).'],
     strengths: [
-      'Time Erase enables safe engage and disengage.',
-      'High burst damage.',
-      'Excellent punish profile when the player understands timing windows.',
+      'Elite utility with Time Erase and Epitaph.',
+      'Huge burst damage with Impale.',
+      'One of the best counter-pick stands in the game.',
     ],
     weaknesses: [
-      'Limited PvE farming tools.',
-      'High skill ceiling.',
-      'More execution-sensitive than broad all-rounder picks.',
+      'Poor PvE farming efficiency.',
+      'High skill floor; difficult for beginners.',
+      'Limited range options.',
     ],
     abilities: [
       {
-        title: 'Impale',
-        description: 'Double-input burst string that defines many confirms.',
-      },
-      {
         title: 'Time Erase',
-        description: 'Core reposition and outplay mechanic for neutral skips.',
+        description: 'Briefly become intangible and reposition behind enemies.',
       },
       {
-        title: 'Chop',
-        description: 'Simple punish tool that helps cash out small openings.',
+        title: 'Impale',
+        description: 'A heavy-hitting strike that pierces through defenses.',
+      },
+      {
+        title: 'Epitaph',
+        description: 'Counters the next incoming attack automatically.',
       },
     ],
   },
   {
-    key: 'golden-experience',
-    name: 'Golden Experience',
-    tier: 'B',
-    rarity: 'Uncommon',
-    part: 'Part 5',
-    bestFor: 'Sustain and flexible progression',
+    key: 'weather-report',
+    name: 'Weather Report',
+    tier: 'A',
+    rarity: 'Rare',
+    part: 'Part 6',
+    bestFor: 'PvE grinding and large-scale AoE control',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/weather-report-stand-bizarre-lineage.jpg',
     quickVerdict:
-      'Solid utility stand that trades raw damage for healing and safer all-round value.',
+      'The king of farming. If you need to clear quests or waves, this is your best friend.',
     summary:
-      'Golden Experience opens the B tier because sustain and utility are real strengths, but the damage profile is too modest for higher placement.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'It is a practical choice when you want survivability more than premium burst.',
-    ],
+      'Weather Report dominates PvE with its massive area-of-effect attacks, making it the most efficient choice for leveling.',
+    howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
     strengths: [
-      'Self-healing sustain.',
-      'Versatile kit.',
-      'Frog reflect punishes careless hits.',
+      'Unmatched AoE coverage for clearing mobs.',
+      'Strong crowd control with Heavy Weather.',
+      'Safe playstyle with many ranged options.',
     ],
     weaknesses: [
-      'Below-average raw damage.',
-      'Slow startup on Restoration.',
-      'Wins more through stability than oppressive pressure.',
+      'Lacks the high burst damage of other A-tier stands.',
+      'Vulnerable in tight 1v1 duels against rushdown.',
+      'Longer animation windups.',
     ],
     abilities: [
       {
-        title: 'Restoration',
-        description: 'Creates healing utility from terrain interactions.',
+        title: 'Frog Downpour',
+        description: 'Rains poisonous frogs over a large area.',
       },
       {
-        title: 'Soul Strike',
-        description: 'Knockout-style melee punish that disrupts rhythm.',
+        title: 'Howling Blitz',
+        description: 'Strikes multiple enemies with bolts of lightning.',
       },
       {
-        title: 'Root Strike',
-        description: 'Pursuing roots that extend melee confirms.',
+        title: 'Heavy Weather',
+        description: 'Slows and confuses enemies within a cloud.',
+      },
+    ],
+  },
+  {
+    key: 'the-world-high-voltage',
+    name: 'The World High Voltage',
+    tier: 'A',
+    rarity: 'Legendary',
+    part: 'Part 7',
+    bestFor: 'Mixed-range pressure and stealthy resets',
+    imageUrl: 'https://destructoid.com/wp-content/uploads/2026/02/the-world-high-voltage-stand-bizarre-lineage.png',
+    quickVerdict:
+      'A more versatile version of The World that trades some raw power for utility and ranged threat.',
+    summary:
+      'High Voltage adds a revolver and smoke bombs to the classic World toolkit, allowing for safer resets and better poking.',
+    howToGet: [
+      'Evolution only: Evolve The World using the "Saint\'s Corpse" path.',
+    ],
+    strengths: [
+      'Excellent mix of ranged and melee attacks.',
+      'Smoke Bomb provides great escape and reset potential.',
+      'Keeps the powerful Time Stop mechanic.',
+    ],
+    weaknesses: [
+      'Requires a difficult evolution process.',
+      'Slightly lower base damage than the standard World.',
+      'Can feel "clunky" compared to pure brawlers.',
+    ],
+    abilities: [
+      {
+        title: 'Revolver Barrage',
+        description: 'Fires several shots from a distance to stun enemies.',
+      },
+      {
+        title: 'Smoke Bomb',
+        description: 'Blinds enemies and allows for a safe reposition.',
+      },
+      {
+        title: 'Kick Volley',
+        description: 'A series of rapid kicks to punish close targets.',
+      },
+    ],
+  },
+  {
+    key: 'killer-queen',
+    name: 'Killer Queen',
+    tier: 'B',
+    rarity: 'Rare',
+    part: 'Part 4',
+    bestFor: 'Area denial and defensive play',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Killer-Queen.png',
+    quickVerdict:
+      'A strong "keep-away" stand that punishes enemies for trying to get close.',
+    summary:
+      'Killer Queen turns the battlefield into a minefield. It\'s great for players who like to control the pace of the fight.',
+    howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
+    strengths: [
+      'Excellent area denial with bombs.',
+      'Very effective for PvE farming.',
+      'Tracking projectiles with Sheer Heart Attack.',
+    ],
+    weaknesses: [
+      'Slow and predictable combo routes.',
+      'Struggles if the enemy manages to bypass the bombs.',
+      'Low mobility.',
+    ],
+    abilities: [
+      {
+        title: 'Primary Bomb',
+        description: 'Plants a bomb on an enemy or object to detonate later.',
+      },
+      {
+        title: 'Sheer Heart Attack',
+        description: 'A tracking drone that explodes on contact.',
+      },
+      {
+        title: 'Stray Cat',
+        description: 'Fires invisible air bombs that are hard to dodge.',
       },
     ],
   },
@@ -449,38 +382,73 @@ export const stands: StandEntry[] = [
     tier: 'B',
     rarity: 'Rare',
     part: 'Part 3',
-    bestFor: 'Close-range melee combos',
+    bestFor: 'High-damage melee combos and swordplay',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Anubis.png',
     quickVerdict:
-      'Great sword pressure in duels, but weak range and group-fight value keep it out of higher tiers.',
+      'A pure rushdown stand with incredible melee speed, but it lacks any form of utility or range.',
     summary:
-      'Anubis lands in B tier on the supplied chart because direct melee pressure is real, but its limitations show quickly outside clean duels.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page attributes the obtainment note to public Trello references.',
-      'Pick it when you want simple melee commitment and accept the lack of ranged flexibility.',
-    ],
+      'Anubis is for players who want to overwhelm their opponents with a flurry of sword strikes. It\'s very high damage if you can stay close.',
+    howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
     strengths: [
-      'Very high melee damage.',
-      'Fast combo chains.',
-      'Custom sword pressure makes close fights threatening.',
+      'Some of the highest melee DPS in the game.',
+      'Fast combo starters and finishers.',
+      'Difficult to parry due to high attack speed.',
     ],
     weaknesses: [
-      'No ranged options.',
-      'No AoE presence.',
-      'Struggles in group fights.',
+      'Zero ranged utility.',
+      'Easily kited by ranged stands.',
+      'Weak in group fights or objective play.',
     ],
     abilities: [
       {
-        title: 'Rend',
-        description: 'Spinning slash that keeps close-range pressure active.',
-      },
-      {
-        title: 'Dice Out',
-        description: 'Dash slice combo with stun follow-up.',
+        title: 'Dice Cut',
+        description: 'A rapid series of slashes that stun the target.',
       },
       {
         title: 'Cursed Severance',
-        description: 'Powered-up slash finisher for burst strings.',
+        description: 'A massive strike that deals high burst damage.',
+      },
+      {
+        title: 'Rend',
+        description: 'A spinning attack that hits all nearby enemies.',
+      },
+    ],
+  },
+  {
+    key: 'golden-experience',
+    name: 'Golden Experience',
+    tier: 'B',
+    rarity: 'Uncommon',
+    part: 'Part 5',
+    bestFor: 'Sustain and beginner-friendly progression',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Golden-Experience.png',
+    quickVerdict:
+      'A reliable choice for new players who want extra survivability through self-healing.',
+    summary:
+      'Golden Experience trades offensive power for utility. Its ability to heal makes it great for long grinding sessions.',
+    howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
+    strengths: [
+      'Self-healing and ally-healing capabilities.',
+      'Frog reflect damage can punish high-burst enemies.',
+      'Versatile kit with both melee and CC.',
+    ],
+    weaknesses: [
+      'Low overall damage output.',
+      'Lacks a definitive "finisher" move.',
+      'Healing animations can be interrupted.',
+    ],
+    abilities: [
+      {
+        title: 'Restoration',
+        description: 'Heals the user or a selected ally.',
+      },
+      {
+        title: 'Frog',
+        description: 'Summons a frog that reflects a portion of damage taken.',
+      },
+      {
+        title: 'Root Strike',
+        description: 'Summons roots to trip and stun enemies.',
       },
     ],
   },
@@ -490,202 +458,35 @@ export const stands: StandEntry[] = [
     tier: 'B',
     rarity: 'Rare',
     part: 'Part 6',
-    bestFor: 'Balanced fights across multiple ranges',
+    bestFor: 'Balanced combat and string-based traps',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/stone-free-stand-bizarre-lineage.jpg',
     quickVerdict:
-      'Reliable and flexible, but it lacks the oppressive edge of the higher tiers.',
+      'A solid all-rounder that provides good mobility and control, but lacks a "wow" factor.',
     summary:
-      'Stone Free holds a B-tier slot on the chart because range coverage and mobility are useful, yet the kit lacks a truly dominant finishing edge.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'It is a sensible choice if you want balance and trapping tools instead of a hard specialist.',
-    ],
+      'Stone Free is a very "honest" stand. It has tools for most situations but isn\'t overwhelmingly powerful in any single area.',
+    howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
     strengths: [
-      'Versatile at all ranges.',
-      'String Trap gives reliable crowd control.',
-      'Good mobility.',
+      'Good mobility with string grapple.',
+      'Versatile at mid-range.',
+      'Reliable stuns with string traps.',
     ],
     weaknesses: [
-      'Balanced rather than oppressive.',
-      'No standout burst finisher.',
-      'Feels honest in a meta that rewards stronger spikes.',
+      'Average damage across the board.',
+      'No major burst window.',
+      'Often outclassed by specialized stands.',
     ],
     abilities: [
       {
-        title: 'Sting Punch',
-        description: 'String-wrapped heavy hit for direct confirms.',
-      },
-      {
-        title: 'Dropkick',
-        description: 'String bind into melee follow-up pressure.',
+        title: 'String Punch',
+        description: 'A series of rapid hits that extend with string.',
       },
       {
         title: 'String Trap',
-        description: 'Ground trap that locks targets in place.',
-      },
-    ],
-  },
-  {
-    key: 'crazy-diamond',
-    name: 'Crazy Diamond',
-    tier: 'B',
-    rarity: 'Uncommon',
-    part: 'Part 4',
-    bestFor: 'Healing support and combo confirms',
-    quickVerdict:
-      'Useful sustain stand with real combo upside, but weak range lowers consistency.',
-    summary:
-      'Crazy Diamond is placed in B tier on the supplied chart because healing and confirms are useful, but the neutral game is not strong enough for A tier.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'It fits players who value sustain and utility more than hard range control.',
-    ],
-    strengths: [
-      'Strong healing access.',
-      'Combo potential when its trap tools connect.',
-      'Useful midpoint choice for balanced progression routes.',
-    ],
-    weaknesses: [
-      'Low range.',
-      'Harder neutral game.',
-      'Needs more setup than its statline first suggests.',
-    ],
-    abilities: [
-      {
-        title: 'Bearing Shot',
-        description: 'Short ranged projectile pressure to start confirms.',
+        description: 'Places a hidden trap that entangles enemies.',
       },
       {
-        title: 'Heal Mode',
-        description: 'Restoration stance that adds sustain utility.',
-      },
-      {
-        title: 'Rock Trap',
-        description: 'Combo starter that pays off when it lands cleanly.',
-      },
-    ],
-  },
-  {
-    key: 'purple-haze',
-    name: 'Purple Haze',
-    tier: 'C',
-    rarity: 'Uncommon',
-    part: 'Part 5',
-    bestFor: 'Poison pressure in close fights',
-    quickVerdict:
-      'Dangerous damage profile, but self-risk and mobility issues make it inconsistent.',
-    summary:
-      'Purple Haze leads the C tier because the damage is scary, but the stand asks for too many risky tradeoffs to rank higher.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'Use it only if you specifically want poison pressure and accept the collateral risk.',
-    ],
-    strengths: [
-      'Very high single-target damage.',
-      'Poison creates area denial.',
-      'Can win short-range scrambles quickly when it gets started.',
-    ],
-    weaknesses: [
-      'Idle Rage can hurt the user.',
-      'Low mobility.',
-      'Poison can affect allies.',
-    ],
-    abilities: [
-      {
-        title: 'Bulb Punch',
-        description: 'Auto-tracking poison strike for close confirms.',
-      },
-      {
-        title: 'Fury Strike',
-        description: 'Close-range poison combo tool with fast payoff.',
-      },
-      {
-        title: 'Infection Frenzy',
-        description: 'Grab sequence that stacks heavy poison damage.',
-      },
-    ],
-  },
-  {
-    key: 'red-hot-chili-pepper',
-    name: 'Red Hot Chili Pepper',
-    tier: 'C',
-    rarity: 'Common',
-    part: 'Part 4',
-    bestFor: 'Early leveling and mobility',
-    quickVerdict:
-      'Fine for early progression, but the damage profile falls off quickly.',
-    summary:
-      'Red Hot Chili Pepper stays in C tier on the supplied chart because mobility helps early, yet the overall damage ceiling fades fast.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'It is more of an early stepping-stone than a long-term chase target.',
-    ],
-    strengths: [
-      'Flash gives useful mobility.',
-      'Accessible early-game option.',
-      'Can help early leveling more than its final rank suggests.',
-    ],
-    weaknesses: [
-      'Low damage output.',
-      'Falls off fast later.',
-      'No reliable sustained damage.',
-    ],
-    abilities: [
-      {
-        title: 'Thunder God',
-        description: 'Electric slam that creates an AoE zone.',
-      },
-      {
-        title: 'Flash',
-        description: 'Teleport movement tool with a damaging trail.',
-      },
-      {
-        title: 'Pinky Slash',
-        description: 'Fast melee stun option for small confirms.',
-      },
-    ],
-  },
-  {
-    key: 'the-hand',
-    name: 'The Hand',
-    tier: 'C',
-    rarity: 'Uncommon',
-    part: 'Part 4',
-    bestFor: 'Short-range erasure punish',
-    quickVerdict:
-      'Can punish hard up close, but predictable routing and no sustain hold it back.',
-    summary:
-      'The Hand stays in C tier on the chart because defense-ignoring hits matter, yet range and sustain problems limit consistency.',
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The checked stand page cites public Trello-backed obtainment notes.',
-      'The stand is workable if you want erasure gimmicks more than broad reliability.',
-    ],
-    strengths: [
-      'Defense-ignoring attacks.',
-      'Erasure Pull closes space quickly.',
-      'Can punish mistakes hard once targets are in range.',
-    ],
-    weaknesses: [
-      'Short range on most moves.',
-      'No sustain.',
-      'Predictable combos.',
-    ],
-    abilities: [
-      {
-        title: 'Erasure Swipe',
-        description: 'Charged erasure hit with stun and burst threat.',
-      },
-      {
-        title: 'Erasure Pull',
-        description: 'Forces targets into your preferred range.',
-      },
-      {
-        title: 'Hard Left',
-        description: 'Simple knockback punish tool for direct confirms.',
+        title: 'Spiraling Thread',
+        description: 'A protective move that reduces incoming damage.',
       },
     ],
   },
@@ -695,45 +496,198 @@ export const stands: StandEntry[] = [
     tier: 'C',
     rarity: 'Uncommon',
     part: 'Part 3',
-    bestFor: 'Quest grinding and AoE coverage',
+    bestFor: 'Early-game PvE and burning groups',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Magicians-Red.png',
     quickVerdict:
-      'Useful for clearing groups, but slow tools and weak mobility limit PvP reliability.',
+      'A decent starter stand for clearing mobs, but its utility drops off sharply in PvP.',
     summary:
-      "Magician's Red closes the C tier because AoE quest value is real, but the stand gets exposed once faster opponents collapse on it.",
-    howToGet: [
-      'Obtained from Stand Arrow.',
-      'The same Trello-backed fan references list it as an arrow stand.',
-      'It is mainly worth considering when you care more about farming and coverage than chase-tier duels.',
-    ],
+      "Magician's Red focuses on burn damage and AoE. It's effective for early quests but easily outplayed by faster stands.",
+    howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
     strengths: [
-      'High AoE coverage.',
-      'Useful for quest grinding.',
-      'Can pressure groups better than many other C-tier options.',
+      'Good AoE for early-game farming.',
+      'Burn damage adds up over time.',
+      'Relatively easy to obtain.',
     ],
-    weaknesses: ['Slow moves.', 'No mobility tools.', 'Weak into rushdown.'],
+    weaknesses: [
+      'Very slow move animations.',
+      'Zero mobility tools.',
+      'Highly vulnerable to rushdown brawlers.',
+    ],
     abilities: [
       {
-        title: 'Flamethrower',
-        description: 'Sustained flame breath that burns targets over time.',
+        title: 'Crossfire Hurricane',
+        description: 'Fires multiple fireballs at enemies.',
       },
       {
-        title: 'Life Sensor',
-        description:
-          'Tracking flame utility that helps reveal and pressure targets.',
+        title: 'Red Bind',
+        description: 'Entangles an enemy in fire, dealing DoT.',
       },
       {
-        title: 'Flame Punch',
-        description: 'Basic melee fire confirm for short-range openings.',
+        title: 'Ignition Burst',
+        description: 'A powerful explosion centered on the user.',
+      },
+    ],
+  },
+  {
+    key: 'crazy-diamond',
+    name: 'Crazy Diamond',
+    tier: 'C',
+    rarity: 'Uncommon',
+    part: 'Part 4',
+    bestFor: 'Healing support and defensive brawling',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Crazy-Diamond.png',
+    quickVerdict:
+      'A support-focused stand that can be useful in team play but struggles in solo duels.',
+    summary:
+      'Crazy Diamond is best used when playing with friends. Its healing and terrain-building skills are unique but niche.',
+    howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
+    strengths: [
+      'Excellent healing for teammates.',
+      'Can build walls to block paths or projectiles.',
+      'Decent melee speed.',
+    ],
+    weaknesses: [
+      'Low solo damage potential.',
+      'Predictable brawling moves.',
+      'Struggles against ranged and high-mobility stands.',
+    ],
+    abilities: [
+      {
+        title: 'Heal Mode',
+        description: 'Switches to a mode dedicated to restoring health.',
+      },
+      {
+        title: 'Wall Smash',
+        description: 'Creates a rock wall that damages and blocks.',
+      },
+      {
+        title: 'Bearing Shot',
+        description: 'Fires a projectile that deals moderate damage.',
+      },
+    ],
+  },
+  {
+    key: 'purple-haze',
+    name: 'Purple Haze',
+    tier: 'C',
+    rarity: 'Uncommon',
+    part: 'Part 5',
+    bestFor: 'High-risk, high-reward poison play',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Purple-Haze.png',
+    quickVerdict:
+      'Deals massive damage but can easily kill the user if not handled with care.',
+    summary:
+      'Purple Haze is a glass cannon. Its virus deals incredible damage, but it doesn\'t distinguish between friend or foe.',
+    howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
+    strengths: [
+      'Extreme DoT with the virus.',
+      'Strong area denial; enemies will avoid your clouds.',
+      'Fast melee attacks.',
+    ],
+    weaknesses: [
+      'Virus can damage the user and allies.',
+      'Inconsistent in many PvP scenarios.',
+      'Zero mobility or ranged threat.',
+    ],
+    abilities: [
+      {
+        title: 'Infectious Bulb',
+        description: 'Releases a virus cloud on impact.',
+      },
+      {
+        title: 'Bulb Smash',
+        description: 'A powerful punch that releases multiple virus clouds.',
+      },
+      {
+        title: 'Fury Strike',
+        description: 'A frantic series of punches that spreads the virus.',
+      },
+    ],
+  },
+  {
+    key: 'the-hand',
+    name: 'The Hand',
+    tier: 'D',
+    rarity: 'Uncommon',
+    part: 'Part 4',
+    bestFor: 'Gimmick erasure builds and raw power',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/The-Hand-man.png',
+    quickVerdict:
+      'High damage potential that is held back by slow animations and extreme predictability.',
+    summary:
+      'The Hand can erase health bars, but most players will simply walk away from its slow attacks. It lacks the tools to be competitive.',
+    howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
+    strengths: [
+      'Very high damage per hit.',
+      'Erasure Pull can catch off-guard enemies.',
+      'Defense-ignoring damage.',
+    ],
+    weaknesses: [
+      'Extremely slow and punishable.',
+      'Very short range on most moves.',
+      'Predictable "one-trick" playstyle.',
+    ],
+    abilities: [
+      {
+        title: 'Erasure Swipe',
+        description: 'A slow swipe that deals massive damage.',
+      },
+      {
+        title: 'Erasure Pull',
+        description: 'Erases space to pull an enemy toward you.',
+      },
+      {
+        title: 'Hard Left',
+        description: 'A heavy punch that knocks enemies back.',
+      },
+    ],
+  },
+  {
+    key: 'red-hot-chili-pepper',
+    name: 'Red Hot Chili Pepper',
+    tier: 'D',
+    rarity: 'Common',
+    part: 'Part 4',
+    bestFor: 'Early mobility and learning the game',
+    imageUrl: 'https://bloxinformer.com/wp-content/uploads/2026/01/Red-Hot-Chilly-Pepper.png',
+    quickVerdict:
+      'Good for moving around the map early on, but its damage is outclassed by almost everything else.',
+    summary:
+      'Red Hot Chili Pepper is a common pull that offers some mobility but fails to provide the damage or CC needed for serious play.',
+    howToGet: ['Obtained from Stand Arrow (Common rarity).'],
+    strengths: [
+      'Flash provides decent early-game mobility.',
+      'Easy to obtain for new players.',
+      'Electric effects can stun briefly.',
+    ],
+    weaknesses: [
+      'Very low base damage.',
+      'Poor scaling into the mid and late game.',
+      'Lacks any meaningful combo potential.',
+    ],
+    abilities: [
+      {
+        title: 'Electrical Surge',
+        description: 'Releases a burst of electricity around the user.',
+      },
+      {
+        title: 'Flash',
+        description: 'A quick teleport that leaves a damaging trail.',
+      },
+      {
+        title: 'Thunder Rod',
+        description: 'A basic electric-infused melee strike.',
       },
     ],
   },
 ] as const;
 
 export const standTierDescriptions: Record<StandTier, string> = {
-  S: 'Best overall picks from the provided chart, usually worth deeper research before long grinds.',
-  A: 'Strong stands with clear payoff, but more visible tradeoffs in execution, farming comfort, or route cost.',
-  B: 'Playable middle-tier options that can work well, but usually need more matchup awareness or accept lower ceilings.',
-  C: 'Useful mostly for niche goals, early progression, or comfort picks rather than broad long-term value.',
+  S: 'The Meta Kings. Unmatched in their respective roles, whether it\'s mobility, control, or raw power.',
+  A: 'Strong & Reliable. Excellent choices for competitive play and high-efficiency farming.',
+  B: 'Solid Mid-Tier. Playable and fun, but they require more effort to beat top-tier stands.',
+  C: 'Niche or Starter. Useful for early progression or specific playstyles, but generally outclassed.',
+  D: 'Underpowered. These stands need significant buffs to compete with the rest of the roster.',
 };
 
-export const starPlatinum = stands[0];
+export const starPlatinum = stands[4]; // Updated index

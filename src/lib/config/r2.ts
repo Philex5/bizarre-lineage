@@ -57,8 +57,11 @@ export function getImageUrl(filename: string, useCustomDomain = true): string {
  * 检查是否为 R2 URL
  */
 export function isR2Url(url: string): boolean {
-  return url.includes(R2_CONFIG.domain) || 
-         (R2_CONFIG.customDomain && url.includes(R2_CONFIG.customDomain));
+  return (
+    url.includes(R2_CONFIG.domain) ||
+    (R2_CONFIG.customDomain !== undefined &&
+      url.includes(R2_CONFIG.customDomain))
+  );
 }
 
 /**

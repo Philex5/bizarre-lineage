@@ -30,5 +30,4 @@ export const localeMessagesPaths = [
   'pages/guides/beginner-guide',
   'pages/guides/stats',
   'pages/guides/prestige',
-  'pages/stands/star-platinum',
 ];

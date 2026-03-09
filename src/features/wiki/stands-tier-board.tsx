@@ -2,40 +2,51 @@
 
 import { useState } from 'react';
 import { stands, type StandEntry, type StandTier } from '@/content-data/stands';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Trophy, Zap, Shield, HelpCircle, AlertTriangle } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { cn } from '@/shared/lib/utils';
 
-const tierOrder: StandTier[] = ['S', 'A', 'B', 'C'];
+const tierOrder: StandTier[] = ['S', 'A', 'B', 'C', 'D'];
 
 const tierPalette: Record<
   StandTier,
-  { row: string; label: string; cell: string; selected: string }
+  { row: string; label: string; cell: string; selected: string; icon: any }
 > = {
   S: {
-    row: 'bg-primary/10',
+    row: 'bg-primary/5',
     label: 'bg-primary text-primary-foreground',
-    cell: 'bg-background hover:bg-primary/10',
-    selected: 'ring-2 ring-primary bg-primary/12',
+    cell: 'bg-background hover:bg-primary/10 hover:scale-[1.02]',
+    selected: 'ring-2 ring-primary bg-primary/15 scale-[1.05] z-10',
+    icon: Trophy,
   },
   A: {
-    row: 'bg-accent/10',
+    row: 'bg-accent/5',
     label: 'bg-accent text-accent-foreground',
-    cell: 'bg-background hover:bg-accent/10',
-    selected: 'ring-2 ring-accent bg-accent/14',
+    cell: 'bg-background hover:bg-accent/10 hover:scale-[1.02]',
+    selected: 'ring-2 ring-accent bg-accent/15 scale-[1.05] z-10',
+    icon: Zap,
   },
   B: {
-    row: 'bg-secondary',
-    label: 'bg-foreground text-background',
-    cell: 'bg-background hover:bg-muted',
-    selected: 'ring-2 ring-foreground/30 bg-muted',
+    row: 'bg-blue-500/5',
+    label: 'bg-blue-500 text-white',
+    cell: 'bg-background hover:bg-blue-500/10 hover:scale-[1.02]',
+    selected: 'ring-2 ring-blue-500 bg-blue-500/15 scale-[1.05] z-10',
+    icon: Shield,
   },
   C: {
-    row: 'bg-muted',
+    row: 'bg-muted/30',
     label: 'bg-muted-foreground text-background',
-    cell: 'bg-background hover:bg-secondary',
-    selected: 'ring-2 ring-muted-foreground/30 bg-secondary',
+    cell: 'bg-background hover:bg-secondary hover:scale-[1.02]',
+    selected: 'ring-2 ring-muted-foreground/30 bg-secondary scale-[1.05] z-10',
+    icon: HelpCircle,
+  },
+  D: {
+    row: 'bg-red-500/5',
+    label: 'bg-red-500 text-white',
+    cell: 'bg-background hover:bg-red-500/10 hover:scale-[1.02]',
+    selected: 'ring-2 ring-red-500 bg-red-500/15 scale-[1.05] z-10',
+    icon: AlertTriangle,
   },
 };
 
@@ -46,87 +57,117 @@ function groupByTier() {
   }));
 }
 
+import Image from 'next/image';
+import { toImageUrl } from '@/lib/r2-utils';
+
 function DetailCard({ stand }: { stand: StandEntry }) {
+  const imageUrl = toImageUrl(stand.imageUrl);
   return (
-    <section className="border-border bg-card overflow-hidden rounded-[2rem] border shadow-lg">
-      <div className="text-primary-foreground bg-[linear-gradient(90deg,var(--color-primary),color-mix(in_oklab,var(--color-primary)_72%,var(--color-accent)),var(--color-accent))] px-6 py-4">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="rounded-full border border-white/20 bg-white/12 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+    <section className="border-border bg-card overflow-hidden rounded-[2.5rem] border shadow-2xl transition-all duration-300">
+      <div className="text-primary-foreground relative bg-[linear-gradient(135deg,var(--color-primary),color-mix(in_oklab,var(--color-primary)_70%,var(--color-accent)),var(--color-accent))] px-8 py-10">
+        {imageUrl && (
+          <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src={imageUrl}
+              alt={stand.name}
+              fill
+              className="object-cover object-center opacity-25 grayscale brightness-50 contrast-125"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+          </div>
+        )}
+        <div className="absolute top-0 right-0 p-8 opacity-10">
+          <Trophy className="size-32" />
+        </div>
+        
+        <div className="relative z-10 flex flex-wrap items-center gap-3">
+          <span className="rounded-full border border-white/30 bg-white/20 px-4 py-1 text-[0.75rem] font-bold tracking-[0.2em] uppercase backdrop-blur-md">
             {stand.tier} tier
           </span>
-          <span className="rounded-full border border-white/20 bg-white/12 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+          <span className="rounded-full border border-white/30 bg-white/20 px-4 py-1 text-[0.75rem] font-bold tracking-[0.2em] uppercase backdrop-blur-md">
             {stand.rarity}
           </span>
-          <span className="rounded-full border border-white/20 bg-white/12 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.18em] uppercase">
+          <span className="rounded-full border border-white/30 bg-white/20 px-4 py-1 text-[0.75rem] font-bold tracking-[0.2em] uppercase backdrop-blur-md">
             {stand.part}
           </span>
         </div>
-        <div className="mt-4 flex items-start justify-between gap-4">
-          <div>
-            <h2 className="font-serif text-4xl leading-none tracking-[-0.05em] text-white">
+        
+        <div className="relative z-10 mt-8 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <h2 className="font-serif text-5xl leading-tight tracking-tight text-white md:text-6xl">
               {stand.name}
             </h2>
-            <p className="mt-2 text-sm font-medium tracking-[0.14em] text-white/74 uppercase">
-              {stand.bestFor}
+            <p className="mt-4 text-lg font-medium tracking-wide text-white/80 uppercase italic">
+              Best for: {stand.bestFor}
             </p>
           </div>
-          {stand.key === 'star-platinum' ? (
-            <Link
-              href="/stands/star-platinum"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-[0.72rem] font-semibold tracking-[0.16em] uppercase transition hover:bg-white/18"
-            >
-              Detail page
-              <ArrowRight className="size-4" />
-            </Link>
-          ) : null}
+          <Link
+            href={`/stands#${stand.key}`}
+            className="group inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-[0.85rem] font-bold tracking-widest text-primary uppercase transition-all hover:bg-opacity-90 hover:shadow-xl active:scale-95"
+          >
+            Stand Database
+            <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
 
-      <div className="grid gap-5 p-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-5">
-          <p className="text-muted-foreground text-base leading-7">
-            {stand.quickVerdict}
-          </p>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {stand.abilities.map((ability) => (
-              <div
-                key={ability.title}
-                className="bg-background/90 border-border rounded-[1.3rem] border p-4"
-              >
-                <div className="text-foreground text-sm font-semibold">
-                  {ability.title}
-                </div>
-                <p className="text-muted-foreground mt-2 text-sm leading-6">
-                  {ability.description}
-                </p>
-              </div>
-            ))}
+      <div className="grid gap-10 p-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="space-y-10">
+          <div>
+            <h3 className="text-foreground mb-4 text-xl font-bold tracking-tight">Verdict</h3>
+            <p className="text-muted-foreground text-lg leading-relaxed italic">
+              "{stand.quickVerdict}"
+            </p>
+            <p className="text-muted-foreground mt-4 text-base leading-relaxed">
+              {stand.summary}
+            </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="border-accent/16 bg-accent/8 rounded-[1.3rem] border p-4">
-              <div className="text-accent text-[0.68rem] font-semibold tracking-[0.18em] uppercase">
+          <div>
+            <h3 className="text-foreground mb-6 text-xl font-bold tracking-tight">Core Abilities</h3>
+            <div className="grid gap-4 md:grid-cols-3">
+              {stand.abilities.map((ability) => (
+                <div
+                  key={ability.title}
+                  className="bg-secondary/50 border-border group rounded-3xl border p-6 transition-colors hover:bg-secondary"
+                >
+                  <div className="text-primary text-sm font-bold tracking-wider uppercase mb-3">
+                    {ability.title}
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {ability.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="border-emerald-500/20 bg-emerald-500/5 rounded-3xl border p-6">
+              <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 text-sm font-bold tracking-widest uppercase mb-4">
+                <Trophy className="size-4" />
                 Strengths
               </div>
-              <ul className="text-muted-foreground mt-3 space-y-2 text-sm leading-6">
+              <ul className="space-y-3">
                 {stand.strengths.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="bg-accent mt-2 size-1.5 rounded-full" />
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="bg-emerald-500 mt-2 size-1.5 shrink-0 rounded-full" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border-primary/16 bg-primary/7 rounded-[1.3rem] border p-4">
-              <div className="text-primary text-[0.68rem] font-semibold tracking-[0.18em] uppercase">
+            <div className="border-red-500/20 bg-red-500/5 rounded-3xl border p-6">
+              <div className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm font-bold tracking-widest uppercase mb-4">
+                <AlertTriangle className="size-4" />
                 Weaknesses
               </div>
-              <ul className="text-muted-foreground mt-3 space-y-2 text-sm leading-6">
+              <ul className="space-y-3">
                 {stand.weaknesses.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="bg-primary mt-2 size-1.5 rounded-full" />
+                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="bg-red-500 mt-2 size-1.5 shrink-0 rounded-full" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -135,32 +176,29 @@ function DetailCard({ stand }: { stand: StandEntry }) {
           </div>
         </div>
 
-        <aside className="grid gap-4">
-          <div className="bg-background/90 border-border rounded-[1.3rem] border p-4">
-            <div className="text-muted-foreground text-[0.68rem] font-semibold tracking-[0.18em] uppercase">
-              How to get
-            </div>
-            <ul className="text-muted-foreground mt-3 space-y-2 text-sm leading-6">
+        <aside className="space-y-6">
+          <div className="bg-primary/5 border-primary/20 rounded-3xl border p-6">
+            <h3 className="text-primary flex items-center gap-2 text-sm font-bold tracking-widest uppercase mb-4">
+              <Zap className="size-4" />
+              Obtainment Guide
+            </h3>
+            <ul className="space-y-4">
               {stand.howToGet.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="bg-primary mt-2 size-1.5 rounded-full" />
+                <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                  <div className="bg-primary mt-1.5 size-2 shrink-0 rounded-full" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="bg-background/90 text-muted-foreground border-border rounded-[1.3rem] border p-4 text-sm leading-6">
-            <div className="text-muted-foreground text-[0.68rem] font-semibold tracking-[0.18em] uppercase">
-              Reading note
-            </div>
-            <p className="mt-3">
-              Use the tier letter for the first pass, then read this card like a
-              reroll decision. The useful question is whether the stand fits
-              your route, grind, and actual skill level.
-            </p>
-            <p className="text-muted-foreground mt-2 text-xs tracking-[0.14em] uppercase">
-              Built for real keep or skip decisions
+          <div className="bg-muted/50 border-border rounded-3xl border p-6">
+            <h3 className="text-muted-foreground flex items-center gap-2 text-sm font-bold tracking-widest uppercase mb-4">
+              <HelpCircle className="size-4" />
+              Pro Tip
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed italic">
+              "When deciding whether to keep or skip {stand.name}, consider your current Prestige level and Conjuring stat. This stand peaks at high Conjuring where its true potential is unlocked."
             </p>
           </div>
         </aside>
@@ -176,78 +214,77 @@ export function StandsTierBoard() {
     stands.find((stand) => stand.key === selectedKey) ?? stands[0];
 
   return (
-    <div className="grid gap-8">
-      <section className="border-border bg-card overflow-hidden rounded-[2rem] border shadow-lg">
-        <div className="border-border border-b px-6 py-5">
-          <div className="text-muted-foreground text-[0.72rem] tracking-[0.22em] uppercase">
-            Stand tiers
-          </div>
-          <h1 className="text-foreground mt-2 font-serif text-4xl leading-none tracking-[-0.05em]">
-            Bizarre Lineage tier list: click a stand to see whether it is worth
-            your next grind.
-          </h1>
-          <p className="text-muted-foreground mt-3 max-w-2xl text-sm leading-7">
-            Tier order follows the current chart. Selecting a stand opens a
-            player-focused card below with obtainment notes, strengths,
-            weaknesses, and a faster read on whether you should keep, chase, or
-            skip it.
-          </p>
-        </div>
+    <div className="max-w-7xl mx-auto space-y-12 py-12">
+      <section className="text-center space-y-4 mb-16 px-4">
+        <h2 className="text-primary font-bold tracking-[0.3em] uppercase text-sm">Community Rankings</h2>
+        <h1 className="text-foreground font-serif text-5xl md:text-7xl leading-[1.1] tracking-tight max-w-4xl mx-auto">
+          Bizarre Lineage Stand Tier List
+        </h1>
+        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          The ultimate guide to every Stand in the game. Updated for March 2026 based on community meta research.
+        </p>
+      </section>
 
-        <div className="overflow-x-auto p-4 md:p-6">
-          <div className="border-border min-w-[920px] overflow-hidden rounded-[1.6rem] border">
-            {grouped.map((group) => (
+      <section className="bg-card border-border overflow-hidden rounded-[3rem] border shadow-xl">
+        <div className="grid divide-y divide-border">
+          {grouped.map((group) => {
+            const TierIcon = tierPalette[group.tier].icon;
+            return (
               <div
                 key={group.tier}
                 className={cn(
-                  'grid grid-cols-[120px_repeat(5,minmax(0,1fr))]',
+                  'flex flex-col md:flex-row min-h-[140px]',
                   tierPalette[group.tier].row
                 )}
               >
                 <div
                   className={cn(
-                    'border-border flex min-h-[110px] items-center justify-center border-r border-b text-4xl font-light tracking-[-0.05em]',
+                    'flex flex-col items-center justify-center gap-2 px-8 py-8 md:w-32 md:shrink-0',
                     tierPalette[group.tier].label
                   )}
                 >
-                  {group.tier}
+                  <TierIcon className="size-8" />
+                  <span className="text-4xl font-black tracking-tighter">{group.tier}</span>
                 </div>
 
-                {Array.from({ length: 5 }).map((_, index) => {
-                  const stand = group.entries[index];
-                  if (!stand) {
-                    return (
-                      <div
-                        key={`${group.tier}-empty-${index}`}
-                        className="bg-secondary border-border min-h-[110px] border-r border-b"
-                      />
-                    );
-                  }
-
-                  const selected = stand.key === selectedKey;
-
-                  return (
-                    <button
-                      key={stand.key}
-                      type="button"
-                      onClick={() => setSelectedKey(stand.key)}
-                      className={cn(
-                        'text-foreground border-border min-h-[110px] border-r border-b px-4 py-3 text-center text-xl leading-tight font-semibold tracking-[-0.04em] transition duration-200',
-                        tierPalette[group.tier].cell,
-                        selected && tierPalette[group.tier].selected
-                      )}
-                    >
-                      {stand.name}
-                    </button>
-                  );
-                })}
+                <div className="flex-1 p-6 flex flex-wrap gap-4 items-center">
+                  {group.entries.length > 0 ? (
+                    group.entries.map((stand) => {
+                      const selected = stand.key === selectedKey;
+                      return (
+                        <button
+                          key={stand.key}
+                          type="button"
+                          onClick={() => setSelectedKey(stand.key)}
+                          className={cn(
+                            'relative h-20 min-w-[140px] px-6 rounded-2xl border-border border flex items-center justify-center text-center font-bold tracking-tight transition-all duration-300 shadow-sm',
+                            tierPalette[group.tier].cell,
+                            selected && tierPalette[group.tier].selected,
+                            selected ? 'text-foreground' : 'text-muted-foreground'
+                          )}
+                        >
+                          <span className="text-lg">{stand.name}</span>
+                          {selected && (
+                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-full" />
+                          )}
+                        </button>
+                      );
+                    })
+                  ) : (
+                    <span className="text-muted-foreground italic text-sm px-4">No stands in this tier</span>
+                  )}
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {selectedStand ? <DetailCard stand={selectedStand} /> : null}
+      {selectedStand ? (
+        <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <DetailCard stand={selectedStand} />
+        </div>
+      ) : null}
     </div>
   );
 }

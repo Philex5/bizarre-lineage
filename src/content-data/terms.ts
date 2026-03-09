@@ -46,6 +46,11 @@ export interface TermEntry {
   heroImageAlt: string;
   intro: string[];
   sections: TermSection[];
+  videos?: Array<{
+    title: string;
+    embedUrl: string;
+    note: string;
+  }>;
   references: TermLink[];
   relatedLinks: TermLink[];
 }
@@ -311,6 +316,23 @@ const enTerms: TermsDictionary = {
           ],
         },
       ],
+      videos: [
+        {
+          title: 'How To RANK SSS Every Raid Boss in Bizarre Lineage!',
+          embedUrl: 'https://www.youtube.com/embed/Ym-f_qM8G5c',
+          note: 'Catrague explains how to achieve the highest rank for maximum rewards.',
+        },
+        {
+          title: 'How To EASILY Get SSS RANK ON ANY RAID',
+          embedUrl: 'https://www.youtube.com/embed/W7U-1pMv5zY',
+          note: 'UnoTwo details high-damage builds and infinite explosion loops for bosses.',
+        },
+        {
+          title: 'I Farmed 20 Jotaro Raids (Is it worth it?)',
+          embedUrl: 'https://www.youtube.com/embed/q_L9zN1rA4U',
+          note: 'YSKY compares drop rates and efficiency for Jotaro and Dio raids.',
+        },
+      ],
       references: [
         {
           label: 'Official Trello board',
@@ -423,6 +445,23 @@ const enTerms: TermsDictionary = {
           ],
         },
       ],
+      videos: [
+        {
+          title: 'How to ACTUALLY PRESTIGE In Bizarre Lineage!',
+          embedUrl: 'https://www.youtube.com/embed/TKgl1YBN10E',
+          note: 'Step-by-step walkthrough of requirements and the Arch Mage location.',
+        },
+        {
+          title: 'The FASTEST Way To Prestige in Bizarre Lineage!',
+          embedUrl: 'https://www.youtube.com/embed/JTOUP84J_uM',
+          note: 'Efficient grinding routes for beginner-friendly speedrunning.',
+        },
+        {
+          title: 'Bizarre Lineage: FULL Beginners Guide',
+          embedUrl: 'https://www.youtube.com/embed/0zTlS2CKB8k',
+          note: 'Holistic view of the game from fresh start to first prestige.',
+        },
+      ],
       references: [
         {
           label: 'Official Trello board',
@@ -524,6 +563,23 @@ const enTerms: TermsDictionary = {
               text: 'Awakening is best treated as a late-game build and evolution term in Bizarre Lineage. Based on the official Trello structure, it belongs much later than stand unlocks, stat basics, or early progression decisions.',
             },
           ],
+        },
+      ],
+      videos: [
+        {
+          title: 'How to ACTUALLY Get Stand Awakening',
+          embedUrl: 'https://www.youtube.com/embed/n21tqQKtKA4',
+          note: 'Full guide and showcase on obtaining your first awakening.',
+        },
+        {
+          title: 'Bizarre Lineage How To Get Stand Awakening Fast',
+          embedUrl: 'https://www.youtube.com/embed/tsQVRXi-jVA',
+          note: 'Fastest location and progression guide for awakening.',
+        },
+        {
+          title: 'Bizarre Lineage Showcasing Every Awakening',
+          embedUrl: 'https://www.youtube.com/embed/mMAVX9PtY4Q',
+          note: 'Visual showcase of all unique moves and ultimate abilities.',
         },
       ],
       references: [
@@ -636,6 +692,23 @@ const enTerms: TermsDictionary = {
           ],
         },
       ],
+      videos: [
+        {
+          title: 'Best Method To Get Arrow Stands In Bizarre Lineage Roblox - Arrow Stand Farming Method! (Roblox)',
+          embedUrl: 'https://www.youtube.com/embed/Z56kw4qNAs0',
+          note: 'Focused arrow stand farming route for players trying to get their first stand path online quickly.',
+        },
+        {
+          title: 'How To GET STAND & LUCKY ARROWS FAST In Bizarre Lineage! (BEST METHOD) Roblox',
+          embedUrl: 'https://www.youtube.com/embed/tvk2f28cYm4',
+          note: 'Focused route for getting stand arrows and lucky arrows quickly in early progression.',
+        },
+        {
+          title: 'How To Get Lucky Stand Arrows & Legendary Chests',
+          embedUrl: 'https://www.youtube.com/embed/TKgl1YBN10E',
+          note: 'A specialized guide for finding rare items and skins.',
+        },
+      ],
       references: [
         {
           label: 'Official Trello board',
@@ -735,6 +808,23 @@ const enTerms: TermsDictionary = {
           ],
         },
       ],
+      videos: [
+        {
+          title: 'How To Get All Fighting Styles + Showcases | Bizarre Linage',
+          embedUrl: 'https://www.youtube.com/embed/3q0QOXfIjyE',
+          note: 'Walkthrough for unlocking the fighting styles with showcase coverage for each route.',
+        },
+        {
+          title: '[Bizarre Lineage] HOW TO GET EVERY FIGHTING STYLE + FULL SHOWCASE (Karate, Boxing, & Kendo)',
+          embedUrl: 'https://www.youtube.com/embed/wQZqbEYv8Jo',
+          note: 'Focused guide for the Karate, Boxing, and Kendo trainer routes plus their showcases.',
+        },
+        {
+          title: 'Bizzare Lineage Fighting Style Tier List, Ripple Is Actually Broken??',
+          embedUrl: 'https://www.youtube.com/embed/KRdZMNyJbn4',
+          note: 'Tier-list style comparison to help decide which fighting style route is worth building around.',
+        },
+      ],
       references: [
         {
           label: 'Official Trello board',
@@ -772,7 +862,7 @@ const enTerms: TermsDictionary = {
       description:
         'What sub-abilities are in Bizarre Lineage, how to unlock them, and how trainer routes differ from the Vampire item route.',
       heroImageSrc:
-        'https://trello.com/1/cards/699f8883686a101eb1c4a0c2/attachments/699f8a6ae3451206a5a14d7a/download/image.png',
+        'https://trello.com/1/cards/695946dffbe09e75b7d4b974/attachments/699bc6a9b163c27099d53663/download/image-ezgif.com-resize_(1).png',
       heroImageAlt: 'Official Bizarre Lineage sub-ability NPC reference',
       intro: [
         'Sub-abilities in Bizarre Lineage are secondary progression layers that sit beside your main stand choice.',
@@ -840,6 +930,23 @@ const enTerms: TermsDictionary = {
               text: 'Sub-abilities are an extra build layer in Bizarre Lineage. Some come from trainers, some come from items, and the correct route depends on which sub-ability you are trying to add to your build.',
             },
           ],
+        },
+      ],
+      videos: [
+        {
+          title: 'What Is the Best Sub Ability in Bizarre Lineage? (For PvE and PvP)',
+          embedUrl: 'https://www.youtube.com/embed/QNTT2v0XsUM',
+          note: 'Compares sub-ability choices for both PvE routes and PvP performance.',
+        },
+        {
+          title: 'All Sub Ability NPC Locations in Bizarre Lineage',
+          embedUrl: 'https://www.youtube.com/embed/wTLrhyoMlgU',
+          note: 'Focused location guide for finding the sub-ability trainers and NPC routes.',
+        },
+        {
+          title: 'Sub-Abilities Showcase | Bizarre Lineage',
+          embedUrl: 'https://www.youtube.com/embed/k_Kuq-_aVXM',
+          note: 'Showcase-style overview of how different sub-abilities look and play in practice.',
         },
       ],
       references: [

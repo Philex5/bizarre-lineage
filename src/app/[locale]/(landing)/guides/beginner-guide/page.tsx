@@ -114,9 +114,9 @@ const youtubeEmbeds = [
   },
   {
     title:
-      "The ULTIMATE Beginner's Guide to Bizarre Lineage Roblox! (Stands, Leveling, Progression & Awakening)",
-    embedUrl: 'https://www.youtube-nocookie.com/embed/LnyDuoPfC18',
-    note: 'Direct beginner route video from noahbamboah.',
+      "The BEST Beginners Guide to Bizarre Lineage! (Stands, Sub-Abilities, Stats)",
+    embedUrl: 'https://www.youtube-nocookie.com/embed/L9w_e-N4L-E',
+    note: 'Deep dive into late-game mechanics and build optimization from Catrague.',
   },
   {
     title: 'How to MAX CONJURATION (Fastest Way) | Bizarre Lineage',
