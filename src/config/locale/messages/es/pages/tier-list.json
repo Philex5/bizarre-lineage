@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "title": "Tier List de Bizarre Lineage: Mejores Stands para PvP y PvE",
+    "description": "Consulta la tier list de Bizarre Lineage para comparar los stands más sólidos en PvP y las opciones que mejor rinden para progresar y farmear en PvE."
+  },
+  "page": {
+    "sections": {
+      "board": {
+        "eyebrow": "Lectura del meta",
+        "title": "Tier List de Stands de Bizarre Lineage",
+        "description": "Una lectura útil del meta actual para decidir qué stands merecen inversión, cuáles cumplen y cuáles se quedan cortos según tu objetivo.",
+        "tier_suffix": "tier",
+        "best_for_label": "Mejor para",
+        "cta": "Ver ficha del stand",
+        "verdict_title": "Veredicto",
+        "core_abilities_title": "Habilidades principales",
+        "strengths_title": "Fortalezas",
+        "weaknesses_title": "Debilidades",
+        "obtainment_title": "Guía de obtención",
+        "pro_tip_title": "Consejo rápido",
+        "pro_tip": "Antes de decidir si te quedas con {standName} o sigues tirando, piensa en tu nivel de prestige, tu ruta y si de verdad puedes sacarle partido ahora mismo.",
+        "empty_tier": "No hay stands en este nivel"
+      },
+      "representative": {
+        "eyebrow": "Stands representativos",
+        "title": "Las fichas sirven para explicar por qué un stand merece atención, no solo en qué tier cae.",
+        "tier_suffix": "tier"
+      },
+      "methodology": {
+        "eyebrow": "Metodología",
+        "title": "Una tier list útil deja claro cómo está evaluando cada stand."
+      },
+      "role_picks": {
+        "eyebrow": "Selecciones por rol",
+        "title": "Muchos jugadores solo quieren saber qué opción encaja mejor en un caso concreto."
+      },
+      "faq": {
+        "eyebrow": "Preguntas frecuentes",
+        "title": "Lo que esta página debería dejar claro.",
+        "items": [
+          {
+            "question": "¿Por qué vincular la tier list a una página de stand?",
+            "answer": "Porque la página de clasificación debe remitir a un artículo tipo base de datos cuando un stand merece una investigación más profunda."
+          },
+          {
+            "question": "¿Por qué la metodología es tan visible aquí?",
+            "answer": "Sin metodología, una tier list se convierte en un gráfico subjetivo en el que es difícil confiar y difícil de diferenciar en las búsquedas."
+          },
+          {
+            "question": "¿Debería cada stand estar en el MVP?",
+            "answer": "No. El MVP utiliza un conjunto representativo y una página de muestra sólida antes de ampliar la cobertura."
+          },
+          {
+            "question": "¿Qué deberían leer los jugadores nuevos después de esta página?",
+            "answer": "La guía para principiantes, especialmente si entienden el meta pero aún necesitan una ruta de progresión temprana."
+          }
+        ]
+      }
+    },
+    "content": {
+      "entries": [
+        {
+          "key": "star-platinum",
+          "name": "Star Platinum",
+          "tier": "S",
+          "pvp": "Excelente",
+          "pve": "Fuerte",
+          "beginner": "Medio",
+          "summary": "Presión confiable, amplio valor en enfrentamientos y suficiente versatilidad para anclar la página de muestra de stands actual."
+        },
+        {
+          "key": "king-crimson",
+          "name": "King Crimson",
+          "tier": "A",
+          "pvp": "Fuerte",
+          "pve": "Bueno",
+          "beginner": "Bajo",
+          "summary": "Gran potencial, pero requiere una toma de decisiones más precisa y castiga la ejecución descuidada más que el puesto superior."
+        },
+        {
+          "key": "silver-chariot",
+          "name": "Silver Chariot",
+          "tier": "B",
+          "pvp": "Bueno",
+          "pve": "Promedio",
+          "beginner": "Medio",
+          "summary": "Utilizable y funcional, aunque depende más de la comodidad, el conocimiento del enfrentamiento y la preferencia del jugador."
+        },
+        {
+          "key": "entry-path-stands",
+          "name": "Stands de inicio",
+          "tier": "C",
+          "pvp": "Promedio",
+          "pve": "Promedio",
+          "beginner": "Alto",
+          "summary": "Están bien para empezar a moverse, pero no son los stands en torno a los cuales la mayoría de los jugadores deberían estructurar sus planes a largo plazo."
+        }
+      ],
+      "methodology": [
+        {
+          "title": "La consistencia supera el valor de los clips",
+          "description": "La clasificación favorece a los stands que rinden en partidas repetidas en lugar de momentos destacados aislados."
+        },
+        {
+          "title": "Tanto el PvP como el PvE importan",
+          "description": "Un stand que domina solo un área todavía necesita advertencias antes de ganar un puesto en el nivel superior para todo propósito."
+        },
+        {
+          "title": "La accesibilidad afecta el valor",
+          "description": "Las opciones extremadamente castigadoras pueden clasificarse más bajo para la base general de jugadores, incluso si los especialistas las valoran altamente."
+        }
+      ],
+      "best_for": [
+        {
+          "title": "Mejor para PvP",
+          "description": "Star Platinum establece actualmente el punto de referencia de la muestra cuando lo que más importa es la presión constante y la amplia cobertura de enfrentamientos."
+        },
+        {
+          "title": "Mejor para PvE",
+          "description": "El valor en PvE debe juzgarse por la eficiencia de progresión estable, no solo por la fuerza en duelos o los momentos destacados de combos."
+        },
+        {
+          "title": "Mejor para principiantes",
+          "description": "Los principiantes deberían inclinarse por el progreso estable y la toma de decisiones clara, incluso si eso significa retrasar la búsqueda de un nivel superior."
+        }
+      ]
+    }
+  }
+}

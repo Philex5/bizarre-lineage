@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { buildMetadata, StandsHubPage } from '@/features/wiki/pages';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 export const revalidate = 3600;
 
@@ -10,13 +10,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'pages.stands' });
 
   return buildMetadata({
     locale,
     path: '/stands',
-    title: 'Bizarre Lineage Stands Guide: Tier List & Acquisition',
-    description:
-      'The complete Bizarre Lineage stands index. Browse stand cards with current tier labels, acquisition notes, and fast verdicts for every stand in-game.',
+    title: t('metadata.title'),
+    description: t('metadata.description'),
   });
 }
 

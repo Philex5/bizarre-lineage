@@ -1,4 +1,5 @@
 export type StandTier = 'S' | 'A' | 'B' | 'C' | 'D';
+export type StandLocale = 'en' | 'es';
 
 export type StandEntry = {
   key: string;
@@ -16,9 +17,16 @@ export type StandEntry = {
   abilities: Array<{ title: string; description: string }>;
 };
 
+export function getStandHref(standKey: string) {
+  return stands.some((stand) => stand.key === standKey)
+    ? `/stands/${standKey}`
+    : `/stands#${standKey}`;
+}
+
 export const standResearchNotes = {
   verifiedAt: '2026-03-09',
-  tierSource: 'Community research and latest tier list updates (Destructoid, March 2026).',
+  tierSource:
+    'Community research and latest tier list updates (Destructoid, March 2026).',
   methodology:
     'Tier placements reflect the current meta where mobility, crowd control, and evolution potential define the ceiling. Rewritten to focus on player-driven "keep or skip" decisions.',
 } as const;
@@ -57,7 +65,8 @@ export const stands: StandEntry[] = [
       },
       {
         title: "Heaven's Wrath",
-        description: 'A lightning-fast dash attack that punishes spacing errors.',
+        description:
+          'A lightning-fast dash attack that punishes spacing errors.',
       },
       {
         title: 'Acceleration',
@@ -233,7 +242,7 @@ export const stands: StandEntry[] = [
     quickVerdict:
       'A high-skill stand that can completely bypass enemy attacks with Time Erase.',
     summary:
-      'King Crimson is a technical duelist. It rewards players who can predict their opponent\'s moves and use Time Erase to reposition.',
+      "King Crimson is a technical duelist. It rewards players who can predict their opponent's moves and use Time Erase to reposition.",
     howToGet: ['Obtained from Stand Arrow (Legendary rarity).'],
     strengths: [
       'Elite utility with Time Erase and Epitaph.',
@@ -349,7 +358,7 @@ export const stands: StandEntry[] = [
     quickVerdict:
       'A strong "keep-away" stand that punishes enemies for trying to get close.',
     summary:
-      'Killer Queen turns the battlefield into a minefield. It\'s great for players who like to control the pace of the fight.',
+      "Killer Queen turns the battlefield into a minefield. It's great for players who like to control the pace of the fight.",
     howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
     strengths: [
       'Excellent area denial with bombs.',
@@ -387,7 +396,7 @@ export const stands: StandEntry[] = [
     quickVerdict:
       'A pure rushdown stand with incredible melee speed, but it lacks any form of utility or range.',
     summary:
-      'Anubis is for players who want to overwhelm their opponents with a flurry of sword strikes. It\'s very high damage if you can stay close.',
+      "Anubis is for players who want to overwhelm their opponents with a flurry of sword strikes. It's very high damage if you can stay close.",
     howToGet: ['Obtained from Stand Arrow (Rare rarity).'],
     strengths: [
       'Some of the highest melee DPS in the game.',
@@ -577,7 +586,7 @@ export const stands: StandEntry[] = [
     quickVerdict:
       'Deals massive damage but can easily kill the user if not handled with care.',
     summary:
-      'Purple Haze is a glass cannon. Its virus deals incredible damage, but it doesn\'t distinguish between friend or foe.',
+      "Purple Haze is a glass cannon. Its virus deals incredible damage, but it doesn't distinguish between friend or foe.",
     howToGet: ['Obtained from Stand Arrow (Uncommon rarity).'],
     strengths: [
       'Extreme DoT with the virus.',
@@ -682,8 +691,677 @@ export const stands: StandEntry[] = [
   },
 ] as const;
 
+type LocalizedStandFields = Omit<
+  StandEntry,
+  'key' | 'name' | 'tier' | 'imageUrl'
+>;
+
+const esStandContent: Record<string, LocalizedStandFields> = {
+  'made-in-heaven': {
+    rarity: 'Especial',
+    part: 'Parte 6',
+    bestFor: 'Movilidad extrema en PvP y presión a toda velocidad',
+    quickVerdict:
+      'Ahora mismo es la cima del meta PvP. Su velocidad y su capacidad para cerrar distancias hacen que sea dificilísimo frenarlo.',
+    summary:
+      'Made in Heaven es la evolución final de la línea de Whitesnake. Cambia parte del control de sus fases anteriores por una velocidad absolutamente desbordante.',
+    howToGet: [
+      'Solo por evolución: evoluciona C-Moon con Prestigio 1+ y más de 100 de Conjuring.',
+      'Necesita una cadena de misiones compleja relacionada con "Way to Heaven".',
+    ],
+    strengths: [
+      'Movilidad brutal y capacidad excelente para perseguir.',
+      'Muy difícil de responder en duelos 1c1.',
+      'Mucho margen para sacar ventaja con sus buffs de velocidad.',
+    ],
+    weaknesses: [
+      'Aguanta menos de lo que parece.',
+      'Exige bastante preparación y una evolución costosa.',
+      'No es la mejor opción para farmear PvE en grupo.',
+    ],
+    abilities: [
+      {
+        title: 'Infinite Pursuit',
+        description: 'Un dash con teletransporte que abre combos rapidísimos.',
+      },
+      {
+        title: "Heaven's Wrath",
+        description:
+          'Una embestida fulminante que castiga cualquier mal spacing.',
+      },
+      {
+        title: 'Acceleration',
+        description:
+          'Aumenta muchísimo la velocidad de movimiento y de ataque.',
+      },
+    ],
+  },
+  whitesnake: {
+    rarity: 'Mítico',
+    part: 'Parte 6',
+    bestFor: 'Control, interrupciones y ruta de evolución',
+    quickVerdict:
+      'Un stand top muy completo que rinde tanto en PvE como en PvP. Es la pieza clave para llegar a C-Moon y Made in Heaven.',
+    summary:
+      'Whitesnake ofrece uno de los mejores controles de masas del juego gracias a su extracción de discos, así que sigue siendo peligroso a cualquier distancia.',
+    howToGet: [
+      'Se obtiene con Stand Arrow (rareza mítica).',
+      'Es una de las tiradas más buscadas por todo su potencial de evolución.',
+    ],
+    strengths: [
+      'Control de masas muy sólido con Disc Extraction.',
+      'Buen daño prolongado con ataques de ácido.',
+      'Funciona bien tanto en duelos como en PvE de grupo.',
+    ],
+    weaknesses: [
+      'Tiene menos movilidad que sus evoluciones.',
+      'Las habilidades de disco exigen bastante puntería.',
+      'Sufre contra stands de rush muy agresivos.',
+    ],
+    abilities: [
+      {
+        title: 'Disc Extraction',
+        description:
+          'Aturde al rival y le quita temporalmente parte de sus habilidades.',
+      },
+      {
+        title: 'Acid Rupture',
+        description:
+          'Aplica bastante daño prolongado y ralentiza a los enemigos en área.',
+      },
+      {
+        title: 'Revolver',
+        description:
+          'Un disparo rápido a distancia para mantener la presión sin acercarte.',
+      },
+    ],
+  },
+  'c-moon': {
+    rarity: 'Especial',
+    part: 'Parte 6',
+    bestFor: 'Combos de gravedad y control de zona',
+    quickVerdict:
+      'Una evolución muy potente con mecánicas de gravedad capaces de bloquear incluso a rivales muy móviles.',
+    summary:
+      'C-Moon conecta la progresión entre Whitesnake y Made in Heaven, y destaca por su denegación de zona y sus inicios de combo muy castigadores.',
+    howToGet: [
+      'Solo por evolución: evoluciona Whitesnake con Prestigio 1+ y más de 100 de Conjuring.',
+    ],
+    strengths: [
+      'Control de masas con gravedad muy fuerte y difícil de contestar.',
+      'Buen sangrado y mucho potencial de combo.',
+      'Muy bueno kiteando y castigando desde media distancia.',
+    ],
+    weaknesses: [
+      'Algunos hitboxes no son fáciles de clavar.',
+      'Las habilidades clave de gravedad tienen enfriamientos más largos.',
+      'Solo se consigue evolucionando Whitesnake.',
+    ],
+    abilities: [
+      {
+        title: 'Graviton Reversal',
+        description:
+          'Invierte la gravedad y estrella a los enemigos contra el suelo.',
+      },
+      {
+        title: 'Gravity Barrier',
+        description:
+          'Crea una zona que ralentiza y daña a quien se queda dentro.',
+      },
+      {
+        title: 'Rock Barrage',
+        description:
+          'Lanza escombros que aturden e interrumpen acciones rivales.',
+      },
+    ],
+  },
+  'the-world': {
+    rarity: 'Legendario',
+    part: 'Parte 3',
+    bestFor: 'Castigos con Time Stop y duelos de burst alto',
+    quickVerdict:
+      'El clásico peso pesado. Ya no domina como algunos stands de evolución, pero sigue siendo un duelista de primer nivel.',
+    summary:
+      'The World está hecho para una sola cosa: parar el tiempo y borrar barras de vida. Su DPS a un solo objetivo sigue siendo de lo mejor del juego.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza legendaria).'],
+    strengths: [
+      'Burst enorme durante Time Stop.',
+      'Muy buen daño a objetivo único.',
+      'Poke a distancia fiable con cuchillos.',
+    ],
+    weaknesses: [
+      'Depende muchísimo de Time Stop para sus mejores jugadas.',
+      'Su AoE pequeño lo penaliza en grupos grandes.',
+      'Se vuelve más previsible cuando Time Stop está en enfriamiento.',
+    ],
+    abilities: [
+      {
+        title: 'Time Stop',
+        description:
+          'Congela a todos los enemigos cercanos durante unos segundos.',
+      },
+      {
+        title: 'Knives',
+        description: 'Lanza una ráfaga de cuchillos con bastante daño.',
+      },
+      {
+        title: 'Kick Volley',
+        description: 'Un remate cuerpo a cuerpo muy contundente.',
+      },
+    ],
+  },
+  'star-platinum': {
+    rarity: 'Legendario',
+    part: 'Parte 3',
+    bestFor: 'Pelea cuerpo a cuerpo y cadenas de aturdimiento',
+    quickVerdict:
+      'Un brawler icónico que destaca pegándose al objetivo y encadenando stuns muy fiables.',
+    summary:
+      'Star Platinum es una referencia clarísima entre los stands melé. Aguanta bien, pega de forma constante y castiga muy rápido en distancias cortas.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza legendaria).'],
+    strengths: [
+      'Velocidad de ataque alta y mucha presión cuerpo a cuerpo.',
+      'Stuns muy consistentes con Star Finger e Inhale.',
+      'Rinde bien en casi cualquier situación PvP.',
+    ],
+    weaknesses: [
+      'Prácticamente no tiene presencia a distancia.',
+      'Le cuesta entrar contra stands centrados en zonear.',
+      'Necesita estar muy cerca para sacar todo su valor.',
+    ],
+    abilities: [
+      {
+        title: 'Star Finger',
+        description: 'Un golpe de alcance ampliado que aturde al objetivo.',
+      },
+      {
+        title: 'Inhale',
+        description: 'Atrae al rival para asegurar el siguiente castigo.',
+      },
+      {
+        title: 'Time Stop',
+        description:
+          'Su movimiento insignia para garantizar un combo completo.',
+      },
+    ],
+  },
+  'king-crimson': {
+    rarity: 'Legendario',
+    part: 'Parte 5',
+    bestFor: 'Outplay, lectura del rival y contraataques',
+    quickVerdict:
+      'Es un stand de manos finas que puede saltarse por completo los ataques rivales gracias a Time Erase.',
+    summary:
+      'King Crimson es un duelista técnico. Premia a quien sabe leer al rival y usar Time Erase para recolocarse justo en el momento clave.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza legendaria).'],
+    strengths: [
+      'Utilidad de élite con Time Erase y Epitaph.',
+      'Burst muy alto con Impale.',
+      'Uno de los mejores picks de counter del juego.',
+    ],
+    weaknesses: [
+      'Farmea PvE bastante peor que otros stands.',
+      'Tiene un skill floor alto y no es amable con principiantes.',
+      'Sus opciones a distancia son limitadas.',
+    ],
+    abilities: [
+      {
+        title: 'Time Erase',
+        description:
+          'Te vuelve intangible unos instantes y te recoloca tras el enemigo.',
+      },
+      {
+        title: 'Impale',
+        description:
+          'Un golpe muy duro que atraviesa parte de la defensa rival.',
+      },
+      {
+        title: 'Epitaph',
+        description:
+          'Contrarresta automáticamente el siguiente ataque entrante.',
+      },
+    ],
+  },
+  'weather-report': {
+    rarity: 'Raro',
+    part: 'Parte 6',
+    bestFor: 'Farmeo PvE y control de área a gran escala',
+    quickVerdict:
+      'El rey del farmeo. Si tu objetivo es limpiar misiones u oleadas, es de los mejores compañeros posibles.',
+    summary:
+      'Weather Report domina el PvE con ataques de área enormes, por eso sigue siendo una de las opciones más eficientes para subir y farmear.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza rara).'],
+    strengths: [
+      'Cobertura AoE excelente para limpiar mobs.',
+      'Buen control de masas con Heavy Weather.',
+      'Estilo de juego bastante seguro gracias a su alcance.',
+    ],
+    weaknesses: [
+      'No tiene el burst de otros stands del tier A.',
+      'Sufre en 1c1 cerrados contra personajes de rush.',
+      'Varias animaciones tardan más en salir.',
+    ],
+    abilities: [
+      {
+        title: 'Frog Downpour',
+        description: 'Hace llover ranas venenosas sobre una zona amplia.',
+      },
+      {
+        title: 'Howling Blitz',
+        description: 'Golpea a varios enemigos con rayos en cadena.',
+      },
+      {
+        title: 'Heavy Weather',
+        description: 'Ralentiza y descoloca a los enemigos dentro de una nube.',
+      },
+    ],
+  },
+  'the-world-high-voltage': {
+    rarity: 'Legendario',
+    part: 'Parte 7',
+    bestFor: 'Presión mixta a varias distancias y resets sigilosos',
+    quickVerdict:
+      'Una versión más versátil de The World que cambia algo de daño bruto por utilidad y amenaza a distancia.',
+    summary:
+      'High Voltage añade revólver y bombas de humo al kit clásico de The World, lo que facilita resets más seguros y un poke bastante mejor.',
+    howToGet: [
+      'Solo por evolución: evoluciona The World mediante la ruta de "Saint\'s Corpse".',
+    ],
+    strengths: [
+      'Muy buena mezcla de ataques cuerpo a cuerpo y a distancia.',
+      'Smoke Bomb da margen para escapar y reiniciar la pelea.',
+      'Mantiene la potencia de Time Stop.',
+    ],
+    weaknesses: [
+      'La evolución es bastante exigente.',
+      'Tiene algo menos de daño base que The World normal.',
+      'Puede sentirse algo tosco comparado con brawlers puros.',
+    ],
+    abilities: [
+      {
+        title: 'Revolver Barrage',
+        description:
+          'Dispara varias veces desde lejos para aturdir al enemigo.',
+      },
+      {
+        title: 'Smoke Bomb',
+        description: 'Ciega al rival y te deja recolocarte con seguridad.',
+      },
+      {
+        title: 'Kick Volley',
+        description: 'Una cadena rápida de patadas para castigar de cerca.',
+      },
+    ],
+  },
+  'killer-queen': {
+    rarity: 'Raro',
+    part: 'Parte 4',
+    bestFor: 'Denegación de zona y juego defensivo',
+    quickVerdict:
+      'Un stand muy bueno para mantener distancias y castigar a quien intenta entrar sin pensar.',
+    summary:
+      'Killer Queen convierte el combate en un campo minado. Encaja muy bien con jugadores que prefieren marcar el ritmo de la pelea.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza rara).'],
+    strengths: [
+      'Gran denegación de zona con bombas.',
+      'Muy útil para farmear en PvE.',
+      'Sheer Heart Attack persigue y presiona bastante bien.',
+    ],
+    weaknesses: [
+      'Sus rutas de combo son lentas y previsibles.',
+      'Pierde mucho si el rival consigue saltarse las bombas.',
+      'Le falta movilidad.',
+    ],
+    abilities: [
+      {
+        title: 'Primary Bomb',
+        description:
+          'Coloca una bomba en un enemigo o en un objeto para detonarla después.',
+      },
+      {
+        title: 'Sheer Heart Attack',
+        description: 'Un proyectil perseguidor que explota al contactar.',
+      },
+      {
+        title: 'Stray Cat',
+        description: 'Dispara bombas de aire invisibles que cuesta esquivar.',
+      },
+    ],
+  },
+  anubis: {
+    rarity: 'Raro',
+    part: 'Parte 3',
+    bestFor: 'Combos melé de mucho daño y juego de espada',
+    quickVerdict:
+      'Es puro rushdown con una velocidad melé tremenda, pero no ofrece apenas utilidad ni opciones a distancia.',
+    summary:
+      'Anubis encaja con jugadores que quieren arrollar al rival a base de cortes seguidos. Si consigues mantenerte encima, su daño es muy serio.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza rara).'],
+    strengths: [
+      'De los DPS cuerpo a cuerpo más altos del juego.',
+      'Entradas y remates de combo muy rápidos.',
+      'Cuesta mucho pararlo por la velocidad de sus golpes.',
+    ],
+    weaknesses: [
+      'No tiene utilidad a distancia.',
+      'Los stands ranged lo kitean con facilidad.',
+      'Rinde peor en peleas de grupo o situaciones de objetivo.',
+    ],
+    abilities: [
+      {
+        title: 'Dice Cut',
+        description: 'Una secuencia rápida de tajos que aturde al objetivo.',
+      },
+      {
+        title: 'Cursed Severance',
+        description: 'Un golpe enorme que mete muchísimo burst.',
+      },
+      {
+        title: 'Rend',
+        description:
+          'Un ataque giratorio que golpea a todos los enemigos cercanos.',
+      },
+    ],
+  },
+  'golden-experience': {
+    rarity: 'Poco común',
+    part: 'Parte 5',
+    bestFor: 'Aguante y progresión amable para principiantes',
+    quickVerdict:
+      'Una opción muy fiable para jugadores nuevos que quieren más margen de error gracias a sus curas.',
+    summary:
+      'Golden Experience cambia daño ofensivo por utilidad. Su capacidad de curar hace que sea muy cómodo para sesiones largas de farmeo.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza poco común).'],
+    strengths: [
+      'Puede curarse a sí mismo y también a aliados.',
+      'El reflejo de daño del sapo castiga a rivales muy explosivos.',
+      'Kit bastante versátil entre melé y control.',
+    ],
+    weaknesses: [
+      'Su daño total se queda corto.',
+      'No tiene un remate realmente decisivo.',
+      'Las animaciones de cura se pueden interrumpir.',
+    ],
+    abilities: [
+      {
+        title: 'Restoration',
+        description: 'Cura al usuario o a un aliado seleccionado.',
+      },
+      {
+        title: 'Frog',
+        description: 'Invoca un sapo que devuelve parte del daño recibido.',
+      },
+      {
+        title: 'Root Strike',
+        description: 'Hace brotar raíces para derribar y aturdir enemigos.',
+      },
+    ],
+  },
+  'stone-free': {
+    rarity: 'Raro',
+    part: 'Parte 6',
+    bestFor: 'Combate equilibrado y trampas con cuerdas',
+    quickVerdict:
+      'Es un all-rounder cumplidor con buena movilidad y control, aunque le falta ese punto diferencial para destacar.',
+    summary:
+      'Stone Free es un stand muy honesto: tiene herramientas para casi todo, pero no sobresale de forma aplastante en ninguna faceta concreta.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza rara).'],
+    strengths: [
+      'Buena movilidad gracias al agarre con cuerda.',
+      'Funciona bien en media distancia.',
+      'Sus trampas de hilo aportan stuns fiables.',
+    ],
+    weaknesses: [
+      'Daño bastante medio en general.',
+      'No tiene una ventana fuerte de burst.',
+      'Otros stands especializados suelen dejarlo atrás.',
+    ],
+    abilities: [
+      {
+        title: 'String Punch',
+        description: 'Una serie de golpes rápidos que se alargan con cuerdas.',
+      },
+      {
+        title: 'String Trap',
+        description: 'Coloca una trampa oculta que inmoviliza al enemigo.',
+      },
+      {
+        title: 'Spiraling Thread',
+        description: 'Una técnica defensiva que reduce el daño entrante.',
+      },
+    ],
+  },
+  'magicians-red': {
+    rarity: 'Poco común',
+    part: 'Parte 3',
+    bestFor: 'PvE temprano y limpiar grupos con quemaduras',
+    quickVerdict:
+      'Cumple como stand inicial para limpiar mobs, pero en PvP su utilidad cae bastante rápido.',
+    summary:
+      "Magician's Red gira en torno al daño por quemadura y el AoE. Rinde bien en las primeras misiones, aunque los stands más rápidos lo superan con facilidad.",
+    howToGet: ['Se obtiene con Stand Arrow (rareza poco común).'],
+    strengths: [
+      'Buen AoE para el farmeo temprano.',
+      'Las quemaduras suman daño con el tiempo.',
+      'Es relativamente fácil de conseguir.',
+    ],
+    weaknesses: [
+      'Animaciones muy lentas.',
+      'No tiene herramientas de movilidad.',
+      'Sufre mucho contra brawlers de rush.',
+    ],
+    abilities: [
+      {
+        title: 'Crossfire Hurricane',
+        description: 'Dispara varias bolas de fuego contra los enemigos.',
+      },
+      {
+        title: 'Red Bind',
+        description:
+          'Atrapa al rival entre llamas y le aplica daño prolongado.',
+      },
+      {
+        title: 'Ignition Burst',
+        description: 'Una explosión potente centrada en el usuario.',
+      },
+    ],
+  },
+  'crazy-diamond': {
+    rarity: 'Poco común',
+    part: 'Parte 4',
+    bestFor: 'Apoyo con curas y pelea defensiva',
+    quickVerdict:
+      'Es un stand pensado para apoyar al equipo: puede aportar bastante con amigos, pero le cuesta cerrar duelos en solitario.',
+    summary:
+      'Crazy Diamond luce más cuando juegas acompañado. Sus curas y herramientas de terreno son distintas, aunque bastante situacionales.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza poco común).'],
+    strengths: [
+      'Muy buena capacidad de curación para el equipo.',
+      'Puede crear muros para cortar rutas o proyectiles.',
+      'Tiene velocidad melé aceptable.',
+    ],
+    weaknesses: [
+      'Poco daño cuando va solo.',
+      'Sus movimientos de brawl son bastante previsibles.',
+      'Lo pasa mal contra stands de rango y mucha movilidad.',
+    ],
+    abilities: [
+      {
+        title: 'Heal Mode',
+        description: 'Cambia a un modo centrado en restaurar vida.',
+      },
+      {
+        title: 'Wall Smash',
+        description: 'Levanta un muro de roca que bloquea y también daña.',
+      },
+      {
+        title: 'Bearing Shot',
+        description: 'Lanza un proyectil que hace un daño moderado.',
+      },
+    ],
+  },
+  'purple-haze': {
+    rarity: 'Poco común',
+    part: 'Parte 5',
+    bestFor: 'Juego de veneno de alto riesgo y alta recompensa',
+    quickVerdict:
+      'Puede destrozar barras de vida, pero también castigarte a ti mismo si no lo manejas con mucho cuidado.',
+    summary:
+      'Purple Haze es un glass cannon de manual. Su virus hace muchísimo daño, pero no distingue bien entre enemigos, aliados y el propio usuario.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza poco común).'],
+    strengths: [
+      'Daño prolongado altísimo con el virus.',
+      'Muy buena denegación de zona porque todo el mundo evita sus nubes.',
+      'Golpes melé rápidos.',
+    ],
+    weaknesses: [
+      'El virus puede dañar al usuario y a sus aliados.',
+      'Es irregular en muchos contextos de PvP.',
+      'No tiene movilidad ni amenaza real a distancia.',
+    ],
+    abilities: [
+      {
+        title: 'Infectious Bulb',
+        description: 'Libera una nube de virus al impactar.',
+      },
+      {
+        title: 'Bulb Smash',
+        description: 'Un puñetazo fuerte que genera varias nubes de virus.',
+      },
+      {
+        title: 'Fury Strike',
+        description: 'Una ráfaga frenética de golpes que propaga el virus.',
+      },
+    ],
+  },
+  'the-hand': {
+    rarity: 'Poco común',
+    part: 'Parte 4',
+    bestFor: 'Builds de borrado y daño bruto',
+    quickVerdict:
+      'Tiene potencial de daño muy alto, pero sus animaciones lentas y lo previsible que resulta lo dejan bastante atrás.',
+    summary:
+      'The Hand puede borrar barras de vida, sí, pero la mayoría de rivales simplemente se apartan de sus ataques. Le faltan herramientas para competir de verdad.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza poco común).'],
+    strengths: [
+      'Mucho daño por golpe.',
+      'Erasure Pull puede pillar desprevenido al rival.',
+      'Parte de su daño ignora defensas.',
+    ],
+    weaknesses: [
+      'Es lentísimo y muy castigable.',
+      'La mayoría de movimientos tienen poco alcance.',
+      'Su estilo de juego es demasiado previsible.',
+    ],
+    abilities: [
+      {
+        title: 'Erasure Swipe',
+        description: 'Un barrido lento que pega una barbaridad.',
+      },
+      {
+        title: 'Erasure Pull',
+        description: 'Borra espacio para atraer al enemigo hacia ti.',
+      },
+      {
+        title: 'Hard Left',
+        description: 'Un puñetazo pesado que manda al rival hacia atrás.',
+      },
+    ],
+  },
+  'red-hot-chili-pepper': {
+    rarity: 'Común',
+    part: 'Parte 4',
+    bestFor: 'Movilidad temprana y primeros pasos en el juego',
+    quickVerdict:
+      'Viene bien para moverte por el mapa al principio, pero su daño se queda muy por detrás de casi todo lo demás.',
+    summary:
+      'Red Hot Chili Pepper es una tirada común con algo de movilidad, aunque no ofrece ni el daño ni el control que se necesitan para rutas más serias.',
+    howToGet: ['Se obtiene con Stand Arrow (rareza común).'],
+    strengths: [
+      'Flash da una movilidad decente al principio de la partida.',
+      'Es fácil de conseguir para cuentas nuevas.',
+      'Sus efectos eléctricos pueden aturdir brevemente.',
+    ],
+    weaknesses: [
+      'Daño base muy bajo.',
+      'Escala mal al mid y al late game.',
+      'No tiene combos realmente amenazantes.',
+    ],
+    abilities: [
+      {
+        title: 'Electrical Surge',
+        description: 'Libera una descarga eléctrica alrededor del usuario.',
+      },
+      {
+        title: 'Flash',
+        description: 'Un teletransporte rápido que deja un rastro dañino.',
+      },
+      {
+        title: 'Thunder Rod',
+        description: 'Un golpe básico cuerpo a cuerpo cargado de electricidad.',
+      },
+    ],
+  },
+};
+
+const esStandTierDescriptions: Record<StandTier, string> = {
+  S: 'Los reyes del meta. Sobresalen en movilidad, control o potencia pura y marcan el listón de referencia.',
+  A: 'Muy fuertes y fiables. Opciones excelentes para competir y para farmear con buena eficiencia.',
+  B: 'Tier medio sólido. Se pueden jugar bien, pero hace falta más trabajo para plantar cara a los tops.',
+  C: 'De nicho o de inicio. Sirven para progresar al principio o para estilos concretos, aunque suelen quedarse cortos.',
+  D: 'Por debajo del nivel esperado. Necesitan mejoras serias para competir con el resto del roster.',
+};
+
+const esStandResearchNotes = {
+  verifiedAt: '2026-03-09',
+  tierSource:
+    'Investigación de la comunidad y últimas actualizaciones visibles de tier list (Destructoid, marzo de 2026).',
+  methodology:
+    'Los tiers reflejan el meta actual, donde la movilidad, el control de masas y el potencial de evolución marcan el techo real. Está reescrito para ayudar a decidir si un stand merece la pena o es mejor dejarlo pasar.',
+} as const;
+
+function resolveStandLocale(locale?: string | null): StandLocale {
+  return locale === 'es' ? 'es' : 'en';
+}
+
+export function getStandResearchNotes(locale?: string | null) {
+  return resolveStandLocale(locale) === 'es'
+    ? esStandResearchNotes
+    : standResearchNotes;
+}
+
+export function getStandTierDescriptions(
+  locale?: string | null
+): Record<StandTier, string> {
+  return resolveStandLocale(locale) === 'es'
+    ? esStandTierDescriptions
+    : standTierDescriptions;
+}
+
+export function getStands(locale?: string | null): StandEntry[] {
+  if (resolveStandLocale(locale) !== 'es') {
+    return stands;
+  }
+
+  return stands.map((stand) => ({
+    ...stand,
+    ...esStandContent[stand.key],
+  }));
+}
+
+export function getStandByKey(
+  standKey: string,
+  locale?: string | null
+): StandEntry | undefined {
+  return getStands(locale).find((stand) => stand.key === standKey);
+}
+
+export function getStandSlugs() {
+  return stands.map((stand) => stand.key);
+}
+
 export const standTierDescriptions: Record<StandTier, string> = {
-  S: 'The Meta Kings. Unmatched in their respective roles, whether it\'s mobility, control, or raw power.',
+  S: "The Meta Kings. Unmatched in their respective roles, whether it's mobility, control, or raw power.",
   A: 'Strong & Reliable. Excellent choices for competitive play and high-efficiency farming.',
   B: 'Solid Mid-Tier. Playable and fun, but they require more effort to beat top-tier stands.',
   C: 'Niche or Starter. Useful for early progression or specific playstyles, but generally outclassed.',

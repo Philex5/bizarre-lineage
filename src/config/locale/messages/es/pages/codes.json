@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "title": "Códigos de Bizarre Lineage: Lista de recompensas activas y expiradas",
+    "description": "Consulta los códigos activos de Bizarre Lineage, revisa el archivo de códigos caducados y sigue una guía clara para canjearlos sin perder tiempo."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Rastreador de códigos",
+        "title": "La pregunta importante es sencilla: qué código sigue compensando canjear ahora mismo.",
+        "description": "La página está pensada para ir al grano: primero los códigos activos, después las entradas en revisión y al final el archivo de caducados para dar contexto sin estorbar.",
+        "items": [
+          {
+            "title": "Comenzar con la tabla de activos",
+            "description": "Quien viene a por recompensas debería ver antes lo que puede usar ya que cualquier bloque explicativo."
+          },
+          {
+            "title": "Tratar las etiquetas de monitoreo como una advertencia en vivo",
+            "description": "Si una entrada está en revisión, todavía conviene volver a comprobarla dentro del juego tras un parche, reinicio o cambio de evento."
+          },
+          {
+            "title": "Usar el archivo solo para contexto",
+            "description": "Los códigos caducados sirven para aclarar referencias antiguas, pero no deberían robar protagonismo a la lista útil."
+          }
+        ]
+      },
+      "notes": {
+        "eyebrow": "Notas de la página",
+        "title": "Todo está planteado para escanear rápido, sin relleno.",
+        "items": {
+          "last_verified": {
+            "title": "Última verificación",
+            "meta": "Señal de frescura"
+          },
+          "tracked_active": {
+            "title": "Entradas activas rastreadas",
+            "meta": "Tamaño actual de la tabla"
+          },
+          "best_next_move": {
+            "title": "Mejor siguiente paso",
+            "meta": "Después de canjear",
+            "description": "Salta a la lista de niveles, la guía para principiantes o el índice de stands en lugar de detenerte en el reclamo de la recompensa."
+          }
+        }
+      },
+      "active": {
+        "eyebrow": "Códigos activos",
+        "title": "Empieza por los códigos que todavía se pueden probar ahora mismo.",
+        "description": "La tabla mantiene siempre los mismos campos: código, recompensa, estado y última verificación. Eso ayuda más que cualquier adorno.",
+        "table": {
+          "code": "Código",
+          "reward": "Recompensa",
+          "status": "Estado",
+          "last_verified": "Última verificación"
+        }
+      },
+      "redeem": {
+        "eyebrow": "Flujo de canje",
+        "title": "Cómo canjearlos sin dar vueltas."
+      },
+      "expired": {
+        "eyebrow": "Archivo de expirados",
+        "title": "Las entradas antiguas siguen aquí, pero no mandan en la página.",
+        "table": {
+          "code": "Código",
+          "reward": "Recompensa",
+          "status": "Estado",
+          "archive_note": "Nota de archivo"
+        }
+      },
+      "troubleshooting": {
+        "eyebrow": "Solución de problemas",
+        "title": "La mayoría de errores al canjear caen en unas pocas causas bastante típicas."
+      },
+      "related": {
+        "eyebrow": "Lecturas relacionadas",
+        "title": "Qué mirar después de revisar los códigos.",
+        "items": {
+          "tier_list": {
+            "title": "Lista de niveles",
+            "description": "Abre la tier list si ahora te toca decidir en qué stand o ruta invertir esas recompensas."
+          },
+          "beginner_guide": {
+            "title": "Guía para principiantes",
+            "description": "Úsala si después de recoger recompensas todavía necesitas una ruta clara para arrancar mejor."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Las dudas que más suelen salir después de mirar los códigos.",
+        "items": [
+          {
+            "question": "¿Cuáles son los códigos activos de Bizarre Lineage ahora mismo?",
+            "answer": "Usa primero la tabla de activos. Mantiene las entradas rastreadas actuales separadas de las filas expiradas para que puedas probar la lista útil más corta."
+          },
+          {
+            "question": "¿Por qué un código muestra monitoreo en lugar de activo?",
+            "answer": "Monitoreo significa que el código aún necesita otra verificación en vivo después de un parche, reinicio o cambio de evento. Puede que aún funcione, pero la página no debe exagerar la confianza."
+          },
+          {
+            "question": "¿Por qué mantener los códigos expirados en la página?",
+            "answer": "Porque los jugadores a menudo llegan desde videos antiguos, publicaciones de Discord o fragmentos de búsqueda. Un archivo visible les ayuda a confirmar que un código es antiguo sin mezclarlo con la lista activa."
+          },
+          {
+            "question": "¿Qué debería leer después de canjear los códigos?",
+            "answer": "La mayoría de los jugadores necesitan tomar la siguiente decisión rápido: abre la lista de niveles para el contexto del meta, la guía para principiantes para la planificación de rutas o el índice de stands para una investigación de construcción más profunda."
+          }
+        ]
+      },
+      "cta": {
+        "eyebrow": "CTA",
+        "title": "Usa esas recompensas para tomar una mejor decisión después.",
+        "description": "Los códigos rara vez cierran una sesión. Normalmente solo te dan margen para decidir mejor qué farmear, qué build montar o qué stand comparar.",
+        "items": {
+          "tier_list": {
+            "eyebrow": "Contexto del meta",
+            "title": "Abrir la lista de niveles",
+            "description": "Comprueba cómo está el meta antes de gastar tiradas, recursos o recompensas de evento."
+          },
+          "beginner_guide": {
+            "eyebrow": "Progresión",
+            "title": "Seguir la guía para principiantes",
+            "description": "Sigue una ruta más clara si necesitas niveles, prioridades de farmeo y menos decisiones a ciegas."
+          },
+          "stand_index": {
+            "eyebrow": "Investigación de builds",
+            "title": "Explorar el índice de stands",
+            "description": "Compara fortalezas, debilidades y notas de obtención antes de comprometerte con un farmeo largo."
+          }
+        }
+      }
+    },
+    "content": {
+      "status": {
+        "active": "Activo",
+        "monitor": "Monitoreo",
+        "expired": "Expirado"
+      },
+      "active_codes_rewards": {
+        "30kLikes": "1 Esencia de punto de estadística",
+        "100kLikes": "1 Esencia de punto de estadística y 1 Cofre raro",
+        "shutdownwoops": "1 Esencia de estadística de Stand",
+        "1week": "1 Esencia de personalidad de Stand"
+      },
+      "monitored_codes_rewards": {
+        "200KLIKES": "Recompensa futura no anunciada"
+      },
+      "expired_codes": [],
+      "redeem_steps": [
+        {
+          "title": "Dale a 'me gusta' al juego y únete al grupo oficial",
+          "description": "Las verificaciones de fuentes recientes aún indican que debes darle a 'me gusta' a Bizarre Lineage y unirte al grupo de Roblox Bizarre Collective antes de canjear códigos."
+        },
+        {
+          "title": "Inicia Bizarre Lineage",
+          "description": "Abre el juego en Roblox y entra al mundo."
+        },
+        {
+          "title": "Abre el chat",
+          "description": "Abre el chat del juego en la esquina superior izquierda. Los informes públicos actuales dicen que puedes canjear en servidores públicos normales, no solo en servidores privados."
+        },
+        {
+          "title": "Enviar y reclamar",
+          "description": "Escribe el código que funciona exactamente como se muestra, incluyendo el prefijo !code, luego presiona Enter para reclamar la recompensa."
+        }
+      ],
+      "failure_reasons": [
+        {
+          "title": "Sensibilidad a mayúsculas y minúsculas",
+          "description": "Los códigos de Roblox suelen distinguir entre mayúsculas y minúsculas. Asegúrate de que \"!code\" y el código en sí coincidan exactamente."
+        },
+        {
+          "title": "Grupo oficial",
+          "description": "Algunos códigos requieren que te unas primero al grupo oficial de la comunidad de Roblox."
+        },
+        {
+          "title": "Retraso en el despliegue del servidor",
+          "description": "Fuentes públicas informan ahora que estos códigos funcionan en servidores normales, pero un servidor recién actualizado aún puede ayudar si uno falla justo después de un parche."
+        }
+      ]
+    }
+  }
+}

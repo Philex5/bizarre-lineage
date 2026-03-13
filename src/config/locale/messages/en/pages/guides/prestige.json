@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Prestige Guide: Timing, Prep & Tradeoffs",
+    "description": "Use this Bizarre Lineage prestige guide to decide when a reset is worth it, what to prepare first, and how to avoid bad prestige timing."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Prestige guide",
+        "title": "Prestige matters when it unlocks the next route, not when it merely becomes available.",
+        "stats": {
+          "focus": "Focus",
+          "focus_value": "When to prestige",
+          "decision_mode": "Decision mode",
+          "decision_mode_value": "Tradeoffs first",
+          "updated": "Updated"
+        },
+        "actions": {
+          "primary": "Check stat logic",
+          "secondary": "Review progression route"
+        },
+        "aside": {
+          "title": "Decision frame",
+          "description": "This page exists to answer whether you should prestige now, what to prepare first, and which reset mistakes are hardest to recover from.",
+          "items": [
+            {
+              "label": "Answer first",
+              "value": "Should I prestige now?"
+            },
+            {
+              "label": "Then cover",
+              "value": "Requirements and preparation"
+            },
+            {
+              "label": "Finally show",
+              "value": "Mistakes and related routes"
+            }
+          ]
+        },
+        "media_label": "Reset route placeholder"
+      },
+      "when_to_prestige": {
+        "eyebrow": "When to prestige",
+        "title": "The reset is efficient only when it moves your route forward."
+      },
+      "prepare_first": {
+        "eyebrow": "Prepare first",
+        "title": "A strong prestige decision starts before the reset."
+      },
+      "mistakes": {
+        "eyebrow": "Mistakes to avoid",
+        "title": "The worst prestige errors usually come from impatience."
+      },
+      "related": {
+        "eyebrow": "Related routes",
+        "title": "Prestige should connect back into the rest of the guide system.",
+        "items": {
+          "stats": {
+            "title": "Stats Guide",
+            "description": "Review build logic before deciding what the reset is actually giving up or enabling."
+          },
+          "beginner": {
+            "title": "Beginner Guide",
+            "description": "Use the broader progression route if you are still in the early or early-mid game transition."
+          },
+          "tier_list": {
+            "title": "Tier List",
+            "description": "Check whether your main stand target still justifies the path you are planning after prestige."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "What the prestige page should settle."
+      }
+    },
+    "content": {
+      "overview": "Prestige is valuable when it unlocks the next stage of your route, not when it merely looks available. The page should answer whether you should prestige now, what you gain, and what you should prepare first.",
+      "when_to_prestige": [
+        {
+          "title": "Prestige when your current route is capped",
+          "description": "If progress is flattening out and prestige meaningfully opens the next stage, the reset starts making sense."
+        },
+        {
+          "title": "Prestige after banking critical value",
+          "description": "Do not rush the reset before securing the resources or knowledge you would regret losing."
+        },
+        {
+          "title": "Prestige with a next-step plan",
+          "description": "A good prestige decision is tied to a new target, not just to the existence of a button."
+        }
+      ],
+      "prepare_first": [
+        {
+          "title": "Confirm the requirements",
+          "description": "Make sure you are not operating on outdated assumptions about level gates or prerequisite tasks."
+        },
+        {
+          "title": "Spend or save intentionally",
+          "description": "Know which resources should be used before prestige and which ones should be preserved."
+        },
+        {
+          "title": "Review your current build",
+          "description": "If stats or stand choices are part of the tradeoff, account for that before you reset."
+        },
+        {
+          "title": "Set the post-prestige route",
+          "description": "You should know your first goal after the reset so you do not drift once prestige is done."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Prestiging as soon as possible",
+          "description": "Availability is not the same thing as readiness. Premature resets often create avoidable friction."
+        },
+        {
+          "title": "Ignoring the tradeoffs",
+          "description": "If you do not understand what the reset costs, you cannot judge whether it is efficient yet."
+        },
+        {
+          "title": "Resetting without a follow-up plan",
+          "description": "Prestige should accelerate the next phase, not leave you improvising from scratch."
+        }
+      ],
+      "faq": [
+        {
+          "question": "What does prestige do in practical terms?",
+          "answer": "It is a progression reset lever that matters because of what it unlocks next, not because the reset itself is exciting."
+        },
+        {
+          "question": "When should you prestige?",
+          "answer": "When your current route is capped, you have prepared key resources, and you know what the next stage requires."
+        },
+        {
+          "question": "What should you read before prestiging?",
+          "answer": "The stats guide and your main progression route are the best pre-checks before making the call."
+        }
+      ]
+    }
+  }
+}

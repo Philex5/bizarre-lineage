@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Link from 'next/link';
 import {
   getTermEntry,
   getTermsDictionary,
@@ -8,8 +7,12 @@ import {
   type TermLink,
   type TermSection,
 } from '@/content-data/terms';
+import { Link } from '@/core/i18n/navigation';
 import { toImageUrl } from '@/lib/r2-utils';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
+
+import { SubAbilitiesInlineModule } from './sub-abilities-overview';
 
 function SmartLink({ href, label }: TermLink) {
   if (href.startsWith('http')) {
@@ -66,7 +69,7 @@ function renderBlock(block: TermBlock, index: number) {
           className="not-prose mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3"
         >
           {block.items.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="group bg-background/92 ring-primary/10 hover:border-border hover:bg-accent/30 border-border/70 block rounded-3xl border p-6 shadow-sm ring-1 transition-colors transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
@@ -82,7 +85,7 @@ function renderBlock(block: TermBlock, index: number) {
               <p className="text-muted-foreground text-sm leading-6">
                 {item.description}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       );
@@ -111,7 +114,7 @@ export async function TermsHubContent() {
         const heroImageUrl = toImageUrl(term.heroImageSrc);
 
         return (
-          <a
+          <Link
             key={termKey}
             href={`/${term.slug}`}
             className="group ring-primary/10 hover:border-border border-border/70 block overflow-hidden rounded-3xl border shadow-sm ring-1 transition-colors transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
@@ -137,7 +140,7 @@ export async function TermsHubContent() {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
         );
       })}
     </div>
@@ -146,8 +149,13 @@ export async function TermsHubContent() {
 
 export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
   const locale = await getLocale();
+  const t = await getTranslations('pages.terms.article');
   const term = getTermEntry(termKey, locale);
   const heroImageUrl = toImageUrl(term.heroImageSrc);
+  const isSubAbilitiesTerm = termKey === 'sub-abilities';
+  const recommendationSectionIndex = term.sections.findIndex((section) =>
+    section.blocks.some((block) => block.type === 'cards')
+  );
 
   return (
     <>
@@ -163,11 +171,17 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
         />
       </div>
 
+      {isSubAbilitiesTerm ? <SubAbilitiesInlineModule /> : null}
+
       {term.sections.map((section) => {
-        if (section.title === 'Other recommended terms' && term.videos && term.videos.length > 0) {
+        if (
+          term.videos &&
+          term.videos.length > 0 &&
+          term.sections.indexOf(section) === recommendationSectionIndex
+        ) {
           return (
             <Fragment key="videos-before-recommendations">
-              <h2>Watch the guide</h2>
+              <h2>{t('watch_guide')}</h2>
               <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
                 {term.videos.map((item) => (
                   <div
@@ -185,15 +199,18 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
                       />
                     </div>
                     <div className="p-4">
-                      <h3 className="text-foreground text-base font-semibold line-clamp-2">
+                      <h3 className="text-foreground line-clamp-2 text-base font-semibold">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground mt-2 text-sm leading-6 line-clamp-3">
+                      <p className="text-muted-foreground mt-2 line-clamp-3 text-sm leading-6">
                         {item.note}
                       </p>
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="not-prose mb-12">
+                <AdsterraBanner />
               </div>
               <TermSectionContent key={section.title} section={section} />
             </Fragment>
@@ -202,40 +219,45 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
         return <TermSectionContent key={section.title} section={section} />;
       })}
 
-      {(!term.sections.some(s => s.title === 'Other recommended terms')) && term.videos && term.videos.length > 0 && (
-        <>
-          <h2>Watch the guide</h2>
-          <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
-            {term.videos.map((item) => (
-              <div
-                key={item.embedUrl}
-                className="border-border bg-background/50 overflow-hidden rounded-2xl border"
-              >
-                <div className="aspect-video">
-                  <iframe
-                    src={item.embedUrl}
-                    title={item.title}
-                    className="h-full w-full border-0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
+      {recommendationSectionIndex === -1 &&
+        term.videos &&
+        term.videos.length > 0 && (
+          <>
+            <h2>{t('watch_guide')}</h2>
+            <div className="not-prose mt-8 mb-12 grid gap-6 lg:grid-cols-3">
+              {term.videos.map((item) => (
+                <div
+                  key={item.embedUrl}
+                  className="border-border bg-background/50 overflow-hidden rounded-2xl border"
+                >
+                  <div className="aspect-video">
+                    <iframe
+                      src={item.embedUrl}
+                      title={item.title}
+                      className="h-full w-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-foreground line-clamp-2 text-base font-semibold">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground mt-2 line-clamp-3 text-sm leading-6">
+                      {item.note}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-foreground text-base font-semibold line-clamp-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground mt-2 text-sm leading-6 line-clamp-3">
-                    {item.note}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+              ))}
+            </div>
+            <div className="not-prose mb-12">
+              <AdsterraBanner />
+            </div>
+          </>
+        )}
 
-      <h2>Official references</h2>
+      <h2>{t('official_references')}</h2>
       <ul>
         {term.references.map((reference) => (
           <li key={reference.href}>
@@ -244,7 +266,7 @@ export async function TermArticleContent({ termKey }: { termKey: TermKey }) {
         ))}
       </ul>
 
-      <h2>Related links</h2>
+      <h2>{t('related_links')}</h2>
       <ul>
         {term.relatedLinks.map((link) => (
           <li key={link.href}>

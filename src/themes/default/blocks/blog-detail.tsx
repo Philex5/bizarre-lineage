@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 import { MarkdownPreview } from '@/shared/blocks/common';
 import { Crumb } from '@/shared/blocks/common/crumb';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
 import { type Post as PostType } from '@/shared/types/blocks/blog';
 import { NavItem } from '@/shared/types/blocks/common';
 
@@ -93,6 +94,10 @@ export function BlogDetail({ post }: { post: PostType }) {
                     )
                   )}
                 </article>
+
+                <div className="mt-10">
+                  <AdsterraBanner />
+                </div>
               </div>
 
               {/* Author Info - Right Sidebar */}

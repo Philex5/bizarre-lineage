@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "title": "Guía de Stands de Bizarre Lineage: Tier List y Obtención",
+    "description": "Explora el índice de stands de Bizarre Lineage con tiers actuales, notas de obtención y veredictos rápidos para cada ruta importante."
+  },
+  "page": {
+    "schema": {
+      "collection": {
+        "name": "Stands de Bizarre Lineage",
+        "description": "Tarjetas de stands agrupadas por tier con notas de obtención, fortalezas, debilidades y enlaces internos."
+      }
+    },
+    "sections": {
+      "hero": {
+        "eyebrow": "Base de datos",
+        "title": "Stands de Bizarre Lineage: Guía completa y Tier List",
+        "description": "Un índice completo de stands, rutas de evolución y lecturas rápidas del meta para ayudarte a decidir mejor."
+      },
+      "index": {
+        "eyebrow": "Índice",
+        "title": "Tarjetas de Stands y Veredictos de Tier de Bizarre Lineage",
+        "description": "Explora todos los stands y entra en la ficha que necesites para ver cómo se consigue, qué aporta y en qué situaciones destaca."
+      },
+      "guide": {
+        "eyebrow": "Guía",
+        "title": "Cómo obtener Stands en Bizarre Lineage",
+        "description": "Qué necesitas saber para conseguir y elegir tus primeros stands. La mayoría salen de la ruta de Stand Arrow, aunque algunos casos pasan por evoluciones.",
+        "items": {
+          "core_identity": {
+            "title": "Identidad central",
+            "description": "Marca tus movimientos, tu forma de presionar y el papel que vas a jugar en combate."
+          },
+          "roll": {
+            "title": "Tirar por Stands",
+            "description": "Usa flechas de cofres o misiones para sacar nuevos stands."
+          },
+          "evolution": {
+            "title": "Rutas de evolución",
+            "description": "Casos como C-Moon exigen misiones y requisitos concretos antes de evolucionar."
+          },
+          "meta": {
+            "title": "Cómo se mueve el meta",
+            "description": "Los stands altos de tier no siempre ganan por daño bruto; muchas veces destacan por utilidad, control o consistencia."
+          }
+        }
+      },
+      "acquisition": {
+        "eyebrow": "Obtención",
+        "title": "Estrategia de obtención para nuevos jugadores",
+        "description": "Sigue estas ideas para no malgastar Stand Arrows y encaminar mejor la progresión de tu cuenta.",
+        "items": {
+          "arrow_first": {
+            "title": "01. Primero, una base estable",
+            "description": "No te obsesiones con evoluciones antes de tener una cuenta que ya progresa con cierta seguridad. Al principio, las tiradas normales son lo más rentable."
+          },
+          "check_stats": {
+            "title": "02. Revisa las stats",
+            "description": "Muchas evoluciones piden Prestige 1+ y requisitos concretos de Conjuring. Ordena la build antes de comprometerte con una ruta larga."
+          },
+          "prioritize_pve": {
+            "title": "03. Prioriza el PvE si estás arrancando",
+            "description": "Un stand con buen AoE, como Weather Report, suele acelerar mucho más la cuenta que perseguir demasiado pronto un pick puro de PvP."
+          }
+        }
+      },
+      "recommendations": {
+        "eyebrow": "Recomendaciones",
+        "title": "Mejores Stands de Bizarre Lineage por rol",
+        "description": "Si solo quieres una respuesta rápida, estos son los stands que ahora mismo más compensan según el meta visible.",
+        "items": {
+          "pvp": {
+            "title": "Mejor Stand para PvP: Star Platinum",
+            "description": "Ahora mismo es una de las referencias más claras para PvP: presión, burst y un rendimiento muy fiable en muchos matchups."
+          },
+          "pve": {
+            "title": "Mejor Stand para PvE: Weather Report",
+            "description": "Su AoE enorme y lo rápido que limpia misiones hacen que siga siendo de lo mejor para farmear."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Preguntas frecuentes",
+        "description": "Lo esencial sobre stands, evoluciones y el meta actual de Bizarre Lineage.",
+        "items": [
+          {
+            "question": "¿Cómo consigo mi primer stand en Bizarre Lineage?",
+            "answer": "Necesitas una Flecha de Stand, que se puede encontrar en cofres por el mapa, ganar en misiones o reclamar con códigos activos. Una vez que tengas una flecha, úsala desde tu inventario para tirar por un stand aleatorio."
+          },
+          {
+            "question": "¿Puedo cambiar mi stand después de obtenerlo?",
+            "answer": "Sí, pero usar una nueva Flecha de Stand sobrescribirá tu stand actual a menos que hayas desbloqueado el Almacenamiento de Stands mediante el Prestigio. Suele valer la pena guardar un stand fuerte antes de volver a tirar."
+          },
+          {
+            "question": "¿Cuál es la diferencia entre los stands de Flecha y los stands de Evolución?",
+            "answer": "Los stands de Flecha se obtienen directamente al usar una Flecha de Stand. Los stands de Evolución, como Made in Heaven o C-Moon, requieren un stand base además de una ruta de nivel superior o una cadena de misiones."
+          },
+          {
+            "question": "¿Qué stand es mejor para subir de nivel y farmear rápido?",
+            "answer": "Weather Report es una de las recomendaciones más fuertes para PvE porque sus ataques de área amplia completan misiones y ciclos de farmeo más rápido que los stands más centrados en duelos."
+          },
+          {
+            "question": "¿Cuáles son los requisitos para evolucionar un stand?",
+            "answer": "La mayoría de las evoluciones requieren progreso en Prestigio, inversión en Conjuración y una misión específica de la ruta o una comprobación de objetos antes de que la evolución pueda ocurrir."
+          },
+          {
+            "question": "¿Cómo afectan los tiers de stands a la jugabilidad?",
+            "answer": "Los stands de tier superior suelen ofrecer un mejor escalado de daño, un control más fuerte o enfrentamientos más fiables. Aun así, el conocimiento del enfrentamiento y el contexto de la ruta importan más que una simple calificación por letras."
+          },
+          {
+            "question": "¿Existen aspectos (skins) de stands brillantes o secretos?",
+            "answer": "Sí. Bizarre Lineage incluye aspectos de stands que cambian los efectos visuales sin alterar el poder, y suelen estar vinculados a las Flechas de la Suerte (Lucky Arrows) o eventos limitados."
+          }
+        ]
+      }
+    }
+  }
+}

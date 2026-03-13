@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage World Events",
+    "description": "Bizarre Lineage events guide covering Meteor Shower, World Boss Dio, Stand Rush, Raid Portal Opening, Graveyard Uprising, rewards, and level tips."
+  },
+  "page": {
+    "quick_answer": {
+      "title": "Quick answer",
+      "summary": "Bizarre Lineage events are server-wide activities that appear during play and usually reward EXP, loot, or rare progression items. Most players should treat level 50 as the safe baseline before joining the harder events."
+    },
+    "current_events_title": "Current Bizarre Lineage events",
+    "labels": {
+      "location": "Location",
+      "recommended_level": "Recommended level",
+      "spawn_timing": "Spawn timing",
+      "what_happens": "What happens",
+      "rewards": "Rewards"
+    },
+    "cooldown_loop": {
+      "title": "How the event loop works",
+      "description": "Events can appear during normal server play, and each one pushes a different kind of route: loot farming, bossing, PvP, raid access, or survival. If you are under level 50, it is usually smarter to prioritize leveling first and then rotate into the tougher event windows."
+    },
+    "read_next": "Read next",
+    "editorial_note": "This page focuses on the event loop players actually need: where each event shows up, what it does, and which rewards make it worth joining."
+  }
+}

@@ -2,9 +2,10 @@ import { envConfigs } from '..';
 
 export const localeNames: any = {
   en: 'English',
+  es: 'Español',
 };
 
-export const locales = ['en'];
+export const locales = ['en', 'es'];
 
 export const defaultLocale = 'en';
 
@@ -30,4 +31,8 @@ export const localeMessagesPaths = [
   'pages/guides/beginner-guide',
   'pages/guides/stats',
   'pages/guides/prestige',
+  'pages/stands',
+  'pages/stands/star-platinum',
+  'pages/terms',
+  'pages/events',
 ];

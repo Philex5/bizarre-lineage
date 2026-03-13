@@ -1,6 +1,7 @@
 import { getThemeBlock } from '@/core/theme';
 import { Crumb } from '@/shared/blocks/common/crumb';
 import { Post as PostType } from '@/shared/types/blocks/blog';
+import { getTranslations } from 'next-intl/server';
 
 export default async function StaticPage({
   locale,
@@ -13,6 +14,13 @@ export default async function StaticPage({
   const isTermsRootPage = post.slug === 'terms';
   const isTermChildPage = Boolean(post.slug?.startsWith('terms/'));
   const termTitle = post.title || '';
+  const tTerms =
+    isTermsRootPage || isTermChildPage
+      ? await getTranslations({
+          locale: locale || 'en',
+          namespace: 'pages.terms',
+        })
+      : null;
 
   return (
     <>
@@ -23,22 +31,22 @@ export default async function StaticPage({
               isTermsRootPage
                 ? [
                     {
-                      title: 'Home',
+                      title: tTerms?.('breadcrumbs.home') || 'Home',
                       url: '/',
                     },
                     {
-                      title: 'Terms',
+                      title: tTerms?.('breadcrumbs.terms') || 'Terms',
                       url: '/terms',
                       is_active: true,
                     },
                   ]
                 : [
                     {
-                      title: 'Home',
+                      title: tTerms?.('breadcrumbs.home') || 'Home',
                       url: '/',
                     },
                     {
-                      title: 'Terms',
+                      title: tTerms?.('breadcrumbs.terms') || 'Terms',
                       url: '/terms',
                     },
                     {

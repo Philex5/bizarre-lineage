@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "title": "Guía de estadísticas de Bizarre Lineage: Lógica de builds y prioridades",
+    "description": "Aprende a repartir estadísticas en Bizarre Lineage con una lógica de build más clara, mejores prioridades para el early game y menos puntos malgastados."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Guía de estadísticas",
+        "title": "Las estadísticas deberían apoyar tu ruta, no hacerte caer en una falsa sensación de precisión.",
+        "stats": {
+          "focus": "Enfoque",
+          "focus_value": "Lógica de asignación",
+          "modes": "Modos",
+          "modes_value": "PvP + PvE",
+          "updated": "Actualizado"
+        },
+        "actions": {
+          "primary": "Comparar roles de stands",
+          "secondary": "Planear prestigio"
+        },
+        "aside": {
+          "title": "Cómo leer esta página",
+          "description": "Aquí se explica qué cambia cada stat, qué conviene priorizar al principio y de dónde salen la mayoría de errores de build.",
+          "items": [
+            {
+              "label": "Empieza con",
+              "value": "Resumen del sistema de estadísticas"
+            },
+            {
+              "label": "Luego revisa",
+              "value": "Prioridades iniciales"
+            },
+            {
+              "label": "Úsala con",
+              "value": "Tier list y guía de prestigio"
+            }
+          ]
+        },
+        "media_label": "Marcador visual de la guía"
+      },
+      "overview": {
+        "eyebrow": "Resumen de estadísticas",
+        "title": "Cada bloque de estadísticas debería responder a una necesidad distinta de la build."
+      },
+      "priorities": {
+        "eyebrow": "Prioridades del juego temprano",
+        "title": "Al principio, las stats deberían ayudarte a progresar con estabilidad."
+      },
+      "mistakes": {
+        "eyebrow": "Errores comunes",
+        "title": "La mayoría de builds flojas fallan por una mala lógica, no por un pequeño error de números."
+      },
+      "related": {
+        "eyebrow": "Rutas relacionadas",
+        "title": "Usa esta guía como contexto para tu build, no como una página aislada.",
+        "items": {
+          "tier_list": {
+            "title": "Tier List",
+            "description": "Revisa qué rol intenta desempeñar tu stand antes de decidir cómo apoyarlo."
+          },
+          "prestige": {
+            "title": "Guía de prestigio",
+            "description": "El momento del prestigio se vuelve más claro cuando entiendes qué partes de tu build importan ahora."
+          },
+          "beginner": {
+            "title": "Guía para principiantes",
+            "description": "Usa la ruta para nuevos jugadores si aún necesitas la secuencia de progresión de nivel superior."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "Preguntas frecuentes",
+        "title": "Lo que la página de estadísticas debe aclarar."
+      }
+    },
+    "content": {
+      "overview": "Las estadísticas deben explicar la lógica de decisión, no pretender que cada jugador necesita una hoja de cálculo perfecta. El objetivo es apoyar a tu stand, ruta y preferencia de modo sin atraparte en un patrón de asignación ineficiente.",
+      "stat_cards": [
+        {
+          "title": "Estadísticas de poder",
+          "description": "Estas suelen definir tu límite de daño directo y si tu build puede aprovechar las aperturas."
+        },
+        {
+          "title": "Estadísticas de durabilidad",
+          "description": "La supervivencia importa cuando tu ruta valora la estabilidad sobre el daño de impacto."
+        },
+        {
+          "title": "Estadísticas de movilidad y tempo",
+          "description": "Estas afectan qué tan seguido puedes iniciar o escapar de enfrentamientos, en lugar de solo qué tan fuerte golpeas."
+        },
+        {
+          "title": "Asignación de utilidad",
+          "description": "Algunos puntos existen para suavizar la progresión en lugar de maximizar un escenario de duelo."
+        }
+      ],
+      "priorities_list": [
+        {
+          "title": "Apoya al stand que realmente usas",
+          "description": "No copies una lógica de build que asuma un stand diferente, un estilo diferente o un objetivo diferente."
+        },
+        {
+          "title": "Inclínate hacia una progresión estable al principio",
+          "description": "Las elecciones de estadísticas en el juego temprano deben facilitar el PvE y el farmeo general antes de optimizar para combates específicos."
+        },
+        {
+          "title": "Separa el pensamiento de PvP y PvE",
+          "description": "La combinación de estadísticas que gana duelos no siempre es la misma que mantiene la progresión eficiente."
+        },
+        {
+          "title": "Deja espacio para correcciones",
+          "description": "Si tienes dudas, evita encerrarte en una distribución extrema demasiado pronto."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Copiar builds de endgame a ciegas",
+          "description": "Los consejos de endgame pueden ser activamente ineficientes en una cuenta nueva o de mitad de juego."
+        },
+        {
+          "title": "Excederse en la build para un solo enfrentamiento",
+          "description": "Una configuración enfocada exclusivamente en duelos puede empeorar el resto de tu ruta."
+        },
+        {
+          "title": "Ignorar el contexto de la progresión",
+          "description": "Las estadísticas deben servir a tu etapa actual de farmeo, no solo a tu estado futuro ideal."
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Qué deben priorizar los principiantes con las estadísticas?",
+          "answer": "Progresión estable, supervivencia y una build que apoye al stand que realmente pueden usar ahora mismo."
+        },
+        {
+          "question": "¿Deben el PvP y el PvE usar la misma lógica de estadísticas?",
+          "answer": "No siempre. El PvP a menudo recompensa una especialización más marcada, mientras que el PvE suele recompensar una consistencia más fluida."
+        },
+        {
+          "question": "¿Por qué esta guía evita números exactos falsos?",
+          "answer": "Porque la página está pensada para enseñar una lógica de asignación que sobreviva a los parches y a los diferentes estados de las cuentas."
+        }
+      ]
+    }
+  }
+}

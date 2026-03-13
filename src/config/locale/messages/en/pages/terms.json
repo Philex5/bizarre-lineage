@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Terms and Glossary",
+    "description": "Quick glossary for Bizarre Lineage terms including prestige, raids, awakening, stand arrows, fighting styles, and sub-abilities."
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "terms": "Terms"
+  },
+  "hub": {
+    "title": "Terms and Glossary"
+  },
+  "article": {
+    "watch_guide": "Watch the guide",
+    "official_references": "Official references",
+    "related_links": "Related links"
+  },
+  "articles": {
+    "awakening": {
+      "metadata": {
+        "title": "Awakening in Bizarre Lineage",
+        "description": "What awakening means in Bizarre Lineage, why it is a late-game term, and how it connects to prestige and evolution routes."
+      }
+    },
+    "fighting-styles": {
+      "metadata": {
+        "title": "Fighting Styles in Bizarre Lineage",
+        "description": "What fighting styles are in Bizarre Lineage, how to unlock them, and where Boxing, Kendo, and Karate trainers are located."
+      }
+    },
+    "prestige": {
+      "metadata": {
+        "title": "Prestige in Bizarre Lineage",
+        "description": "What prestige means in Bizarre Lineage, where to prestige, and why timing matters more than pressing it immediately."
+      }
+    },
+    "raid": {
+      "metadata": {
+        "title": "Raid in Bizarre Lineage",
+        "description": "Bizarre Lineage raid overview covering the 8-player raid format, raid token shops, and every listed raid reward in the current public game data."
+      }
+    },
+    "stand-arrow": {
+      "metadata": {
+        "title": "Stand Arrow in Bizarre Lineage",
+        "description": "What a Stand Arrow is in Bizarre Lineage, how to get one, and why it matters for your first stand route."
+      }
+    },
+    "sub-abilities": {
+      "metadata": {
+        "title": "Sub-Abilities in Bizarre Lineage",
+        "description": "What sub-abilities are in Bizarre Lineage, how to unlock them, and how trainer routes differ from the Vampire item route."
+      }
+    }
+  }
+}

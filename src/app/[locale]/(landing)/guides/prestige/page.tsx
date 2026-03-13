@@ -6,6 +6,7 @@ import { setRequestLocale } from 'next-intl/server';
 
 import { Link } from '@/core/i18n/navigation';
 import { Crumb } from '@/shared/blocks/common/crumb';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
 
 export const revalidate = 3600;
 const pageUpdatedAt = '2026-03-09';
@@ -239,6 +240,10 @@ export default async function PrestigeGuideRoute({
           </div>
         </header>
 
+        <div className="not-prose mb-10">
+          <AdsterraBanner />
+        </div>
+
         <section>
           <h2>What prestige is really for</h2>
           <p>
@@ -289,6 +294,10 @@ export default async function PrestigeGuideRoute({
             ))}
           </ul>
         </section>
+
+        <div className="not-prose my-10">
+          <AdsterraBanner />
+        </div>
 
         <section>
           <h2>Common prestige mistakes</h2>
@@ -359,6 +368,9 @@ export default async function PrestigeGuideRoute({
                 </div>
               </div>
             ))}
+          </div>
+          <div className="not-prose mt-8">
+            <AdsterraBanner />
           </div>
         </section>
 

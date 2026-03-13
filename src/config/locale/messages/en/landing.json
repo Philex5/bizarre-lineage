@@ -63,6 +63,12 @@
           "icon": "ScrollText",
           "children": [
             {
+              "title": "All Terms",
+              "description": "Browse the full glossary and term hub",
+              "url": "/terms",
+              "icon": "Library"
+            },
+            {
               "title": "Raid",
               "description": "Team-based encounters and rewards",
               "url": "/terms/raid",
@@ -105,7 +111,7 @@
     },
     "show_sign": false,
     "show_theme": true,
-    "show_locale": false,
+    "show_locale": true,
     "topbanner": {
       "text": ""
     }
@@ -174,6 +180,11 @@
           "title": "Terms",
           "children": [
             {
+              "title": "All Terms",
+              "url": "/terms",
+              "target": "_self"
+            },
+            {
               "title": "Raid",
               "url": "/terms/raid",
               "target": "_self"
@@ -206,7 +217,7 @@
           ]
         },
         {
-          "title": "Progression",
+          "title": "Friends",
           "children": [
             {
               "title": "FrogDR-bizarre lineage wiki",
@@ -234,6 +245,6 @@
       ]
     },
     "show_theme": true,
-    "show_locale": false
+    "show_locale": true
   }
 }

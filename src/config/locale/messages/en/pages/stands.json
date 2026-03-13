@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Stands Guide: Tier List & Acquisition",
+    "description": "Browse the Bizarre Lineage stands index with current tier labels, acquisition guidance, and quick verdicts for each major stand route."
+  },
+  "page": {
+    "schema": {
+      "collection": {
+        "name": "Bizarre Lineage stands",
+        "description": "Tier-grouped stand cards for Bizarre Lineage with acquisition notes, strengths, weaknesses, and internal links."
+      }
+    },
+    "sections": {
+      "hero": {
+        "eyebrow": "Database",
+        "title": "Bizarre Lineage Stands: Full Guide & Tier List",
+        "description": "The complete index of stands, evolution paths, and meta verdicts for every combat identity in Bizarre Lineage."
+      },
+      "index": {
+        "eyebrow": "Index",
+        "title": "Bizarre Lineage Stand Cards & Tier Verdicts",
+        "description": "Browse the full collection of Bizarre Lineage stands. Click any card below to view detailed stats and acquisition paths for every stand in-game."
+      },
+      "guide": {
+        "eyebrow": "Guide",
+        "title": "How to Get Stands in Bizarre Lineage",
+        "description": "Everything you need to know about acquiring and choosing your first Bizarre Lineage stands. Most stands start with the Stand Arrow path, while special cases require evolution.",
+        "items": {
+          "core_identity": {
+            "title": "Core Identity",
+            "description": "Defines your moves, pressure pattern, and role within the Bizarre Lineage stands meta."
+          },
+          "roll": {
+            "title": "Roll for Stands",
+            "description": "Use arrows from chests or quests to spin for new Bizarre Lineage stands."
+          },
+          "evolution": {
+            "title": "Evolution Routes",
+            "description": "Special cases like C-Moon require specific quests to evolve your Bizarre Lineage stands."
+          },
+          "meta": {
+            "title": "Meta Evolution",
+            "description": "High-tier Bizarre Lineage stands often trade pure power for high-utility kits."
+          }
+        }
+      },
+      "acquisition": {
+        "eyebrow": "Acquisition",
+        "title": "Acquisition Strategy for New Players",
+        "description": "Follow these key rules to optimize your account progression and avoid wasting precious Stand Arrows.",
+        "items": {
+          "arrow_first": {
+            "title": "01. Arrow First",
+            "description": "Do not waste time chasing evolutions before you have a stable level 50 character. Standard arrow pulls are your best friends early on."
+          },
+          "check_stats": {
+            "title": "02. Check Stats",
+            "description": "Top-tier evolutions require Prestige 1+ and specific Conjuring stats. Plan your build before committing to a route."
+          },
+          "prioritize_pve": {
+            "title": "03. Prioritize PvE",
+            "description": "Picking a high-AoE stand like Weather Report speeds up your overall progression, making it easier to grind for elite PvP stands."
+          }
+        }
+      },
+      "recommendations": {
+        "eyebrow": "Recommendations",
+        "title": "Best Bizarre Lineage Stands by Role",
+        "description": "If you need a quick answer, these are the stands we recommend based on current community meta research.",
+        "items": {
+          "pvp": {
+            "title": "Best PvP Stand: Star Platinum",
+            "description": "The clearest current PvP benchmark. Combines pressure, burst, and broad matchup value."
+          },
+          "pve": {
+            "title": "Best PvE Stand: Weather Report",
+            "description": "Screen-wide AoE and mission clearing speed make this the king of grinding."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Frequently Asked Questions",
+        "description": "Everything you need to know about Bizarre Lineage stands, evolutions, and the current meta.",
+        "items": [
+          {
+            "question": "How do I get my first stand in Bizarre Lineage?",
+            "answer": "You need a Stand Arrow, which can be found in chests around the map, earned from quests, or claimed from active codes. Once you have an arrow, use it from your inventory to roll for a random stand."
+          },
+          {
+            "question": "Can I change my stand after rolling it?",
+            "answer": "Yes, but using a new Stand Arrow will overwrite your current stand unless you have unlocked Stand Storage through Prestige. It is usually worth saving a strong stand before rolling again."
+          },
+          {
+            "question": "What is the difference between Arrow stands and Evolution stands?",
+            "answer": "Arrow stands come directly from using a Stand Arrow. Evolution stands such as Made in Heaven or C-Moon require a base stand plus a higher-level route or questline."
+          },
+          {
+            "question": "Which stand is best for fast leveling and farming?",
+            "answer": "Weather Report is one of the strongest PvE recommendations because its wide-area attacks clear missions and farming loops faster than more duel-focused stands."
+          },
+          {
+            "question": "What are the requirements for evolving a stand?",
+            "answer": "Most evolutions require Prestige progress, Conjuring investment, and a route-specific quest or item check before the evolution can happen."
+          },
+          {
+            "question": "How do stand tiers affect gameplay?",
+            "answer": "Higher-tier stands usually offer better damage scaling, stronger control, or more reliable matchups. Even so, matchup knowledge and route context still matter more than a letter grade alone."
+          },
+          {
+            "question": "Are there shiny or secret stand skins?",
+            "answer": "Yes. Bizarre Lineage includes stand skins that change visuals without changing power, and they are usually tied to Lucky Arrows or limited events."
+          }
+        ]
+      }
+    }
+  }
+}

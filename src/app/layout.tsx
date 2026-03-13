@@ -9,7 +9,7 @@ import { getLocale, setRequestLocale } from 'next-intl/server';
 import NextTopLoader from 'nextjs-toploader';
 
 import { envConfigs } from '@/config';
-import { locales } from '@/config/locale';
+import { defaultLocale, locales } from '@/config/locale';
 import { UtmCapture } from '@/shared/blocks/common/utm-capture';
 import { getAllConfigs } from '@/shared/models/config';
 import { getAdsService } from '@/shared/services/ads';
@@ -125,9 +125,10 @@ export default async function RootLayout({
                 key={loc}
                 rel="alternate"
                 hrefLang={loc}
-                href={`${appUrl}${loc === 'en' ? '' : `/${loc}`}`}
+                href={`${appUrl}${loc === defaultLocale ? '' : `/${loc}`}`}
               />
             ))}
+            <link rel="alternate" hrefLang="x-default" href={appUrl} />
           </>
         ) : null}
 
@@ -178,6 +179,9 @@ export default async function RootLayout({
 
         {/* inject customer service body scripts */}
         {customerServiceBodyScripts}
+
+        {/* adsterra socialbar */}
+        <script src="https://pl28909857.effectivegatecpm.com/e7/c9/58/e7c958e3963a97d940c6365883e62f0b.js"></script>
       </body>
     </html>
   );

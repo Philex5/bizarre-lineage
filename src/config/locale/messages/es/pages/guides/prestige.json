@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "title": "Guía de prestigio de Bizarre Lineage: Tiempos, preparación y compensaciones",
+    "description": "Usa esta guía de prestige para decidir cuándo compensa reiniciar, qué preparar antes y cómo evitar errores típicos al prestigiar."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Guía de prestigio",
+        "title": "El prestige importa cuando abre la siguiente ruta, no solo porque el botón ya esté disponible.",
+        "stats": {
+          "focus": "Enfoque",
+          "focus_value": "Cuándo prestigiar",
+          "decision_mode": "Modo de decisión",
+          "decision_mode_value": "Priorizar compensaciones",
+          "updated": "Actualizado"
+        },
+        "actions": {
+          "primary": "Verificar lógica de estadísticas",
+          "secondary": "Revisar ruta de progresión"
+        },
+        "aside": {
+          "title": "Marco de decisión",
+          "description": "La página intenta resolver tres cosas: si ahora te compensa prestigiar, qué deberías preparar antes y qué errores cuestan más de arreglar después.",
+          "items": [
+            {
+              "label": "Responder primero",
+              "value": "¿Debería prestigiar ahora?"
+            },
+            {
+              "label": "Luego cubrir",
+              "value": "Requisitos y preparación"
+            },
+            {
+              "label": "Finalmente mostrar",
+              "value": "Errores y rutas relacionadas"
+            }
+          ]
+        },
+        "media_label": "Marcador de posición de ruta de reinicio"
+      },
+      "when_to_prestige": {
+        "eyebrow": "Cuándo prestigiar",
+        "title": "El reinicio solo compensa cuando hace avanzar de verdad tu ruta."
+      },
+      "prepare_first": {
+        "eyebrow": "Preparar primero",
+        "title": "Una buena decisión de prestige se prepara antes de reiniciar."
+      },
+      "mistakes": {
+        "eyebrow": "Errores a evitar",
+        "title": "Los peores errores de prestige casi siempre vienen por impaciencia."
+      },
+      "related": {
+        "eyebrow": "Rutas relacionadas",
+        "title": "El prestige solo tiene sentido si encaja con el resto de tu ruta.",
+        "items": {
+          "stats": {
+            "title": "Guía de estadísticas",
+            "description": "Revisa la lógica de tu build antes de decidir qué estás sacrificando o habilitando con el reinicio."
+          },
+          "beginner": {
+            "title": "Guía para principiantes",
+            "description": "Usa la ruta de progresión general si aún estás en la transición del inicio o mitad del juego temprano."
+          },
+          "tier_list": {
+            "title": "Lista de niveles",
+            "description": "Verifica si tu objetivo principal de stand aún justifica el camino que planeas tras el prestigio."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "Preguntas frecuentes",
+        "title": "Lo que la página de prestigio debería resolver."
+      }
+    },
+    "content": {
+      "overview": "El prestigio es valioso cuando desbloquea la siguiente etapa de tu ruta, no cuando simplemente parece estar disponible. La página debe responder si deberías prestigiar ahora, qué ganas y qué deberías preparar primero.",
+      "when_to_prestige": [
+        {
+          "title": "Prestigia cuando tu ruta actual llegue al límite",
+          "description": "Si el progreso se estanca y el prestigio abre significativamente la siguiente etapa, el reinicio empieza a tener sentido."
+        },
+        {
+          "title": "Prestigia tras asegurar valores críticos",
+          "description": "No apresures el reinicio antes de asegurar los recursos o conocimientos que lamentarías perder."
+        },
+        {
+          "title": "Prestigia con un plan para el siguiente paso",
+          "description": "Una buena decisión de prestigio está ligada a un nuevo objetivo, no solo a la existencia de un botón."
+        }
+      ],
+      "prepare_first": [
+        {
+          "title": "Confirma los requisitos",
+          "description": "Asegúrate de no basarte en suposiciones desactualizadas sobre límites de nivel o tareas previas."
+        },
+        {
+          "title": "Gasta o ahorra intencionalmente",
+          "description": "Sabe qué recursos deben usarse antes del prestigio y cuáles deben conservarse."
+        },
+        {
+          "title": "Revisa tu build actual",
+          "description": "Si las estadísticas o la elección de stands son parte de la compensación, tenlo en cuenta antes de reiniciar."
+        },
+        {
+          "title": "Establece la ruta post-prestigio",
+          "description": "Debes conocer tu primer objetivo tras el reinicio para no perder el rumbo una vez hecho el prestigio."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Prestigiar lo antes posible",
+          "description": "Que esté disponible no significa que estés listo. Los reinicios prematuros a menudo crean una fricción evitable."
+        },
+        {
+          "title": "Ignorar las compensaciones",
+          "description": "Si no entiendes lo que cuesta el reinicio, aún no puedes juzgar si es eficiente."
+        },
+        {
+          "title": "Reiniciar sin un plan de seguimiento",
+          "description": "El prestigio debería acelerar la siguiente fase, no dejarte improvisando desde cero."
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Qué hace el prestigio en términos prácticos?",
+          "answer": "Es una palanca de reinicio de progresión que importa por lo que desbloquea a continuación, no porque el reinicio en sí sea emocionante."
+        },
+        {
+          "question": "¿Cuándo deberías prestigiar?",
+          "answer": "Cuando tu ruta actual ha llegado al límite, has preparado recursos clave y sabes lo que requiere la siguiente etapa."
+        },
+        {
+          "question": "¿Qué deberías leer antes de prestigiar?",
+          "answer": "La guía de estadísticas y tu ruta de progresión principal son las mejores comprobaciones previas antes de tomar la decisión."
+        }
+      ]
+    }
+  }
+}

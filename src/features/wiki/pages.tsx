@@ -2,44 +2,49 @@ import { type ReactNode } from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import {
-  activeCodes,
-  codeFailureReasons,
-  expiredCodes,
-  redeemSteps,
+  getActiveCodes,
+  getCodeFailureReasons,
+  getExpiredCodes,
+  getMonitoredCodeClaims,
+  getRedeemSteps,
 } from '@/content-data/codes';
 import {
-  beginnerGuide,
-  prestigeGuide,
-  statsGuide,
-} from '@/content-data/guides';
-import {
-  homeFaq,
-  officialLinks,
+  getHomeFaq,
+  getOfficialLinks,
   placeholderImages,
   siteName,
 } from '@/content-data/site';
-import { stands, type StandEntry } from '@/content-data/stands';
 import {
-  bestForCards,
-  tierListEntries,
-  tierMethodology,
+  getStandHref,
+  getStands,
+  type StandEntry,
+} from '@/content-data/stands';
+import {
+  getBestForCards,
+  getTierListEntries,
+  getTierMethodology,
 } from '@/content-data/tier-list';
 import { toImageUrl } from '@/lib/r2-utils';
 import {
+  AlertCircle,
   ArrowUpRight,
   Castle,
+  CheckCircle2,
+  ExternalLink,
   Flame,
+  Info,
   Swords,
   Ticket,
   Trophy,
   WandSparkles,
 } from 'lucide-react';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { SiDiscord, SiRoblox, SiTrello } from 'react-icons/si';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { Crumb } from '@/shared/blocks/common/crumb';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
 import { Button } from '@/shared/components/ui/button';
 import {
   Table,
@@ -53,12 +58,9 @@ import { cn } from '@/shared/lib/utils';
 
 import { HomeCodeCopyButton } from './home-code-copy-button';
 import {
-  AsidePanel,
   CardGrid,
   FaqGrid,
   GuideCard,
-  HeroActions,
-  HeroFrame,
   OrderedChecklist,
   PageShell,
   SectionFrame,
@@ -124,7 +126,7 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
   };
 
   const content = (
-    <article className="bg-background/92 border-border group relative overflow-hidden rounded-[1.6rem] border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+    <article className="bg-background/92 border-border group relative flex h-full overflow-hidden rounded-[1.6rem] border p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
       {imageUrl && (
         <div className="absolute inset-0 opacity-10 transition-opacity group-hover:opacity-20">
           <Image
@@ -144,7 +146,7 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
       >
         {stand.tier}
       </div>
-      <div className="relative z-10">
+      <div className="relative z-10 flex min-h-full flex-1 flex-col">
         <div className="pr-10">
           <h3 className="text-foreground text-2xl font-semibold tracking-[-0.04em]">
             {stand.name}
@@ -156,7 +158,7 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
         <p className="text-primary mt-4 text-sm font-medium tracking-[0.12em] uppercase">
           {stand.bestFor}
         </p>
-        <p className="text-muted-foreground mt-3 text-sm leading-7">
+        <p className="text-muted-foreground mt-3 flex-1 text-sm leading-7">
           {stand.quickVerdict}
         </p>
       </div>
@@ -164,7 +166,7 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
   );
 
   return (
-    <Link id={stand.key} href={`/stands#${stand.key}`} className="block">
+    <Link id={stand.key} href={getStandHref(stand.key)} className="block h-full">
       {content}
     </Link>
   );
@@ -200,12 +202,12 @@ function HomeQuickAccessCard({
   return (
     <Link
       href={href}
-      className="border-border bg-background/70 hover:border-primary/35 hover:bg-background/92 group flex min-h-24 flex-col justify-between rounded-[1.25rem] border p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+      className="border-border bg-background/70 hover:border-primary/35 hover:bg-background/92 group flex min-h-[3.5rem] items-center gap-3 rounded-[1.1rem] border px-3 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
     >
-      <span className="text-primary/90 flex size-10 items-center justify-center rounded-2xl bg-white/6 text-lg shadow-inner ring-1 ring-white/8 transition-transform duration-300 group-hover:scale-105">
+      <span className="text-primary/90 flex size-9 shrink-0 items-center justify-center rounded-xl bg-white/6 text-base shadow-inner ring-1 ring-white/8 transition-transform duration-300 group-hover:scale-105">
         {icon}
       </span>
-      <span className="text-foreground text-sm font-semibold tracking-[-0.02em]">
+      <span className="text-foreground text-sm font-semibold tracking-[-0.02em] leading-tight">
         {title}
       </span>
     </Link>
@@ -213,42 +215,47 @@ function HomeQuickAccessCard({
 }
 
 export async function HomePage() {
+  const locale = await getLocale();
   const t = await getTranslations('pages.index');
-  const featuredStands = stands.slice(0, 3);
+  const tCodes = await getTranslations('pages.codes');
+  const officialLinks = getOfficialLinks(t);
+  const homeFaq = getHomeFaq(t);
+  const activeCodes = getActiveCodes(tCodes);
+  const featuredStands = getStands(locale).slice(0, 3);
   const featuredCodes = activeCodes.slice(0, 3);
   const heroQuickAccessItems = [
     {
-      title: 'Tier List',
+      title: t('page.sections.utility.quick_access.items.tier_list'),
       href: '/tier-list',
       icon: <Trophy className="size-5" />,
     },
     {
-      title: 'Stands',
+      title: t('page.sections.utility.quick_access.items.stands'),
       href: '/stands',
       icon: <WandSparkles className="size-5" />,
     },
     {
-      title: 'Beginner Guide',
+      title: t('page.sections.utility.quick_access.items.beginner_guide'),
       href: '/guides/beginner-guide',
       icon: <ArrowUpRight className="size-5" />,
     },
     {
-      title: 'Raids',
+      title: t('page.sections.utility.quick_access.items.raids'),
       href: '/terms/raid',
       icon: <Castle className="size-5" />,
     },
     {
-      title: 'Events',
+      title: t('page.sections.utility.quick_access.items.events'),
       href: '/events',
       icon: <Ticket className="size-5" />,
     },
     {
-      title: 'Fighting Styles',
+      title: t('page.sections.utility.quick_access.items.fighting_styles'),
       href: '/terms/fighting-styles',
       icon: <Swords className="size-5" />,
     },
     {
-      title: 'Sub-Abilities',
+      title: t('page.sections.utility.quick_access.items.sub_abilities'),
       href: '/terms/sub-abilities',
       icon: <Flame className="size-5" />,
     },
@@ -256,43 +263,43 @@ export async function HomePage() {
   const officialLinkCards = [
     {
       ...officialLinks[0],
-      title: 'Roblox',
+      title: t('page.sections.utility.official_links.items.roblox'),
       icon: SiRoblox,
     },
     {
       ...officialLinks[1],
-      title: 'Discord',
+      title: t('page.sections.utility.official_links.items.discord'),
       icon: SiDiscord,
     },
     {
       ...officialLinks[2],
-      title: 'Trello',
+      title: t('page.sections.utility.official_links.items.trello'),
       icon: SiTrello,
     },
   ] as const;
   const homeGuideCards = [
     {
-      title: 'Bizarre Lineage beginner guide',
+      title: t('page.sections.start_here.items.beginner_guide'),
       href: '/guides/beginner-guide',
     },
     {
-      title: 'Bizarre Lineage stats guide',
+      title: t('page.sections.start_here.items.stats_guide'),
       href: '/guides/stats',
     },
     {
-      title: 'When to prestige in Bizarre Lineage',
+      title: t('page.sections.start_here.items.prestige'),
       href: '/guides/prestige',
     },
     {
-      title: 'Bizarre Lineage codes guide',
+      title: t('page.sections.start_here.items.codes'),
       href: '/codes',
     },
     {
-      title: 'Bizarre Lineage tier list',
+      title: t('page.sections.start_here.items.tier_list'),
       href: '/tier-list',
     },
     {
-      title: 'Bizarre Lineage stands guide',
+      title: t('page.sections.start_here.items.stands'),
       href: '/stands',
     },
   ] as const;
@@ -336,7 +343,7 @@ export async function HomePage() {
   const homeFaqSchema = [
     {
       '@type': 'Question',
-      name: 'What is Bizarre Lineage?',
+      name: homeFaq[0]?.question,
       acceptedAnswer: {
         '@type': 'Answer',
         text: homeFaq[0]?.answer,
@@ -344,7 +351,7 @@ export async function HomePage() {
     },
     {
       '@type': 'Question',
-      name: 'Does Bizarre Lineage have codes?',
+      name: homeFaq[3]?.question,
       acceptedAnswer: {
         '@type': 'Answer',
         text: homeFaq[3]?.answer,
@@ -352,7 +359,7 @@ export async function HomePage() {
     },
     {
       '@type': 'Question',
-      name: 'What is the best stand for beginners?',
+      name: t('page.sections.faq.items.0.question'),
       acceptedAnswer: {
         '@type': 'Answer',
         text: t('page.sections.faq.items.0.answer'),
@@ -360,7 +367,7 @@ export async function HomePage() {
     },
     {
       '@type': 'Question',
-      name: 'When should you prestige?',
+      name: t('page.sections.faq.items.1.question'),
       acceptedAnswer: {
         '@type': 'Answer',
         text: t('page.sections.faq.items.1.answer'),
@@ -392,15 +399,15 @@ export async function HomePage() {
             <div className="absolute inset-0">
               <Image
                 src={placeholderImages.hero}
-                alt="Bizarre Lineage hero key art placeholder"
+                alt={t('page.sections.hero.image_alt')}
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center dark:brightness-[0.88] dark:saturate-[0.94]"
                 priority
               />
-              <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_oklab,var(--color-foreground)_92%,black)_0%,color-mix(in_oklab,var(--color-foreground)_84%,transparent)_34%,color-mix(in_oklab,var(--color-foreground)_56%,transparent)_62%,color-mix(in_oklab,var(--color-foreground)_84%,black)_100%)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,black_18%,transparent)_0%,transparent_20%,color-mix(in_oklab,black_44%,transparent)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_oklab,var(--color-foreground)_92%,black)_0%,color-mix(in_oklab,var(--color-foreground)_84%,transparent)_34%,color-mix(in_oklab,var(--color-foreground)_56%,transparent)_62%,color-mix(in_oklab,var(--color-foreground)_84%,black)_100%)] dark:bg-[linear-gradient(90deg,color-mix(in_oklab,black_74%,transparent)_0%,color-mix(in_oklab,black_48%,transparent)_30%,color-mix(in_oklab,black_22%,transparent)_58%,color-mix(in_oklab,black_56%,transparent)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,black_18%,transparent)_0%,transparent_20%,color-mix(in_oklab,black_44%,transparent)_100%)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,black_32%,transparent)_0%,transparent_22%,color-mix(in_oklab,black_56%,transparent)_100%)]" />
             </div>
-            <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)]" />
+            <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_10%,transparent),transparent)]" />
 
             <div className="relative flex min-h-[68vh] items-end px-6 py-10 md:px-10 md:py-14 lg:px-14 lg:py-18">
               <div className="max-w-2xl">
@@ -417,14 +424,16 @@ export async function HomePage() {
             </div>
           </div>
 
-          <div className="border-border bg-card/94 relative overflow-hidden rounded-[2rem] border p-6 shadow-lg backdrop-blur-sm md:p-7">
+          <div className="border-border bg-card/94 relative overflow-hidden rounded-[1.7rem] border p-4 shadow-lg backdrop-blur-sm md:p-5">
             <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--color-primary),var(--color-accent),var(--color-primary))] opacity-90" />
-            <div className="relative">
-              <h2 className="text-foreground text-center font-serif text-2xl leading-none tracking-[-0.04em] md:text-3xl">
-                Official Bizarre Lineage links
-              </h2>
+            <div className="relative flex items-center gap-3 overflow-x-auto pr-1 md:gap-4">
+              <div className="min-w-[9.5rem] shrink-0">
+                <h2 className="text-foreground font-serif text-xl leading-none tracking-[-0.04em] md:text-2xl">
+                  {t('page.sections.utility.official_links.title')}
+                </h2>
+              </div>
 
-              <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="flex min-w-0 flex-1 items-stretch gap-3">
                 {officialLinkCards.map((item) => {
                   const Icon = item.icon;
 
@@ -434,12 +443,12 @@ export async function HomePage() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex min-h-32 flex-col items-center justify-center rounded-[1.5rem] border p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex min-w-[9rem] flex-1 items-center gap-3 rounded-[1.1rem] border px-3 py-3 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:min-w-0 md:px-4"
                     >
-                      <span className="text-primary mb-4 flex size-12 items-center justify-center rounded-2xl bg-white/6 text-2xl ring-1 ring-white/8">
+                      <span className="text-primary flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/6 text-xl ring-1 ring-white/8">
                         <Icon />
                       </span>
-                      <div className="text-foreground text-lg font-semibold tracking-[-0.03em]">
+                      <div className="text-foreground text-sm font-semibold tracking-[-0.03em] md:text-base">
                         {item.title}
                       </div>
                     </a>
@@ -448,22 +457,26 @@ export async function HomePage() {
               </div>
             </div>
           </div>
+
+          <div className="px-1">
+            <AdsterraBanner />
+          </div>
         </div>
 
         <aside className="border-border bg-card/96 relative overflow-hidden rounded-[2rem] border p-5 shadow-lg backdrop-blur-sm lg:self-start">
           <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_8%,transparent)_0%,transparent_24%),linear-gradient(color-mix(in_oklab,var(--color-foreground)_5%,transparent)_1px,transparent_1px)] bg-[length:100%_100%,18px_18px]" />
           <div className="relative space-y-6">
             <div>
-              <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
-                Quick Access
-              </div>
-              <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
-                Bizarre Lineage Navigation
-              </h2>
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {heroQuickAccessItems.map((item) => (
-                  <HomeQuickAccessCard
-                    key={item.href}
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
+                    {t('page.sections.utility.quick_access.eyebrow')}
+                  </div>
+                  <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
+                    {t('page.sections.utility.quick_access.title')}
+                  </h2>
+                  <div className="mt-5 grid grid-cols-2 gap-2.5">
+                    {heroQuickAccessItems.map((item) => (
+                      <HomeQuickAccessCard
+                        key={item.href}
                     title={item.title}
                     href={item.href}
                     icon={item.icon}
@@ -476,14 +489,14 @@ export async function HomePage() {
               <div className="flex items-end justify-between gap-3">
                 <div>
                   <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
-                    Latest Codes
+                    {t('page.sections.utility.latest_codes.eyebrow')}
                   </div>
                   <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
-                    Active Codes
+                    {t('page.sections.utility.latest_codes.title')}
                   </h2>
                 </div>
                 <div className="text-muted-foreground text-right text-xs leading-5">
-                  Verified
+                  {t('page.sections.utility.latest_codes.verified_label')}
                   <br />
                   2026-03-09
                 </div>
@@ -493,14 +506,14 @@ export async function HomePage() {
                 {featuredCodes.map((code) => (
                   <div
                     key={code.code}
-                    className="bg-background/85 border-border rounded-[1.35rem] border p-4"
+                    className="bg-background/85 border-border rounded-[1.2rem] border px-3 py-3"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <div className="text-foreground font-mono text-sm font-semibold">
                           {code.code}
                         </div>
-                        <p className="text-muted-foreground mt-2 text-sm leading-6">
+                        <p className="text-muted-foreground mt-1.5 text-sm leading-5">
                           {code.reward}
                         </p>
                       </div>
@@ -511,7 +524,9 @@ export async function HomePage() {
               </div>
 
               <Button asChild className="mt-4 w-full rounded-xl">
-                <Link href="/codes">View More Codes</Link>
+                <Link href="/codes">
+                  {t('page.sections.utility.latest_codes.cta')}
+                </Link>
               </Button>
             </div>
           </div>
@@ -546,7 +561,7 @@ export async function HomePage() {
             <div className="relative aspect-[16/9]">
               <Image
                 src="/placeholders/introduction.webp"
-                alt="Bizarre Lineage Map and Introduction"
+                alt={t('page.sections.world.image_alt')}
                 fill
                 sizes="(min-width: 1024px) 34rem, 100vw"
                 className="object-cover"
@@ -667,13 +682,52 @@ export async function HomePage() {
 
 export async function CodesPage() {
   const t = await getTranslations('pages.codes');
+  const activeCodes = getActiveCodes(t);
+  const expiredCodes = getExpiredCodes(t);
+  const monitoredCodeClaims = getMonitoredCodeClaims(t);
+  const redeemSteps = getRedeemSteps(t);
+  const codeFailureReasons = getCodeFailureReasons(t);
+  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-13';
+  const sourceLinks = [
+    {
+      label: 'Official Roblox Game',
+      href: 'https://www.roblox.com/games/14890802310/Bizarre-Lineage',
+    },
+    {
+      label: 'Official Discord',
+      href: 'https://discord.com/invite/bizarrelineage',
+    },
+  ] as const;
+  const faqItems = [
+    {
+      question: 'How do I redeem Bizarre Lineage codes?',
+      answer:
+        'Launch Bizarre Lineage on Roblox, open the in-game chat, type the working code exactly as shown, and press Enter to claim the reward.',
+    },
+    {
+      question: 'Where can I find more Bizarre Lineage codes for rewards?',
+      answer:
+        'The official Discord server and Roblox game page are still the best sources. This page tracks those updates so you can check one guide first.',
+    },
+    {
+      question: 'What do Bizarre Lineage codes give you?',
+      answer:
+        'Most Bizarre Lineage codes give progression rewards like stat point essence, stand items, chests, or other boosts that help you move faster through the game.',
+    },
+    {
+      question: 'Why are my Bizarre Lineage codes not working?',
+      answer:
+        'Codes can fail because of case-sensitive input, missing the required group or like step, or testing on a server that has not fully refreshed after an update.',
+    },
+  ];
+
   return (
-    <PageShell accent="ember">
+    <PageShell accent="gold">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: t.raw('page.sections.faq.items').map((item: any) => ({
+          mainEntity: faqItems.map((item) => ({
             '@type': 'Question',
             name: item.question,
             acceptedAnswer: {
@@ -684,126 +738,230 @@ export async function CodesPage() {
         }}
       />
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)]">
-        <SectionFrame
-          eyebrow={t('page.sections.hero.eyebrow')}
-          title={t('page.sections.hero.title')}
-          description={t('page.sections.hero.description')}
-        >
-          <OrderedChecklist
-            items={[
-              {
-                title: 'Open with the active table',
-                description:
-                  'Players looking for rewards should see usable codes before any supporting content.',
-              },
-              {
-                title: 'Treat monitor labels as a live caution',
-                description:
-                  'A monitor status means the entry still deserves another in-game pass after a patch, reset, or event rollover.',
-              },
-              {
-                title: 'Use the archive for context only',
-                description:
-                  'Expired rows help explain old community references, but they should never lead the page.',
-              },
-            ]}
-          />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow={t('page.sections.notes.eyebrow')}
-          title={t('page.sections.notes.title')}
-        >
-          <CardGrid
-            columns={2}
-            items={[
-              {
-                title: t('page.sections.notes.items.last_verified.title'),
-                meta: t('page.sections.notes.items.last_verified.meta'),
-                description: '2026-03-08',
-              },
-              {
-                title: t('page.sections.notes.items.tracked_active.title'),
-                meta: t('page.sections.notes.items.tracked_active.meta'),
-                description: String(activeCodes.length),
-              },
-              {
-                title: t('page.sections.notes.items.best_next_move.title'),
-                meta: t('page.sections.notes.items.best_next_move.meta'),
-                description: t(
-                  'page.sections.notes.items.best_next_move.description'
-                ),
-              },
-            ]}
-          />
-        </SectionFrame>
+      <div className="px-1">
+        <AdsterraBanner />
       </div>
 
       <SectionFrame
         id="active-codes"
-        eyebrow={t('page.sections.active.eyebrow')}
-        title={t('page.sections.active.title')}
-        description={t('page.sections.active.description')}
+        eyebrow="Active Rewards"
+        title="Bizarre Lineage Codes List"
+        description="Check the latest tracked Bizarre Lineage codes first, then use the redemption guide below if you want to claim rewards quickly without digging through menus."
       >
-        <div className="border-foreground/10 bg-background/75 overflow-hidden rounded-[1.6rem] border">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="px-4">
-                  {t('page.sections.active.table.code')}
-                </TableHead>
-                <TableHead>{t('page.sections.active.table.reward')}</TableHead>
-                <TableHead>{t('page.sections.active.table.status')}</TableHead>
-                <TableHead className="px-4">
-                  {t('page.sections.active.table.last_verified')}
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {activeCodes.map((row) => (
-                <TableRow key={row.code}>
-                  <TableCell className="px-4 font-mono text-xs">
-                    {row.code}
-                  </TableCell>
-                  <TableCell>{row.reward}</TableCell>
-                  <TableCell>{row.status}</TableCell>
-                  <TableCell className="px-4">{row.lastVerified}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+        <div className="space-y-6">
+          <div className="grid gap-4">
+            {activeCodes.length > 0 ? (
+              activeCodes.map((row) => (
+                <div
+                  key={row.code}
+                  className="group bg-background/92 border-gold/20 hover:border-gold/50 relative flex flex-col justify-between gap-4 rounded-2xl border p-5 shadow-sm transition-all hover:shadow-md md:flex-row md:items-center"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                      <CheckCircle2 className="size-6" />
+                    </div>
+                    <div>
+                      <div className="text-foreground select-all font-mono text-xl font-bold tracking-tight">
+                        {row.code}
+                      </div>
+                      <div className="text-muted-foreground mt-1 text-sm">
+                        Reward: {row.reward}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <div className="rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-sm text-green-500">
+                      Working Bizarre Lineage Code
+                    </div>
+                    <div className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                      Verified {row.lastVerified}
+                    </div>
+                    <HomeCodeCopyButton code={row.code} />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="bg-background/88 border-border rounded-2xl border p-8 text-center">
+                <AlertCircle className="text-muted-foreground mx-auto mb-4 size-12" />
+                <h3 className="mb-2 text-lg font-semibold">
+                  No Active Bizarre Lineage Codes Found
+                </h3>
+                <p className="text-muted-foreground mx-auto max-w-md">
+                  There are currently no confirmed active Bizarre Lineage codes.
+                  Check the official channels below and revisit this page after
+                  the next update or milestone drop.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <p className="text-muted-foreground text-sm italic">
+            Last verified: {latestVerified}. Redeem codes quickly after updates,
+            because Bizarre Lineage rewards can expire with very little warning.
+          </p>
+
+          {monitoredCodeClaims.length > 0 ? (
+            <div className="bg-background/60 border-border rounded-2xl border p-5">
+              <div className="text-muted-foreground mb-4 flex items-center gap-2">
+                <Info className="size-4" />
+                <span className="text-sm font-semibold tracking-wider uppercase">
+                  Upcoming Bizarre Lineage Codes and Milestones
+                </span>
+              </div>
+              <div className="space-y-3">
+                {monitoredCodeClaims.map((row) => (
+                  <div
+                    key={row.code}
+                    className="flex flex-col gap-1 text-sm sm:flex-row sm:items-center sm:justify-between"
+                  >
+                    <span className="text-foreground font-mono font-medium">
+                      {row.code}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {row.reward}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </SectionFrame>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <SectionFrame
+        id="how-to-use"
+        eyebrow="Redemption Guide"
+        title="How to Use Bizarre Lineage Codes"
+        description="Follow the in-game flow below to redeem Bizarre Lineage codes. The screenshot guide from the earlier layout is restored here as well."
+      >
+        <div className="flex flex-col gap-8">
+          <div className="grid gap-6">
+            {redeemSteps.map((step, index) => (
+              <div key={step.title} className="flex gap-4">
+                <div className="bg-foreground text-background flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="mb-1 text-base font-bold">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative mx-auto aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-3xl border border-border shadow-lg">
+            <Image
+              src="/images/codes/redeem-guide.jpg"
+              alt="Step-by-step guide for Bizarre Lineage codes redemption"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </SectionFrame>
+
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
         <SectionFrame
-          eyebrow={t('page.sections.redeem.eyebrow')}
-          title={t('page.sections.redeem.title')}
+          id="about"
+          eyebrow="Overview"
+          title="What is Bizarre Lineage?"
         >
-          <OrderedChecklist items={[...redeemSteps]} />
+          <div className="space-y-4">
+            <p className="text-muted-foreground text-sm leading-7 md:text-base">
+              Bizarre Lineage is a Roblox RPG inspired by JoJo's Bizarre
+              Adventure, with stand progression, PvP, farming routes, and
+              character optimization driving most sessions. Codes matter because
+              they can shorten that grind with free items or resets.
+            </p>
+            <p className="text-muted-foreground text-sm leading-7 md:text-base">
+              This page keeps the older content-first flow intact: check the
+              live rewards first, redeem them quickly, then move into guides and
+              build research instead of stopping at the claim screen.
+            </p>
+          </div>
         </SectionFrame>
 
         <SectionFrame
-          eyebrow={t('page.sections.expired.eyebrow')}
-          title={t('page.sections.expired.title')}
+          eyebrow="Troubleshooting"
+          title="Why a Bizarre Lineage code may fail"
         >
-          <div className="border-foreground/10 bg-background/75 overflow-hidden rounded-[1.6rem] border">
+          <CardGrid columns={3} items={[...codeFailureReasons]} />
+        </SectionFrame>
+      </div>
+
+      <SectionFrame
+        id="sources"
+        eyebrow="Community"
+        title="Find More Bizarre Lineage Codes"
+        description="Follow the official channels if you want to catch new code drops as soon as they happen."
+      >
+        <div className="flex flex-wrap gap-4">
+          {sourceLinks.map((source) => (
+            <Button
+              key={source.href}
+              asChild
+              variant="outline"
+              className="h-12 rounded-full px-6 transition-all hover:bg-gold hover:text-white"
+            >
+              <a href={source.href} target="_blank" rel="noreferrer">
+                {source.label}
+                <ExternalLink className="ml-2 size-4" />
+              </a>
+            </Button>
+          ))}
+        </div>
+      </SectionFrame>
+
+      <SectionFrame
+        id="faq"
+        eyebrow="FAQ"
+        title="Bizarre Lineage Codes Frequently Asked Questions"
+      >
+        <FaqGrid items={faqItems} />
+      </SectionFrame>
+
+      <SectionFrame
+        id="related"
+        eyebrow="Next Reads"
+        title="Use your rewards better after the code check"
+      >
+        <CardGrid
+          columns={2}
+          items={[
+            {
+              title: 'Tier List',
+              description:
+                'Move to the stand rankings if you are deciding where those rewards should actually be spent.',
+              href: '/tier-list',
+            },
+            {
+              title: 'Beginner Guide',
+              description:
+                'Open the guide if you need a stronger first-session route after collecting rewards.',
+              href: '/guides/beginner-guide',
+            },
+          ]}
+        />
+      </SectionFrame>
+
+      {expiredCodes.length > 0 ? (
+        <SectionFrame
+          id="expired"
+          eyebrow="Archive"
+          title="Expired Bizarre Lineage Codes"
+          description="These old entries stay here for reference so you can quickly rule out outdated rewards."
+        >
+          <div className="border-border bg-background/50 overflow-hidden rounded-2xl border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="px-4">
-                    {t('page.sections.expired.table.code')}
-                  </TableHead>
-                  <TableHead>
-                    {t('page.sections.expired.table.reward')}
-                  </TableHead>
-                  <TableHead>
-                    {t('page.sections.expired.table.status')}
-                  </TableHead>
-                  <TableHead className="px-4">
-                    {t('page.sections.expired.table.archive_note')}
-                  </TableHead>
+                  <TableHead className="px-4">Expired Code</TableHead>
+                  <TableHead>Previous Reward</TableHead>
+                  <TableHead>Status</TableHead>
+                  <TableHead className="px-4">Last Verified</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -821,106 +979,16 @@ export async function CodesPage() {
             </Table>
           </div>
         </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow={t('page.sections.troubleshooting.eyebrow')}
-        title={t('page.sections.troubleshooting.title')}
-      >
-        <CardGrid columns={3} items={[...codeFailureReasons]} />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow={t('page.sections.related.eyebrow')}
-        title={t('page.sections.related.title')}
-      >
-        <CardGrid
-          columns={2}
-          items={[
-            {
-              title: t('page.sections.related.items.tier_list.title'),
-              description: t(
-                'page.sections.related.items.tier_list.description'
-              ),
-              href: '/tier-list',
-            },
-            {
-              title: t('page.sections.related.items.beginner_guide.title'),
-              description: t(
-                'page.sections.related.items.beginner_guide.description'
-              ),
-              href: '/guides/beginner-guide',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow={t('page.sections.faq.eyebrow')}
-        title={t('page.sections.faq.title')}
-        description={t('page.sections.faq.description')}
-      >
-        <FaqGrid items={t.raw('page.sections.faq.items')} />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow={t('page.sections.cta.eyebrow')}
-        title={t('page.sections.cta.title')}
-        description={t('page.sections.cta.description')}
-      >
-        <div className="grid gap-4 md:grid-cols-3">
-          <Link
-            href="/tier-list"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              {t('page.sections.cta.items.tier_list.eyebrow')}
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              {t('page.sections.cta.items.tier_list.title')}
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              {t('page.sections.cta.items.tier_list.description')}
-            </p>
-          </Link>
-
-          <Link
-            href="/guides/beginner-guide"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              {t('page.sections.cta.items.beginner_guide.eyebrow')}
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              {t('page.sections.cta.items.beginner_guide.title')}
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              {t('page.sections.cta.items.beginner_guide.description')}
-            </p>
-          </Link>
-
-          <Link
-            href="/stands"
-            className="bg-background/92 text-foreground border-border rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-          >
-            <div className="text-muted-foreground text-[0.7rem] tracking-[0.2em] uppercase">
-              {t('page.sections.cta.items.stand_index.eyebrow')}
-            </div>
-            <h3 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
-              {t('page.sections.cta.items.stand_index.title')}
-            </h3>
-            <p className="text-muted-foreground mt-3 text-sm leading-7">
-              {t('page.sections.cta.items.stand_index.description')}
-            </p>
-          </Link>
-        </div>
-      </SectionFrame>
+      ) : null}
     </PageShell>
   );
 }
 
 export async function TierListPage() {
   const t = await getTranslations('pages.tier-list');
+  const tierListEntries = getTierListEntries(t);
+  const tierMethodology = getTierMethodology(t);
+  const bestForCards = getBestForCards(t);
   return (
     <PageShell accent="violet">
       <StandsTierBoard />
@@ -930,15 +998,34 @@ export async function TierListPage() {
           eyebrow={t('page.sections.representative.eyebrow')}
           title={t('page.sections.representative.title')}
         >
-          <CardGrid
-            columns={2}
-            items={tierListEntries.map((entry) => ({
-              title: entry.name,
-              meta: `${entry.tier} ${t('page.sections.representative.tier_suffix')}`,
-              description: entry.summary,
-              href: `/stands#${entry.key}`,
-            }))}
-          />
+          <div className="grid gap-4 md:grid-cols-2">
+            {tierListEntries.map((entry) => (
+              <article
+                key={entry.key}
+                className="group bg-background/92 border-border relative overflow-hidden rounded-[1.6rem] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="absolute inset-x-5 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-primary),var(--color-accent),transparent)]" />
+                <Link
+                  href={getStandHref(entry.key)}
+                  className="border-border bg-background/90 text-foreground hover:border-primary/30 hover:text-primary absolute top-4 right-4 inline-flex size-9 items-center justify-center rounded-full border transition-colors"
+                  aria-label={`Open ${entry.name}`}
+                >
+                  <ArrowUpRight className="size-4" />
+                </Link>
+                <div className="pr-12">
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                    {entry.tier} {t('page.sections.representative.tier_suffix')}
+                  </div>
+                  <h3 className="text-foreground mt-2 text-xl font-semibold tracking-[-0.03em]">
+                    {entry.name}
+                  </h3>
+                  <p className="text-muted-foreground mt-3 text-sm leading-7">
+                    {entry.summary}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </SectionFrame>
 
         <SectionFrame
@@ -955,6 +1042,10 @@ export async function TierListPage() {
       >
         <CardGrid columns={3} items={[...bestForCards]} />
       </SectionFrame>
+
+      <div className="px-1">
+        <AdsterraBanner />
+      </div>
 
       <SectionFrame
         eyebrow={t('page.sections.faq.eyebrow')}
@@ -973,8 +1064,12 @@ export async function GuidesHubPage() {
       <div className="px-1 pt-2">
         <Crumb
           items={[
-            { title: 'Home', url: '/' },
-            { title: 'Guides', url: '/guides', is_active: true },
+            { title: t('page.sections.breadcrumbs.home'), url: '/' },
+            {
+              title: t('page.sections.breadcrumbs.guides'),
+              url: '/guides',
+              is_active: true,
+            },
           ]}
         />
       </div>
@@ -1025,208 +1120,32 @@ export async function GuidesHubPage() {
   );
 }
 
-export async function BeginnerGuidePage() {
-  const t = await getTranslations('pages.guides.beginner-guide');
-  return (
-    <PageShell accent="jade">
-      <HeroFrame
-        eyebrow={t('page.sections.hero.eyebrow')}
-        title={t('page.sections.hero.title')}
-        dek={t('page.sections.hero.description')}
-        stats={[
-          {
-            label: t('page.sections.hero.stats.audience'),
-            value: t('page.sections.hero.stats.audience_value'),
-          },
-          {
-            label: t('page.sections.hero.stats.reading_mode'),
-            value: t('page.sections.hero.stats.reading_mode_value'),
-          },
-          {
-            label: t('page.sections.hero.stats.reading_time'),
-            value: beginnerGuide.readingTime,
-          },
-          {
-            label: t('page.sections.hero.stats.updated'),
-            value: beginnerGuide.updatedAt,
-          },
-        ]}
-        actions={
-          <HeroActions
-            primary={{
-              href: '/codes',
-              label: t('page.sections.hero.actions.primary'),
-            }}
-            secondary={{
-              href: '/tier-list',
-              label: t('page.sections.hero.actions.secondary'),
-            }}
-          />
-        }
-        backgroundImageSrc={placeholderImages.guide}
-        backgroundImageAlt="Beginner guide placeholder visual"
-        mediaLabel={t('page.sections.hero.media_label')}
-        aside={
-          <AsidePanel
-            title={t('page.sections.hero.aside.title')}
-            description={t('page.sections.hero.aside.description')}
-            items={t.raw('page.sections.hero.aside.items')}
-          />
-        }
-      />
+export async function StandsHubPage() {
+  const locale = await getLocale();
+  const t = await getTranslations('pages.stands');
+  const localizedStands = getStands(locale);
+  const faqItems = t.raw('page.sections.faq.items') as Array<{
+    question: string;
+    answer: string;
+  }>;
 
-      <SectionFrame
-        eyebrow={t('page.sections.checklist.eyebrow')}
-        title={t('page.sections.checklist.title')}
-      >
-        <OrderedChecklist items={[...beginnerGuide.checklist]} />
-      </SectionFrame>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SectionFrame
-          eyebrow={t('page.sections.first_30.eyebrow')}
-          title={t('page.sections.first_30.title')}
-        >
-          <CardGrid columns={2} items={[...beginnerGuide.firstThirtyMinutes]} />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow={t('page.sections.mistakes.eyebrow')}
-          title={t('page.sections.mistakes.title')}
-        >
-          <CardGrid columns={2} items={[...beginnerGuide.mistakes]} />
-        </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow={t('page.sections.progression.eyebrow')}
-        title={t('page.sections.progression.title')}
-      >
-        <OrderedChecklist items={[...beginnerGuide.goals]} />
-      </SectionFrame>
-
-      <SectionFrame
-        eyebrow="FAQ"
-        title="Questions the beginner page should settle."
-      >
-        <FaqGrid items={[...beginnerGuide.faq]} />
-      </SectionFrame>
-    </PageShell>
-  );
-}
-
-export function StatsGuidePage() {
-  return (
-    <PageShell accent="jade">
-      <HeroFrame
-        eyebrow="Stats guide"
-        title="Stats should support your route, not trap you in fake precision."
-        dek={statsGuide.overview}
-        stats={[
-          { label: 'Focus', value: 'Allocation logic' },
-          { label: 'Modes', value: 'PvP + PvE' },
-          { label: 'Updated', value: statsGuide.updatedAt },
-        ]}
-        actions={
-          <HeroActions
-            primary={{ href: '/tier-list', label: 'Compare stand roles' }}
-            secondary={{ href: '/guides/prestige', label: 'Plan prestige' }}
-          />
-        }
-        backgroundImageSrc={placeholderImages.guide}
-        backgroundImageAlt="Stats guide placeholder visual"
-        mediaLabel="Guide visual placeholder"
-        aside={
-          <AsidePanel
-            title="How to read this page"
-            description="The guide explains what each stat affects, what early players should prioritize, and where common build mistakes come from."
-            items={[
-              { label: 'Start with', value: 'Stat system overview' },
-              { label: 'Then check', value: 'Early priorities' },
-              { label: 'Use with', value: 'Tier list and prestige guide' },
-            ]}
-          />
-        }
-      />
-
-      <SectionFrame
-        eyebrow="Stats overview"
-        title="Each stat category should answer a different build question."
-      >
-        <CardGrid columns={2} items={[...statsGuide.statCards]} />
-      </SectionFrame>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SectionFrame
-          eyebrow="Early-game priorities"
-          title="Early stat choices should create stable progress first."
-        >
-          <OrderedChecklist items={[...statsGuide.priorities]} />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow="Common mistakes"
-          title="Most weak builds fail because the logic is wrong, not because the math is slightly off."
-        >
-          <CardGrid columns={2} items={[...statsGuide.mistakes]} />
-        </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow="Related routes"
-        title="Use the stats guide as build context, not as an isolated page."
-      >
-        <CardGrid
-          columns={3}
-          items={[
-            {
-              title: 'Tier List',
-              description:
-                'Check what role your stand is trying to play before you decide how to support it.',
-              href: '/tier-list',
-            },
-            {
-              title: 'Prestige Guide',
-              description:
-                'Prestige timing becomes cleaner when you understand what parts of your build matter now.',
-              href: '/guides/prestige',
-            },
-            {
-              title: 'Beginner Guide',
-              description:
-                'Use the new-player route if you still need the higher-level progression sequence.',
-              href: '/guides/beginner-guide',
-            },
-          ]}
-        />
-      </SectionFrame>
-
-      <SectionFrame eyebrow="FAQ" title="What the stats page should clarify.">
-        <FaqGrid items={[...statsGuide.faq]} />
-      </SectionFrame>
-    </PageShell>
-  );
-}
-
-export function StandsHubPage() {
   return (
     <PageShell accent="violet">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Bizarre Lineage stands',
-          description:
-            'Tier-grouped stand cards for Bizarre Lineage with acquisition notes, strengths, weaknesses, and internal links.',
+          name: t('page.schema.collection.name'),
+          description: t('page.schema.collection.description'),
           url: `${envConfigs.app_url}/stands`,
           mainEntity: {
             '@type': 'ItemList',
-            itemListElement: stands.map((stand, index) => ({
+            itemListElement: localizedStands.map((stand, index) => ({
               '@type': 'ListItem',
               position: index + 1,
               name: stand.name,
               description: stand.quickVerdict,
-              url: `${envConfigs.app_url}/stands#${stand.key}`,
+              url: `${envConfigs.app_url}${getStandHref(stand.key)}`,
             })),
           },
         }}
@@ -1235,144 +1154,115 @@ export function StandsHubPage() {
         data={{
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
-          mainEntity: [
-            {
-              '@type': 'Question',
-              name: 'What is a Bizarre Lineage stand?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'A Bizarre Lineage stand is your main combat identity. It determines your core moves, matchup profile, and how your build performs in PvP and PvE.',
-              },
+          mainEntity: faqItems.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
             },
-            {
-              '@type': 'Question',
-              name: 'How do you get a stand in Bizarre Lineage?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Most stands start from the Stand Arrow path, while some top-end options come from evolution routes. This page separates normal Arrow stands from evolution-only stands.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'What is the best PvP stand in Bizarre Lineage?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: 'Made in Heaven and Whitesnake are currently the strongest PvP stands. Star Platinum remains the clearest all-round PvP benchmark, while other S-tier stands like C-Moon stay dominant in the current meta.',
-              },
-            },
-            {
-              '@type': 'Question',
-              name: 'What is the best PvE stand in Bizarre Lineage?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Weather Report is the best PvE stand for grinding due to its massive AoE and mission-clearing speed. Magician's Red is also a great early-game choice for farming.",
-              },
-            },
-          ],
+          })),
         }}
       />
 
-      <section className="px-4 py-16 text-center">
-        <div className="text-primary mb-4 text-sm font-bold tracking-[0.3em] uppercase">
-          Database
-        </div>
-        <h1 className="text-foreground mx-auto mb-6 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
-          Bizarre Lineage Stands: Full Guide & Tier List
+      <section className="px-4 pb-4 pt-2 text-center md:pb-6 md:pt-3">
+        <h1 className="text-foreground mx-auto mb-3 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+          {t('page.sections.hero.title')}
         </h1>
         <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed md:text-xl">
-          The complete index of stands, evolution paths, and meta-verdicts for
-          every combat identity in Bizarre Lineage.
+          {t('page.sections.hero.description')}
         </p>
       </section>
 
       <SectionFrame
-        eyebrow="Index"
-        title="Bizarre Lineage Stand Cards & Tier Verdicts"
-        description="Browse the full collection of bizarre lineage stands. Click any card below to view detailed stats and acquisition paths for every stand in-game."
+        eyebrow={t('page.sections.index.eyebrow')}
+        title={t('page.sections.index.title')}
+        description={t('page.sections.index.description')}
+        contentClassName="mt-3"
       >
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {stands.map((stand) => (
-            <StandSummaryCard key={stand.key} stand={stand} />
-          ))}
+        <div className="space-y-6">
+          <AdsterraBanner />
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {localizedStands.map((stand) => (
+              <StandSummaryCard key={stand.key} stand={stand} />
+            ))}
+          </div>
         </div>
       </SectionFrame>
 
       {/* Information sections stack vertically in a single column */}
       <div className="space-y-12">
         <SectionFrame
-          eyebrow="Guide"
-          title="How to Get Stands in Bizarre Lineage"
-          description="Everything you need to know about acquiring and choosing your first bizarre lineage stands. Most stands start with the Stand Arrow path, while special cases require evolution."
+          eyebrow={t('page.sections.guide.eyebrow')}
+          title={t('page.sections.guide.title')}
+          description={t('page.sections.guide.description')}
         >
           <CardGrid
             columns={4}
             items={[
               {
-                title: 'Core Identity',
-                description:
-                  'Defines your moves, pressure pattern, and role within the bizarre lineage stands meta.',
+                title: t('page.sections.guide.items.core_identity.title'),
+                description: t(
+                  'page.sections.guide.items.core_identity.description'
+                ),
               },
               {
-                title: 'Roll for Stands',
-                description:
-                  'Use arrows from chests or quests to spin for new bizarre lineage stands.',
+                title: t('page.sections.guide.items.roll.title'),
+                description: t('page.sections.guide.items.roll.description'),
               },
               {
-                title: 'Evolution Routes',
-                description:
-                  'Special cases like C-Moon require specific quests to evolve your bizarre lineage stands.',
+                title: t('page.sections.guide.items.evolution.title'),
+                description: t(
+                  'page.sections.guide.items.evolution.description'
+                ),
               },
               {
-                title: 'Meta Evolution',
-                description:
-                  'High-tier bizarre lineage stands often trade pure power for high-utility kits.',
+                title: t('page.sections.guide.items.meta.title'),
+                description: t('page.sections.guide.items.meta.description'),
               },
             ]}
           />
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Acquisition"
-          title="Acquisition Strategy for New Players"
-          description="Follow these key rules to optimize your account progression and avoid wasting precious Stand Arrows."
+          eyebrow={t('page.sections.acquisition.eyebrow')}
+          title={t('page.sections.acquisition.title')}
+          description={t('page.sections.acquisition.description')}
         >
           <div className="grid gap-6 md:grid-cols-3">
             <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
               <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
-                01. Arrow First
+                {t('page.sections.acquisition.items.arrow_first.title')}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Don't waste time chasing evolutions before you have a stable
-                level 50 character. Standard arrow pulls are your best friends
-                early on.
+                {t('page.sections.acquisition.items.arrow_first.description')}
               </p>
             </div>
             <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
               <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
-                02. Check Stats
+                {t('page.sections.acquisition.items.check_stats.title')}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Top-tier evolutions require Prestige 1+ and specific Conjuring
-                stats. Plan your build before committing to a route.
+                {t('page.sections.acquisition.items.check_stats.description')}
               </p>
             </div>
             <div className="bg-primary/5 border-primary/10 rounded-[2rem] border p-8">
               <div className="text-primary mb-4 text-xl font-bold tracking-tighter uppercase">
-                03. Prioritize PvE
+                {t('page.sections.acquisition.items.prioritize_pve.title')}
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Picking a high-AoE stand like Weather Report speeds up your
-                overall progression, making it easier to grind for elite PvP
-                stands.
+                {t(
+                  'page.sections.acquisition.items.prioritize_pve.description'
+                )}
               </p>
             </div>
           </div>
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Recommendations"
-          title="Best Bizarre Lineage Stands by Role"
-          description="If you need a quick answer, these are the stands we recommend based on current community meta research."
+          eyebrow={t('page.sections.recommendations.eyebrow')}
+          title={t('page.sections.recommendations.title')}
+          description={t('page.sections.recommendations.description')}
         >
           <div className="grid gap-4 md:grid-cols-2">
             <div className="bg-card border-border flex items-start gap-4 rounded-[1.5rem] border p-6">
@@ -1381,11 +1271,10 @@ export function StandsHubPage() {
               </div>
               <div>
                 <h4 className="text-lg font-bold">
-                  Best PvP Stand: Star Platinum
+                  {t('page.sections.recommendations.items.pvp.title')}
                 </h4>
                 <p className="text-muted-foreground mt-1 text-sm">
-                  The clearest current PvP benchmark. Combines pressure, burst,
-                  and broad matchup value.
+                  {t('page.sections.recommendations.items.pvp.description')}
                 </p>
               </div>
             </div>
@@ -1395,11 +1284,10 @@ export function StandsHubPage() {
               </div>
               <div>
                 <h4 className="text-lg font-bold">
-                  Best PvE Stand: Weather Report
+                  {t('page.sections.recommendations.items.pve.title')}
                 </h4>
                 <p className="text-muted-foreground mt-1 text-sm">
-                  Screen-wide AoE and mission clearing speed make this the king
-                  of grinding.
+                  {t('page.sections.recommendations.items.pve.description')}
                 </p>
               </div>
             </div>
@@ -1407,147 +1295,165 @@ export function StandsHubPage() {
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="FAQ"
-          title="Frequently Asked Questions"
-          description="Everything you need to know about Bizarre Lineage stands, evolutions, and the current meta."
+          eyebrow={t('page.sections.faq.eyebrow')}
+          title={t('page.sections.faq.title')}
+          description={t('page.sections.faq.description')}
         >
-          <FaqGrid
-            items={[
-              {
-                question: 'How do I get my first stand in Bizarre Lineage?',
-                answer:
-                  'You need a Stand Arrow, which can be found in chests spawning around the map, as a reward from quests, or by redeeming active codes. Once you have an arrow, use it from your inventory to roll for a random stand.',
-              },
-              {
-                question: 'Can I change my stand after rolling it?',
-                answer:
-                  'Yes, but using a new Stand Arrow will overwrite your current stand unless you have unlocked "Stand Storage" through Prestige. It is highly recommended to store a good stand before rolling for a new one.',
-              },
-              {
-                question:
-                  'What is the difference between Arrow stands and Evolution stands?',
-                answer:
-                  'Arrow stands are obtained directly from using a Stand Arrow. Evolution stands (like Made in Heaven or C-Moon) cannot be rolled; they require you to own a base stand and complete specific high-level questlines.',
-              },
-              {
-                question: 'Which stand is best for fast leveling and farming?',
-                answer:
-                  'Weather Report is widely considered the best PvE stand due to its massive Area of Effect (AoE) abilities, allowing you to clear waves of NPCs much faster than single-target stands like Star Platinum.',
-              },
-              {
-                question: 'What are the requirements for evolving a stand?',
-                answer:
-                  'Most evolutions require you to be at least Prestige 1, have a specific amount of "Conjuring" stats, and often require a special item or a visit to a specific NPC like Pucci.',
-              },
-              {
-                question: 'How do Stand Tiers affect gameplay?',
-                answer:
-                  'Higher tier stands (S and A) generally have better damage scaling, more reliable crowd control, and shorter cooldowns. However, a well-played B-tier stand can still beat an S-tier if the player understands the matchups.',
-              },
-              {
-                question: 'Are there "shiny" or secret stand skins?',
-                answer:
-                  'Yes, Bizarre Lineage features stand skins that change the visual appearance of your stand without altering its power. These are typically obtained via Lucky Arrows or special events.',
-              },
-            ]}
-          />
+          <FaqGrid items={faqItems} />
         </SectionFrame>
       </div>
     </PageShell>
   );
 }
 
-export function PrestigeGuidePage() {
+export async function BeginnerGuidePage() {
+  const t = await getTranslations('pages.guides.beginner-guide');
+
+  const checklistItems = [
+    { key: 'tutorial_boost', img: 'assets/pages/guides/beginner-guide/start.png' },
+    { key: 'unlock_teleport', img: 'assets/pages/guides/beginner-guide/bus.png' },
+    { key: 'gym_benefits', img: 'assets/pages/guides/beginner-guide/gym.png' },
+    { key: 'pawn_shop_cash', img: null },
+  ];
+
   return (
-    <PageShell accent="gold">
-      <HeroFrame
-        eyebrow="Prestige guide"
-        title="Prestige matters when it unlocks the next route, not when it merely becomes available."
-        dek={prestigeGuide.overview}
-        stats={[
-          { label: 'Focus', value: 'When to prestige' },
-          { label: 'Decision mode', value: 'Tradeoffs first' },
-          { label: 'Updated', value: prestigeGuide.updatedAt },
-        ]}
-        actions={
-          <HeroActions
-            primary={{ href: '/guides/stats', label: 'Check stat logic' }}
-            secondary={{
-              href: '/guides/beginner-guide',
-              label: 'Review progression route',
-            }}
-          />
-        }
-        backgroundImageSrc={placeholderImages.guide}
-        backgroundImageAlt="Prestige guide placeholder visual"
-        mediaLabel="Reset route placeholder"
-        aside={
-          <AsidePanel
-            title="Decision frame"
-            description="This page exists to answer whether you should prestige now, what to prepare first, and which reset mistakes are hardest to recover from."
-            items={[
-              { label: 'Answer first', value: 'Should I prestige now?' },
-              { label: 'Then cover', value: 'Requirements and preparation' },
-              { label: 'Finally show', value: 'Mistakes and related routes' },
-            ]}
-          />
-        }
-      />
-
-      <SectionFrame
-        eyebrow="When to prestige"
-        title="The reset is efficient only when it moves your route forward."
-      >
-        <OrderedChecklist items={[...prestigeGuide.whenToPrestige]} />
-      </SectionFrame>
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <SectionFrame
-          eyebrow="Prepare first"
-          title="A strong prestige decision starts before the reset."
-        >
-          <OrderedChecklist items={[...prestigeGuide.prepareFirst]} />
-        </SectionFrame>
-
-        <SectionFrame
-          eyebrow="Mistakes to avoid"
-          title="The worst prestige errors usually come from impatience."
-        >
-          <CardGrid columns={2} items={[...prestigeGuide.mistakes]} />
-        </SectionFrame>
-      </div>
-
-      <SectionFrame
-        eyebrow="Related routes"
-        title="Prestige should connect back into the rest of the guide system."
-      >
-        <CardGrid
-          columns={3}
+    <PageShell accent="jade">
+      <div className="px-1 pt-2">
+        <Crumb
           items={[
+            { title: 'Home', url: '/' },
+            { title: 'Guides', url: '/guides' },
             {
-              title: 'Stats Guide',
-              description:
-                'Review build logic before deciding what the reset is actually giving up or enabling.',
-              href: '/guides/stats',
-            },
-            {
-              title: 'Beginner Guide',
-              description:
-                'Use the broader progression route if you are still in the early or early-mid game transition.',
-              href: '/guides/beginner-guide',
-            },
-            {
-              title: 'Tier List',
-              description:
-                'Check whether your main stand target still justifies the path you are planning after prestige.',
-              href: '/tier-list',
+              title: t('page.sections.hero.eyebrow'),
+              url: '/guides/beginner-guide',
+              is_active: true,
             },
           ]}
         />
+      </div>
+
+      <header className="px-4 pb-4 pt-2 text-center md:pb-6 md:pt-3">
+        <h1 className="text-foreground mx-auto mb-3 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+          {t('page.sections.hero.title')}
+        </h1>
+        <p className="text-muted-foreground mx-auto max-w-2xl text-lg leading-relaxed md:text-xl">
+          {t('page.sections.hero.description')}
+        </p>
+      </header>
+
+      <SectionFrame
+        eyebrow={t('page.sections.checklist.eyebrow')}
+        title={t('page.sections.checklist.title')}
+        contentClassName="mt-3"
+      >
+        <div className="space-y-12">
+          {checklistItems.map((item, i) => (
+            <div key={item.key} className="group flex flex-col gap-6 lg:flex-row lg:items-center">
+              <div className="flex-1 space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="bg-primary/10 text-primary flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-foreground m-0 text-2xl font-bold tracking-tight">
+                    {t(`page.content.checklist.${i}.title` as any)}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  {t(`page.content.checklist.${i}.description` as any)}
+                </p>
+              </div>
+              {item.img && (
+                <div className="border-border bg-muted relative aspect-video w-full overflow-hidden rounded-3xl border shadow-lg lg:w-[400px]">
+                  <Image
+                    src={toImageUrl(item.img)}
+                    alt="Guide step image"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </SectionFrame>
 
-      <SectionFrame eyebrow="FAQ" title="What the prestige page should settle.">
-        <FaqGrid items={[...prestigeGuide.faq]} />
+      <div className="px-1">
+        <AdsterraBanner />
+      </div>
+
+      <SectionFrame
+        eyebrow={t('page.sections.first_30.eyebrow')}
+        title={t('page.sections.first_30.title')}
+      >
+        <div className="grid gap-6 sm:grid-cols-2">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="border-border bg-background/50 rounded-2xl border p-6">
+              <h4 className="m-0 font-bold">{t(`page.content.first_thirty_minutes.${i}.title` as any)}</h4>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                {t(`page.content.first_thirty_minutes.${i}.description` as any)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionFrame>
+
+      <SectionFrame
+        eyebrow={t('page.sections.power_systems.eyebrow')}
+        title={t('page.sections.power_systems.title')}
+      >
+        <div className="grid gap-6 sm:grid-cols-2">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="border-border bg-background/50 rounded-2xl border p-6">
+              <h4 className="m-0 font-bold">{t(`page.content.power_systems.${i}.title` as any)}</h4>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                {t(`page.content.power_systems.${i}.description` as any)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionFrame>
+
+      <SectionFrame
+        eyebrow={t('page.sections.mistakes.eyebrow')}
+        title={t('page.sections.mistakes.title')}
+      >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[0, 1, 2, 3].map((i) => (
+            <GuideCard
+              key={i}
+              title={t(`page.content.mistakes_cards.${i}.title` as any)}
+              description={t(`page.content.mistakes_cards.${i}.description` as any)}
+              href={t(`page.content.mistakes_cards.${i}.href` as any)}
+            />
+          ))}
+        </div>
+      </SectionFrame>
+
+      <SectionFrame
+        eyebrow={t('page.sections.progression.eyebrow')}
+        title={t('page.sections.progression.title')}
+      >
+        <div className="space-y-4">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="border-border bg-background/50 rounded-xl border p-5">
+              <h4 className="m-0 font-bold">{t(`page.content.goals.${i}.title` as any)}</h4>
+              <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                {t(`page.content.goals.${i}.description` as any)}
+              </p>
+            </div>
+          ))}
+        </div>
+      </SectionFrame>
+
+      <div className="px-1">
+        <AdsterraBanner />
+      </div>
+
+      <SectionFrame
+        eyebrow={t('page.sections.faq.eyebrow')}
+        title={t('page.sections.faq.title')}
+      >
+        <FaqGrid items={t.raw('page.content.faq')} />
       </SectionFrame>
     </PageShell>
   );

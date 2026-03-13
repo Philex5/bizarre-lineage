@@ -1,0 +1,250 @@
+{
+  "header": {
+    "id": "header",
+    "brand": {
+      "logo": {
+        "src": "/logo.webp",
+        "alt": "Bizarre Lineage Wiki",
+        "width": 160,
+        "height": 160,
+        "className": "h-12 w-auto rounded-lg sm:h-14"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Códigos",
+          "url": "/codes",
+          "icon": "BadgePercent"
+        },
+        {
+          "title": "Lista de Niveles",
+          "url": "/tier-list",
+          "icon": "Trophy"
+        },
+        {
+          "title": "Stands",
+          "url": "/stands",
+          "icon": "Shield"
+        },
+        {
+          "title": "Guías",
+          "icon": "BookOpenText",
+          "children": [
+            {
+              "title": "Todas las guías",
+              "description": "Consulta el directorio completo de guías de Bizarre Lineage",
+              "url": "/guides",
+              "icon": "Library"
+            },
+            {
+              "title": "Guía para principiantes",
+              "description": "Consigue un primer stand útil y una ruta inicial más clara",
+              "url": "/guides/beginner-guide",
+              "icon": "Map"
+            },
+            {
+              "title": "Guía de stats",
+              "description": "Ordena tu build antes de arrastrar errores durante media partida",
+              "url": "/guides/stats",
+              "icon": "ChartColumn"
+            },
+            {
+              "title": "Guía de prestige",
+              "description": "Aclara cuándo compensa prestigiar y qué preparar antes",
+              "url": "/guides/prestige",
+              "icon": "RotateCcw"
+            }
+          ]
+        },
+        {
+          "title": "Términos",
+          "icon": "ScrollText",
+          "children": [
+            {
+              "title": "Todos los términos",
+              "description": "Explora el glosario completo y la portada de términos",
+              "url": "/terms",
+              "icon": "Library"
+            },
+            {
+              "title": "Raid",
+              "description": "Contenido en grupo, recompensas y tiendas de fichas",
+              "url": "/terms/raid",
+              "icon": "Swords"
+            },
+            {
+              "title": "Prestige",
+              "description": "Cuándo reiniciar y qué valor sacas al reset",
+              "url": "/terms/prestige",
+              "icon": "RotateCcw"
+            },
+            {
+              "title": "Awakening",
+              "description": "Capa avanzada de poder para rutas más de late game",
+              "url": "/terms/awakening",
+              "icon": "Zap"
+            },
+            {
+              "title": "Sub-Habilidades",
+              "description": "Habilidades extra que cambian cómo rinde tu build",
+              "url": "/terms/sub-abilities",
+              "icon": "Sparkles"
+            },
+            {
+              "title": "Fighting styles",
+              "description": "Estilos de combate que se combinan con tu stand",
+              "url": "/terms/fighting-styles",
+              "icon": "Shield"
+            }
+          ]
+        }
+      ]
+    },
+    "buttons": [],
+    "user_nav": {
+      "show_name": false,
+      "show_credits": false,
+      "show_sign_out": false,
+      "items": []
+    },
+    "show_sign": false,
+    "show_theme": true,
+    "show_locale": true,
+    "topbanner": {
+      "text": ""
+    }
+  },
+  "footer": {
+    "id": "footer",
+    "brand": {
+      "title": "Bizarre Lineage Wiki",
+      "description": "Guía no oficial de Bizarre Lineage con códigos, tier list, páginas de stands y rutas de progreso claras.",
+      "logo": {
+        "src": "/logo.webp",
+        "alt": "Bizarre Lineage Wiki",
+        "width": 1024,
+        "height": 1024
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Páginas principales",
+          "children": [
+            {
+              "title": "Códigos",
+              "url": "/codes",
+              "target": "_self"
+            },
+            {
+              "title": "Tier list",
+              "url": "/tier-list",
+              "target": "_self"
+            },
+            {
+              "title": "Centro de guías",
+              "url": "/guides",
+              "target": "_self"
+            },
+            {
+              "title": "Guía para principiantes",
+              "url": "/guides/beginner-guide",
+              "target": "_self"
+            },
+            {
+              "title": "Guía de stats",
+              "url": "/guides/stats",
+              "target": "_self"
+            },
+            {
+              "title": "Guía de prestige",
+              "url": "/guides/prestige",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Base de datos",
+          "children": [
+            {
+              "title": "Índice de stands",
+              "url": "/stands",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Términos",
+          "children": [
+            {
+              "title": "Todos los términos",
+              "url": "/terms",
+              "target": "_self"
+            },
+            {
+              "title": "Raid",
+              "url": "/terms/raid",
+              "target": "_self"
+            },
+            {
+              "title": "Prestige",
+              "url": "/terms/prestige",
+              "target": "_self"
+            },
+            {
+              "title": "Awakening",
+              "url": "/terms/awakening",
+              "target": "_self"
+            },
+            {
+              "title": "Stand Arrow",
+              "url": "/terms/stand-arrow",
+              "target": "_self"
+            },
+            {
+              "title": "Sub-Habilidades",
+              "url": "/terms/sub-abilities",
+              "target": "_self"
+            },
+            {
+              "title": "Fighting styles",
+              "url": "/terms/fighting-styles",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Amigos",
+          "children": [
+            {
+              "title": "FrogDR-bizarre lineage wiki",
+              "url": "https://frogdr.com/bizarrelineage.info",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": []
+    },
+    "show_built_with": false,
+    "agreement": {
+      "items": [
+        {
+          "title": "Política de privacidad",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Términos del servicio",
+          "url": "/terms-of-service"
+        }
+      ]
+    },
+    "show_theme": true,
+    "show_locale": true
+  }
+}

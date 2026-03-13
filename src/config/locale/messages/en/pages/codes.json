@@ -8,7 +8,21 @@
       "hero": {
         "eyebrow": "Codes tracker",
         "title": "Bizarre Lineage codes should resolve the main question immediately: what is still worth redeeming.",
-        "description": "This page skips the oversized hero and opens with the verification model instead. Active entries stay first, monitor labels explain uncertainty, and the expired archive remains visible without slowing down urgent checks."
+        "description": "This page skips the oversized hero and opens with the verification model instead. Active entries stay first, monitor labels explain uncertainty, and the expired archive remains visible without slowing down urgent checks.",
+        "items": [
+          {
+            "title": "Open with the active table",
+            "description": "Players looking for rewards should see usable codes before any supporting content."
+          },
+          {
+            "title": "Treat monitor labels as a live caution",
+            "description": "A monitor status means the entry still deserves another in-game pass after a patch, reset, or event rollover."
+          },
+          {
+            "title": "Use the archive for context only",
+            "description": "Expired rows help explain old community references, but they should never lead the page."
+          }
+        ]
       },
       "notes": {
         "eyebrow": "Page notes",
@@ -75,6 +89,7 @@
       "faq": {
         "eyebrow": "FAQ",
         "title": "Questions readers usually ask after checking Bizarre Lineage codes.",
+        "description": "Use these quick answers to understand which codes are worth testing, why statuses change, and where to go next after redeeming rewards.",
         "items": [
           {
             "question": "What are the active Bizarre Lineage codes right now?",
@@ -116,6 +131,55 @@
           }
         }
       }
+    },
+    "content": {
+      "status": {
+        "active": "Active",
+        "monitor": "Monitor",
+        "expired": "Expired"
+      },
+      "active_codes_rewards": {
+        "30kLikes": "1 Stat Point Essence",
+        "100kLikes": "1 Stat Point Essence and 1 Rare Chest",
+        "shutdownwoops": "1 Stand Stat Essence",
+        "1week": "1 Stand Personality Essence"
+      },
+      "monitored_codes_rewards": {
+        "200KLIKES": "Unannounced future reward"
+      },
+      "expired_codes": [],
+      "redeem_steps": [
+        {
+          "title": "Like the game and join the official group",
+          "description": "Recent source checks still note that you should like Bizarre Lineage and join the Bizarre Collective Roblox group before redeeming codes."
+        },
+        {
+          "title": "Launch Bizarre Lineage",
+          "description": "Open the game on Roblox and enter the world."
+        },
+        {
+          "title": "Open Chat",
+          "description": "Open the in-game chat in the top-left corner. Current public reports say you can redeem in normal public servers, not only private servers."
+        },
+        {
+          "title": "Send and Claim",
+          "description": "Type the working code exactly as shown, including the !code prefix, then press Enter to claim the reward."
+        }
+      ],
+      "failure_reasons": [
+        {
+          "title": "Case Sensitivity",
+          "description": "Roblox codes are usually case-sensitive. Ensure \"!code\" and the code itself match exactly."
+        },
+        {
+          "title": "Official Group",
+          "description": "Some codes require you to join the official Roblox community group first."
+        },
+        {
+          "title": "Server rollout delay",
+          "description": "Public sources now report these codes working in normal servers, but a freshly updated server can still help if one fails right after a patch."
+        }
+      ]
     }
   }
 }

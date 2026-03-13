@@ -2,6 +2,7 @@ import { getMDXComponents } from '@/mdx-components';
 import { and, count, desc, eq, like } from 'drizzle-orm';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import moment from 'moment';
+import { getTranslations } from 'next-intl/server';
 
 import { db } from '@/core/db';
 import { logsSource, pagesSource, postsSource } from '@/core/docs/source';
@@ -12,6 +13,7 @@ import {
   Category as BlogCategoryType,
   Post as BlogPostType,
 } from '@/shared/types/blocks/blog';
+import { defaultLocale } from '@/config/locale';
 
 import { getTaxonomies, TaxonomyStatus, TaxonomyType } from './taxonomy';
 
@@ -206,7 +208,11 @@ export async function getLocalPost({
   locale: string;
   postPrefix?: string;
 }): Promise<BlogPostType | null> {
-  const localPost = await postsSource.getPage([slug], locale);
+  const localPost =
+    (await postsSource.getPage([slug], locale)) ||
+    (locale !== defaultLocale
+      ? await postsSource.getPage([slug], defaultLocale)
+      : null);
   if (!localPost) {
     return null;
   }
@@ -254,7 +260,11 @@ export async function getLocalPage({
   slug: string;
   locale: string;
 }): Promise<BlogPostType | null> {
-  const localPage = await pagesSource.getPage([slug], locale);
+  const localPage =
+    (await pagesSource.getPage([slug], locale)) ||
+    (locale !== defaultLocale
+      ? await pagesSource.getPage([slug], defaultLocale)
+      : null);
   if (!localPage) {
     return null;
   }
@@ -270,12 +280,17 @@ export async function getLocalPage({
   );
 
   const frontmatter = localPage.data as any;
+  const localizedMetadata = await getLocalizedStaticPageMetadata({
+    slug,
+    locale,
+  });
 
   const post: BlogPostType = {
     id: localPage.path,
     slug: slug,
-    title: localPage.data.title || '',
-    description: localPage.data.description || '',
+    title: localizedMetadata?.title || localPage.data.title || '',
+    description:
+      localizedMetadata?.description || localPage.data.description || '',
     content: '',
     body: body,
     toc: localPage.data.toc, // Use fumadocs auto-generated TOC
@@ -292,6 +307,65 @@ export async function getLocalPage({
   };
 
   return post;
+}
+
+async function getLocalizedStaticPageMetadata({
+  slug,
+  locale,
+}: {
+  slug: string;
+  locale: string;
+}) {
+  const candidates: Array<{ namespace: string; keyPrefix: string }> = [];
+
+  if (slug === 'terms') {
+    candidates.push({
+      namespace: 'pages.terms',
+      keyPrefix: 'metadata',
+    });
+  } else if (slug.startsWith('terms/')) {
+    candidates.push({
+      namespace: 'pages.terms',
+      keyPrefix: `articles.${slug.slice('terms/'.length)}.metadata`,
+    });
+  } else if (slug === 'events') {
+    candidates.push({
+      namespace: 'pages.events',
+      keyPrefix: 'metadata',
+    });
+  } else {
+    candidates.push({
+      namespace: `pages.${slug.replaceAll('/', '.')}`,
+      keyPrefix: 'metadata',
+    });
+  }
+
+  for (const candidate of candidates) {
+    try {
+      const t = await getTranslations({
+        locale,
+        namespace: candidate.namespace,
+      });
+
+      const title = t.has(`${candidate.keyPrefix}.title`)
+        ? t(`${candidate.keyPrefix}.title`)
+        : '';
+      const description = t.has(`${candidate.keyPrefix}.description`)
+        ? t(`${candidate.keyPrefix}.description`)
+        : '';
+
+      if (title || description) {
+        return {
+          title,
+          description,
+        };
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  return null;
 }
 
 // get posts and categories, both from local files and database
@@ -469,6 +543,13 @@ export async function getLocalPostsAndCategories({
     localPosts = logsSource.getPages(locale);
   }
 
+  if ((!localPosts || localPosts.length === 0) && locale !== defaultLocale) {
+    localPosts =
+      type === PostType.LOG
+        ? logsSource.getPages(defaultLocale)
+        : postsSource.getPages(defaultLocale);
+  }
+
   // no local posts
   if (!localPosts || localPosts.length === 0) {
     return {
@@ -557,7 +638,7 @@ export function getPostDate({
 }) {
   return moment(created_at)
     .locale(locale || 'en')
-    .format(locale === 'zh' ? 'YYYY/MM/DD' : 'MMM D, YYYY');
+    .format(locale === 'zh' ? 'YYYY/MM/DD' : 'll');
 }
 
 // Helper function to remove frontmatter from markdown content

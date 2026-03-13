@@ -1,0 +1,312 @@
+{
+  "metadata": {
+    "title": "Wiki de Bizarre Lineage: códigos, tier list y guías de stands",
+    "description": "Domina Bizarre Lineage con una wiki centrada en lo que de verdad importa: códigos activos, tier list al día, guías de evolución y rutas de progreso claras para Roblox.",
+    "metadata": []
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Wiki de Bizarre Lineage",
+        "title": "Wiki de Bizarre Lineage: una guía clara para stands, builds y meta",
+        "dek": "Entiende cómo progresa de verdad Bizarre Lineage sin perder tiempo entre guías genéricas. Aquí tienes la tier list, las rutas de progreso, las builds y las páginas de stands que más ayudan cuando quieres tomar buenas decisiones en Morioh Cho.",
+        "image_alt": "Marcador de posición de arte principal de Bizarre Lineage",
+        "stats": {
+          "updated": "Actualizado",
+          "codes_tracked": "Códigos rastreados",
+          "top_meta_pick": "Mejor elección del meta"
+        },
+        "buttons": {
+          "tier_list": "Ver tier list",
+          "leveling_guide": "Guía de nivelación",
+          "code_archive": "Archivo de códigos"
+        },
+        "tip": "Una wiki pensada para jugadores que quieren respuestas útiles y directas."
+      },
+      "world": {
+        "eyebrow": "El mundo de Bizarre Lineage",
+        "title": "Explora Morioh Cho en Bizarre Lineage",
+        "description": "Bizarre Lineage no va solo de tirar por un stand y pelear. También va de saber moverte por Morioh Cho, localizar NPC, entender qué sistemas merecen tu tiempo y leer bien cuándo compensa farmear, hacer raids o meterte en PvP.",
+        "image_alt": "Vista previa del mapa e introducción de Bizarre Lineage",
+        "buttons": {
+          "explore_stands": "Ver todos los stands",
+          "master_basics": "Domina lo básico"
+        }
+      },
+      "utility": {
+        "official_links": {
+          "title": "Enlaces oficiales de Bizarre Lineage",
+          "items": {
+            "roblox": "Roblox",
+            "discord": "Discord",
+            "trello": "Trello"
+          }
+        },
+        "quick_access": {
+          "eyebrow": "Acceso rápido",
+          "title": "Navegación de Bizarre Lineage",
+          "items": {
+            "tier_list": "Tier List",
+            "stands": "Stands",
+            "beginner_guide": "Guía para principiantes",
+            "raids": "Incursiones",
+            "events": "Eventos",
+            "fighting_styles": "Estilos de lucha",
+            "sub_abilities": "Subhabilidades"
+          }
+        },
+        "latest_codes": {
+          "eyebrow": "Últimos códigos",
+          "title": "Códigos activos",
+          "verified_label": "Verificado",
+          "cta": "Ver más códigos"
+        }
+      },
+      "database": {
+        "eyebrow": "Acceso rápido a la Wiki de Bizarre Lineage",
+        "title": "Herramientas y páginas clave de Bizarre Lineage",
+        "description": "Ve directo a las páginas que más te ayudan a decidir qué stand perseguir, cómo repartir stats y qué ruta te compensa seguir.",
+        "items": {
+          "tier_list": {
+          "title": "Tier list",
+            "meta": "Meta de Bizarre Lineage",
+            "description": "Compara qué stands están rindiendo mejor ahora mismo tanto en PvP como en PvE."
+          },
+          "stand_db": {
+            "title": "Base de datos de stands",
+            "meta": "Stands de Bizarre Lineage",
+            "description": "Consulta cada stand en detalle, qué ofrece, cómo se consigue y cuándo merece la pena perseguirlo."
+          },
+          "fighting_styles": {
+            "title": "Estilos de lucha",
+            "meta": "Subhabilidades",
+            "description": "Entiende cómo encajan Hamon, Vampiro o Espada dentro de tu build y tu ruta de progreso."
+          },
+          "stats_guide": {
+            "title": "Guía de estadísticas",
+            "meta": "Mejor build",
+            "description": "Aprende a repartir puntos con cabeza para no estropear la build desde el principio."
+          },
+          "leveling_path": {
+            "title": "Ruta de nivelación",
+            "meta": "Progresión",
+            "description": "Sigue una ruta clara desde tus primeros niveles hasta el momento en que el prestige empieza a tener sentido."
+          },
+          "raids_bosses": {
+            "title": "Incursiones y Jefes",
+            "meta": "Ciclos de endgame",
+            "description": "Ubica el contenido de grupo y entiende cuándo raids y bosses sí compensan dentro de tu progreso."
+          },
+          "prestige_system": {
+            "title": "Sistema de prestigio",
+            "meta": "Recompensas de reinicio",
+            "description": "Aclara cuándo reiniciar, qué prepararte antes y por qué no siempre conviene prestigiar cuanto antes."
+          },
+          "codes_archive": {
+            "title": "Archivo de códigos",
+            "meta": "Estado: en revisión",
+            "description": "Revisa los códigos activos, vigila futuras entradas y comprueba el archivo sin mezclar lo útil con lo que ya no sirve."
+          },
+          "mechanics": {
+            "title": "Mecánicas de la Wiki",
+            "meta": "Información general",
+            "description": "Repasa objetos, NPC y sistemas que suelen generar dudas cuando empiezas a profundizar en el juego."
+          }
+        }
+      },
+      "progression": {
+        "eyebrow": "Guía de nivelación de Bizarre Lineage",
+        "title": "Una ruta de progreso que sí te orienta",
+        "description": "Del primer stand a decisiones como raids, awakening o prestige, esta es la secuencia que más sentido suele tener.",
+        "steps": [
+          {
+            "title": "Principiante: La primera flecha",
+            "description": "Nivel 1-10. Consigue tu primer stand con flechas y céntrate en una base de progreso estable antes de perseguir objetivos demasiado caros.",
+            "meta": "Objetivo: asegurar un stand de tier A/S",
+            "hrefLabel": "Guía para principiantes"
+          },
+          {
+            "title": "Build: estilo y especialización",
+            "description": "Nivel 10-30. Empieza a ordenar la build con styles, stats y decisiones que sigan siendo útiles más allá del early game.",
+            "meta": "Objetivo: Desbloquear Estilos de lucha",
+            "hrefLabel": "Guía de estadísticas"
+          },
+          {
+            "title": "Evolución: El farmeo del mid-game",
+            "description": "Nivel 30-50. Aquí el farmeo ya gira más alrededor de evoluciones, bosses, raids y objetos que abren la siguiente capa de progreso.",
+            "meta": "Objetivo: iniciar la evolución del stand",
+            "hrefLabel": "Guía de incursiones"
+          },
+          {
+            "title": "Ascensión: awakening del stand",
+            "description": "Nivel 50. El awakening empieza a importar cuando ya has montado una base sólida y buscas un salto real de poder.",
+            "meta": "Objetivo: Despertar de nivel 50",
+            "hrefLabel": "Ruta de despertar"
+          },
+          {
+            "title": "Endgame: El ciclo de prestigio",
+            "description": "Nivel máximo. El prestige compensa cuando el reinicio abre una ruta mejor y no cuando simplemente ves el botón disponible.",
+            "meta": "Objetivo: Desbloquear recompensas de prestigio",
+            "hrefLabel": "Guía de prestigio"
+          }
+        ]
+      },
+      "meta_preview": {
+        "eyebrow": "Vista previa de stands y meta",
+        "title": "Los stands que más están destacando ahora mismo",
+        "description": "Esta vista previa te sirve para ubicar rápido qué stands están mereciendo más atención antes de abrir la tier list completa o meterte en una ruta de farmeo larga.",
+        "subtitle": "Son opciones de referencia útiles si solo quieres una lectura rápida del meta actual.",
+        "tier_list_link": "Tier list",
+        "all_stands_link": "Todos los stands"
+      },
+      "start_here": {
+        "eyebrow": "Empieza aquí",
+        "title": "Elige la guía que necesitas",
+        "description": "Ve directo a la página de códigos, estadísticas, prestigio, stands o tu primera ruta de progresión.",
+        "items": {
+          "beginner_guide": "Guía para principiantes de Bizarre Lineage",
+          "stats_guide": "Guía de estadísticas de Bizarre Lineage",
+          "prestige": "Cuándo prestigiar en Bizarre Lineage",
+          "codes": "Guía de códigos de Bizarre Lineage",
+          "tier_list": "Tier list de Bizarre Lineage",
+          "stands": "Guía de stands de Bizarre Lineage"
+        },
+        "all_guides_link": "Ver todas las guías"
+      },
+      "faq": {
+        "eyebrow": "Preguntas comunes",
+        "title": "Preguntas comunes",
+        "description": "Estas son las dudas que más suelen salir antes de decidir qué página abrir después: códigos, tier list, guías o una página concreta de stand.",
+        "items": [
+          {
+            "question": "¿Cuál es el mejor stand para principiantes?",
+            "answer": "El mejor stand para principiantes suele ser aquel que es estable, fácil de usar y que no obliga a perseguir un costoso cambio de tirada demasiado pronto."
+          },
+          {
+            "question": "¿Cuándo deberías prestigiar?",
+            "answer": "Prestigia cuando tu ruta se esté ralentizando, ya hayas asegurado un valor importante y sepas qué te ayudará a desbloquear el reinicio."
+          },
+          {
+            "question": "¿Deberían los principiantes buscar un stand de tier S inmediatamente?",
+            "answer": "Normalmente no. Una ruta sólida comienza con un stand que realmente puedas usar bien, luego mejora hacia objetivos premium una vez que tus recursos y progresión sean más estables."
+          },
+          {
+            "question": "¿Por qué importan tanto las estadísticas al principio de Bizarre Lineage?",
+            "answer": "Porque un mal gasto de estadísticas iniciales puede ralentizar tanto el progreso en JcE como las opciones de build posteriores. Incluso un stand fuerte se siente peor si la build que lo rodea es ineficiente."
+          },
+          {
+            "question": "¿Importan los códigos después de la primera sesión?",
+            "answer": "Sí. Los códigos activos actuales de Bizarre Lineage aún ofrecen un valor útil para la build y la progresión, por lo que vale la pena consultarlos incluso después de tu primera sesión."
+          },
+          {
+            "question": "¿Vale siempre la pena tomar el prestigio tan pronto como se desbloquea?",
+            "answer": "No. El prestigio es más fuerte cuando entiendes lo que ganas, lo que podrías perder y cómo será tu próxima ruta después de reiniciar."
+          },
+          {
+            "question": "¿Qué debería leer después de revisar la página de inicio?",
+            "answer": "La mayoría de los jugadores pasan luego a la página de códigos, la tier list, la guía para principiantes o una página de stand, dependiendo de si necesitan recompensas, clasificaciones, ayuda con la ruta o una respuesta sobre un stand específico."
+          }
+        ]
+      }
+    },
+    "content": {
+      "official_links": {
+        "roblox_note": "Úsalo para entrar al juego y comprobar si el nombre y la versión visible coinciden con la actualización actual.",
+        "discord_note": "Suele ser la fuente más rápida para parches, anuncios y nuevos códigos.",
+        "trello_note": "Muy útil para revisar stands, NPC, regiones, estilos y notas de progresión."
+      },
+      "gameplay_loop": [
+        "Obtener flecha",
+        "Tirar por un stand",
+        "Añadir Estilo o Subhabilidad",
+        "Invertir estadísticas",
+        "Impulsar la progresión",
+        "Incursión o JcJ"
+      ],
+      "systems_overview": [
+        {
+          "key": "stands",
+          "title": "Stands",
+          "description": "La identidad de poder principal. El valor de tier depende de la consistencia, el techo de poder y cuánto esfuerzo requiere obtenerlo."
+        },
+        {
+          "key": "fighting_styles",
+          "title": "Estilos de lucha",
+          "description": "Los estilos definen la cobertura en los enfrentamientos y el ritmo. El sistema importa incluso antes de que existan páginas dedicadas."
+        },
+        {
+          "key": "sub_abilities",
+          "title": "Subhabilidades",
+          "description": "Opciones suplementarias que pueden cubrir debilidades o especializar un stand en un rol específico."
+        },
+        {
+          "key": "stats",
+          "title": "Estadísticas",
+          "description": "La asignación de puntos decide si tu build realmente respalda tu stand y tu patrón de juego."
+        },
+        {
+          "key": "raids",
+          "title": "Incursiones",
+          "description": "Un punto de control de progresión para jugadores que pasan del juego temprano a contenido coordinado o repetible."
+        },
+        {
+          "key": "prestige",
+          "title": "Prestigio",
+          "description": "Una decisión de progresión de tipo reinicio que debe ser programada, no apresurada."
+        },
+        {
+          "key": "awakening",
+          "title": "Despertar",
+          "description": "Punto de presión de progresión del arco final que debe estar en el mapa del sitio incluso antes de que se publique la cobertura completa."
+        }
+      ],
+      "new_player_route": [
+        {
+          "key": "first_stand",
+          "title": "Obtén un primer stand útil",
+          "description": "Comienza con una ruta que produzca valor inmediato en lugar de apostar todos tus recursos en un objetivo lejano."
+        },
+        {
+          "key": "avoid_waste",
+          "title": "Evita gastos innecesarios al principio",
+          "description": "Usa la página de códigos y la guía para principiantes antes de tomar tus primeras decisiones que parezcan irreversibles."
+        },
+        {
+          "key": "understand_stats",
+          "title": "Entiende las estadísticas antes de desarrollar tu build",
+          "description": "Los errores en la asignación de estadísticas son más difíciles de recuperar que la mayoría de los errores de combate en la primera sesión.",
+          "hrefLabel": "Abrir guía de estadísticas"
+        },
+        {
+          "key": "reset_point",
+          "title": "Planifica tu primer punto de reinicio",
+          "description": "El prestigio se vuelve mucho más sencillo una vez que sabes qué preparar y qué no sacrificar demasiado pronto.",
+          "hrefLabel": "Abrir guía de prestigio"
+        }
+      ],
+      "trust_signals": [
+        "Los códigos incluyen el estado explícito y notas de la última verificación en lugar de una certeza absoluta.",
+        "Las evaluaciones de tier explican el marco de evaluación para que las clasificaciones sean más fáciles de cuestionar y actualizar.",
+        "Las guías se enlazan entre sí para coincidir con las rutas reales de los jugadores en lugar de dejar a los visitantes en callejones sin salida."
+      ],
+      "home_faq": [
+        {
+          "question": "¿Qué es Bizarre Lineage?",
+          "answer": "Bizarre Lineage es un RPG de Roblox centrado en stands, reinicios de progresión, inversión de estadísticas y decisiones de combate basadas en enfrentamientos."
+        },
+        {
+          "question": "¿Cuál es el mejor stand en Bizarre Lineage?",
+          "answer": "No hay una respuesta universal permanente, pero este MVP actualmente trata a Star Platinum como el ejemplo más claro de stand de tier S por su amplia utilidad."
+        },
+        {
+          "question": "¿Cómo obtienes tu primer stand?",
+          "answer": "Usa primero la guía para principiantes. El objetivo inicial es asegurar un stand práctico y proteger los recursos escasos antes de buscar un objetivo premium."
+        },
+        {
+          "question": "¿Tiene Bizarre Lineage códigos?",
+          "answer": "Sí. El sitio mantiene una página de códigos dedicada con las cuatro entradas activas actuales, notas de monitoreo para futuros lanzamientos y un archivo para cualquier cosa que deje de funcionar."
+        }
+      ]
+    }
+  }
+}

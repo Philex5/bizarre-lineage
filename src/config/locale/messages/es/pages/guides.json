@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "Centro de guías de Bizarre Lineage: progresión y builds",
+    "description": "Accede a las guías clave de Bizarre Lineage en un solo sitio: primeras rutas, stats, prestige y decisiones que de verdad afectan a tu progreso.",
+    "keywords": []
+  },
+  "page": {
+    "sections": {
+      "breadcrumbs": {
+        "home": "Inicio",
+        "guides": "Guías"
+      },
+      "hero": {
+        "eyebrow": "Centro de Guías",
+        "title": "Todas las guías clave de Bizarre Lineage, en un solo sitio",
+        "description": "Si necesitas una mejor ruta inicial, ordenar tus stats o decidir cuándo prestigiar, este es el mejor punto de partida.",
+        "stats": {
+          "total_guides": "Guías Totales",
+          "total_guides_value": "4",
+          "reading_time": "Lectura Est.",
+          "reading_time_value": "20 min",
+          "updated": "Última Actualización",
+          "updated_value": "2026-03-08"
+        }
+      },
+      "directory": {
+        "eyebrow": "Explorar guías",
+        "title": "Elige la guía que encaja con tu problema actual",
+        "description": "Cada guía resuelve un atasco concreto de progreso. Abre la que mejor encaje con lo que te está frenando ahora mismo.",
+        "items": {
+          "beginner": {
+            "title": "Guía para Principiantes",
+            "meta": "Progresión principal",
+            "description": "La ruta de inicio definitiva. Consigue un primer stand útil y estabiliza tus recursos del juego temprano sin desvíos innecesarios."
+          },
+          "stats": {
+            "title": "Guía de Estadísticas",
+            "meta": "Lógica de build",
+            "description": "Corrige tu asignación de puntos. Aprende cómo las estadísticas de poder, durabilidad y movilidad definen tu build antes de que los malos hábitos te retrasen."
+          },
+          "prestige": {
+            "title": "Guía de Prestigio",
+            "meta": "Momento del Reinicio",
+            "description": "Planifica el reinicio de tu personaje. Sabe exactamente cuándo hacer el prestigio, qué ganas y qué guardar antes de presionar el botón."
+          },
+          "codes": {
+            "title": "Guía de Códigos",
+            "meta": "Archivo de Recompensas",
+            "description": "Reclama cada recompensa activa. Una lista completa de códigos vigentes y expirados con monitoreo de estado y notas de archivo."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "Preguntas Frecuentes",
+        "title": "Cómo usar estas guías",
+        "items": [
+          {
+            "question": "¿Qué guía debería leer primero?",
+            "answer": "Si eres nuevo, comienza con la Guía para Principiantes. Si ya tienes un stand y quieres optimizarlo, consulta la Guía de Estadísticas."
+          },
+          {
+            "question": "¿Se mantienen actualizadas estas guías?",
+            "answer": "Sí. Seguimos los cambios del juego y las notas de parche para que los consejos de progresión y la lógica de build no se queden desfasados."
+          },
+          {
+            "question": "¿Necesito leer cada guía?",
+            "answer": "No. Son modulares. Abre la que resuelva tu problema actual y luego regresa aquí cuando alcances el siguiente hito de progresión."
+          }
+        ]
+      }
+    }
+  }
+}

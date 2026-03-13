@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "title": "Eventos mundiales de Bizarre Lineage",
+    "description": "Guia de eventos de Bizarre Lineage con Meteor Shower, World Boss Dio, Stand Rush, Raid Portal Opening, Graveyard Uprising, recompensas y consejos de nivel."
+  },
+  "page": {
+    "quick_answer": {
+      "title": "Respuesta rápida",
+      "summary": "Los eventos de Bizarre Lineage son actividades para todo el servidor que aparecen durante la partida y suelen dar EXP, botin o materiales raros. Para los eventos mas duros, lo mas seguro es entrar ya con nivel 50."
+    },
+    "current_events_title": "Eventos actuales de Bizarre Lineage",
+    "labels": {
+      "location": "Ubicacion",
+      "recommended_level": "Nivel recomendado",
+      "spawn_timing": "Frecuencia",
+      "what_happens": "Que pasa",
+      "rewards": "Recompensas"
+    },
+    "cooldown_loop": {
+      "title": "Como funciona el ciclo de eventos",
+      "description": "Los eventos pueden aparecer durante la partida normal y cada uno empuja una ruta distinta: farmeo de botin, bosses, PvP, acceso a raids o supervivencia. Si aun no llegas al nivel 50, normalmente conviene subir antes de perseguir las ventanas mas exigentes."
+    },
+    "read_next": "Leer a continuación",
+    "editorial_note": "Esta pagina se centra en lo que mas sirve dentro del juego: donde aparece cada evento, que hace y que recompensas justifican entrar."
+  }
+}

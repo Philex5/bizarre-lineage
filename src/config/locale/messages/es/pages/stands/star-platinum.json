@@ -1,0 +1,194 @@
+{
+  "metadata": {
+    "title": "Star Platinum en Bizarre Lineage - Página de Stand de Ejemplo",
+    "description": "Una página de stand de ejemplo para Star Platinum en Bizarre Lineage que cubre el veredicto rápido, la lógica de inversión, fortalezas, debilidades y su lugar en la estructura meta de MVP."
+  },
+  "page": {
+    "title": "Star Platinum en Bizarre Lineage",
+    "show_sections": [
+      "hero",
+      "introduce",
+      "benefits",
+      "features",
+      "faq",
+      "cta"
+    ],
+    "sections": {
+      "hero": {
+        "id": "hero",
+        "title": "Star Platinum: página de ejemplo sólida, juicio provisional en vivo",
+        "description": "Esta página es el plano MVP para la futura cobertura de stands. Está diseñada para responder si un stand vale la inversión de tiempo antes de que el lector se comprometa con el farmeo.",
+        "buttons": [
+          {
+            "title": "Comparar con la Tier List",
+            "url": "/tier-list",
+            "icon": "Sparkles"
+          }
+        ],
+        "image": {
+          "src": "assets/stands/star-platinum/hero.webp",
+          "alt": "Star Platinum page hero",
+          "width": 1200,
+          "height": 800
+        },
+        "background_image": {
+          "src": "assets/stands/star-platinum/background.webp",
+          "alt": "Star Platinum background"
+        }
+      },
+      "introduce": {
+        "block": "features-list",
+        "id": "introduce",
+        "title": "Veredicto rápido",
+        "description": "Star Platinum es un stand de ejemplo natural porque los jugadores entienden instantáneamente la fantasía. La página debe presentarlo como un punto de referencia confiable, dejando espacio para reajustes de equilibrio.",
+        "image": {
+          "src": "assets/stands/star-platinum/introduce.webp",
+          "alt": "Star Platinum quick verdict"
+        },
+        "items": [
+          {
+            "title": "¿Por qué les importa a los jugadores?",
+            "description": "Es un stand reconocible y de alto interés que sirve como un caso de prueba sólido para una página de base de datos con capacidad de búsqueda.",
+            "icon": "Sparkles",
+            "image": {
+              "src": "assets/stands/star-platinum/item-0.webp",
+              "alt": "Why players care"
+            }
+          },
+          {
+            "title": "Qué debe decidir esta página",
+            "description": "¿Vale la pena buscar Star Platinum para tus objetivos actuales, o deberías optar por otra opción primero?",
+            "icon": "Scale",
+            "image": {
+              "src": "assets/stands/star-platinum/item-1.webp",
+              "alt": "Decision framing"
+            }
+          },
+          {
+            "title": "Qué sigue siendo provisional",
+            "description": "Los valores exactos de los movimientos, las condiciones de desbloqueo y las ventajas en enfrentamientos deben actualizarse siempre que cambie el equilibrio del juego.",
+            "icon": "ShieldAlert",
+            "image": {
+              "src": "assets/stands/star-platinum/item-2.webp",
+              "alt": "Provisional data"
+            }
+          },
+          {
+            "title": "Dónde se conecta",
+            "description": "Esta página debe enlazar de vuelta a la tier list para el contexto del meta y a la guía para principiantes para los jugadores que aún están en la progresión inicial.",
+            "icon": "Link",
+            "image": {
+              "src": "assets/stands/star-platinum/item-3.webp",
+              "alt": "Internal links"
+            }
+          }
+        ],
+        "className": "bg-muted"
+      },
+      "benefits": {
+        "block": "features-accordion",
+        "id": "benefits",
+        "title": "Estructura de fortalezas y debilidades",
+        "description": "Una página de stand solo funciona si le dice al lector lo que gana y lo que tolera a cambio.",
+        "items": [
+          {
+            "title": "Fortalezas",
+            "description": "Presenta a Star Platinum como un ejemplo de estilo equilibrado y sólido, especialmente cuando un jugador valora la presión directa y la toma de decisiones clara.",
+            "icon": "ShieldCheck",
+            "image": {
+              "src": "assets/stands/star-platinum/item-10.webp",
+              "alt": "Strengths"
+            }
+          },
+          {
+            "title": "Debilidades",
+            "description": "Señala el costo de oportunidad, los límites en los enfrentamientos o las exigencias de ejecución que impiden que sea una respuesta automática para todos los jugadores.",
+            "icon": "TriangleAlert",
+            "image": {
+              "src": "assets/stands/star-platinum/item-11.webp",
+              "alt": "Weaknesses"
+            }
+          },
+          {
+            "title": "Mejores casos de uso",
+            "description": "Explica si el stand se siente mejor para la progresión general, presión en PvP u objetivos específicos para que el lector pueda juzgar su idoneidad rápidamente.",
+            "icon": "Target",
+            "image": {
+              "src": "assets/stands/star-platinum/item-12.webp",
+              "alt": "Use cases"
+            }
+          }
+        ]
+      },
+      "features": {
+        "id": "features",
+        "title": "Qué debe contener una plantilla de stand escalable",
+        "description": "Estos son los bloques de contenido duraderos que las futuras páginas de stands pueden reutilizar sin volverse superficiales o repetitivas.",
+        "items": [
+          {
+            "title": "Resumen principal con rol y contexto de la tier actual",
+            "description": "Indica al lector para qué sirve el stand antes de entrar en detalles.",
+            "icon": "UserRound"
+          },
+          {
+            "title": "Cómo obtenerlo, solo si está verificado",
+            "description": "Los detalles de adquisición deben actualizarse solo cuando se hayan verificado recientemente.",
+            "icon": "MapPinned"
+          },
+          {
+            "title": "Resumen de habilidades o movimientos sin precisión inventada",
+            "description": "Describe lo que permite el conjunto de habilidades antes de enumerar cifras que podrían estar desactualizadas.",
+            "icon": "Swords"
+          },
+          {
+            "title": "Fortalezas, debilidades y alternativas",
+            "description": "Aquí es donde la página se gana la confianza al ayudar al lector a comparar opciones con honestidad.",
+            "icon": "Scale"
+          },
+          {
+            "title": "Enlaces internos para las siguientes decisiones",
+            "description": "Envía al jugador a la tier list, a la guía para principiantes o a la página de códigos dependiendo de dónde se encuentre en su progresión.",
+            "icon": "ArrowRightLeft"
+          }
+        ]
+      },
+      "faq": {
+        "id": "faq",
+        "title": "Preguntas frecuentes",
+        "description": "Respuestas cortas a preguntas comunes sobre las páginas de stands.",
+        "items": [
+          {
+            "question": "¿Es Star Platinum el mejor stand del juego?",
+            "answer": "Esta página lo trata como un sólido candidato de ejemplo, no como la mejor opción universal automática. El juicio correcto depende del estado del parche, los objetivos y lo que la tier list respalde actualmente."
+          },
+          {
+            "question": "¿Por qué esta página evita las cifras exactas de las habilidades?",
+            "answer": "Porque el MVP prioriza una estructura confiable sobre una precisión no verificada. Los valores exactos deben añadirse solo tras una revisión reciente."
+          },
+          {
+            "question": "¿Qué debería abrir después de esta página?",
+            "answer": "Usa la Tier List para un contexto más amplio o la Guía para Principiantes si aún necesitas un camino más claro a través de la progresión inicial."
+          }
+        ]
+      },
+      "cta": {
+        "id": "cta",
+        "title": "Compara antes de comprometerte",
+        "description": "Usa la tier list para ver el panorama general, luego regresa a las páginas de stands cuando necesites una decisión de inversión más específica.",
+        "buttons": [
+          {
+            "title": "Volver a la Tier List",
+            "url": "/tier-list",
+            "icon": "Trophy"
+          },
+          {
+            "title": "Abrir Guía para Principiantes",
+            "url": "/guides/beginner-guide",
+            "icon": "BookOpenText"
+          }
+        ],
+        "className": "bg-muted"
+      }
+    }
+  }
+}

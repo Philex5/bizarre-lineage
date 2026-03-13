@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "Actualizaciones",
+    "description": "Consulta cambios, notas editoriales y novedades relacionadas con la cobertura de Bizarre Lineage."
+  },
+  "page": {
+    "sections": {
+      "updates": {
+        "id": "updates",
+        "title": "Actualizaciones",
+        "description": "Consulta cambios recientes, mejoras de contenido y nuevas páginas publicadas."
+      }
+    }
+  }
+}

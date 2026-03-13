@@ -1,4 +1,4 @@
-export type TermsLocale = 'en';
+export type TermsLocale = 'en' | 'es';
 
 export type TermKey =
   | 'raid'
@@ -318,19 +318,19 @@ const enTerms: TermsDictionary = {
       ],
       videos: [
         {
-          title: 'How To RANK SSS Every Raid Boss in Bizarre Lineage!',
-          embedUrl: 'https://www.youtube.com/embed/Ym-f_qM8G5c',
-          note: 'Catrague explains how to achieve the highest rank for maximum rewards.',
+          title: 'Bizarre Lineage How To *GLITCH* (Jotaru,Kira,Dio) Raid Boss Fast + Full Guide!',
+          embedUrl: 'https://www.youtube.com/embed/Gpjlb3VWOo8',
+          note: 'Builderboy TV covers a fast glitch-based clear route for the Jotaro, Kira, and Dio raid bosses with a full setup guide.',
         },
         {
-          title: 'How To EASILY Get SSS RANK ON ANY RAID',
-          embedUrl: 'https://www.youtube.com/embed/W7U-1pMv5zY',
-          note: 'UnoTwo details high-damage builds and infinite explosion loops for bosses.',
+          title: 'HOW I KIRA RAID | Bizarre Lineage',
+          embedUrl: 'https://www.youtube.com/embed/9-t6K7Wh3I0',
+          note: 'JoeFrozen shows a Kira raid run focused on practical routing, pressure, and how the clear looks in a real match.',
         },
         {
-          title: 'I Farmed 20 Jotaro Raids (Is it worth it?)',
-          embedUrl: 'https://www.youtube.com/embed/q_L9zN1rA4U',
-          note: 'YSKY compares drop rates and efficiency for Jotaro and Dio raids.',
+          title: 'How To EASILY Get SSS RANK ON ANY RAID In Bizarre Lineage Roblox...',
+          embedUrl: 'https://www.youtube.com/embed/5pIUc-_SbOs',
+          note: 'UnoTwo explains how to push SSS rank consistently with a high-damage raid approach built around fast boss clears.',
         },
       ],
       references: [
@@ -980,14 +980,137 @@ const enTerms: TermsDictionary = {
   },
 };
 
+const esTermOverrides: Partial<Record<TermKey, Partial<TermEntry>>> = {
+  raid: {
+    title: 'Raid en Bizarre Lineage',
+    cardTitle: 'Raid',
+    cardDescription:
+      'Contenido cooperativo de mid o late game que de verdad importa para recompensas, preparación y planificación de ruta.',
+    description:
+      'Resumen de las raids de Bizarre Lineage con formato para 8 jugadores, tiendas de tokens y recompensas listadas en los datos públicos actuales.',
+    heroImageAlt:
+      'Referencia oficial de la zona de raid de Graveyard en Bizarre Lineage',
+  },
+  prestige: {
+    title: 'Prestige en Bizarre Lineage',
+    cardTitle: 'Prestige',
+    cardDescription:
+      'El reset de progresión que más condiciona cuándo reiniciar y cómo encarar la siguiente ruta.',
+    description:
+      'Qué significa prestige en Bizarre Lineage, cuándo suele compensar reiniciar y por qué el momento importa más que hacerlo cuanto antes.',
+    heroImageAlt: 'Referencia oficial del NPC de prestige en Bizarre Lineage',
+  },
+  awakening: {
+    title: 'Awakening en Bizarre Lineage',
+    cardTitle: 'Awakening',
+    cardDescription:
+      'Una capa avanzada de progreso que empieza a importar cuando tu cuenta ya tiene una base estable.',
+    description:
+      'Qué significa awakening en Bizarre Lineage, por qué se considera progreso avanzado y cómo encaja con prestige y otras rutas de cuenta.',
+    heroImageAlt: 'Referencia oficial del sistema awakening en Bizarre Lineage',
+  },
+  'stand-arrow': {
+    title: 'Stand Arrow en Bizarre Lineage',
+    cardTitle: 'Stand Arrow',
+    cardDescription:
+      'La vía principal para conseguir muchos stands y uno de los términos más importantes del early game.',
+    description:
+      'Qué hace la Stand Arrow en Bizarre Lineage, cómo encaja en la progresión inicial y por qué no conviene gastar tiradas sin contexto.',
+    heroImageAlt: 'Referencia oficial de la Stand Arrow en Bizarre Lineage',
+  },
+  'fighting-styles': {
+    title: 'Fighting styles en Bizarre Lineage',
+    cardTitle: 'Fighting styles',
+    cardDescription:
+      'Especializaciones de combate que cambian presión, utilidad y ritmo de la build.',
+    description:
+      'Qué son los fighting styles en Bizarre Lineage, cuándo merece la pena priorizarlos y cómo cambian una build ya estable.',
+    heroImageAlt:
+      'Referencia oficial de fighting styles y entrenadores en Bizarre Lineage',
+  },
+  'sub-abilities': {
+    title: 'Sub-abilities en Bizarre Lineage',
+    cardTitle: 'Sub-abilities',
+    cardDescription:
+      'Una capa extra de build que puede aportar utilidad, movilidad o presión según la ruta.',
+    description:
+      'Qué son las sub-abilities en Bizarre Lineage, cuándo compensan y cómo encajan con el resto de la build.',
+    heroImageAlt: 'Referencia oficial de sub-abilities en Bizarre Lineage',
+  },
+};
+
+const esReferenceLabels: Record<string, string> = {
+  'Official Trello board': 'Tablero oficial de Trello',
+  'Raid overview': 'Resumen de raids',
+  'Prestige system': 'Sistema de prestige',
+  'Awakening overview': 'Resumen de awakening',
+  'Stand Arrow overview': 'Resumen de Stand Arrow',
+  'Fighting style overview': 'Resumen de fighting styles',
+  'Sub-ability overview': 'Resumen de sub-abilities',
+  'Sub Ability NPC': 'NPC de sub-abilities',
+  'Elder Vampire': 'Elder Vampire',
+  'Vampire route': 'Ruta de vampiro',
+  'Boxing Trainer': 'Entrenador de Boxing',
+  'Karate Trainer': 'Entrenador de Karate',
+  'Kendo Trainer': 'Entrenador de Kendo',
+};
+
+const esRelatedLabels: Record<string, string> = {
+  'Terms hub': 'Centro de términos',
+  'Prestige term': 'Término de prestige',
+  'Awakening term': 'Término de awakening',
+  'Stand Arrow term': 'Término de Stand Arrow',
+  'Fighting styles term': 'Término de fighting styles',
+  'Sub-abilities term': 'Término de sub-abilities',
+  'Beginner guide': 'Guía para principiantes',
+};
+
+function localizeTermLink(label: string, map: Record<string, string>) {
+  return map[label] ?? label;
+}
+
+function createSpanishTermsDictionary(): TermsDictionary {
+  const localizedTerms = Object.fromEntries(
+    (Object.keys(enTerms.terms) as TermKey[]).map((key) => {
+      const base = enTerms.terms[key];
+      const overrides = esTermOverrides[key] ?? {};
+
+      return [
+        key,
+        {
+          ...base,
+          ...overrides,
+          references: base.references.map((reference) => ({
+            ...reference,
+            label: localizeTermLink(reference.label, esReferenceLabels),
+          })),
+          relatedLinks: base.relatedLinks.map((link) => ({
+            ...link,
+            label: localizeTermLink(link.label, esRelatedLabels),
+          })),
+        },
+      ];
+    })
+  ) as Record<TermKey, TermEntry>;
+
+  return {
+    hub: enTerms.hub,
+    terms: localizedTerms,
+  };
+}
+
+const esTerms = createSpanishTermsDictionary();
+
 export function resolveTermsLocale(locale?: string | null): TermsLocale {
-  return locale === 'en' ? 'en' : 'en';
+  return locale === 'es' ? 'es' : 'en';
 }
 
 export function getTermsDictionary(locale?: string | null): TermsDictionary {
   const resolvedLocale = resolveTermsLocale(locale);
 
   switch (resolvedLocale) {
+    case 'es':
+      return esTerms;
     case 'en':
     default:
       return enTerms;

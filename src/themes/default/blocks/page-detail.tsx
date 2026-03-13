@@ -1,6 +1,7 @@
 import { CalendarIcon } from 'lucide-react';
 
 import { MarkdownPreview } from '@/shared/blocks/common';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
 import { type Post as PostType } from '@/shared/types/blocks/blog';
 
 import '@/config/style/docs.css';
@@ -8,6 +9,11 @@ import '@/config/style/docs.css';
 export async function PageDetail({ post }: { post: PostType }) {
   const isTermsHub = post.slug === 'terms';
   const isTermsChildPage = Boolean(post.slug?.startsWith('terms/'));
+  const isSubAbilitiesPage =
+    post.slug === 'terms/sub-abilities' ||
+    Boolean(post.slug?.startsWith('terms/sub-abilities/'));
+  const shouldRenderBottomAd =
+    (isTermsHub || isTermsChildPage) && post.slug !== 'terms/sub-abilities';
   const sectionSpacingClass = isTermsHub
     ? 'pt-4 pb-24 md:pt-5 md:pb-32'
     : isTermsChildPage
@@ -17,7 +23,11 @@ export async function PageDetail({ post }: { post: PostType }) {
   return (
     <section id={post.id}>
       <div className={sectionSpacingClass}>
-        <div className="mx-auto w-full max-w-4xl px-6 md:px-8">
+        <div
+          className={`mx-auto w-full px-6 md:px-8 ${
+            isSubAbilitiesPage ? 'max-w-6xl' : 'max-w-4xl'
+          }`}
+        >
           <div
             className={
               isTermsHub
@@ -75,6 +85,12 @@ export async function PageDetail({ post }: { post: PostType }) {
               )}
             </div>
           </div>
+
+          {shouldRenderBottomAd ? (
+            <div className="mt-10">
+              <AdsterraBanner />
+            </div>
+          ) : null}
         </div>
       </div>
     </section>

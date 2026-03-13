@@ -10,6 +10,7 @@
         "eyebrow": "Bizarre Lineage Wiki",
         "title": "Bizarre Lineage Wiki: The Ultimate Resource for Stands, Builds & Meta",
         "dek": "Master every mechanic in Bizarre Lineage with our comprehensive wiki. Explore the Bizarre Lineage tier list, discover the best builds, and follow our detailed Bizarre Lineage leveling guide to dominate Morioh Cho. Stay updated with the latest Bizarre Lineage meta and game mechanics.",
+        "image_alt": "Bizarre Lineage hero key art placeholder",
         "stats": {
           "updated": "Updated",
           "codes_tracked": "Codes Tracked",
@@ -26,9 +27,39 @@
         "eyebrow": "Bizarre Lineage World",
         "title": "Explore Morioh Cho in Bizarre Lineage",
         "description": "Bizarre Lineage is more than just a roll-and-fight game; it's a full-scale recreation of Morioh Cho. From the bustling Train Station where Raids occur to the hidden alleys where NPCs teach secret Fighting Styles, every corner holds a secret. Whether you're a Part 3 classicist or a Part 8 fan, our wiki provides the maps, spawn locations, and combat guides to help you dominate both PvE events and the competitive PvP ladder.",
+        "image_alt": "Bizarre Lineage map and introduction preview",
         "buttons": {
           "explore_stands": "Explore All Stands",
           "master_basics": "Master the Basics"
+        }
+      },
+      "utility": {
+        "official_links": {
+          "title": "Official Bizarre Lineage links",
+          "items": {
+            "roblox": "Roblox",
+            "discord": "Discord",
+            "trello": "Trello"
+          }
+        },
+        "quick_access": {
+          "eyebrow": "Quick Access",
+          "title": "Bizarre Lineage Navigation",
+          "items": {
+            "tier_list": "Tier List",
+            "stands": "Stands",
+            "beginner_guide": "Beginner Guide",
+            "raids": "Raids",
+            "events": "Events",
+            "fighting_styles": "Fighting Styles",
+            "sub_abilities": "Sub-Abilities"
+          }
+        },
+        "latest_codes": {
+          "eyebrow": "Latest Codes",
+          "title": "Active Codes",
+          "verified_label": "Verified",
+          "cta": "View More Codes"
         }
       },
       "database": {
@@ -74,7 +105,7 @@
           "codes_archive": {
             "title": "Codes Archive",
             "meta": "Status: Monitoring",
-            "description": "Historical record of Bizarre Lineage codes. Check here for status updates and archive notes."
+            "description": "Check the current four active Bizarre Lineage codes, monitor future drops, and review archived entries without guessing what still works."
           },
           "mechanics": {
             "title": "Wiki Mechanics",
@@ -132,6 +163,14 @@
         "eyebrow": "Start Here",
         "title": "Pick the guide you need",
         "description": "Jump straight to the page for codes, stats, prestige, stands, or your first progression route.",
+        "items": {
+          "beginner_guide": "Bizarre Lineage beginner guide",
+          "stats_guide": "Bizarre Lineage stats guide",
+          "prestige": "When to prestige in Bizarre Lineage",
+          "codes": "Bizarre Lineage codes guide",
+          "tier_list": "Bizarre Lineage tier list",
+          "stands": "Bizarre Lineage stands guide"
+        },
         "all_guides_link": "View all guides"
       },
       "faq": {
@@ -157,7 +196,7 @@
           },
           {
             "question": "Do codes matter after the first session?",
-            "answer": "Yes. Codes are useful whenever they give spins, arrows, or progression value that saves time on your current route."
+            "answer": "Yes. The current active Bizarre Lineage codes still offer useful build and progression value, so they are worth checking even after your first session."
           },
           {
             "question": "Is prestige always worth taking as soon as it unlocks?",
@@ -169,6 +208,105 @@
           }
         ]
       }
+    },
+    "content": {
+      "official_links": {
+        "roblox_note": "Launch the game and verify the live title and update state.",
+        "discord_note": "Best source for patch notes, announcements, and code drops.",
+        "trello_note": "Use it for stands, specs, NPCs, regions, and progression notes."
+      },
+      "gameplay_loop": [
+        "Get Arrow",
+        "Roll Stand",
+        "Add Style or Sub-Ability",
+        "Invest Stats",
+        "Push Progression",
+        "Raid or PvP"
+      ],
+      "systems_overview": [
+        {
+          "key": "stands",
+          "title": "Stands",
+          "description": "The main power identity. Tier value depends on consistency, ceiling, and how much work the chase demands."
+        },
+        {
+          "key": "fighting_styles",
+          "title": "Fighting Styles",
+          "description": "Styles shape matchup coverage and tempo. The system matters even before dedicated pages exist."
+        },
+        {
+          "key": "sub_abilities",
+          "title": "Sub-Abilities",
+          "description": "Supplemental choices that can patch weaknesses or sharpen a stand into a specific role."
+        },
+        {
+          "key": "stats",
+          "title": "Stats",
+          "description": "Point allocation decides whether your build actually supports your stand and play pattern."
+        },
+        {
+          "key": "raids",
+          "title": "Raids",
+          "description": "A progression checkpoint for players moving from early game into coordinated or repeatable content."
+        },
+        {
+          "key": "prestige",
+          "title": "Prestige",
+          "description": "A reset-style progression decision that should be timed, not rushed."
+        },
+        {
+          "key": "awakening",
+          "title": "Awakening",
+          "description": "Late-arc progression pressure point that belongs in the site map even before full coverage ships."
+        }
+      ],
+      "new_player_route": [
+        {
+          "key": "first_stand",
+          "title": "Get a usable first stand",
+          "description": "Start with a route that produces immediate value instead of gambling all your resources on a distant chase target."
+        },
+        {
+          "key": "avoid_waste",
+          "title": "Avoid wasteful early spending",
+          "description": "Use the codes page and the beginner guide before making your first irreversible-looking choices."
+        },
+        {
+          "key": "understand_stats",
+          "title": "Understand stats before you overbuild",
+          "description": "Stat allocation mistakes are harder to recover from than most first-session combat mistakes.",
+          "hrefLabel": "Open stats guide"
+        },
+        {
+          "key": "reset_point",
+          "title": "Plan your first mid-game reset point",
+          "description": "Prestige becomes much cleaner once you know what to prepare and what not to sacrifice too early.",
+          "hrefLabel": "Open prestige guide"
+        }
+      ],
+      "trust_signals": [
+        "Codes include explicit status and last-verified notes instead of blanket certainty.",
+        "Tier calls explain the evaluation frame so rankings are easier to challenge and update.",
+        "Guides link into each other to match actual player paths instead of leaving search visitors at dead ends."
+      ],
+      "home_faq": [
+        {
+          "question": "What is Bizarre Lineage?",
+          "answer": "Bizarre Lineage is a Roblox RPG built around stands, progression resets, stat investment, and matchup-driven combat decisions."
+        },
+        {
+          "question": "What is the best stand in Bizarre Lineage?",
+          "answer": "There is no permanent universal answer, but this MVP currently treats Star Platinum as the clearest sample S-tier stand because of its broad usefulness."
+        },
+        {
+          "question": "How do you get your first stand?",
+          "answer": "Use the beginner guide first. The early goal is to secure a practical stand and protect scarce resources before chasing a premium target."
+        },
+        {
+          "question": "Does Bizarre Lineage have codes?",
+          "answer": "Yes. The site keeps a dedicated codes page with the current four active entries, monitor notes for future drops, and an archive for anything that stops working."
+        }
+      ]
     }
   }
 }

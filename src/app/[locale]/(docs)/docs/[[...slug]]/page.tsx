@@ -9,6 +9,7 @@ import {
 } from 'fumadocs-ui/page';
 
 import { source } from '@/core/docs/source';
+import { defaultLocale } from '@/config/locale';
 
 export const revalidate = 86400;
 export const dynamic = 'force-static';
@@ -18,7 +19,11 @@ export default async function DocsContentPage(props: {
   params: Promise<{ slug?: string[]; locale?: string }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug, params.locale);
+  const page =
+    source.getPage(params.slug, params.locale) ||
+    (params.locale !== defaultLocale
+      ? source.getPage(params.slug, defaultLocale)
+      : null);
 
   if (!page) notFound();
 
@@ -54,7 +59,11 @@ export async function generateMetadata(props: {
   params: Promise<{ slug?: string[]; locale?: string }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug, params.locale);
+  const page =
+    source.getPage(params.slug, params.locale) ||
+    (params.locale !== defaultLocale
+      ? source.getPage(params.slug, defaultLocale)
+      : null);
   if (!page) notFound();
 
   return {

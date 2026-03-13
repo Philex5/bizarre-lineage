@@ -6,6 +6,10 @@
   },
   "page": {
     "sections": {
+      "breadcrumbs": {
+        "home": "Home",
+        "guides": "Guides"
+      },
       "hero": {
         "eyebrow": "Guides Hub",
         "title": "Complete Bizarre Lineage Guide Directory",

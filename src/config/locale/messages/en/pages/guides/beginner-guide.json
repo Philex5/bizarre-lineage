@@ -1,19 +1,19 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Beginner Guide: Leveling & Progress Route",
-    "description": "Start Bizarre Lineage with our first-session guide. Learn how to get your first stand, follow the fastest leveling route, and avoid common beginner mistakes."
+    "title": "Bizarre Lineage Strategy: Level 1 to Prestige Step-by-Step",
+    "description": "The definitive chronological guide for Bizarre Lineage. Follow these steps to maximize EXP, farm money, and reach your first Prestige efficiently."
   },
   "page": {
     "sections": {
       "hero": {
-        "eyebrow": "Beginner guide",
-        "title": "New players need a route for the first 30 minutes, not a wall of lore.",
-        "description": "This guide is structured around anxiety reduction: checklist first, mistakes second, progression path third. It should feel like a field manual you can skim between play sessions.",
+        "eyebrow": "Step-by-Step Guide",
+        "title": "Bizarre Lineage: Complete Beginner Strategy",
+        "description": "Don't waste time. Follow this linear path to master the early game, from your first EXP buff to your first Prestige reset.",
         "stats": {
-          "audience": "Audience",
-          "audience_value": "First-time players",
-          "reading_mode": "Reading mode",
-          "reading_mode_value": "Checklist first",
+          "audience": "Target",
+          "audience_value": "New Players",
+          "reading_mode": "Linear Path",
+          "reading_mode_value": "Chronological",
           "reading_time": "Reading time",
           "updated": "Updated"
         },
@@ -22,32 +22,167 @@
           "secondary": "Review tier list"
         },
         "aside": {
-          "title": "Fast-start brief",
-          "description": "The page is optimized for overwhelmed readers. Every section exists to reduce uncertainty and point to the next useful page.",
+          "title": "Strategy Brief",
+          "description": "The goal is Level 50 and $10,000. Stack EXP buffs constantly and prioritize PvE Gang Contracts over everything else.",
           "items": [
-            { "label": "Opens with", "value": "Fast Start Checklist" },
-            { "label": "Avoids", "value": "Long paragraphs and fluff" },
-            { "label": "Links outward", "value": "Codes, tier list, stand page" }
+            { "label": "Phase 1", "value": "Initial Buffs" },
+            { "label": "Phase 2", "value": "Contract Grinding" },
+            { "label": "Phase 3", "value": "Prestige Prep" }
           ]
         },
-        "media_label": "Route visual placeholder"
+        "media_label": "Strategy Map",
+        "image": {
+          "src": "assets/pages/guides/beginner-guide/start.png",
+          "alt": "Bizarre Lineage Progress"
+        }
       },
       "checklist": {
-        "eyebrow": "Fast start checklist",
-        "title": "Give the reader a short route they can execute immediately."
+        "eyebrow": "Step 1: Setup",
+        "title": "Initial Buffs & Navigation"
       },
       "first_30": {
-        "eyebrow": "First 30 minutes",
-        "title": "The opening loop should stay practical."
+        "eyebrow": "Step 2: Leveling",
+        "title": "The Fastest Grinding Route"
+      },
+      "power_systems": {
+        "eyebrow": "Step 3: Gear",
+        "title": "Stand Arrows & Mobility"
       },
       "mistakes": {
-        "eyebrow": "Mistakes to avoid",
-        "title": "The guide should call out the most expensive beginner errors."
+        "eyebrow": "Step 4: Advanced",
+        "title": "Subclasses & Fighting Styles"
       },
       "progression": {
-        "eyebrow": "Progression path",
-        "title": "Once the checklist is done, the player needs a calmer medium-term route."
+        "eyebrow": "Step 5: Ascension",
+        "title": "Reaching Prestige 1"
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Common Strategy Questions"
       }
+    },
+    "content": {
+      "reading_time": "8 min read",
+      "checklist": [
+        {
+          "key": "tutorial_boost",
+          "title": "Complete Tutorial (1.5x EXP)",
+          "description": "Talk to the receptionist first. This permanent early-game boost is the foundation of your speed-leveling strategy.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/start.png",
+            "alt": "Tutorial"
+          }
+        },
+        {
+          "key": "unlock_teleport",
+          "title": "Unlock Rhett (Bus Stops)",
+          "description": "Unlock teleportation immediately. Moving between Bus Stop 1 (Contracts) and Bus Stop 2 (Gym) is key to your loop.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/bus.png",
+            "alt": "Bus Stop"
+          }
+        },
+        {
+          "key": "gym_benefits",
+          "title": "Gym Treadmill (Extra 1.5x EXP)",
+          "description": "Go to the Gym (Bus Stop 2). Using the treadmill grants another 15 minutes of boost. Refresh this every 30 minutes.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/gym.png",
+            "alt": "Gym Buff"
+          }
+        },
+        {
+          "key": "pawn_shop",
+          "title": "Visit Pawn Shop for Cash",
+          "description": "Located in Rahage. Sell all unwanted loot here. You need $10,000 for prestige; start saving from level 1."
+        }
+      ],
+      "first_thirty_minutes": [
+        {
+          "title": "Storyline (Levels 1 - 64)",
+          "description": "Follow the main questline as long as you can. It provides steady, high-volume EXP for solo progression."
+        },
+        {
+          "title": "Gang Contracts (Efficiency)",
+          "description": "Switch to the Gang Contractor (Bus Stop 1). Focus on 'Capture Territory' for passive gains and 'Rob Civilian' for active EXP."
+        },
+        {
+          "title": "Reset PvP Assignments",
+          "description": "If the contractor gives you a 'Defeat Player' quest, talk to him again to reset. PvP is too slow for efficient leveling."
+        },
+        {
+          "title": "Passive Territory Income",
+          "description": "Control all three zones. This generates EXP and money automatically every 1-2 minutes while you do other tasks."
+        }
+      ],
+      "power_systems": [
+        {
+          "title": "Stand Arrows & Skins",
+          "description": "Use regular arrows for your build. Save Lucky Arrows from legendary chests for guaranteed skins only."
+        },
+        {
+          "title": "Skateboard Upgrades",
+          "description": "Get the basic plank from NPC Gupta. Trade gold coins at Bus Stop 2 for the real skateboard to maximize speed."
+        },
+        {
+          "title": "Weapons & Skills",
+          "description": "Farm bosses and raids for weapons. They add right-click abilities that complement your stand's power."
+        },
+        {
+          "title": "Subclasses & Fighting Styles",
+          "description": "Once stable, look into Subclasses (Vampire, Hamon) and Styles (Boxing). Check our dedicated pages for details."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Subclasses Guide",
+          "description": "View detailed info on Vampire, Hamon, and Cyborg abilities.",
+          "href": "/terms/sub-abilities"
+        },
+        {
+          "title": "Fighting Styles Guide",
+          "description": "Learn about Boxing, Kendo, and Karate requirements.",
+          "href": "/terms/fighting-styles"
+        },
+        {
+          "title": "Stands Database",
+          "description": "Check SSS-Rank stand stats and personality buffs.",
+          "href": "/stands"
+        },
+        {
+          "title": "Tier List",
+          "description": "Compare the best stands for PvE and PvP combat.",
+          "href": "/tier-list"
+        }
+      ],
+      "goals": [
+        {
+          "title": "Reach Level 50",
+          "description": "The mandatory level for your first Prestige. Keep stacking Gym buffs to hit this milestone as fast as possible."
+        },
+        {
+          "title": "Bank $10,000 Cash",
+          "description": "The prestige fee. If you're short, grind 'Rob Civilian' contracts or sell accessories at the Pawn Shop."
+        },
+        {
+          "title": "Prestige at Bus Stop 10",
+          "description": "Talk to Arch Mitch. Reset to Level 1 to unlock permanent storage and earn Prestige Shards for perks."
+        }
+      ],
+      "faq": [
+        {
+          "question": "What is the best leveling loop?",
+          "answer": "Gym Buff -> Capture 3 Territories -> Rob Civilians -> Repeat. This maximizes both passive and active EXP."
+        },
+        {
+          "question": "How do I get Lucky Arrows?",
+          "answer": "Legendary chests are your primary source. They are rare, so use them wisely for skins you actually want."
+        },
+        {
+          "question": "When should I start raids?",
+          "answer": "Raids are better for mid-to-late game gear. Focus on solo leveling and money farming until you hit Level 50."
+        }
+      ]
     }
   }
 }

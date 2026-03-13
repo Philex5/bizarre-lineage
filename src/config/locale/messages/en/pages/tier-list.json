@@ -5,6 +5,22 @@
   },
   "page": {
     "sections": {
+      "board": {
+        "eyebrow": "Community Rankings",
+        "title": "Bizarre Lineage Stand Tier List",
+        "description": "The ultimate guide to every Stand in the game. Updated for March 2026 based on community meta research.",
+        "tier_suffix": "tier",
+        "best_for_label": "Best for",
+        "cta": "Stand Detail",
+        "verdict_title": "Verdict",
+        "core_abilities_title": "Core Abilities",
+        "strengths_title": "Strengths",
+        "weaknesses_title": "Weaknesses",
+        "obtainment_title": "Obtainment Guide",
+        "pro_tip_title": "Pro Tip",
+        "pro_tip": "When deciding whether to keep or skip {standName}, consider your current Prestige level and Conjuring stat. This stand peaks at high Conjuring where its true potential is unlocked.",
+        "empty_tier": "No stands in this tier"
+      },
       "representative": {
         "eyebrow": "Representative stands",
         "title": "The cards explain why a stand earns attention, not just where it lands.",
@@ -40,6 +56,74 @@
           }
         ]
       }
+    },
+    "content": {
+      "entries": [
+        {
+          "key": "star-platinum",
+          "name": "Star Platinum",
+          "tier": "S",
+          "pvp": "Excellent",
+          "pve": "Strong",
+          "beginner": "Medium",
+          "summary": "Reliable pressure, broad matchup value, and enough versatility to anchor the current sample stand page."
+        },
+        {
+          "key": "king-crimson",
+          "name": "King Crimson",
+          "tier": "A",
+          "pvp": "Strong",
+          "pve": "Good",
+          "beginner": "Low",
+          "summary": "High upside, but it asks for cleaner decision-making and punishes sloppy execution more than the top slot."
+        },
+        {
+          "key": "silver-chariot",
+          "name": "Silver Chariot",
+          "tier": "B",
+          "pvp": "Good",
+          "pve": "Average",
+          "beginner": "Medium",
+          "summary": "Usable and serviceable, though more dependent on comfort, matchup knowledge, and player preference."
+        },
+        {
+          "key": "entry-path-stands",
+          "name": "Entry-path stands",
+          "tier": "C",
+          "pvp": "Average",
+          "pve": "Average",
+          "beginner": "High",
+          "summary": "Fine for getting moving, but not the stands most players should structure long-term plans around."
+        }
+      ],
+      "methodology": [
+        {
+          "title": "Consistency beats clip value",
+          "description": "The ranking favors stands that perform across repeat matches rather than isolated highlight moments."
+        },
+        {
+          "title": "PvP and PvE both matter",
+          "description": "A stand that dominates only one lane still needs caveats before it earns an all-purpose top tier slot."
+        },
+        {
+          "title": "Accessibility affects value",
+          "description": "Extremely punishing options can rank lower for the general player base even if specialists rate them highly."
+        }
+      ],
+      "best_for": [
+        {
+          "title": "Best for PvP",
+          "description": "Star Platinum currently sets the sample benchmark when consistent pressure and broad matchup coverage matter most."
+        },
+        {
+          "title": "Best for PvE",
+          "description": "PvE value should be judged on stable progression efficiency, not just duel strength or combo highlights."
+        },
+        {
+          "title": "Best for beginners",
+          "description": "Beginners should bias toward stable progress and clean decision-making, even if that means delaying a top-tier chase."
+        }
+      ]
     }
   }
 }

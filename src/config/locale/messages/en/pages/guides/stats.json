@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "title": "Bizarre Lineage Stats Guide: Build Logic & Priorities",
+    "description": "Learn how to approach Bizarre Lineage stats with better early-game priorities, cleaner stand build logic, and fewer wasted point allocations."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Stats guide",
+        "title": "Stats should support your route, not trap you in fake precision.",
+        "stats": {
+          "focus": "Focus",
+          "focus_value": "Allocation logic",
+          "modes": "Modes",
+          "modes_value": "PvP + PvE",
+          "updated": "Updated"
+        },
+        "actions": {
+          "primary": "Compare stand roles",
+          "secondary": "Plan prestige"
+        },
+        "aside": {
+          "title": "How to read this page",
+          "description": "The guide explains what each stat affects, what early players should prioritize, and where common build mistakes come from.",
+          "items": [
+            {
+              "label": "Start with",
+              "value": "Stat system overview"
+            },
+            {
+              "label": "Then check",
+              "value": "Early priorities"
+            },
+            {
+              "label": "Use with",
+              "value": "Tier list and prestige guide"
+            }
+          ]
+        },
+        "media_label": "Guide visual placeholder"
+      },
+      "overview": {
+        "eyebrow": "Stats overview",
+        "title": "Each stat category should answer a different build question."
+      },
+      "priorities": {
+        "eyebrow": "Early-game priorities",
+        "title": "Early stat choices should create stable progress first."
+      },
+      "mistakes": {
+        "eyebrow": "Common mistakes",
+        "title": "Most weak builds fail because the logic is wrong, not because the math is slightly off."
+      },
+      "related": {
+        "eyebrow": "Related routes",
+        "title": "Use the stats guide as build context, not as an isolated page.",
+        "items": {
+          "tier_list": {
+            "title": "Tier List",
+            "description": "Check what role your stand is trying to play before you decide how to support it."
+          },
+          "prestige": {
+            "title": "Prestige Guide",
+            "description": "Prestige timing becomes cleaner when you understand what parts of your build matter now."
+          },
+          "beginner": {
+            "title": "Beginner Guide",
+            "description": "Use the new-player route if you still need the higher-level progression sequence."
+          }
+        }
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "What the stats page should clarify."
+      }
+    },
+    "content": {
+      "overview": "Stats should explain decision logic, not pretend every player needs a perfect spreadsheet. The goal is to support your stand, route, and mode preference without trapping yourself in a wasteful allocation pattern.",
+      "stat_cards": [
+        {
+          "title": "Power stats",
+          "description": "These typically shape your direct damage ceiling and whether your build can capitalize on openings."
+        },
+        {
+          "title": "Durability stats",
+          "description": "Survivability matters when your route values stability over highlight damage."
+        },
+        {
+          "title": "Mobility and tempo stats",
+          "description": "These affect how often you can start or escape engagements instead of just how hard you hit."
+        },
+        {
+          "title": "Utility allocation",
+          "description": "Some points exist to smooth progression rather than maximize a duel scenario."
+        }
+      ],
+      "priorities_list": [
+        {
+          "title": "Support the stand you actually use",
+          "description": "Do not copy a build logic that assumes a different stand, different style, or different goal."
+        },
+        {
+          "title": "Bias toward stable progression early",
+          "description": "Early-game stat choices should make PvE and general grinding easier before you optimize for niche fights."
+        },
+        {
+          "title": "Separate PvP and PvE thinking",
+          "description": "The stat mix that wins duels is not always the same mix that keeps progression efficient."
+        },
+        {
+          "title": "Leave room for correction",
+          "description": "If you are uncertain, avoid locking yourself into an extreme distribution too early."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Blindly copying endgame builds",
+          "description": "Endgame advice can be actively inefficient on a fresh or mid-game account."
+        },
+        {
+          "title": "Overbuilding for one matchup",
+          "description": "A narrow duel-focused setup can make the rest of your route worse."
+        },
+        {
+          "title": "Ignoring progression context",
+          "description": "Stats should serve your current grind stage, not just your ideal future state."
+        }
+      ],
+      "faq": [
+        {
+          "question": "What should beginners prioritize with stats?",
+          "answer": "Stable progression, survivability, and a build that supports the stand they can actually use right now."
+        },
+        {
+          "question": "Should PvP and PvE use the same stat logic?",
+          "answer": "Not always. PvP often rewards sharper specialization, while PvE usually rewards smoother consistency."
+        },
+        {
+          "question": "Why does this guide avoid fake exact numbers?",
+          "answer": "Because the page is meant to teach allocation thinking that survives patches and different account states."
+        }
+      ]
+    }
+  }
+}

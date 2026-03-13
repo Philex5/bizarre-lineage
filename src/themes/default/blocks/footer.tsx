@@ -1,4 +1,5 @@
-import { officialLinks } from '@/content-data/site';
+import { getOfficialLinks } from '@/content-data/site';
+import { getTranslations } from 'next-intl/server';
 
 import { Link } from '@/core/i18n/navigation';
 import {
@@ -12,7 +13,10 @@ import { SmartIcon } from '@/shared/blocks/common/smart-icon';
 import { NavItem } from '@/shared/types/blocks/common';
 import { Footer as FooterType } from '@/shared/types/blocks/landing';
 
-export function Footer({ footer }: { footer: FooterType }) {
+export async function Footer({ footer }: { footer: FooterType }) {
+  const t = await getTranslations('pages.index');
+  const officialLinks = getOfficialLinks(t);
+
   return (
     <footer
       id={footer.id}
@@ -46,7 +50,7 @@ export function Footer({ footer }: { footer: FooterType }) {
           <div className="col-span-3 grid min-w-0 gap-6 sm:grid-cols-4">
             <div className="min-w-0 space-y-4 text-sm break-words">
               <span className="block font-medium tracking-[0.14em] break-words uppercase">
-                Official Links
+                {t('page.sections.utility.official_links.title')}
               </span>
 
               <div className="flex min-w-0 flex-wrap gap-4 sm:flex-col">

@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "title": "Estrategia de Bizarre Lineage: Del Nivel 1 al Prestigio paso a paso",
+    "description": "La guía cronológica definitiva para Bizarre Lineage. Sigue estos pasos para maximizar la EXP, farmear dinero y llegar al Prestigio eficientemente."
+  },
+  "page": {
+    "sections": {
+      "hero": {
+        "eyebrow": "Guía paso a paso",
+        "title": "Bizarre Lineage: Estrategia Completa para Principiantes",
+        "description": "No pierdas tiempo. Sigue este camino lineal para dominar el inicio del juego, desde tu primer buff de EXP hasta tu primer reinicio de Prestigio.",
+        "stats": {
+          "audience": "Objetivo",
+          "audience_value": "Nuevos Jugadores",
+          "reading_mode": "Camino Lineal",
+          "reading_mode_value": "Cronológico",
+          "reading_time": "Tiempo de lectura",
+          "updated": "Actualizado"
+        },
+        "actions": {
+          "primary": "Códigos primero",
+          "secondary": "Lista de niveles"
+        },
+        "aside": {
+          "title": "Resumen Estratégico",
+          "description": "El objetivo es el Nivel 50 y $10,000. Acumula buffs de EXP constantemente y prioriza Contratos de Banda PvE.",
+          "items": [
+            { "label": "Fase 1", "value": "Buffs Iniciales" },
+            { "label": "Fase 2", "value": "Farmeo de Contratos" },
+            { "label": "Fase 3", "value": "Prep. Prestigio" }
+          ]
+        },
+        "media_label": "Mapa de Estrategia",
+        "image": {
+          "src": "assets/pages/guides/beginner-guide/start.png",
+          "alt": "Progreso Bizarre Lineage"
+        }
+      },
+      "checklist": {
+        "eyebrow": "Paso 1: Configuración",
+        "title": "Buffs Iniciales y Navegación"
+      },
+      "first_30": {
+        "eyebrow": "Paso 2: Nivelación",
+        "title": "La Ruta de Farmeo más Rápida"
+      },
+      "power_systems": {
+        "eyebrow": "Paso 3: Equipo",
+        "title": "Flechas de Stand y Movilidad"
+      },
+      "mistakes": {
+        "eyebrow": "Paso 4: Avanzado",
+        "title": "Subclases y Estilos de Lucha"
+      },
+      "progression": {
+        "eyebrow": "Paso 5: Ascensión",
+        "title": "Llegando al Prestigio 1"
+      },
+      "faq": {
+        "eyebrow": "FAQ",
+        "title": "Preguntas de Estrategia"
+      }
+    },
+    "content": {
+      "reading_time": "8 min de lectura",
+      "checklist": [
+        {
+          "key": "tutorial_boost",
+          "title": "Completa el Tutorial (1.5x EXP)",
+          "description": "Habla primero con la recepcionista. Este potenciador permanente es la base de tu estrategia de nivelación rápida.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/start.png",
+            "alt": "Tutorial"
+          }
+        },
+        {
+          "key": "unlock_teleport",
+          "title": "Desbloquea a Rhett (Autobuses)",
+          "description": "Desbloquea el teletransporte de inmediato. Moverte entre la Parada 1 (Contratos) y la Parada 2 (Gym) es clave.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/bus.png",
+            "alt": "Autobús"
+          }
+        },
+        {
+          "key": "gym_benefits",
+          "title": "Cinta del Gym (1.5x EXP extra)",
+          "description": "Ve al Gimnasio (Parada 2). Usar la cinta otorga otros 15 min de buff. Renuévalo cada 30 minutos.",
+          "image": {
+            "src": "assets/pages/guides/beginner-guide/gym.png",
+            "alt": "Buff de Gym"
+          }
+        },
+        {
+          "key": "pawn_shop",
+          "title": "Casa de Empeño para Efectivo",
+          "description": "En Rahage. Vende todo el botín no deseado. Necesitas $10,000 para el prestigio; ahorra desde el nivel 1."
+        }
+      ],
+      "first_thirty_minutes": [
+        {
+          "title": "Historia (Niveles 1 - 64)",
+          "description": "Sigue la misión principal mientras puedas. Proporciona una fuente constante de EXP para progresar solo."
+        },
+        {
+          "title": "Contratos de Banda (Eficiencia)",
+          "description": "Ve al Contratista (Parada 1). Prioriza 'Capturar Territorio' para EXP pasiva y 'Robar Civil' para EXP activa."
+        },
+        {
+          "title": "Restablece Misiones PvP",
+          "description": "Si te dan una misión de 'Derrotar Jugador', habla con él de nuevo para cambiarla. El PvP es demasiado lento para subir nivel."
+        },
+        {
+          "title": "Ingresos Pasivos de Territorio",
+          "description": "Controla las tres zonas. Genera EXP y dinero automáticamente cada 1-2 minutos mientras haces otras tareas."
+        }
+      ],
+      "power_systems": [
+        {
+          "title": "Flechas de Stand y Skins",
+          "description": "Usa flechas normales para tu build. Guarda las Flechas con Suerte para skins garantizadas solamente."
+        },
+        {
+          "title": "Mejoras de Monopatín",
+          "description": "Consigue la tabla básica de NPC Gupta. Cambia monedas de oro en la Parada 2 por el monopatín real para máxima velocidad."
+        },
+        {
+          "title": "Armas y Habilidades",
+          "description": "Farmea jefes para armas. Añaden habilidades de clic derecho que complementan el poder de tu stand."
+        },
+        {
+          "title": "Subclases y Estilos de Lucha",
+          "description": "Una vez estable, mira las Subclases (Vampiro, Hamon) y Estilos (Boxeo). Mira nuestras páginas dedicadas."
+        }
+      ],
+      "mistakes_cards": [
+        {
+          "title": "Guía de Subclases",
+          "description": "Información detallada sobre Vampiro, Hamon y Cyborg.",
+          "href": "/terms/sub-abilities"
+        },
+        {
+          "title": "Guía de Estilos",
+          "description": "Requisitos para Boxeo, Kendo y Kárate.",
+          "href": "/terms/fighting-styles"
+        },
+        {
+          "title": "Base de Datos de Stands",
+          "description": "Estadísticas de stands rango SSS y buffs de personalidad.",
+          "href": "/stands"
+        },
+        {
+          "title": "Lista de Niveles",
+          "description": "Compara los mejores stands para PvE y PvP.",
+          "href": "/tier-list"
+        }
+      ],
+      "goals": [
+        {
+          "title": "Alcanza el Nivel 50",
+          "description": "El nivel obligatorio para tu primer Prestigio. Sigue acumulando buffs de Gym para llegar rápido."
+        },
+        {
+          "title": "Ahorra $10,000",
+          "description": "La tasa de prestigio. Si te falta, farmea contratos de 'Robar Civil' o vende en la Casa de Empeño."
+        },
+        {
+          "title": "Prestigio en Parada 10",
+          "description": "Habla con Arch Mitch. Reinicia al Nivel 1 para desbloquear almacenamiento permanente."
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Cuál es el mejor ciclo de nivelación?",
+          "answer": "Buff de Gym -> Capturar 3 Territorios -> Robar Civiles -> Repetir. Maximiza EXP pasiva y activa."
+        },
+        {
+          "question": "¿Cómo consigo Flechas con Suerte?",
+          "answer": "Los cofres legendarios son tu fuente principal. Son raras, úsalas con cabeza para las skins que quieras."
+        },
+        {
+          "question": "When should I start raids?",
+          "answer": "Las incursiones son mejores para equipo de mid-game. Enfócate en nivelar solo hasta el Nivel 50."
+        }
+      ]
+    }
+  }
+}

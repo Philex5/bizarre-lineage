@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "title": "Actualidad de Bizarre Lineage Wiki",
+    "description": "Lee notas, cambios editoriales y artículos relacionados con la cobertura de Bizarre Lineage."
+  },
+  "page": {
+    "title": "Blog de Bizarre Lineage Wiki",
+    "sections": {
+      "blog": {
+        "id": "blog",
+        "title": "Blog",
+        "description": "Aquí reunimos artículos, notas y contenidos editoriales relacionados con Bizarre Lineage."
+      }
+    }
+  },
+  "messages": {
+    "all": "Todos",
+    "no_content": "Todavía no hay contenido",
+    "crumb": "Blog",
+    "toc": "Índice del artículo"
+  }
+}

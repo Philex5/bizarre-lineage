@@ -1,46 +1,45 @@
 import {
-  worldEvents,
-  worldEventsIntro,
-  worldEventsNotes,
-  worldEventsRelatedLinks,
+  getWorldEventsContent,
 } from '@/content-data/events';
+import { Link } from '@/core/i18n/navigation';
 import { toImageUrl } from '@/lib/r2-utils';
+import AdsterraBanner from '@/shared/components/ads/adsterra_banner';
+import { getLocale, getTranslations } from 'next-intl/server';
 
-export function EventsPageContent() {
-  const heroImageUrl = toImageUrl(worldEventsIntro.heroImageSrc);
+export async function EventsPageContent() {
+  const locale = await getLocale();
+  const t = await getTranslations('pages.events.page');
+  const content = getWorldEventsContent(locale);
+  const heroImageUrl = toImageUrl(content.intro.heroImageSrc);
 
   return (
     <>
-      <p>{worldEventsIntro.description}</p>
-      <p>
-        This page reflects the official Trello card as checked on March 9, 2026.
-        Where the board stays short, this page stays short too.
-      </p>
+      <p>{content.intro.description}</p>
+      <p>{t('editorial_note')}</p>
 
       <div className="not-prose border-border/70 bg-background/90 my-8 overflow-hidden rounded-3xl border shadow-sm">
         <img
           src={heroImageUrl}
-          alt={worldEventsIntro.heroImageAlt}
+          alt={content.intro.heroImageAlt}
           className="aspect-[16/7] w-full object-cover"
         />
       </div>
 
-      <h2>Quick answer</h2>
-      <p>
-        Bizarre Lineage world events are official limited-time activities that
-        happen server-wide. The current public card shows a{' '}
-        <strong>{worldEventsIntro.cooldown}</strong> and names two active
-        examples.
-      </p>
+      <div className="not-prose my-8">
+        <AdsterraBanner />
+      </div>
+
+      <h2>{t('quick_answer.title')}</h2>
+      <p>{t('quick_answer.summary')}</p>
       <ul>
-        {worldEventsNotes.map((note) => (
+        {content.notes.map((note) => (
           <li key={note}>{note}</li>
         ))}
       </ul>
 
-      <h2>Current official world events</h2>
+      <h2>{t('current_events_title')}</h2>
       <div className="not-prose mt-8 grid gap-6 lg:grid-cols-2">
-        {worldEvents.map((event) => (
+        {content.events.map((event) => (
           <article
             key={event.key}
             className="border-border bg-background/60 overflow-hidden rounded-3xl border shadow-sm"
@@ -60,39 +59,64 @@ export function EventsPageContent() {
               <p className="text-muted-foreground mt-3 text-sm leading-7">
                 {event.summary}
               </p>
-              <div className="border-border bg-card/85 mt-5 rounded-2xl border p-4">
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="border-border bg-card/85 rounded-2xl border p-4">
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                    {t('labels.location')}
+                  </div>
+                  <p className="text-foreground mt-2 text-sm leading-6">
+                    {event.location}
+                  </p>
+                </div>
+                <div className="border-border bg-card/85 rounded-2xl border p-4">
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                    {t('labels.recommended_level')}
+                  </div>
+                  <p className="text-foreground mt-2 text-sm leading-6">
+                    {event.recommendedLevel}
+                  </p>
+                </div>
+              </div>
+              {event.cadence ? (
+                <div className="border-border bg-card/85 mt-3 rounded-2xl border p-4">
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                    {t('labels.spawn_timing')}
+                  </div>
+                  <p className="text-foreground mt-2 text-sm leading-6">
+                    {event.cadence}
+                  </p>
+                </div>
+              ) : null}
+              <div className="border-border bg-card/85 mt-3 rounded-2xl border p-4">
                 <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
-                  Official wording
+                  {t('labels.what_happens')}
                 </div>
                 <p className="text-foreground mt-2 text-sm leading-7">
-                  {event.officialRule}
+                  {event.details}
                 </p>
+              </div>
+              <div className="border-border bg-card/85 mt-3 rounded-2xl border p-4">
+                <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                  {t('labels.rewards')}
+                </div>
+                <ul className="text-foreground mt-2 list-disc space-y-1 pl-5 text-sm leading-6">
+                  {event.rewards.map((reward) => (
+                    <li key={reward}>{reward}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           </article>
         ))}
       </div>
 
-      <h2>Cooldown and event loop</h2>
-      <p>
-        The official card currently adds a <strong>20 minute cooldown</strong>{' '}
-        note to world events. It does not publish a larger event table, spawn
-        map, or extra reward list on this card, so this page keeps that part
-        narrow instead of guessing.
-      </p>
+      <h2>{t('cooldown_loop.title')}</h2>
+      <p>{t('cooldown_loop.description')}</p>
 
-      <h2>Source and verification</h2>
-      <p>
-        Source:{' '}
-        <a href={worldEventsIntro.sourceHref}>{worldEventsIntro.sourceLabel}</a>
-        . The card name is currently blank in the Trello UI, but the historical
-        actions and description identify it as the World Events entry.
-      </p>
-
-      <h2>Read next</h2>
+      <h2>{t('read_next')}</h2>
       <div className="not-prose mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {worldEventsRelatedLinks.map((item) => (
-          <a
+        {content.relatedLinks.map((item) => (
+          <Link
             key={item.href}
             href={item.href}
             className="group bg-background/92 ring-primary/10 hover:border-border hover:bg-accent/30 border-border/70 block rounded-3xl border p-6 shadow-sm ring-1 transition-colors transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
@@ -108,7 +132,7 @@ export function EventsPageContent() {
             <p className="text-muted-foreground text-sm leading-6">
               {item.description}
             </p>
-          </a>
+          </Link>
         ))}
       </div>
     </>

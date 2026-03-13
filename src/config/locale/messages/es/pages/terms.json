@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Términos y glosario de Bizarre Lineage",
+    "description": "Glosario rápido de Bizarre Lineage con términos como prestige, raids, awakening, stand arrows, fighting styles y sub-abilities."
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "terms": "Términos"
+  },
+  "hub": {
+    "title": "Términos y glosario"
+  },
+  "article": {
+    "watch_guide": "Ver la guía",
+    "official_references": "Referencias oficiales",
+    "related_links": "Enlaces relacionados"
+  },
+  "articles": {
+    "awakening": {
+      "metadata": {
+        "title": "Awakening en Bizarre Lineage",
+        "description": "Qué significa awakening en Bizarre Lineage, por qué aparece en fases avanzadas de cuenta y cómo se relaciona con prestige y otras rutas."
+      }
+    },
+    "fighting-styles": {
+      "metadata": {
+        "title": "Fighting styles en Bizarre Lineage",
+        "description": "Qué son los fighting styles en Bizarre Lineage, cuándo compensa buscarlos y cómo encajan dentro de tu build."
+      }
+    },
+    "prestige": {
+      "metadata": {
+        "title": "Prestige en Bizarre Lineage",
+        "description": "Qué significa prestige en Bizarre Lineage, cuándo suele compensar reiniciar y por qué el momento importa más que hacerlo cuanto antes."
+      }
+    },
+    "raid": {
+      "metadata": {
+        "title": "Raid en Bizarre Lineage",
+        "description": "Resumen de las raids de Bizarre Lineage con formato para 8 jugadores, tiendas de fichas y recompensas listadas en los datos públicos actuales."
+      }
+    },
+    "stand-arrow": {
+      "metadata": {
+        "title": "Stand Arrow en Bizarre Lineage",
+        "description": "Qué hace la Stand Arrow en Bizarre Lineage, cómo encaja en tu primera ruta y por qué no conviene gastar tiradas sin contexto."
+      }
+    },
+    "sub-abilities": {
+      "metadata": {
+        "title": "Sub-habilidades en Bizarre Lineage",
+        "description": "Qué son las sub-abilities en Bizarre Lineage, cuándo merecen la pena y cómo encajan con el resto de tu build."
+      }
+    }
+  }
+}

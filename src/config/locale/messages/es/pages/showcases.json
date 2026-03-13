@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "Showcases",
+    "description": "Ejemplos y referencias visuales relacionadas con la cobertura y el ecosistema de Bizarre Lineage."
+  },
+  "page": {
+    "title": "Showcases",
+    "sections": {
+      "showcases": {
+        "id": "showcases",
+        "title": "Referencias y showcases",
+        "description": "Una colección de referencias visuales y proyectos destacados. Esta sección sigue siendo secundaria frente a las guías y páginas de ayuda.",
+        "groups": [
+          {
+            "name": "all",
+            "title": "Todos"
+          },
+          {
+            "name": "ai-chatbot",
+            "title": "Chatbot de IA"
+          },
+          {
+            "name": "ai-image",
+            "title": "Imagen de IA"
+          },
+          {
+            "name": "ai-video",
+            "title": "Video de IA"
+          },
+          {
+            "name": "ai-audio",
+            "title": "Audio de IA"
+          },
+          {
+            "name": "ai-music",
+            "title": "Música de IA"
+          },
+          {
+            "name": "ai-coding",
+            "title": "Programación con IA"
+          },
+          {
+            "name": "other",
+            "title": "Otros"
+          }
+        ],
+        "items": [
+          {
+            "title": "ThinkAny",
+            "description": "Motor de búsqueda de IA",
+            "url": "https://thinkany.ai",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/7.png",
+              "alt": "showcases"
+            },
+            "group": "ai-chatbot"
+          },
+          {
+            "title": "HeyBeauty",
+            "description": "Probador virtual de IA",
+            "url": "https://heybeauty.ai",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/5.png",
+              "alt": "showcases"
+            },
+            "group": "ai-image"
+          },
+          {
+            "title": "AI Wallpaper",
+            "description": "Generador de fondos de pantalla de IA",
+            "url": "https://aiwallpaper.shop",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/1.png",
+              "alt": "showcases"
+            },
+            "group": "ai-image"
+          },
+          {
+            "title": "AI Cover",
+            "description": "Generador de portadas de IA",
+            "url": "https://aicover.design",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/2.png",
+              "alt": "showcases"
+            },
+            "group": "ai-image"
+          },
+          {
+            "title": "GPTs Works",
+            "description": "Directorio de GPTs",
+            "url": "https://gpts.works",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/3.png",
+              "alt": "showcases"
+            },
+            "group": "other"
+          },
+          {
+            "title": "Melodisco",
+            "description": "Reproductor de música de IA",
+            "url": "https://melodis.co",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/4.png",
+              "alt": "showcases"
+            },
+            "group": "ai-music"
+          },
+          {
+            "title": "Pagen",
+            "description": "Generador de páginas de aterrizaje de IA",
+            "url": "https://pagen.so",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/6.png",
+              "alt": "showcases"
+            },
+            "group": "ai-coding"
+          },
+          {
+            "title": "SoraFM",
+            "description": "Generador de videos de IA",
+            "url": "https://sorafm.trys.ai",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/8.png",
+              "alt": "showcases"
+            },
+            "group": "ai-video"
+          },
+          {
+            "title": "PodLM",
+            "description": "Generador de podcasts de IA",
+            "url": "https://podlm.ai",
+            "target": "_blank",
+            "image": {
+              "src": "/imgs/cases/9.png",
+              "alt": "showcases"
+            },
+            "group": "ai-audio"
+          }
+        ]
+      }
+    }
+  }
+}

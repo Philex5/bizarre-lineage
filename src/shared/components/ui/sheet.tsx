@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 import { cn } from "@/shared/lib/utils";
 
