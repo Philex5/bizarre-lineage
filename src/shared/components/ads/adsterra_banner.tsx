@@ -32,7 +32,7 @@ export default function AdsterraBanner() {
   const ad = isDesktop ? DESKTOP_AD : MOBILE_AD;
 
   return (
-    <div className="mt-0 flex justify-center">
+    <div className="-my-3 md:-my-4 flex justify-center">
       <iframe
         key={ad.label}
         src={`/ads/adsterra_native_banner.html`}
