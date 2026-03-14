@@ -59,12 +59,17 @@
           ]
         },
         {
-          "title": "Términos",
+          "title": "Ubicaciones de NPC",
+          "url": "/npc-locations",
+          "icon": "MapPinned"
+        },
+        {
+          "title": "Sistemas",
           "icon": "ScrollText",
           "children": [
             {
-              "title": "Todos los términos",
-              "description": "Explora el glosario completo y la portada de términos",
+              "title": "Centro de términos",
+              "description": "Explora el hub principal de sistemas y páginas tipo glosario",
               "url": "/terms",
               "icon": "Library"
             },
@@ -85,6 +90,12 @@
               "description": "Capa avanzada de poder para rutas más de late game",
               "url": "/terms/awakening",
               "icon": "Zap"
+            },
+            {
+              "title": "Stand Arrow",
+              "description": "El objeto que abre la progresión principal de stands",
+              "url": "/terms/stand-arrow",
+              "icon": "Target"
             },
             {
               "title": "Sub-Habilidades",
@@ -145,6 +156,26 @@
               "target": "_self"
             },
             {
+              "title": "Stands",
+              "url": "/stands",
+              "target": "_self"
+            },
+            {
+              "title": "Ubicaciones de NPC",
+              "url": "/npc-locations",
+              "target": "_self"
+            },
+            {
+              "title": "Eventos",
+              "url": "/events",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Guías",
+          "children": [
+            {
               "title": "Centro de guías",
               "url": "/guides",
               "target": "_self"
@@ -167,20 +198,10 @@
           ]
         },
         {
-          "title": "Base de datos",
+          "title": "Sistemas",
           "children": [
             {
-              "title": "Índice de stands",
-              "url": "/stands",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Términos",
-          "children": [
-            {
-              "title": "Todos los términos",
+              "title": "Centro de términos",
               "url": "/terms",
               "target": "_self"
             },
@@ -222,7 +243,7 @@
             {
               "title": "FrogDR-bizarre lineage wiki",
               "url": "https://frogdr.com/bizarrelineage.info",
-              "target": "_self"
+              "target": "_blank"
             }
           ]
         }

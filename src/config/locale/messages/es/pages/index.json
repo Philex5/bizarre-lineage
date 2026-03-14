@@ -52,7 +52,8 @@
             "raids": "Incursiones",
             "events": "Eventos",
             "fighting_styles": "Estilos de lucha",
-            "sub_abilities": "Subhabilidades"
+            "sub_abilities": "Subhabilidades",
+            "npc_locations": "Ubicaciones de NPC"
           }
         },
         "latest_codes": {
@@ -68,7 +69,7 @@
         "description": "Ve directo a las páginas que más te ayudan a decidir qué stand perseguir, cómo repartir stats y qué ruta te compensa seguir.",
         "items": {
           "tier_list": {
-          "title": "Tier list",
+            "title": "Tier list",
             "meta": "Meta de Bizarre Lineage",
             "description": "Compara qué stands están rindiendo mejor ahora mismo tanto en PvP como en PvE."
           },

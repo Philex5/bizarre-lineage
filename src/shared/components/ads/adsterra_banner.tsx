@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 const DESKTOP_BREAKPOINT = 768;
 const DESKTOP_AD = {
   width: 1100,
-  height: 260,
+  height: 230,
   label: "desktop",
 };
 const MOBILE_AD = {
   width: 320,
-  height: 320,
+  height: 300,
   label: "mobile",
 };
 

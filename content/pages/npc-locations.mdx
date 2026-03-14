@@ -1,0 +1,23 @@
+---
+title: Bizarre Lineage NPC Locations & Map Guide
+description: Find Bizarre Lineage NPC locations, trainer spots, regions, and bus stop routes for Pucci, Arch Mage, Ancient Ghost, Stroheim, Elder Vampire, and more.
+slug: npc-locations
+template: page
+published: true
+updatedAt: 2026-03-15
+---
+
+import { NpcLocationsPageContent } from '@/features/wiki/npc-locations-content';
+import { NpcLocationsSidebar } from '@/features/wiki/npc-locations-sidebar';
+
+<div className="relative">
+  {/* 主体居中区域 */}
+  <div className="w-full">
+    <NpcLocationsPageContent />
+  </div>
+
+  {/* 外部右侧边栏 - 仅在超大屏幕 (xl) 显示，避免遮挡 */}
+  <div className="hidden xl:block absolute top-0 left-full ml-12 h-full">
+    <NpcLocationsSidebar />
+  </div>
+</div>

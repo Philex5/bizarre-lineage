@@ -12,6 +12,7 @@ export async function PageDetail({ post }: { post: PostType }) {
   const isSubAbilitiesPage =
     post.slug === 'terms/sub-abilities' ||
     Boolean(post.slug?.startsWith('terms/sub-abilities/'));
+  const shouldRenderNpcLocationsTopAd = post.slug === 'npc-locations';
   const shouldRenderBottomAd =
     (isTermsHub || isTermsChildPage) && post.slug !== 'terms/sub-abilities';
   const sectionSpacingClass = isTermsHub
@@ -55,6 +56,11 @@ export async function PageDetail({ post }: { post: PostType }) {
             >
               {post.description}
             </div>
+            {shouldRenderNpcLocationsTopAd ? (
+              <div className="mb-8">
+                <AdsterraBanner />
+              </div>
+            ) : null}
             {post.created_at && (
               <div
                 className={

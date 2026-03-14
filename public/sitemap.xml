@@ -85,6 +85,20 @@
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
+    <loc>https://bizarrelineage.info/npc-locations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/npc-locations" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/npc-locations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/npc-locations" />
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/es/npc-locations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/npc-locations" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/npc-locations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/npc-locations" />
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url>
+  <url>
     <loc>https://bizarrelineage.info/guides</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides" />
     <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides" />

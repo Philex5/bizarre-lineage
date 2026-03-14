@@ -32,6 +32,10 @@
 3. SEO关键词方案
    `@docs/bizarre-lineage-seo-keywords.md`
 
+4. Trello 缺口推进记录
+   `@docs/trello-gap-roadmap-2026-03-15.md`
+   用于跟踪对照官方 Trello 后，已补哪些数据库型内容、还缺哪些模块、推荐按什么顺序继续做。
+
 ### 当前已确认决策
 
 - 站点定位为 `Game Wiki + Guide Hub + Database`，但 MVP 只做少数关键页面。

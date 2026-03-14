@@ -59,12 +59,17 @@
           ]
         },
         {
-          "title": "Terms",
+          "title": "NPC Locations",
+          "url": "/npc-locations",
+          "icon": "MapPinned"
+        },
+        {
+          "title": "Systems",
           "icon": "ScrollText",
           "children": [
             {
-              "title": "All Terms",
-              "description": "Browse the full glossary and term hub",
+              "title": "Terms Hub",
+              "description": "Browse the main systems hub and glossary-style pages",
               "url": "/terms",
               "icon": "Library"
             },
@@ -85,6 +90,12 @@
               "description": "Late-game power upgrade path",
               "url": "/terms/awakening",
               "icon": "Zap"
+            },
+            {
+              "title": "Stand Arrow",
+              "description": "The item route that starts stand-based progression",
+              "url": "/terms/stand-arrow",
+              "icon": "Target"
             },
             {
               "title": "Sub-Abilities",
@@ -145,6 +156,26 @@
               "target": "_self"
             },
             {
+              "title": "Stands",
+              "url": "/stands",
+              "target": "_self"
+            },
+            {
+              "title": "NPC Locations",
+              "url": "/npc-locations",
+              "target": "_self"
+            },
+            {
+              "title": "Events",
+              "url": "/events",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Guides",
+          "children": [
+            {
               "title": "Guides Hub",
               "url": "/guides",
               "target": "_self"
@@ -167,20 +198,10 @@
           ]
         },
         {
-          "title": "Database",
+          "title": "Systems",
           "children": [
             {
-              "title": "Stands Hub",
-              "url": "/stands",
-              "target": "_self"
-            }
-          ]
-        },
-        {
-          "title": "Terms",
-          "children": [
-            {
-              "title": "All Terms",
+              "title": "Terms Hub",
               "url": "/terms",
               "target": "_self"
             },
@@ -222,7 +243,7 @@
             {
               "title": "FrogDR-bizarre lineage wiki",
               "url": "https://frogdr.com/bizarrelineage.info",
-              "target": "_self"
+              "target": "_blank"
             }
           ]
         }

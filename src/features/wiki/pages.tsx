@@ -33,6 +33,7 @@ import {
   ExternalLink,
   Flame,
   Info,
+  MapPinned,
   Swords,
   Ticket,
   Trophy,
@@ -166,7 +167,11 @@ function StandSummaryCard({ stand }: { stand: StandEntry }) {
   );
 
   return (
-    <Link id={stand.key} href={getStandHref(stand.key)} className="block h-full">
+    <Link
+      id={stand.key}
+      href={getStandHref(stand.key)}
+      className="block h-full"
+    >
       {content}
     </Link>
   );
@@ -207,7 +212,7 @@ function HomeQuickAccessCard({
       <span className="text-primary/90 flex size-9 shrink-0 items-center justify-center rounded-xl bg-white/6 text-base shadow-inner ring-1 ring-white/8 transition-transform duration-300 group-hover:scale-105">
         {icon}
       </span>
-      <span className="text-foreground text-sm font-semibold tracking-[-0.02em] leading-tight">
+      <span className="text-foreground text-sm leading-tight font-semibold tracking-[-0.02em]">
         {title}
       </span>
     </Link>
@@ -258,6 +263,11 @@ export async function HomePage() {
       title: t('page.sections.utility.quick_access.items.sub_abilities'),
       href: '/terms/sub-abilities',
       icon: <Flame className="size-5" />,
+    },
+    {
+      title: t('page.sections.utility.quick_access.items.npc_locations'),
+      href: '/npc-locations',
+      icon: <MapPinned className="size-5" />,
     },
   ] as const;
   const officialLinkCards = [
@@ -393,9 +403,9 @@ export async function HomePage() {
         }}
       />
 
-      <section className="grid gap-6 lg:grid-cols-[minmax(0,1.45fr)_23rem] lg:items-start">
-        <div className="space-y-6">
-          <div className="relative overflow-hidden rounded-[2.2rem]">
+      <section className="grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_23rem] lg:items-start">
+        <div className="space-y-3 md:space-y-4">
+          <div className="relative overflow-hidden rounded-[2rem]">
             <div className="absolute inset-0">
               <Image
                 src={placeholderImages.hero}
@@ -407,33 +417,33 @@ export async function HomePage() {
               <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_oklab,var(--color-foreground)_92%,black)_0%,color-mix(in_oklab,var(--color-foreground)_84%,transparent)_34%,color-mix(in_oklab,var(--color-foreground)_56%,transparent)_62%,color-mix(in_oklab,var(--color-foreground)_84%,black)_100%)] dark:bg-[linear-gradient(90deg,color-mix(in_oklab,black_74%,transparent)_0%,color-mix(in_oklab,black_48%,transparent)_30%,color-mix(in_oklab,black_22%,transparent)_58%,color-mix(in_oklab,black_56%,transparent)_100%)]" />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,black_18%,transparent)_0%,transparent_20%,color-mix(in_oklab,black_44%,transparent)_100%)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,black_32%,transparent)_0%,transparent_22%,color-mix(in_oklab,black_56%,transparent)_100%)]" />
             </div>
-            <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_10%,transparent),transparent)]" />
+            <div className="absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_10%,transparent),transparent)]" />
 
-            <div className="relative flex min-h-[68vh] items-end px-6 py-10 md:px-10 md:py-14 lg:px-14 lg:py-18">
+            <div className="relative flex min-h-[19rem] items-end px-5 py-6 sm:min-h-[23rem] sm:px-6 sm:py-7 md:min-h-[52vh] md:px-9 md:py-9 lg:px-12 lg:py-11">
               <div className="max-w-2xl">
-                <div className="mb-5 inline-flex rounded-full border border-white/18 bg-black/18 px-3 py-1 text-[0.68rem] tracking-[0.24em] text-white uppercase backdrop-blur-sm">
+                <div className="mb-4 inline-flex rounded-full border border-white/18 bg-black/18 px-3 py-1 text-[0.68rem] tracking-[0.24em] text-white uppercase backdrop-blur-sm">
                   {t('page.sections.hero.eyebrow')}
                 </div>
-                <h1 className="font-serif text-4xl leading-[0.9] tracking-[-0.05em] text-balance text-white sm:text-5xl lg:text-7xl">
+                <h1 className="font-serif text-[2.5rem] leading-[0.92] tracking-[-0.05em] text-balance text-white sm:text-5xl lg:text-7xl">
                   {t('page.sections.hero.title')}
                 </h1>
-                <p className="mt-5 max-w-xl text-base leading-7 text-white/82 md:text-lg">
+                <p className="mt-3 max-w-xl text-sm leading-6 text-white/82 sm:mt-4 sm:text-base sm:leading-7 md:text-lg">
                   {t('page.sections.hero.dek')}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="border-border bg-card/94 relative overflow-hidden rounded-[1.7rem] border p-4 shadow-lg backdrop-blur-sm md:p-5">
+          <div className="border-border bg-card/94 relative overflow-hidden rounded-[1.5rem] border p-3 shadow-lg backdrop-blur-sm md:p-4">
             <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--color-primary),var(--color-accent),var(--color-primary))] opacity-90" />
-            <div className="relative flex items-center gap-3 overflow-x-auto pr-1 md:gap-4">
-              <div className="min-w-[9.5rem] shrink-0">
-                <h2 className="text-foreground font-serif text-xl leading-none tracking-[-0.04em] md:text-2xl">
+            <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-3 md:overflow-x-auto md:pr-1">
+              <div className="min-w-0 md:min-w-[8.75rem] md:shrink-0">
+                <h2 className="text-foreground font-serif text-lg leading-none tracking-[-0.04em] md:text-[1.65rem]">
                   {t('page.sections.utility.official_links.title')}
                 </h2>
               </div>
 
-              <div className="flex min-w-0 flex-1 items-stretch gap-3">
+              <div className="grid min-w-0 flex-1 grid-cols-3 gap-2 md:flex md:items-stretch md:gap-2.5">
                 {officialLinkCards.map((item) => {
                   const Icon = item.icon;
 
@@ -443,12 +453,13 @@ export async function HomePage() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex min-w-[9rem] flex-1 items-center gap-3 rounded-[1.1rem] border px-3 py-3 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:min-w-0 md:px-4"
+                      aria-label={item.title}
+                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex h-12 min-w-0 items-center justify-center rounded-[0.95rem] border px-0 py-0 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:min-w-[8.5rem] md:flex-1 md:justify-start md:gap-2.5 md:rounded-[1rem] md:px-3 md:py-2.5"
                     >
-                      <span className="text-primary flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/6 text-xl ring-1 ring-white/8">
+                      <span className="text-primary flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/6 text-lg ring-1 ring-white/8">
                         <Icon />
                       </span>
-                      <div className="text-foreground text-sm font-semibold tracking-[-0.03em] md:text-base">
+                      <div className="text-foreground hidden text-sm font-semibold tracking-[-0.03em] md:block md:text-base">
                         {item.title}
                       </div>
                     </a>
@@ -467,16 +478,16 @@ export async function HomePage() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_8%,transparent)_0%,transparent_24%),linear-gradient(color-mix(in_oklab,var(--color-foreground)_5%,transparent)_1px,transparent_1px)] bg-[length:100%_100%,18px_18px]" />
           <div className="relative space-y-6">
             <div>
-                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
-                    {t('page.sections.utility.quick_access.eyebrow')}
-                  </div>
-                  <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
-                    {t('page.sections.utility.quick_access.title')}
-                  </h2>
-                  <div className="mt-5 grid grid-cols-2 gap-2.5">
-                    {heroQuickAccessItems.map((item) => (
-                      <HomeQuickAccessCard
-                        key={item.href}
+              <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
+                {t('page.sections.utility.quick_access.eyebrow')}
+              </div>
+              <h2 className="mt-3 font-serif text-3xl leading-none tracking-[-0.04em]">
+                {t('page.sections.utility.quick_access.title')}
+              </h2>
+              <div className="mt-5 grid grid-cols-2 gap-2.5">
+                {heroQuickAccessItems.map((item) => (
+                  <HomeQuickAccessCard
+                    key={item.href}
                     title={item.title}
                     href={item.href}
                     icon={item.icon}
@@ -486,7 +497,7 @@ export async function HomePage() {
             </div>
 
             <div className="border-border border-t pt-6">
-              <div className="flex items-end justify-between gap-3">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <div className="text-muted-foreground text-[0.68rem] tracking-[0.24em] uppercase">
                     {t('page.sections.utility.latest_codes.eyebrow')}
@@ -495,10 +506,10 @@ export async function HomePage() {
                     {t('page.sections.utility.latest_codes.title')}
                   </h2>
                 </div>
-                <div className="text-muted-foreground text-right text-xs leading-5">
+                <div className="text-muted-foreground text-left text-xs leading-5 sm:text-right">
                   {t('page.sections.utility.latest_codes.verified_label')}
                   <br />
-                  2026-03-09
+                  2026-03-15
                 </div>
               </div>
 
@@ -596,6 +607,9 @@ export async function HomePage() {
               {t('page.sections.meta_preview.tier_list_link')}
             </Link>
           </div>
+          <div className="py-2 md:py-3">
+            <AdsterraBanner />
+          </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {featuredStands.map((stand) => (
               <StandSummaryCard key={stand.key} stand={stand} />
@@ -687,7 +701,7 @@ export async function CodesPage() {
   const monitoredCodeClaims = getMonitoredCodeClaims(t);
   const redeemSteps = getRedeemSteps(t);
   const codeFailureReasons = getCodeFailureReasons(t);
-  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-13';
+  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-15';
   const sourceLinks = [
     {
       label: 'Official Roblox Game',
@@ -757,11 +771,11 @@ export async function CodesPage() {
                   className="group bg-background/92 border-gold/20 hover:border-gold/50 relative flex flex-col justify-between gap-4 rounded-2xl border p-5 shadow-sm transition-all hover:shadow-md md:flex-row md:items-center"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10 text-gold">
+                    <div className="bg-gold/10 text-gold flex h-12 w-12 items-center justify-center rounded-xl">
                       <CheckCircle2 className="size-6" />
                     </div>
                     <div>
-                      <div className="text-foreground select-all font-mono text-xl font-bold tracking-tight">
+                      <div className="text-foreground font-mono text-xl font-bold tracking-tight select-all">
                         {row.code}
                       </div>
                       <div className="text-muted-foreground mt-1 text-sm">
@@ -817,9 +831,7 @@ export async function CodesPage() {
                     <span className="text-foreground font-mono font-medium">
                       {row.code}
                     </span>
-                    <span className="text-muted-foreground">
-                      {row.reward}
-                    </span>
+                    <span className="text-muted-foreground">{row.reward}</span>
                   </div>
                 ))}
               </div>
@@ -851,7 +863,7 @@ export async function CodesPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-3xl border border-border shadow-lg">
+          <div className="border-border relative mx-auto aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-3xl border shadow-lg">
             <Image
               src="/images/codes/redeem-guide.jpg"
               alt="Step-by-step guide for Bizarre Lineage codes redemption"
@@ -904,7 +916,7 @@ export async function CodesPage() {
               key={source.href}
               asChild
               variant="outline"
-              className="h-12 rounded-full px-6 transition-all hover:bg-gold hover:text-white"
+              className="hover:bg-gold h-12 rounded-full px-6 transition-all hover:text-white"
             >
               <a href={source.href} target="_blank" rel="noreferrer">
                 {source.label}
@@ -1165,7 +1177,7 @@ export async function StandsHubPage() {
         }}
       />
 
-      <section className="px-4 pb-4 pt-2 text-center md:pb-6 md:pt-3">
+      <section className="px-4 pt-2 pb-4 text-center md:pt-3 md:pb-6">
         <h1 className="text-foreground mx-auto mb-3 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
           {t('page.sections.hero.title')}
         </h1>
@@ -1180,12 +1192,17 @@ export async function StandsHubPage() {
         description={t('page.sections.index.description')}
         contentClassName="mt-3"
       >
-        <div className="space-y-6">
-          <AdsterraBanner />
+        <div className="space-y-10 md:space-y-12">
+          <div className="py-2 md:py-3">
+            <AdsterraBanner />
+          </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {localizedStands.map((stand) => (
               <StandSummaryCard key={stand.key} stand={stand} />
             ))}
+          </div>
+          <div className="py-2 md:py-3">
+            <AdsterraBanner />
           </div>
         </div>
       </SectionFrame>
@@ -1310,8 +1327,14 @@ export async function BeginnerGuidePage() {
   const t = await getTranslations('pages.guides.beginner-guide');
 
   const checklistItems = [
-    { key: 'tutorial_boost', img: 'assets/pages/guides/beginner-guide/start.png' },
-    { key: 'unlock_teleport', img: 'assets/pages/guides/beginner-guide/bus.png' },
+    {
+      key: 'tutorial_boost',
+      img: 'assets/pages/guides/beginner-guide/start.png',
+    },
+    {
+      key: 'unlock_teleport',
+      img: 'assets/pages/guides/beginner-guide/bus.png',
+    },
     { key: 'gym_benefits', img: 'assets/pages/guides/beginner-guide/gym.png' },
     { key: 'pawn_shop_cash', img: null },
   ];
@@ -1332,7 +1355,7 @@ export async function BeginnerGuidePage() {
         />
       </div>
 
-      <header className="px-4 pb-4 pt-2 text-center md:pb-6 md:pt-3">
+      <header className="px-4 pt-2 pb-4 text-center md:pt-3 md:pb-6">
         <h1 className="text-foreground mx-auto mb-3 max-w-4xl font-serif text-4xl leading-tight tracking-tight md:text-6xl">
           {t('page.sections.hero.title')}
         </h1>
@@ -1348,7 +1371,10 @@ export async function BeginnerGuidePage() {
       >
         <div className="space-y-12">
           {checklistItems.map((item, i) => (
-            <div key={item.key} className="group flex flex-col gap-6 lg:flex-row lg:items-center">
+            <div
+              key={item.key}
+              className="group flex flex-col gap-6 lg:flex-row lg:items-center"
+            >
               <div className="flex-1 space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="bg-primary/10 text-primary flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold">
@@ -1387,8 +1413,13 @@ export async function BeginnerGuidePage() {
       >
         <div className="grid gap-6 sm:grid-cols-2">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="border-border bg-background/50 rounded-2xl border p-6">
-              <h4 className="m-0 font-bold">{t(`page.content.first_thirty_minutes.${i}.title` as any)}</h4>
+            <div
+              key={i}
+              className="border-border bg-background/50 rounded-2xl border p-6"
+            >
+              <h4 className="m-0 font-bold">
+                {t(`page.content.first_thirty_minutes.${i}.title` as any)}
+              </h4>
               <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                 {t(`page.content.first_thirty_minutes.${i}.description` as any)}
               </p>
@@ -1403,8 +1434,13 @@ export async function BeginnerGuidePage() {
       >
         <div className="grid gap-6 sm:grid-cols-2">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="border-border bg-background/50 rounded-2xl border p-6">
-              <h4 className="m-0 font-bold">{t(`page.content.power_systems.${i}.title` as any)}</h4>
+            <div
+              key={i}
+              className="border-border bg-background/50 rounded-2xl border p-6"
+            >
+              <h4 className="m-0 font-bold">
+                {t(`page.content.power_systems.${i}.title` as any)}
+              </h4>
               <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                 {t(`page.content.power_systems.${i}.description` as any)}
               </p>
@@ -1422,7 +1458,9 @@ export async function BeginnerGuidePage() {
             <GuideCard
               key={i}
               title={t(`page.content.mistakes_cards.${i}.title` as any)}
-              description={t(`page.content.mistakes_cards.${i}.description` as any)}
+              description={t(
+                `page.content.mistakes_cards.${i}.description` as any
+              )}
               href={t(`page.content.mistakes_cards.${i}.href` as any)}
             />
           ))}
@@ -1435,8 +1473,13 @@ export async function BeginnerGuidePage() {
       >
         <div className="space-y-4">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="border-border bg-background/50 rounded-xl border p-5">
-              <h4 className="m-0 font-bold">{t(`page.content.goals.${i}.title` as any)}</h4>
+            <div
+              key={i}
+              className="border-border bg-background/50 rounded-xl border p-5"
+            >
+              <h4 className="m-0 font-bold">
+                {t(`page.content.goals.${i}.title` as any)}
+              </h4>
               <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
                 {t(`page.content.goals.${i}.description` as any)}
               </p>

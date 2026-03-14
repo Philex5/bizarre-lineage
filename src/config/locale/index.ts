@@ -35,4 +35,5 @@ export const localeMessagesPaths = [
   'pages/stands/star-platinum',
   'pages/terms',
   'pages/events',
+  'pages/npc-locations',
 ];

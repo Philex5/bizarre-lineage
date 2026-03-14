@@ -87,3 +87,4 @@
 - For frontend UI development and copywriting, use the `gemini` skill.
 - After completing any page, use the `seo-audit` skill to review its SEO performance.
 - When current ShipAny framework details are needed, use Ref MCP to query the official ShipAny documentation.
+- Only run `build` when it is actually needed for the task or to confirm a likely build-time issue. Do not default to running a full build after every change, because restarting the local service is disruptive in this project.
