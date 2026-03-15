@@ -7,6 +7,7 @@ import { source } from '@/core/docs/source';
 import { baseOptions } from './layout.config';
 
 import '@/config/style/docs.css';
+
 const locales = [
   { name: 'English', locale: 'en' },
   { name: 'Español', locale: 'es' },

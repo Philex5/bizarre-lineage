@@ -1,8 +1,7 @@
 {
   "metadata": {
     "title": "Centro de guías de Bizarre Lineage: progresión y builds",
-    "description": "Accede a las guías clave de Bizarre Lineage en un solo sitio: primeras rutas, stats, prestige y decisiones que de verdad afectan a tu progreso.",
-    "keywords": []
+    "description": "Accede a las guías clave de Bizarre Lineage en un solo sitio: primeras rutas, stats, prestige y decisiones que de verdad afectan a tu progreso."
   },
   "page": {
     "sections": {
@@ -16,7 +15,7 @@
         "description": "Si necesitas una mejor ruta inicial, ordenar tus stats o decidir cuándo prestigiar, este es el mejor punto de partida.",
         "stats": {
           "total_guides": "Guías Totales",
-          "total_guides_value": "4",
+          "total_guides_value": "5",
           "reading_time": "Lectura Est.",
           "reading_time_value": "20 min",
           "updated": "Última Actualización",
@@ -42,6 +41,11 @@
             "title": "Guía de Prestigio",
             "meta": "Momento del Reinicio",
             "description": "Planifica el reinicio de tu personaje. Sabe exactamente cuándo hacer el prestigio, qué ganas y qué guardar antes de presionar el botón."
+          },
+          "dio_raid": {
+            "title": "Guía de DIO Raid",
+            "meta": "Ruta de Raid",
+            "description": "Encuentra la DIO Raid, evita confundirla con World Boss Dio y decide si la tienda de DIO Tokens merece la pena."
           },
           "codes": {
             "title": "Guía de Códigos",

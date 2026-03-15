@@ -1,8 +1,7 @@
 {
   "metadata": {
     "title": "Bizarre Lineage Guides Hub: Master Progression & Builds",
-    "description": "Access all Bizarre Lineage guides in one place. From beginner routes and stat builds to prestige timing and stand evolution, our wiki has the pro strategies you need.",
-    "keywords": []
+    "description": "Access all Bizarre Lineage guides in one place. From beginner routes and stat builds to prestige timing and stand evolution, our wiki has the pro strategies you need."
   },
   "page": {
     "sections": {
@@ -16,7 +15,7 @@
         "description": "Master every system in Bizarre Lineage with our focused guides. Whether you need a cleaner opening route, better stat logic, or a plan for your first prestige, start here.",
         "stats": {
           "total_guides": "Total Guides",
-          "total_guides_value": "4",
+          "total_guides_value": "5",
           "reading_time": "Est. Reading",
           "reading_time_value": "20 min",
           "updated": "Last Updated",
@@ -42,6 +41,11 @@
             "title": "Prestige Guide",
             "meta": "Reset Timing",
             "description": "Plan your character reset. Know exactly when to prestige, what you gain, and what to bank before hitting the button."
+          },
+          "dio_raid": {
+            "title": "DIO Raid Guide",
+            "meta": "Raid Routing",
+            "description": "Find the DIO Raid, avoid confusing it with World Boss Dio, and decide whether the DIO Token shop is worth farming."
           },
           "codes": {
             "title": "Codes Guide",

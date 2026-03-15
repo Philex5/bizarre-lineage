@@ -12,9 +12,12 @@ export async function PageDetail({ post }: { post: PostType }) {
   const isSubAbilitiesPage =
     post.slug === 'terms/sub-abilities' ||
     Boolean(post.slug?.startsWith('terms/sub-abilities/'));
+  const isDioRaidGuide = post.slug === 'guides/dio-raid';
   const shouldRenderNpcLocationsTopAd = post.slug === 'npc-locations';
+  const shouldRenderPreContentAd = isTermsChildPage;
   const shouldRenderBottomAd =
-    (isTermsHub || isTermsChildPage) && post.slug !== 'terms/sub-abilities';
+    ((isTermsHub || isTermsChildPage) && post.slug !== 'terms/sub-abilities') ||
+    isDioRaidGuide;
   const sectionSpacingClass = isTermsHub
     ? 'pt-4 pb-24 md:pt-5 md:pb-32'
     : isTermsChildPage
@@ -56,6 +59,11 @@ export async function PageDetail({ post }: { post: PostType }) {
             >
               {post.description}
             </div>
+            {isDioRaidGuide ? (
+              <div className="mb-8">
+                <AdsterraBanner />
+              </div>
+            ) : null}
             {shouldRenderNpcLocationsTopAd ? (
               <div className="mb-8">
                 <AdsterraBanner />
@@ -75,6 +83,11 @@ export async function PageDetail({ post }: { post: PostType }) {
           </div>
 
           <div className="ring-foreground/5 relative mt-8 rounded-3xl border border-transparent px-4 shadow ring-1 md:px-8">
+            {shouldRenderPreContentAd ? (
+              <div className="not-prose mt-8">
+                <AdsterraBanner />
+              </div>
+            ) : null}
             <div>
               {post.body ? (
                 <div className="docs text-foreground text-md my-8 space-y-4 font-normal *:leading-relaxed">

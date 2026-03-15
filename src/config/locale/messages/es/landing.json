@@ -55,6 +55,12 @@
               "description": "Aclara cuándo compensa prestigiar y qué preparar antes",
               "url": "/guides/prestige",
               "icon": "RotateCcw"
+            },
+            {
+              "title": "Guía de DIO Raid",
+              "description": "Encuentra la entrada de DIO Raid y compárala con World Boss Dio",
+              "url": "/guides/dio-raid",
+              "icon": "Castle"
             }
           ]
         },
@@ -110,6 +116,11 @@
               "icon": "Shield"
             }
           ]
+        },
+        {
+          "title": "Actualizaciones",
+          "url": "/updates",
+          "icon": "ScrollText"
         }
       ]
     },
@@ -169,6 +180,11 @@
               "title": "Eventos",
               "url": "/events",
               "target": "_self"
+            },
+            {
+              "title": "Actualizaciones",
+              "url": "/updates",
+              "target": "_self"
             }
           ]
         },
@@ -193,6 +209,11 @@
             {
               "title": "Guía de prestige",
               "url": "/guides/prestige",
+              "target": "_self"
+            },
+            {
+              "title": "Guía de DIO Raid",
+              "url": "/guides/dio-raid",
               "target": "_self"
             }
           ]
@@ -251,6 +272,16 @@
     },
     "social": {
       "items": []
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Github",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/PhiMaker5/bizarre-lineage",
+          "target": "_blank"
+        }
+      ]
     },
     "show_built_with": false,
     "agreement": {

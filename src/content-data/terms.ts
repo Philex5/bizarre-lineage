@@ -249,6 +249,17 @@ const enTerms: TermsDictionary = {
               type: 'paragraph',
               text: 'DIO Raid currently has the widest shop in the current data. It is the only raid here that explicitly lists two weapons in addition to traits, arrows, chests, and an accessory.',
             },
+            {
+              type: 'cards',
+              items: [
+                {
+                  href: '/guides/dio-raid',
+                  title: 'Full DIO Raid guide',
+                  description:
+                    'Open the dedicated DIO Raid page for the location-vs-world-boss breakdown, reward focus, and search-intent quick answers.',
+                },
+              ],
+            },
           ],
         },
         {

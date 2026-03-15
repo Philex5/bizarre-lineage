@@ -1071,6 +1071,39 @@ export async function TierListPage() {
 
 export async function GuidesHubPage() {
   const t = await getTranslations('pages.guides');
+  const guideCards = [
+    {
+      title: t('page.sections.directory.items.beginner.title'),
+      meta: t('page.sections.directory.items.beginner.meta'),
+      description: t('page.sections.directory.items.beginner.description'),
+      href: '/guides/beginner-guide',
+    },
+    {
+      title: t('page.sections.directory.items.stats.title'),
+      meta: t('page.sections.directory.items.stats.meta'),
+      description: t('page.sections.directory.items.stats.description'),
+      href: '/guides/stats',
+    },
+    {
+      title: t('page.sections.directory.items.prestige.title'),
+      meta: t('page.sections.directory.items.prestige.meta'),
+      description: t('page.sections.directory.items.prestige.description'),
+      href: '/guides/prestige',
+    },
+    {
+      title: t('page.sections.directory.items.dio_raid.title'),
+      meta: t('page.sections.directory.items.dio_raid.meta'),
+      description: t('page.sections.directory.items.dio_raid.description'),
+      href: '/guides/dio-raid',
+    },
+    {
+      title: t('page.sections.directory.items.codes.title'),
+      meta: t('page.sections.directory.items.codes.meta'),
+      description: t('page.sections.directory.items.codes.description'),
+      href: '/codes',
+    },
+  ];
+
   return (
     <PageShell accent="jade">
       <div className="px-1 pt-2">
@@ -1090,35 +1123,24 @@ export async function GuidesHubPage() {
         title={t('page.sections.directory.title')}
         description={t('page.sections.directory.description')}
       >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <GuideCard
-            title={t('page.sections.directory.items.beginner.title')}
-            meta={t('page.sections.directory.items.beginner.meta')}
-            description={t(
-              'page.sections.directory.items.beginner.description'
-            )}
-            href="/guides/beginner-guide"
-          />
-          <GuideCard
-            title={t('page.sections.directory.items.stats.title')}
-            meta={t('page.sections.directory.items.stats.meta')}
-            description={t('page.sections.directory.items.stats.description')}
-            href="/guides/stats"
-          />
-          <GuideCard
-            title={t('page.sections.directory.items.prestige.title')}
-            meta={t('page.sections.directory.items.prestige.meta')}
-            description={t(
-              'page.sections.directory.items.prestige.description'
-            )}
-            href="/guides/prestige"
-          />
-          <GuideCard
-            title={t('page.sections.directory.items.codes.title')}
-            meta={t('page.sections.directory.items.codes.meta')}
-            description={t('page.sections.directory.items.codes.description')}
-            href="/codes"
-          />
+        <div className="space-y-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {guideCards.slice(0, 4).map((card) => (
+              <GuideCard key={card.href} {...card} />
+            ))}
+          </div>
+
+          <div className="px-1 py-1" aria-label="Sponsored">
+            <div className="overflow-hidden rounded-[1.5rem]">
+              <AdsterraBanner />
+            </div>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {guideCards.slice(4).map((card) => (
+              <GuideCard key={card.href} {...card} />
+            ))}
+          </div>
         </div>
       </SectionFrame>
 

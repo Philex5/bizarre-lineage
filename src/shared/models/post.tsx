@@ -288,7 +288,13 @@ export async function getLocalPage({
   const post: BlogPostType = {
     id: localPage.path,
     slug: slug,
-    title: localizedMetadata?.title || localPage.data.title || '',
+    title: localPage.data.title || localizedMetadata?.title || '',
+    seo_title:
+      localizedMetadata?.seoTitle ||
+      (frontmatter.seoTitle as string | undefined) ||
+      localizedMetadata?.title ||
+      localPage.data.title ||
+      '',
     description:
       localizedMetadata?.description || localPage.data.description || '',
     content: '',
@@ -350,13 +356,17 @@ async function getLocalizedStaticPageMetadata({
       const title = t.has(`${candidate.keyPrefix}.title`)
         ? t(`${candidate.keyPrefix}.title`)
         : '';
+      const seoTitle = t.has(`${candidate.keyPrefix}.seoTitle`)
+        ? t(`${candidate.keyPrefix}.seoTitle`)
+        : '';
       const description = t.has(`${candidate.keyPrefix}.description`)
         ? t(`${candidate.keyPrefix}.description`)
         : '';
 
-      if (title || description) {
+      if (title || seoTitle || description) {
         return {
           title,
+          seoTitle,
           description,
         };
       }

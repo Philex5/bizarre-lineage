@@ -43,7 +43,8 @@ const guideFaq = [
 
 const prestigeChecklist = [
   {
-    title: 'Hit the current requirement line before you even consider the reset',
+    title:
+      'Hit the current requirement line before you even consider the reset',
     description:
       'Current public guides consistently point to prestige starting at Level 50 with $10,000 cash. If you are not already there, the decision is premature.',
   },
@@ -131,8 +132,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: '/guides/prestige',
-    title:
-      'Bizarre Lineage Prestige Guide - When to Prestige, Requirements, Tradeoffs',
+    title: 'Bizarre Lineage Prestige Guide - when and how to prestige',
     description:
       'Read the Bizarre Lineage prestige guide to check current requirements, decide when to prestige, and avoid resetting before the next route is ready.',
   });
@@ -217,12 +217,12 @@ export default async function PrestigeGuideRoute({
             current one by accident
           </h1>
           <p className="text-muted-foreground mt-4 max-w-3xl text-base leading-7">
-            Current public guides line up on the same baseline: prestige
-            usually starts at Level 50 with $10,000 cash, is handled through
-            the Arch Mage in the Hospital near Bus Stop 10, and sends your
-            character back to Level 1. The real question is not whether the
-            button exists. It is whether the reset buys enough long-term value
-            to justify starting the cycle again.
+            Current public guides line up on the same baseline: prestige usually
+            starts at Level 50 with $10,000 cash, is handled through the Arch
+            Mage in the Hospital near Bus Stop 10, and sends your character back
+            to Level 1. The real question is not whether the button exists. It
+            is whether the reset buys enough long-term value to justify starting
+            the cycle again.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             <span className="border-border rounded-full border px-4 py-2">

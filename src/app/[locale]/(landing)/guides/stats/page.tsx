@@ -95,7 +95,8 @@ const commonMistakes = [
 
 const youtubeEmbeds = [
   {
-    title: 'BEST STAT BUILD FOR EACH STAND In Bizarre Lineage! (STATS FULL GUIDE) Roblox',
+    title:
+      'BEST STAT BUILD FOR EACH STAND In Bizarre Lineage! (STATS FULL GUIDE) Roblox',
     videoUrl: 'https://www.youtube.com/watch?v=_1ez2dWIuH4',
     embedUrl: 'https://www.youtube-nocookie.com/embed/_1ez2dWIuH4',
     note: 'Best starting point if you want one broad pass over stat logic across multiple Stand choices.',
@@ -103,7 +104,8 @@ const youtubeEmbeds = [
       'Use this first to map your Stand choice to a likely stat direction before you start spending points blindly.',
   },
   {
-    title: 'The TRUTH About Destructive Power and Destructive Energy | Bizzare Lineage',
+    title:
+      'The TRUTH About Destructive Power and Destructive Energy | Bizzare Lineage',
     videoUrl: 'https://www.youtube.com/watch?v=GvSIpmfyMRw',
     embedUrl: 'https://www.youtube-nocookie.com/embed/GvSIpmfyMRw',
     note: 'Best follow-up once you need the difference between general early damage and Stand-heavy scaling.',
@@ -157,10 +159,9 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: '/guides/stats',
-    title:
-      'Bizarre Lineage Stats Guide - What to Level First, Build Logic, Mistakes',
+    title: 'Bizarre Lineage Stats Guide - what is the best stats',
     description:
-      'Use this Bizarre Lineage stats guide to learn the 6 main stats, what to level first, when to pivot into Stand damage, and how Conjuration changes later build planning.',
+      'Use Bizarre Lineage stats guide to learn the 6 main stats,what to level first,when to pivot into Stand damage,and how Conjuration changes later build planning.',
   });
 }
 
@@ -238,11 +239,11 @@ export default async function StatsGuideRoute({
           </h1>
           <p className="text-muted-foreground mt-4 max-w-3xl text-base leading-7">
             Current public guides broadly agree on the same six main stats:
-            Strength, Health, Power, Weapon, Destructive Power, and
-            Destructive Energy. The useful question is not perfect numbers. It
-            is which stats stabilize early progression, when Stand scaling
-            should take over, and how Conjuration changes the value of a
-            Stand-focused build later on.
+            Strength, Health, Power, Weapon, Destructive Power, and Destructive
+            Energy. The useful question is not perfect numbers. It is which
+            stats stabilize early progression, when Stand scaling should take
+            over, and how Conjuration changes the value of a Stand-focused build
+            later on.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
             {heroBadges.map((badge) => (
@@ -271,13 +272,13 @@ export default async function StatsGuideRoute({
             like equal-value point dumps. Health keeps unstable routes alive.
             Strength and Power are the easiest early general-purpose damage
             layer. Destructive Power and Destructive Energy matter more when
-            your Stand is clearly carrying the build. Weapon only becomes a
-            real priority when the build is deliberately weapon-led.
+            your Stand is clearly carrying the build. Weapon only becomes a real
+            priority when the build is deliberately weapon-led.
           </p>
           <p>
-            The real mistake is not being a few points off. It is building for
-            a role you are not actually playing yet. If your route is still
-            shaky, survivability and clean PvE value usually beat specialist
+            The real mistake is not being a few points off. It is building for a
+            role you are not actually playing yet. If your route is still shaky,
+            survivability and clean PvE value usually beat specialist
             theorycrafting.
           </p>
         </section>
@@ -307,9 +308,9 @@ export default async function StatsGuideRoute({
         <section>
           <h2>What to level first in the early game</h2>
           <p>
-            The beginner-safe route is simple: stabilize survival first,
-            improve general damage second, and only then lean harder into
-            Stand-focused scaling when your actual build supports it.
+            The beginner-safe route is simple: stabilize survival first, improve
+            general damage second, and only then lean harder into Stand-focused
+            scaling when your actual build supports it.
           </p>
           <ol>
             {earlyGamePriorities.map((item) => (
@@ -338,16 +339,15 @@ export default async function StatsGuideRoute({
           <p>
             If you are still learning the game, do not build as if you are
             already on a polished endgame account. Health plus reliable
-            early-route damage usually outperforms copied specialist setups
-            that assume better gear, cleaner execution, or a different Stand.
+            early-route damage usually outperforms copied specialist setups that
+            assume better gear, cleaner execution, or a different Stand.
           </p>
           <p>
             Also do not ignore Conjuration just because it is not listed as one
-            of the six main stats. Current public guides tie it to Stand
-            ability unlocks and Awakening progression, with Awakening planning
-            commonly starting around Level 50 and Conjuration 100. That means
-            Conjuration changes how quickly a Stand-focused build actually pays
-            off.
+            of the six main stats. Current public guides tie it to Stand ability
+            unlocks and Awakening progression, with Awakening planning commonly
+            starting around Level 50 and Conjuration 100. That means Conjuration
+            changes how quickly a Stand-focused build actually pays off.
           </p>
         </section>
 

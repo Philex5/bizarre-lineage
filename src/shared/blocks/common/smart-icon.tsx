@@ -1,4 +1,10 @@
 import { ComponentType, lazy, Suspense } from 'react';
+import { RiGithubFill, RiQuestionLine } from 'react-icons/ri';
+
+const remixIconMap: Record<string, ComponentType<any>> = {
+  RiGithubFill,
+  RiQuestionLine,
+};
 
 const iconCache: { [key: string]: ComponentType<any> } = {};
 
@@ -24,6 +30,13 @@ export function SmartIcon({
 }) {
   const library = detectIconLibrary(name);
   const cacheKey = `${library}-${name}`;
+  const staticRemixIcon =
+    library === 'ri' ? remixIconMap[name as keyof typeof remixIconMap] : null;
+
+  if (staticRemixIcon) {
+    const IconComponent = staticRemixIcon;
+    return <IconComponent size={size} className={className} {...props} />;
+  }
 
   if (!iconCache[cacheKey]) {
     if (library === 'ri') {
@@ -38,14 +51,11 @@ export function SmartIcon({
             console.warn(
               `Icon "${name}" not found in react-icons/ri, using fallback`
             );
-            return { default: module.RiQuestionLine as ComponentType<any> };
+            return { default: RiQuestionLine as ComponentType<any> };
           }
         } catch (error) {
           console.error(`Failed to load react-icons/ri:`, error);
-          const fallbackModule = await import('react-icons/ri');
-          return {
-            default: fallbackModule.RiQuestionLine as ComponentType<any>,
-          };
+          return { default: RiQuestionLine as ComponentType<any> };
         }
       });
     } else {

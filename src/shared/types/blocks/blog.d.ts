@@ -17,6 +17,7 @@ export interface Post {
   id?: string;
   slug?: string;
   title?: string;
+  seo_title?: string;
   description?: string;
   image?: string;
   content?: string;

@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "Actualizaciones",
-    "description": "Consulta cambios, notas editoriales y novedades relacionadas con la cobertura de Bizarre Lineage."
+    "title": "Actualizaciones de Bizarre Lineage",
+    "description": "Sigue la cobertura de actualizaciones de Bizarre Lineage, notas de canales oficiales y cambios de gameplay resumidos en una sola cronología."
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
-        "title": "Actualizaciones",
-        "description": "Consulta cambios recientes, mejoras de contenido y nuevas páginas publicadas."
+        "title": "Actualizaciones de Bizarre Lineage",
+        "description": "Una cronología continua con notas de seguimiento de canales oficiales, cambios de balance y señales de actualización confirmadas por la comunidad para Bizarre Lineage."
       }
     }
   }

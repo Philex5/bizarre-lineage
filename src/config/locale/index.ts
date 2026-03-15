@@ -31,6 +31,7 @@ export const localeMessagesPaths = [
   'pages/guides/beginner-guide',
   'pages/guides/stats',
   'pages/guides/prestige',
+  'pages/guides/dio-raid',
   'pages/stands',
   'pages/stands/star-platinum',
   'pages/terms',

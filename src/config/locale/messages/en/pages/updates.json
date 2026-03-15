@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "Update Logs",
-    "description": "View product update logs, including latest features and improvements."
+    "title": "Bizarre Lineage Updates",
+    "description": "Track Bizarre Lineage update coverage, official channel watch notes, and summarized gameplay changes in one timeline."
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
-        "title": "Update Logs",
-        "description": "View product update logs, including latest features and improvements."
+        "title": "Bizarre Lineage Updates",
+        "description": "A running timeline of official-channel watch notes, balance changes, and community-confirmed update themes for Bizarre Lineage."
       }
     }
   }

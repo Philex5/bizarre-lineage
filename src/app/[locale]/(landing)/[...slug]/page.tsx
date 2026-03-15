@@ -43,7 +43,7 @@ export async function generateMetadata({
 
   // return static page metadata
   if (staticPage) {
-    title = staticPage.title || '';
+    title = staticPage.seo_title || staticPage.title || '';
     description = staticPage.description || '';
 
     return {

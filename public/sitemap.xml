@@ -1,633 +1,355 @@
-<?xml version='1.0' encoding='utf-8' standalone='yes'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bizarrelineage.info/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/blog" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/blog" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/blog" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/blog" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/blog" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/blog" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/blog/what-is-xxx</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/blog/what-is-xxx" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/blog/what-is-xxx" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/blog/what-is-xxx" />
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/blog/what-is-xxx</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/blog/what-is-xxx" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/blog/what-is-xxx" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/blog/what-is-xxx" />
     <lastmod>2025-10-24T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/codes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/codes" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/codes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/codes" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/codes</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/codes" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/codes" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/codes" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/docs</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/docs" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/docs" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/docs" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/docs</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/docs" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/docs" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/docs" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/events</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/events" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/events" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/events" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/events</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/events" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/events" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/events" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/npc-locations</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/npc-locations" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/npc-locations" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/npc-locations" />
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/npc-locations</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/npc-locations" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/npc-locations" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/npc-locations" />
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/guides</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/guides</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/guides/beginner-guide</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/beginner-guide" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/beginner-guide" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/beginner-guide" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/guides/beginner-guide</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/beginner-guide" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/beginner-guide" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/beginner-guide" />
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/guides/dio-raid</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://bizarrelineage.info/es/guides/dio-raid</loc>
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/guides/prestige</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/prestige" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/prestige" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/prestige" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/guides/prestige</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/prestige" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/prestige" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/prestige" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/guides/stats</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/stats" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/stats" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/stats" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/guides/stats</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/guides/stats" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/guides/stats" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/guides/stats" />
-    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://bizarrelineage.info/privacy-policy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/privacy-policy" />
-    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://bizarrelineage.info/es/privacy-policy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/privacy-policy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/privacy-policy" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/showcases</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/showcases" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/showcases" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/showcases" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/showcases</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/showcases" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/showcases" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/showcases" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/made-in-heaven</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/made-in-heaven" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/made-in-heaven" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/made-in-heaven" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/made-in-heaven</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/made-in-heaven" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/made-in-heaven" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/made-in-heaven" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/whitesnake</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/whitesnake" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/whitesnake" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/whitesnake" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/whitesnake</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/whitesnake" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/whitesnake" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/whitesnake" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/c-moon</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/c-moon" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/c-moon" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/c-moon" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/c-moon</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/c-moon" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/c-moon" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/c-moon" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/the-world</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-world" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-world" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-world" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/the-world</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-world" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-world" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-world" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/star-platinum</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/star-platinum" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/star-platinum" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/star-platinum" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/star-platinum</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/star-platinum" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/star-platinum" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/star-platinum" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/king-crimson</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/king-crimson" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/king-crimson" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/king-crimson" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/king-crimson</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/king-crimson" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/king-crimson" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/king-crimson" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/weather-report</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/weather-report" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/weather-report" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/weather-report" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/weather-report</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/weather-report" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/weather-report" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/weather-report" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/the-world-high-voltage</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-world-high-voltage" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-world-high-voltage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-world-high-voltage" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/the-world-high-voltage</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-world-high-voltage" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-world-high-voltage" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-world-high-voltage" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/killer-queen</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/killer-queen" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/killer-queen" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/killer-queen" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/killer-queen</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/killer-queen" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/killer-queen" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/killer-queen" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/anubis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/anubis" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/anubis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/anubis" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/anubis</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/anubis" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/anubis" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/anubis" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/golden-experience</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/golden-experience" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/golden-experience" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/golden-experience" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/golden-experience</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/golden-experience" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/golden-experience" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/golden-experience" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/stone-free</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/stone-free" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/stone-free" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/stone-free" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/stone-free</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/stone-free" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/stone-free" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/stone-free" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/magicians-red</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/magicians-red" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/magicians-red" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/magicians-red" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/magicians-red</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/magicians-red" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/magicians-red" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/magicians-red" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/crazy-diamond</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/crazy-diamond" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/crazy-diamond" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/crazy-diamond" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/crazy-diamond</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/crazy-diamond" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/crazy-diamond" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/crazy-diamond" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/purple-haze</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/purple-haze" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/purple-haze" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/purple-haze" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/purple-haze</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/purple-haze" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/purple-haze" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/purple-haze" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/the-hand</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-hand" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-hand" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-hand" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/the-hand</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/the-hand" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/the-hand" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/the-hand" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/stands/red-hot-chili-pepper</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/red-hot-chili-pepper" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/red-hot-chili-pepper" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/red-hot-chili-pepper" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/stands/red-hot-chili-pepper</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/stands/red-hot-chili-pepper" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/stands/red-hot-chili-pepper" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/stands/red-hot-chili-pepper" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/awakening</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/awakening" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/awakening" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/awakening" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/awakening</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/awakening" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/awakening" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/awakening" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/fighting-styles</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/fighting-styles" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/fighting-styles" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/fighting-styles" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/fighting-styles</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/fighting-styles" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/fighting-styles" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/fighting-styles" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/prestige</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/prestige" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/prestige" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/prestige" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/prestige</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/prestige" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/prestige" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/prestige" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/raid</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/raid" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/raid" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/raid" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/raid</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/raid" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/raid" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/raid" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/stand-arrow</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/stand-arrow" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/stand-arrow" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/stand-arrow" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/stand-arrow</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/stand-arrow" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/stand-arrow" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/stand-arrow" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/sub-abilities</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/sub-abilities</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/sub-abilities/cyborg</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/cyborg" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/cyborg" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/cyborg" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/sub-abilities/cyborg</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/cyborg" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/cyborg" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/cyborg" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/sub-abilities/ripple</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/ripple" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/ripple" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/ripple" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/sub-abilities/ripple</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/ripple" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/ripple" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/ripple" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/sub-abilities/spin</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/spin" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/spin" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/spin" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/sub-abilities/spin</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/spin" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/spin" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/spin" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/terms/sub-abilities/vampire</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/vampire" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/vampire" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/vampire" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/terms/sub-abilities/vampire</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms/sub-abilities/vampire" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms/sub-abilities/vampire" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms/sub-abilities/vampire" />
-    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://bizarrelineage.info/terms-of-service</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms-of-service" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms-of-service" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms-of-service" />
-    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
-  </url>
-  <url>
-    <loc>https://bizarrelineage.info/es/terms-of-service</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/terms-of-service" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/terms-of-service" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/terms-of-service" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/tier-list</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/tier-list" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/tier-list" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/tier-list" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/tier-list</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/tier-list" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/tier-list" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/tier-list" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/updates</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/updates" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/updates" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/updates" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
   <url>
     <loc>https://bizarrelineage.info/es/updates</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bizarrelineage.info/updates" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://bizarrelineage.info/es/updates" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bizarrelineage.info/updates" />
     <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>

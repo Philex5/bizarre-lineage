@@ -105,6 +105,21 @@ export async function EventsPageContent() {
                   ))}
                 </ul>
               </div>
+              {event.key === 'world-boss-dio' ? (
+                <div className="border-border bg-card/85 mt-3 rounded-2xl border p-4">
+                  <div className="text-muted-foreground text-[0.68rem] tracking-[0.2em] uppercase">
+                    Related
+                  </div>
+                  <p className="text-foreground mt-2 text-sm leading-7">
+                    Looking for the 8-player DIO Raid instead of the Cairo
+                    Streets event? Read the{' '}
+                    <Link href="/guides/dio-raid" className="text-primary">
+                      full DIO Raid guide
+                    </Link>
+                    .
+                  </p>
+                </div>
+              ) : null}
             </div>
           </article>
         ))}

@@ -44,6 +44,24 @@ export async function Footer({ footer }: { footer: FooterType }) {
                   dangerouslySetInnerHTML={{ __html: footer.brand.description }}
                 />
               ) : null}
+
+              {footer.social ? (
+                <div className="flex min-w-0 flex-wrap items-center gap-4">
+                  {footer.social.items.map((item: NavItem, index) => (
+                    <Link
+                      key={index}
+                      href={item.url || ''}
+                      target={item.target || ''}
+                      className="text-muted-foreground hover:text-primary block cursor-pointer duration-150"
+                      aria-label={item.title || 'Social media link'}
+                    >
+                      {item.icon && (
+                        <SmartIcon name={item.icon as string} size={20} />
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -125,24 +143,6 @@ export async function Footer({ footer }: { footer: FooterType }) {
                   className="text-muted-foreground hover:text-primary block text-xs break-words underline duration-150"
                 >
                   {item.title || ''}
-                </Link>
-              ))}
-            </div>
-          ) : null}
-
-          {footer.social ? (
-            <div className="flex min-w-0 flex-wrap items-center gap-2">
-              {footer.social?.items.map((item: NavItem, index) => (
-                <Link
-                  key={index}
-                  href={item.url || ''}
-                  target={item.target || ''}
-                  className="text-muted-foreground hover:text-primary bg-background/78 border-border/70 block cursor-pointer rounded-full border p-2 backdrop-blur duration-150"
-                  aria-label={item.title || 'Social media link'}
-                >
-                  {item.icon && (
-                    <SmartIcon name={item.icon as string} size={20} />
-                  )}
                 </Link>
               ))}
             </div>
