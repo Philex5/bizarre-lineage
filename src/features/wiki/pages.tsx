@@ -219,6 +219,53 @@ function HomeQuickAccessCard({
   );
 }
 
+function HomeSponsorBanner({
+  badge,
+  slogan,
+}: {
+  badge: string;
+  slogan: string;
+}) {
+  return (
+    <a
+      href="https://anividai.com?utm_source=bizarrelineage.info"
+      target="_blank"
+      rel="sponsored noreferrer"
+      aria-label="Visit AnividAI sponsor"
+      className="border-border bg-card/96 group hover:border-primary/30 relative mx-auto -mt-8 mb-2 block w-full max-w-3xl overflow-hidden rounded-[1rem] border px-3.5 py-1.5 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl sm:-mt-10 sm:px-4 sm:py-1.5"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,color-mix(in_oklab,var(--color-primary)_14%,transparent)_0,transparent_42%),linear-gradient(135deg,color-mix(in_oklab,var(--color-accent)_8%,transparent),transparent_55%)] opacity-90" />
+      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,var(--color-primary),var(--color-accent),transparent)]" />
+
+      <span className="border-primary/20 bg-primary/10 text-primary absolute top-2 right-2 inline-flex shrink-0 items-center rounded-full border px-2 py-0.5 text-[0.55rem] font-semibold tracking-[0.16em] uppercase">
+        {badge}
+      </span>
+
+      <div className="relative flex min-w-0 items-center gap-2.5 pr-9">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-lg">
+            <img
+              src="https://artworks.anividai.com/assets/avatar.png"
+              alt="AnividAI logo"
+              className="size-full object-cover"
+              loading="lazy"
+            />
+          </span>
+
+          <div className="min-w-0">
+            <p className="flex min-w-0 items-center gap-1.5 text-[0.92rem] leading-4.5">
+              <span className="text-foreground shrink-0 font-semibold tracking-[-0.03em]">
+                AnividAI
+              </span>
+              <span className="text-muted-foreground truncate">{slogan}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export async function HomePage() {
   const locale = await getLocale();
   const t = await getTranslations('pages.index');
@@ -403,8 +450,13 @@ export async function HomePage() {
         }}
       />
 
+      <HomeSponsorBanner
+        badge={t('page.sections.sponsor.badge')}
+        slogan={t('page.sections.sponsor.slogan')}
+      />
+
       <section className="grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_23rem] lg:items-start">
-        <div className="space-y-3 md:space-y-4">
+        <div className="space-y-2">
           <div className="relative overflow-hidden rounded-[2rem]">
             <div className="absolute inset-0">
               <Image
@@ -419,26 +471,26 @@ export async function HomePage() {
             </div>
             <div className="absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_20%,transparent),transparent)] dark:bg-[linear-gradient(180deg,color-mix(in_oklab,var(--color-primary)_10%,transparent),transparent)]" />
 
-            <div className="relative flex min-h-[19rem] items-end px-5 py-6 sm:min-h-[23rem] sm:px-6 sm:py-7 md:min-h-[52vh] md:px-9 md:py-9 lg:px-12 lg:py-11">
+            <div className="relative flex min-h-[14.5rem] items-end px-4 py-4 sm:min-h-[17rem] sm:px-5 sm:py-5 md:min-h-[38vh] md:px-6 md:py-6 lg:px-8 lg:py-7">
               <div className="max-w-2xl">
-                <div className="mb-4 inline-flex rounded-full border border-white/18 bg-black/18 px-3 py-1 text-[0.68rem] tracking-[0.24em] text-white uppercase backdrop-blur-sm">
+                <div className="mb-2.5 inline-flex rounded-full border border-white/18 bg-black/18 px-3 py-1 text-[0.58rem] tracking-[0.2em] text-white uppercase backdrop-blur-sm">
                   {t('page.sections.hero.eyebrow')}
                 </div>
-                <h1 className="font-serif text-[2.5rem] leading-[0.92] tracking-[-0.05em] text-balance text-white sm:text-5xl lg:text-7xl">
+                <h1 className="font-serif text-[1.75rem] leading-[0.96] tracking-[-0.05em] text-balance text-white sm:text-[2.35rem] lg:text-[4rem]">
                   {t('page.sections.hero.title')}
                 </h1>
-                <p className="mt-3 max-w-xl text-sm leading-6 text-white/82 sm:mt-4 sm:text-base sm:leading-7 md:text-lg">
+                <p className="mt-2 max-w-xl text-[0.92rem] leading-5 text-white/82 sm:mt-2.5 sm:text-sm sm:leading-6 md:text-[0.95rem]">
                   {t('page.sections.hero.dek')}
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="border-border bg-card/94 relative overflow-hidden rounded-[1.5rem] border p-3 shadow-lg backdrop-blur-sm md:p-4">
+          <div className="border-border bg-card/94 relative overflow-hidden rounded-[1.25rem] border p-2.5 shadow-lg backdrop-blur-sm">
             <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--color-primary),var(--color-accent),var(--color-primary))] opacity-90" />
-            <div className="relative flex flex-col gap-3 md:flex-row md:items-center md:gap-3 md:overflow-x-auto md:pr-1">
-              <div className="min-w-0 md:min-w-[8.75rem] md:shrink-0">
-                <h2 className="text-foreground font-serif text-lg leading-none tracking-[-0.04em] md:text-[1.65rem]">
+            <div className="relative flex flex-col gap-2.5 md:flex-row md:items-center md:gap-2.5 md:overflow-x-auto md:pr-1">
+              <div className="min-w-0 md:min-w-[6.5rem] md:shrink-0">
+                <h2 className="text-foreground font-serif text-[0.95rem] leading-none tracking-[-0.04em] md:text-[1.1rem]">
                   {t('page.sections.utility.official_links.title')}
                 </h2>
               </div>
@@ -454,12 +506,12 @@ export async function HomePage() {
                       target="_blank"
                       rel="noreferrer"
                       aria-label={item.title}
-                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex h-12 min-w-0 items-center justify-center rounded-[0.95rem] border px-0 py-0 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:min-w-[8.5rem] md:flex-1 md:justify-start md:gap-2.5 md:rounded-[1rem] md:px-3 md:py-2.5"
+                      className="border-border bg-background/80 hover:border-primary/35 hover:bg-background flex h-9 min-w-0 items-center justify-center rounded-[0.85rem] border px-0 py-0 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:min-w-[6.8rem] md:flex-1 md:justify-start md:gap-2 md:px-2 md:py-1.5"
                     >
-                      <span className="text-primary flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/6 text-lg ring-1 ring-white/8">
+                      <span className="text-primary flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/6 text-sm ring-1 ring-white/8">
                         <Icon />
                       </span>
-                      <div className="text-foreground hidden text-sm font-semibold tracking-[-0.03em] md:block md:text-base">
+                      <div className="text-foreground hidden text-[0.95rem] font-semibold tracking-[-0.03em] md:block">
                         {item.title}
                       </div>
                     </a>
@@ -469,7 +521,7 @@ export async function HomePage() {
             </div>
           </div>
 
-          <div className="px-1">
+          <div className="px-1 pt-1.5">
             <AdsterraBanner />
           </div>
         </div>
@@ -509,7 +561,7 @@ export async function HomePage() {
                 <div className="text-muted-foreground text-left text-xs leading-5 sm:text-right">
                   {t('page.sections.utility.latest_codes.verified_label')}
                   <br />
-                  2026-03-15
+                  2026-03-17
                 </div>
               </div>
 
@@ -701,7 +753,7 @@ export async function CodesPage() {
   const monitoredCodeClaims = getMonitoredCodeClaims(t);
   const redeemSteps = getRedeemSteps(t);
   const codeFailureReasons = getCodeFailureReasons(t);
-  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-15';
+  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-17';
   const sourceLinks = [
     {
       label: 'Official Roblox Game',

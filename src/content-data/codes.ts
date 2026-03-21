@@ -18,7 +18,7 @@ const monitoredCodeDefs = [
   { code: '200KLIKES', rewardKey: '200KLIKES' },
 ] as const;
 
-const lastVerified = '2026-03-15';
+const lastVerified = '2026-03-21';
 
 export function getActiveCodes(t: ContentDataTranslator): CodeEntry[] {
   return activeCodeDefs.map((entry) => ({
