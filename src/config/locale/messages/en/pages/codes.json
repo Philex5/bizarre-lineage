@@ -144,14 +144,12 @@
         "shutdownwoops": "1 Stand Stat Essence",
         "1week": "1 Stand Personality Essence"
       },
-      "monitored_codes_rewards": {
-        "200KLIKES": "Unannounced future reward"
-      },
+      "monitored_codes_rewards": {},
       "expired_codes": [],
       "redeem_steps": [
         {
-          "title": "Like the game and join the official group",
-          "description": "Recent source checks still note that you should like Bizarre Lineage and join the Bizarre Collective Roblox group before redeeming codes."
+          "title": "Join the official Roblox community first",
+          "description": "Current public code guides still say you should join the Bizarre Collective community from the Roblox game page before testing rewards."
         },
         {
           "title": "Launch Bizarre Lineage",
@@ -159,7 +157,7 @@
         },
         {
           "title": "Open Chat",
-          "description": "Open the in-game chat in the top-left corner. Current public reports say you can redeem in normal public servers, not only private servers."
+          "description": "Open the in-game chat in the top-left corner. The latest public guides still describe chat redemption as the standard method."
         },
         {
           "title": "Send and Claim",
@@ -173,11 +171,11 @@
         },
         {
           "title": "Official Group",
-          "description": "Some codes require you to join the official Roblox community group first."
+          "description": "The latest public guides still tell players to join the Bizarre Collective community before rewards will redeem correctly."
         },
         {
-          "title": "Server rollout delay",
-          "description": "Public sources now report these codes working in normal servers, but a freshly updated server can still help if one fails right after a patch."
+          "title": "Chat or server state",
+          "description": "If a code fails right after maintenance, reopen chat or retry in a refreshed server because newly updated sessions can lag behind recent changes."
         }
       ]
     }

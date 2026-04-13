@@ -14,11 +14,12 @@ const activeCodeDefs = [
   { code: '!code 1week', rewardKey: '1week' },
 ] as const;
 
-const monitoredCodeDefs = [
-  { code: '200KLIKES', rewardKey: '200KLIKES' },
-] as const;
+const monitoredCodeDefs: ReadonlyArray<{
+  code: string;
+  rewardKey: string;
+}> = [];
 
-const lastVerified = '2026-03-21';
+const lastVerified = '2026-04-05';
 
 export function getActiveCodes(t: ContentDataTranslator): CodeEntry[] {
   return activeCodeDefs.map((entry) => ({

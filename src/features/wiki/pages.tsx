@@ -561,7 +561,7 @@ export async function HomePage() {
                 <div className="text-muted-foreground text-left text-xs leading-5 sm:text-right">
                   {t('page.sections.utility.latest_codes.verified_label')}
                   <br />
-                  2026-03-17
+                  2026-04-05
                 </div>
               </div>
 
@@ -753,7 +753,7 @@ export async function CodesPage() {
   const monitoredCodeClaims = getMonitoredCodeClaims(t);
   const redeemSteps = getRedeemSteps(t);
   const codeFailureReasons = getCodeFailureReasons(t);
-  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-03-17';
+  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-04-05';
   const sourceLinks = [
     {
       label: 'Official Roblox Game',
@@ -773,12 +773,12 @@ export async function CodesPage() {
     {
       question: 'Where can I find more Bizarre Lineage codes for rewards?',
       answer:
-        'The official Discord server and Roblox game page are still the best sources. This page tracks those updates so you can check one guide first.',
+        'The official Discord server is still the fastest place to watch announcements, while the Roblox game page helps confirm whether codes are part of the current update push.',
     },
     {
       question: 'What do Bizarre Lineage codes give you?',
       answer:
-        'Most Bizarre Lineage codes give progression rewards like stat point essence, stand items, chests, or other boosts that help you move faster through the game.',
+        'The current publicly tracked list focuses on progression rewards such as stat point essence, a rare chest, stand stat essence, and stand personality essence.',
     },
     {
       question: 'Why are my Bizarre Lineage codes not working?',
@@ -853,17 +853,19 @@ export async function CodesPage() {
                   No Active Bizarre Lineage Codes Found
                 </h3>
                 <p className="text-muted-foreground mx-auto max-w-md">
-                  There are currently no confirmed active Bizarre Lineage codes.
-                  Check the official channels below and revisit this page after
-                  the next update or milestone drop.
+                  There are currently no newly confirmed active Bizarre Lineage
+                  codes beyond the tracked list below. Check the official
+                  channels below and revisit this page after the next update or
+                  milestone drop.
                 </p>
               </div>
             )}
           </div>
 
           <p className="text-muted-foreground text-sm italic">
-            Last verified: {latestVerified}. Redeem codes quickly after updates,
-            because Bizarre Lineage rewards can expire with very little warning.
+            Last verified: {latestVerified}. Publicly indexed guides still agree
+            on the same four tracked rewards, so redeem them quickly after
+            updates in case the next maintenance window changes the pool.
           </p>
 
           {monitoredCodeClaims.length > 0 ? (
