@@ -275,6 +275,7 @@ export async function HomePage() {
   const activeCodes = getActiveCodes(tCodes);
   const featuredStands = getStands(locale).slice(0, 3);
   const featuredCodes = activeCodes.slice(0, 3);
+  const latestCodesVerified = featuredCodes[0]?.lastVerified ?? '2026-04-18';
   const heroQuickAccessItems = [
     {
       title: t('page.sections.utility.quick_access.items.tier_list'),
@@ -561,7 +562,7 @@ export async function HomePage() {
                 <div className="text-muted-foreground text-left text-xs leading-5 sm:text-right">
                   {t('page.sections.utility.latest_codes.verified_label')}
                   <br />
-                  2026-04-05
+                  {latestCodesVerified}
                 </div>
               </div>
 
@@ -753,39 +754,24 @@ export async function CodesPage() {
   const monitoredCodeClaims = getMonitoredCodeClaims(t);
   const redeemSteps = getRedeemSteps(t);
   const codeFailureReasons = getCodeFailureReasons(t);
-  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-04-05';
+  const latestVerified = activeCodes[0]?.lastVerified ?? '2026-04-18';
+  const faqItems = t.raw('page.content.sections.faq.items') as Array<{
+    question: string;
+    answer: string;
+  }>;
+  const aboutParagraphs = t.raw(
+    'page.content.sections.about.paragraphs'
+  ) as string[];
   const sourceLinks = [
     {
-      label: 'Official Roblox Game',
+      label: t('page.content.sections.sources.items.roblox'),
       href: 'https://www.roblox.com/games/14890802310/Bizarre-Lineage',
     },
     {
-      label: 'Official Discord',
+      label: t('page.content.sections.sources.items.discord'),
       href: 'https://discord.com/invite/bizarrelineage',
     },
   ] as const;
-  const faqItems = [
-    {
-      question: 'How do I redeem Bizarre Lineage codes?',
-      answer:
-        'Launch Bizarre Lineage on Roblox, open the in-game chat, type the working code exactly as shown, and press Enter to claim the reward.',
-    },
-    {
-      question: 'Where can I find more Bizarre Lineage codes for rewards?',
-      answer:
-        'The official Discord server is still the fastest place to watch announcements, while the Roblox game page helps confirm whether codes are part of the current update push.',
-    },
-    {
-      question: 'What do Bizarre Lineage codes give you?',
-      answer:
-        'The current publicly tracked list focuses on progression rewards such as stat point essence, a rare chest, stand stat essence, and stand personality essence.',
-    },
-    {
-      question: 'Why are my Bizarre Lineage codes not working?',
-      answer:
-        'Codes can fail because of case-sensitive input, missing the required group or like step, or testing on a server that has not fully refreshed after an update.',
-    },
-  ];
 
   return (
     <PageShell accent="gold">
@@ -810,9 +796,9 @@ export async function CodesPage() {
 
       <SectionFrame
         id="active-codes"
-        eyebrow="Active Rewards"
-        title="Bizarre Lineage Codes List"
-        description="Check the latest tracked Bizarre Lineage codes first, then use the redemption guide below if you want to claim rewards quickly without digging through menus."
+        eyebrow={t('page.content.sections.active.eyebrow')}
+        title={t('page.content.sections.active.title')}
+        description={t('page.content.sections.active.description')}
       >
         <div className="space-y-6">
           <div className="grid gap-4">
@@ -831,16 +817,18 @@ export async function CodesPage() {
                         {row.code}
                       </div>
                       <div className="text-muted-foreground mt-1 text-sm">
-                        Reward: {row.reward}
+                        {t('page.content.sections.active.reward_label')}:{' '}
+                        {row.reward}
                       </div>
                     </div>
                   </div>
                   <div className="flex flex-wrap items-center gap-4">
                     <div className="rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-sm text-green-500">
-                      Working Bizarre Lineage Code
+                      {t('page.content.sections.active.badge')}
                     </div>
                     <div className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
-                      Verified {row.lastVerified}
+                      {t('page.content.sections.active.verified_label')}{' '}
+                      {row.lastVerified}
                     </div>
                     <HomeCodeCopyButton code={row.code} />
                   </div>
@@ -850,22 +838,19 @@ export async function CodesPage() {
               <div className="bg-background/88 border-border rounded-2xl border p-8 text-center">
                 <AlertCircle className="text-muted-foreground mx-auto mb-4 size-12" />
                 <h3 className="mb-2 text-lg font-semibold">
-                  No Active Bizarre Lineage Codes Found
+                  {t('page.content.sections.active.empty_title')}
                 </h3>
                 <p className="text-muted-foreground mx-auto max-w-md">
-                  There are currently no newly confirmed active Bizarre Lineage
-                  codes beyond the tracked list below. Check the official
-                  channels below and revisit this page after the next update or
-                  milestone drop.
+                  {t('page.content.sections.active.empty_description')}
                 </p>
               </div>
             )}
           </div>
 
           <p className="text-muted-foreground text-sm italic">
-            Last verified: {latestVerified}. Publicly indexed guides still agree
-            on the same four tracked rewards, so redeem them quickly after
-            updates in case the next maintenance window changes the pool.
+            {t('page.content.sections.active.note', {
+              date: latestVerified,
+            })}
           </p>
 
           {monitoredCodeClaims.length > 0 ? (
@@ -873,7 +858,7 @@ export async function CodesPage() {
               <div className="text-muted-foreground mb-4 flex items-center gap-2">
                 <Info className="size-4" />
                 <span className="text-sm font-semibold tracking-wider uppercase">
-                  Upcoming Bizarre Lineage Codes and Milestones
+                  {t('page.content.sections.monitor.eyebrow')}
                 </span>
               </div>
               <div className="space-y-3">
@@ -896,9 +881,9 @@ export async function CodesPage() {
 
       <SectionFrame
         id="how-to-use"
-        eyebrow="Redemption Guide"
-        title="How to Use Bizarre Lineage Codes"
-        description="Follow the in-game flow below to redeem Bizarre Lineage codes. The screenshot guide from the earlier layout is restored here as well."
+        eyebrow={t('page.content.sections.redeem.eyebrow')}
+        title={t('page.content.sections.redeem.title')}
+        description={t('page.content.sections.redeem.description')}
       >
         <div className="flex flex-col gap-8">
           <div className="grid gap-6">
@@ -920,7 +905,7 @@ export async function CodesPage() {
           <div className="border-border relative mx-auto aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-3xl border shadow-lg">
             <Image
               src="/images/codes/redeem-guide.jpg"
-              alt="Step-by-step guide for Bizarre Lineage codes redemption"
+              alt={t('page.content.sections.redeem.image_alt')}
               fill
               className="object-cover"
               priority
@@ -932,27 +917,24 @@ export async function CodesPage() {
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
         <SectionFrame
           id="about"
-          eyebrow="Overview"
-          title="What is Bizarre Lineage?"
+          eyebrow={t('page.content.sections.about.eyebrow')}
+          title={t('page.content.sections.about.title')}
         >
           <div className="space-y-4">
-            <p className="text-muted-foreground text-sm leading-7 md:text-base">
-              Bizarre Lineage is a Roblox RPG inspired by JoJo's Bizarre
-              Adventure, with stand progression, PvP, farming routes, and
-              character optimization driving most sessions. Codes matter because
-              they can shorten that grind with free items or resets.
-            </p>
-            <p className="text-muted-foreground text-sm leading-7 md:text-base">
-              This page keeps the older content-first flow intact: check the
-              live rewards first, redeem them quickly, then move into guides and
-              build research instead of stopping at the claim screen.
-            </p>
+            {aboutParagraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-muted-foreground text-sm leading-7 md:text-base"
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </SectionFrame>
 
         <SectionFrame
-          eyebrow="Troubleshooting"
-          title="Why a Bizarre Lineage code may fail"
+          eyebrow={t('page.content.sections.troubleshooting.eyebrow')}
+          title={t('page.content.sections.troubleshooting.title')}
         >
           <CardGrid columns={3} items={[...codeFailureReasons]} />
         </SectionFrame>
@@ -960,9 +942,9 @@ export async function CodesPage() {
 
       <SectionFrame
         id="sources"
-        eyebrow="Community"
-        title="Find More Bizarre Lineage Codes"
-        description="Follow the official channels if you want to catch new code drops as soon as they happen."
+        eyebrow={t('page.content.sections.sources.eyebrow')}
+        title={t('page.content.sections.sources.title')}
+        description={t('page.content.sections.sources.description')}
       >
         <div className="flex flex-wrap gap-4">
           {sourceLinks.map((source) => (
@@ -983,30 +965,34 @@ export async function CodesPage() {
 
       <SectionFrame
         id="faq"
-        eyebrow="FAQ"
-        title="Bizarre Lineage Codes Frequently Asked Questions"
+        eyebrow={t('page.content.sections.faq.eyebrow')}
+        title={t('page.content.sections.faq.title')}
       >
         <FaqGrid items={faqItems} />
       </SectionFrame>
 
       <SectionFrame
         id="related"
-        eyebrow="Next Reads"
-        title="Use your rewards better after the code check"
+        eyebrow={t('page.content.sections.related.eyebrow')}
+        title={t('page.content.sections.related.title')}
       >
         <CardGrid
           columns={2}
           items={[
             {
-              title: 'Tier List',
-              description:
-                'Move to the stand rankings if you are deciding where those rewards should actually be spent.',
+              title: t('page.content.sections.related.items.tier_list.title'),
+              description: t(
+                'page.content.sections.related.items.tier_list.description'
+              ),
               href: '/tier-list',
             },
             {
-              title: 'Beginner Guide',
-              description:
-                'Open the guide if you need a stronger first-session route after collecting rewards.',
+              title: t(
+                'page.content.sections.related.items.beginner_guide.title'
+              ),
+              description: t(
+                'page.content.sections.related.items.beginner_guide.description'
+              ),
               href: '/guides/beginner-guide',
             },
           ]}
@@ -1016,18 +1002,26 @@ export async function CodesPage() {
       {expiredCodes.length > 0 ? (
         <SectionFrame
           id="expired"
-          eyebrow="Archive"
-          title="Expired Bizarre Lineage Codes"
-          description="These old entries stay here for reference so you can quickly rule out outdated rewards."
+          eyebrow={t('page.content.sections.expired.eyebrow')}
+          title={t('page.content.sections.expired.title')}
+          description={t('page.content.sections.expired.description')}
         >
           <div className="border-border bg-background/50 overflow-hidden rounded-2xl border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="px-4">Expired Code</TableHead>
-                  <TableHead>Previous Reward</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="px-4">Last Verified</TableHead>
+                  <TableHead className="px-4">
+                    {t('page.content.sections.expired.table.code')}
+                  </TableHead>
+                  <TableHead>
+                    {t('page.content.sections.expired.table.reward')}
+                  </TableHead>
+                  <TableHead>
+                    {t('page.content.sections.expired.table.status')}
+                  </TableHead>
+                  <TableHead className="px-4">
+                    {t('page.content.sections.expired.table.last_verified')}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

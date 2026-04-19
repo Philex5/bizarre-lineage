@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Codes: Active & Expired Reward List",
-    "description": "Get the latest Bizarre Lineage codes for Roblox. Our verified tracker lists all active codes, expired rewards, and a step-by-step redemption guide."
+    "title": "Bizarre Lineage Codes: Update 1 Reward List",
+    "description": "Check the latest reported Bizarre Lineage codes for Roblox Update 1, expired launch-window codes, and the current redemption notes."
   },
   "page": {
     "sections": {
       "hero": {
         "eyebrow": "Codes tracker",
-        "title": "Bizarre Lineage codes should resolve the main question immediately: what is still worth redeeming.",
-        "description": "This page skips the oversized hero and opens with the verification model instead. Active entries stay first, monitor labels explain uncertainty, and the expired archive remains visible without slowing down urgent checks.",
+        "title": "Bizarre Lineage codes should answer one thing quickly: what is worth testing now.",
+        "description": "Update 1 changed the public code picture, so this tracker leads with the newest reported entries, keeps reward details cautious, and moves older launch-window codes into the archive.",
         "items": [
           {
             "title": "Open with the active table",
-            "description": "Players looking for rewards should see usable codes before any supporting content."
+            "description": "Players looking for rewards should see the newest reported codes before any supporting content."
           },
           {
-            "title": "Treat monitor labels as a live caution",
-            "description": "A monitor status means the entry still deserves another in-game pass after a patch, reset, or event rollover."
+            "title": "Treat reported entries with care",
+            "description": "A fresh single-source code update should still be tested in-game before you plan a route around the reward."
           },
           {
             "title": "Use the archive for context only",
@@ -46,7 +46,7 @@
       "active": {
         "eyebrow": "Active codes",
         "title": "Start with the entries players can act on right now.",
-        "description": "The table keeps the required fields stable: Code, Reward, Status, and Last Verified. That consistency matters more than decorative noise.",
+        "description": "The table keeps the required fields stable: Code, Reward, Status, and Last Verified. Reward names stay cautious when public sources only describe them broadly.",
         "table": {
           "code": "Code",
           "reward": "Reward",
@@ -92,16 +92,16 @@
         "description": "Use these quick answers to understand which codes are worth testing, why statuses change, and where to go next after redeeming rewards.",
         "items": [
           {
-            "question": "What are the active Bizarre Lineage codes right now?",
-            "answer": "Use the active table first. It keeps the current tracked entries separate from expired rows so you can test the shortest useful list."
+            "question": "What are the latest Bizarre Lineage codes right now?",
+            "answer": "Use the active table first. It now tracks the newest Update 1 codes reported by public sources and separates older launch-window entries into the expired archive."
           },
           {
-            "question": "Why does a code show monitor instead of active?",
-            "answer": "Monitor means the code still needs another live verification pass after a patch, reset, or event change. It may still work, but the page should not overstate confidence."
+            "question": "Why do reward details sound cautious?",
+            "answer": "The latest public code list describes several Update 1 rewards only as essence or chest rewards, so the page avoids inventing exact item names until they are confirmed in-game."
           },
           {
             "question": "Why keep expired codes on the page at all?",
-            "answer": "Because players often arrive from old videos, Discord posts, or search snippets. A visible archive helps them confirm a code is old without mixing it into the live list."
+            "answer": "Because players often arrive from old videos, Discord posts, or search snippets. A visible archive helps them confirm that older !code entries are no longer part of the current list."
           },
           {
             "question": "What should I read after redeeming codes?",
@@ -134,50 +134,168 @@
     },
     "content": {
       "status": {
-        "active": "Active",
+        "active": "Reported active",
         "monitor": "Monitor",
         "expired": "Expired"
       },
       "active_codes_rewards": {
-        "30kLikes": "1 Stat Point Essence",
-        "100kLikes": "1 Stat Point Essence and 1 Rare Chest",
-        "shutdownwoops": "1 Stand Stat Essence",
-        "1week": "1 Stand Personality Essence"
+        "Delay3": "Essence or chest reward, exact item pending in-game verification",
+        "Delay2": "Essence or chest reward, exact item pending in-game verification",
+        "Delay1": "Essence or chest reward, exact item pending in-game verification",
+        "BizarreLineage1": "Essence or chest reward, exact item pending in-game verification",
+        "Update1": "Essence or chest reward, exact item pending in-game verification",
+        "LikeTheGameForMore1": "Essence or chest reward, exact item pending in-game verification",
+        "FavoriteTheGame1": "Essence or chest reward, exact item pending in-game verification",
+        "750LikesforNextCode": "Essence or chest reward, exact item pending in-game verification",
+        "Update2_2027": "Essence or chest reward, exact item pending in-game verification",
+        "250kLikes": "Essence or chest reward, exact item pending in-game verification",
+        "500kLikes": "Essence or chest reward, exact item pending in-game verification"
       },
       "monitored_codes_rewards": {},
-      "expired_codes": [],
+      "expired_codes": [
+        {
+          "code": "!code 100kLikes",
+          "reward": "Previously reported as 1 Stat Point Essence and 1 Rare Chest",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code 30kLikes",
+          "reward": "Previously reported as 1 Stat Point Essence",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code 1week",
+          "reward": "Previously reported as 1 Stand Personality Essence",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code shutdownwoops",
+          "reward": "Previously reported as 1 Stand Stat Essence",
+          "lastVerified": "2026-04-18"
+        }
+      ],
       "redeem_steps": [
         {
-          "title": "Join the official Roblox community first",
-          "description": "Current public code guides still say you should join the Bizarre Collective community from the Roblox game page before testing rewards."
+          "title": "Like the game and meet the entry requirement",
+          "description": "The latest Update 1 coverage says code redemption now requires liking Bizarre Lineage and reaching level 10 or higher."
         },
         {
           "title": "Launch Bizarre Lineage",
           "description": "Open the game on Roblox and enter the world."
         },
         {
-          "title": "Open Chat",
-          "description": "Open the in-game chat in the top-left corner. The latest public guides still describe chat redemption as the standard method."
+          "title": "Open the code UI",
+          "description": "Update 1 coverage reports a dedicated code UI. If your server still uses the older flow, retry through chat or refresh into a newer server."
         },
         {
           "title": "Send and Claim",
-          "description": "Type the working code exactly as shown, including the !code prefix, then press Enter to claim the reward."
+          "description": "Enter the code exactly as shown. The current Update 1 list does not use the older !code prefix."
         }
       ],
       "failure_reasons": [
         {
           "title": "Case Sensitivity",
-          "description": "Roblox codes are usually case-sensitive. Ensure \"!code\" and the code itself match exactly."
+          "description": "Roblox codes are usually case-sensitive. Copy the code exactly, including numbers and punctuation such as the equals sign in Update2=2027."
         },
         {
-          "title": "Official Group",
-          "description": "The latest public guides still tell players to join the Bizarre Collective community before rewards will redeem correctly."
+          "title": "Like or level gate",
+          "description": "The latest Update 1 coverage says the new code UI requires liking the game and being level 10 or higher before redemption works."
         },
         {
-          "title": "Chat or server state",
-          "description": "If a code fails right after maintenance, reopen chat or retry in a refreshed server because newly updated sessions can lag behind recent changes."
+          "title": "Server state",
+          "description": "If a code fails right after maintenance, retry in a refreshed server because newly updated sessions can lag behind recent changes."
         }
-      ]
+      ],
+      "sections": {
+        "active": {
+          "eyebrow": "Active Rewards",
+          "title": "Bizarre Lineage Codes List",
+          "description": "Check the newest reported Bizarre Lineage Update 1 codes first, then use the redemption notes below if you want to claim rewards without digging through old posts.",
+          "badge": "Reported Bizarre Lineage Code",
+          "reward_label": "Reward",
+          "verified_label": "Checked",
+          "empty_title": "No Active Bizarre Lineage Codes Found",
+          "empty_description": "There are currently no newly confirmed active Bizarre Lineage codes beyond the tracked list below. Check the official channels and revisit this page after the next update or milestone drop.",
+          "note": "Last checked: {date}. The newest public list was published after Update 1, but exact reward names are still broad, so test the codes in-game before planning around a specific item."
+        },
+        "monitor": {
+          "eyebrow": "Upcoming Bizarre Lineage Codes and Milestones"
+        },
+        "redeem": {
+          "eyebrow": "Redemption Guide",
+          "title": "How to Use Bizarre Lineage Codes",
+          "description": "Follow the current Update 1 flow below. The older chat flow may still appear in stale servers or older guides.",
+          "image_alt": "Reference screenshot for Bizarre Lineage code redemption"
+        },
+        "about": {
+          "eyebrow": "Overview",
+          "title": "What is Bizarre Lineage?",
+          "paragraphs": [
+            "Bizarre Lineage is a Roblox RPG inspired by JoJo's Bizarre Adventure, with stand progression, PvP, farming routes, raids, and character optimization driving most sessions. Codes matter because they can shorten that grind with free items or resets.",
+            "Update 1 appears to have moved code redemption into a dedicated UI and shifted older launch-window !code entries into the expired bucket, so this page treats new rewards as a quick check before deeper build research."
+          ]
+        },
+        "troubleshooting": {
+          "eyebrow": "Troubleshooting",
+          "title": "Why a Bizarre Lineage code may fail"
+        },
+        "sources": {
+          "eyebrow": "Community",
+          "title": "Find More Bizarre Lineage Codes",
+          "description": "Follow the official channels if you want to catch new code drops as soon as they happen.",
+          "items": {
+            "roblox": "Official Roblox Game",
+            "discord": "Official Discord"
+          }
+        },
+        "faq": {
+          "eyebrow": "FAQ",
+          "title": "Bizarre Lineage Codes Frequently Asked Questions",
+          "items": [
+            {
+              "question": "How do I redeem Bizarre Lineage codes?",
+              "answer": "Launch Bizarre Lineage on Roblox, reach the level requirement, open the Update 1 code UI, type the working code exactly as shown, and submit it to claim the reward."
+            },
+            {
+              "question": "Where can I find more Bizarre Lineage codes for rewards?",
+              "answer": "The official Discord server is still the fastest place to watch announcements, while the Roblox game page helps confirm whether codes are part of the current update push."
+            },
+            {
+              "question": "What do Bizarre Lineage codes give you?",
+              "answer": "The newest public list describes the Update 1 codes as essence or chest rewards. Treat exact item names as provisional until they are confirmed in-game."
+            },
+            {
+              "question": "Why are my Bizarre Lineage codes not working?",
+              "answer": "Codes can fail because of case-sensitive input, missing the like or level gate, using an expired !code entry, or testing on a server that has not fully refreshed after an update."
+            }
+          ]
+        },
+        "related": {
+          "eyebrow": "Next Reads",
+          "title": "Use your rewards better after the code check",
+          "items": {
+            "tier_list": {
+              "title": "Tier List",
+              "description": "Move to the stand rankings if you are deciding where those rewards should actually be spent."
+            },
+            "beginner_guide": {
+              "title": "Beginner Guide",
+              "description": "Open the guide if you need a stronger first-session route after collecting rewards."
+            }
+          }
+        },
+        "expired": {
+          "eyebrow": "Archive",
+          "title": "Expired Bizarre Lineage Codes",
+          "description": "These old entries stay here for reference so you can quickly rule out outdated rewards.",
+          "table": {
+            "code": "Expired Code",
+            "reward": "Previous Reward",
+            "status": "Status",
+            "last_verified": "Last Verified"
+          }
+        }
+      }
     }
   }
 }

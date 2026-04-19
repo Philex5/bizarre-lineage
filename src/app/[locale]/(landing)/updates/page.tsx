@@ -51,8 +51,8 @@ export default async function UpdatesPage({
       })
       // sort posts by version desc
       .sort((a, b) => {
-        const versionA = a.version || '';
-        const versionB = b.version || '';
+        const versionA = String(a.version || '');
+        const versionB = String(b.version || '');
         return versionB.localeCompare(versionA);
       });
   } catch (error) {

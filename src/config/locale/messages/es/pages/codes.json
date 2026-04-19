@@ -1,22 +1,22 @@
 {
   "metadata": {
-    "title": "Códigos de Bizarre Lineage: Lista de recompensas activas y expiradas",
-    "description": "Consulta los códigos activos de Bizarre Lineage, revisa el archivo de códigos caducados y sigue una guía clara para canjearlos sin perder tiempo."
+    "title": "Códigos de Bizarre Lineage: lista de recompensas de Update 1",
+    "description": "Consulta los códigos reportados más recientes de Bizarre Lineage para Roblox Update 1, los códigos antiguos expirados y las notas actuales de canje."
   },
   "page": {
     "sections": {
       "hero": {
         "eyebrow": "Rastreador de códigos",
-        "title": "La pregunta importante es sencilla: qué código sigue compensando canjear ahora mismo.",
-        "description": "La página está pensada para ir al grano: primero los códigos activos, después las entradas en revisión y al final el archivo de caducados para dar contexto sin estorbar.",
+        "title": "La pregunta importante es sencilla: qué código merece la pena probar ahora.",
+        "description": "Update 1 cambió el panorama público de códigos, así que este rastreador prioriza las entradas nuevas reportadas, mantiene cautela con las recompensas y mueve los códigos antiguos al archivo.",
         "items": [
           {
             "title": "Comenzar con la tabla de activos",
-            "description": "Quien viene a por recompensas debería ver antes lo que puede usar ya que cualquier bloque explicativo."
+            "description": "Quien viene a por recompensas debería ver primero los códigos reportados más recientes."
           },
           {
-            "title": "Tratar las etiquetas de monitoreo como una advertencia en vivo",
-            "description": "Si una entrada está en revisión, todavía conviene volver a comprobarla dentro del juego tras un parche, reinicio o cambio de evento."
+            "title": "Tratar las entradas reportadas con cuidado",
+            "description": "Una lista nueva de una sola fuente aún debería probarse dentro del juego antes de planear una ruta alrededor de la recompensa."
           },
           {
             "title": "Usar el archivo solo para contexto",
@@ -46,7 +46,7 @@
       "active": {
         "eyebrow": "Códigos activos",
         "title": "Empieza por los códigos que todavía se pueden probar ahora mismo.",
-        "description": "La tabla mantiene siempre los mismos campos: código, recompensa, estado y última verificación. Eso ayuda más que cualquier adorno.",
+        "description": "La tabla mantiene siempre los mismos campos: código, recompensa, estado y última verificación. Los nombres de recompensa se mantienen cautelosos cuando las fuentes públicas solo los describen de forma amplia.",
         "table": {
           "code": "Código",
           "reward": "Recompensa",
@@ -91,16 +91,16 @@
         "title": "Las dudas que más suelen salir después de mirar los códigos.",
         "items": [
           {
-            "question": "¿Cuáles son los códigos activos de Bizarre Lineage ahora mismo?",
-            "answer": "Usa primero la tabla de activos. Mantiene las entradas rastreadas actuales separadas de las filas expiradas para que puedas probar la lista útil más corta."
+            "question": "¿Cuáles son los códigos más recientes de Bizarre Lineage ahora mismo?",
+            "answer": "Usa primero la tabla de activos. Ahora rastrea los códigos nuevos de Update 1 reportados por fuentes públicas y separa las entradas antiguas en el archivo de expirados."
           },
           {
-            "question": "¿Por qué un código muestra monitoreo en lugar de activo?",
-            "answer": "Monitoreo significa que el código aún necesita otra verificación en vivo después de un parche, reinicio o cambio de evento. Puede que aún funcione, pero la página no debe exagerar la confianza."
+            "question": "¿Por qué los detalles de recompensa suenan cautelosos?",
+            "answer": "La lista pública más reciente describe varias recompensas de Update 1 solo como esencias o cofres, así que la página evita inventar nombres exactos hasta confirmarlos dentro del juego."
           },
           {
             "question": "¿Por qué mantener los códigos expirados en la página?",
-            "answer": "Porque los jugadores a menudo llegan desde videos antiguos, publicaciones de Discord o fragmentos de búsqueda. Un archivo visible les ayuda a confirmar que un código es antiguo sin mezclarlo con la lista activa."
+            "answer": "Porque los jugadores a menudo llegan desde videos antiguos, publicaciones de Discord o fragmentos de búsqueda. Un archivo visible ayuda a confirmar que los códigos antiguos con !code ya no pertenecen a la lista actual."
           },
           {
             "question": "¿Qué debería leer después de canjear los códigos?",
@@ -133,52 +133,168 @@
     },
     "content": {
       "status": {
-        "active": "Activo",
+        "active": "Reportado activo",
         "monitor": "Monitoreo",
         "expired": "Expirado"
       },
       "active_codes_rewards": {
-        "30kLikes": "1 Esencia de punto de estadística",
-        "100kLikes": "1 Esencia de punto de estadística y 1 Cofre raro",
-        "shutdownwoops": "1 Esencia de estadística de Stand",
-        "1week": "1 Esencia de personalidad de Stand"
+        "Delay3": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "Delay2": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "Delay1": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "BizarreLineage1": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "Update1": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "LikeTheGameForMore1": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "FavoriteTheGame1": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "750LikesforNextCode": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "Update2_2027": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "250kLikes": "Esencia o cofre; objeto exacto pendiente de verificación en el juego",
+        "500kLikes": "Esencia o cofre; objeto exacto pendiente de verificación en el juego"
       },
-      "monitored_codes_rewards": {
-        "200KLIKES": "Recompensa futura no anunciada"
-      },
-      "expired_codes": [],
+      "monitored_codes_rewards": {},
+      "expired_codes": [
+        {
+          "code": "!code 100kLikes",
+          "reward": "Antes reportado como 1 esencia de punto de estadística y 1 cofre raro",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code 30kLikes",
+          "reward": "Antes reportado como 1 esencia de punto de estadística",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code 1week",
+          "reward": "Antes reportado como 1 esencia de personalidad de Stand",
+          "lastVerified": "2026-04-18"
+        },
+        {
+          "code": "!code shutdownwoops",
+          "reward": "Antes reportado como 1 esencia de estadística de Stand",
+          "lastVerified": "2026-04-18"
+        }
+      ],
       "redeem_steps": [
         {
-          "title": "Dale a 'me gusta' al juego y únete al grupo oficial",
-          "description": "Las verificaciones de fuentes recientes aún indican que debes darle a 'me gusta' a Bizarre Lineage y unirte al grupo de Roblox Bizarre Collective antes de canjear códigos."
+          "title": "Dale me gusta al juego y cumple el requisito de entrada",
+          "description": "La cobertura más reciente de Update 1 dice que el canje de códigos ahora requiere dar me gusta a Bizarre Lineage y alcanzar nivel 10 o superior."
         },
         {
           "title": "Inicia Bizarre Lineage",
           "description": "Abre el juego en Roblox y entra al mundo."
         },
         {
-          "title": "Abre el chat",
-          "description": "Abre el chat del juego en la esquina superior izquierda. Los informes públicos actuales dicen que puedes canjear en servidores públicos normales, no solo en servidores privados."
+          "title": "Abre la interfaz de códigos",
+          "description": "La cobertura de Update 1 reporta una interfaz dedicada para códigos. Si tu servidor todavía usa el flujo antiguo, prueba por chat o entra en un servidor actualizado."
         },
         {
           "title": "Enviar y reclamar",
-          "description": "Escribe el código que funciona exactamente como se muestra, incluyendo el prefijo !code, luego presiona Enter para reclamar la recompensa."
+          "description": "Introduce el código exactamente como aparece. La lista actual de Update 1 no usa el prefijo antiguo !code."
         }
       ],
       "failure_reasons": [
         {
           "title": "Sensibilidad a mayúsculas y minúsculas",
-          "description": "Los códigos de Roblox suelen distinguir entre mayúsculas y minúsculas. Asegúrate de que \"!code\" y el código en sí coincidan exactamente."
+          "description": "Los códigos de Roblox suelen distinguir entre mayúsculas y minúsculas. Copia el código exactamente, incluidos números y signos como el igual en Update2=2027."
         },
         {
-          "title": "Grupo oficial",
-          "description": "Algunos códigos requieren que te unas primero al grupo oficial de la comunidad de Roblox."
+          "title": "Me gusta o requisito de nivel",
+          "description": "La cobertura más reciente de Update 1 dice que la nueva interfaz requiere dar me gusta al juego y ser nivel 10 o superior antes de canjear."
         },
         {
-          "title": "Retraso en el despliegue del servidor",
-          "description": "Fuentes públicas informan ahora que estos códigos funcionan en servidores normales, pero un servidor recién actualizado aún puede ayudar si uno falla justo después de un parche."
+          "title": "Estado del servidor",
+          "description": "Si un código falla justo después de mantenimiento, prueba en un servidor actualizado porque algunas sesiones pueden tardar en reflejar cambios recientes."
         }
-      ]
+      ],
+      "sections": {
+        "active": {
+          "eyebrow": "Recompensas activas",
+          "title": "Lista de códigos de Bizarre Lineage",
+          "description": "Consulta primero los códigos más recientes reportados para Bizarre Lineage Update 1 y después usa las notas de canje para evitar publicaciones antiguas.",
+          "badge": "Código de Bizarre Lineage reportado",
+          "reward_label": "Recompensa",
+          "verified_label": "Revisado",
+          "empty_title": "No se encontraron códigos activos de Bizarre Lineage",
+          "empty_description": "Ahora mismo no hay códigos activos nuevos confirmados fuera de la lista rastreada. Revisa los canales oficiales y vuelve tras la próxima actualización o hito.",
+          "note": "Última revisión: {date}. La lista pública más reciente se publicó después de Update 1, pero los nombres exactos de recompensas siguen siendo amplios, así que prueba los códigos dentro del juego antes de planear alrededor de un objeto concreto."
+        },
+        "monitor": {
+          "eyebrow": "Próximos códigos e hitos de Bizarre Lineage"
+        },
+        "redeem": {
+          "eyebrow": "Guía de canje",
+          "title": "Cómo usar códigos de Bizarre Lineage",
+          "description": "Sigue el flujo actual de Update 1. El flujo antiguo por chat puede seguir apareciendo en servidores no actualizados o guías antiguas.",
+          "image_alt": "Captura de referencia para canjear códigos de Bizarre Lineage"
+        },
+        "about": {
+          "eyebrow": "Resumen",
+          "title": "¿Qué es Bizarre Lineage?",
+          "paragraphs": [
+            "Bizarre Lineage es un RPG de Roblox inspirado en JoJo's Bizarre Adventure, con progresión de stands, PvP, rutas de farmeo, raids y optimización de personaje como parte central de muchas sesiones. Los códigos importan porque pueden acortar el farmeo con objetos gratis o reinicios.",
+            "Update 1 parece haber movido el canje a una interfaz dedicada y los códigos antiguos con !code al archivo de expirados, así que esta página trata las recompensas nuevas como una comprobación rápida antes de investigar builds."
+          ]
+        },
+        "troubleshooting": {
+          "eyebrow": "Solución de problemas",
+          "title": "Por qué puede fallar un código de Bizarre Lineage"
+        },
+        "sources": {
+          "eyebrow": "Comunidad",
+          "title": "Dónde encontrar más códigos de Bizarre Lineage",
+          "description": "Sigue los canales oficiales si quieres detectar nuevos códigos cuando aparezcan.",
+          "items": {
+            "roblox": "Juego oficial en Roblox",
+            "discord": "Discord oficial"
+          }
+        },
+        "faq": {
+          "eyebrow": "FAQ",
+          "title": "Preguntas frecuentes sobre códigos de Bizarre Lineage",
+          "items": [
+            {
+              "question": "¿Cómo canjeo códigos de Bizarre Lineage?",
+              "answer": "Abre Bizarre Lineage en Roblox, cumple el requisito de nivel, entra en la interfaz de códigos de Update 1, escribe el código exactamente como aparece y envíalo para reclamar la recompensa."
+            },
+            {
+              "question": "¿Dónde puedo encontrar más códigos de Bizarre Lineage?",
+              "answer": "El servidor oficial de Discord sigue siendo el lugar más rápido para ver anuncios, mientras que la página de Roblox ayuda a confirmar si los códigos forman parte del empuje actual de actualización."
+            },
+            {
+              "question": "¿Qué dan los códigos de Bizarre Lineage?",
+              "answer": "La lista pública más reciente describe los códigos de Update 1 como recompensas de esencia o cofres. Trata los nombres exactos como provisionales hasta confirmarlos dentro del juego."
+            },
+            {
+              "question": "¿Por qué no funcionan mis códigos de Bizarre Lineage?",
+              "answer": "Pueden fallar por mayúsculas, por no cumplir el requisito de me gusta o nivel, por usar una entrada antigua con !code, o por probar en un servidor que aún no se actualizó tras un parche."
+            }
+          ]
+        },
+        "related": {
+          "eyebrow": "Siguientes lecturas",
+          "title": "Usa mejor tus recompensas después de revisar códigos",
+          "items": {
+            "tier_list": {
+              "title": "Lista de niveles",
+              "description": "Pasa a los rankings de stands si estás decidiendo dónde gastar esas recompensas."
+            },
+            "beginner_guide": {
+              "title": "Guía para principiantes",
+              "description": "Abre la guía si necesitas una ruta inicial más clara después de recoger recompensas."
+            }
+          }
+        },
+        "expired": {
+          "eyebrow": "Archivo",
+          "title": "Códigos expirados de Bizarre Lineage",
+          "description": "Estas entradas antiguas quedan como referencia para descartar recompensas desactualizadas.",
+          "table": {
+            "code": "Código expirado",
+            "reward": "Recompensa anterior",
+            "status": "Estado",
+            "last_verified": "Última verificación"
+          }
+        }
+      }
     }
   }
 }

@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "title": "Bizarre Lineage Updates: Latest Patch Notes, Codes, and News",
-    "description": "Track the latest Bizarre Lineage updates, patch-watch notes, code status changes, and official-channel signals in one timeline."
+    "title": "Bizarre Lineage Updates: Update 1, Codes, and Patch Watch",
+    "description": "Track Bizarre Lineage Update 1 notes, code status changes, raid additions, and official-channel signals in one timeline."
   },
   "page": {
     "sections": {
       "updates": {
         "id": "updates",
         "title": "Bizarre Lineage Updates",
-        "description": "A running timeline of the latest Bizarre Lineage patch-watch notes, code checks, and official-channel signals."
+        "description": "A running timeline of Bizarre Lineage Update 1 notes, code checks, raid additions, and official-channel signals."
       }
     }
   }

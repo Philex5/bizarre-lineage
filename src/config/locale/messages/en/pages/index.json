@@ -111,7 +111,7 @@
           "codes_archive": {
             "title": "Codes Archive",
             "meta": "Status: Monitoring",
-            "description": "Check the current four active Bizarre Lineage codes, monitor future drops, and review archived entries without guessing what still works."
+            "description": "Check the latest reported Bizarre Lineage codes, monitor future drops, and review archived entries without guessing what still works."
           },
           "mechanics": {
             "title": "Wiki Mechanics",
@@ -202,7 +202,7 @@
           },
           {
             "question": "Do codes matter after the first session?",
-            "answer": "Yes. The current active Bizarre Lineage codes still offer useful build and progression value, so they are worth checking even after your first session."
+            "answer": "Yes. The latest reported Bizarre Lineage codes can still offer useful build and progression value, so they are worth checking even after your first session."
           },
           {
             "question": "Is prestige always worth taking as soon as it unlocks?",
@@ -310,7 +310,7 @@
         },
         {
           "question": "Does Bizarre Lineage have codes?",
-          "answer": "Yes. The site keeps a dedicated codes page with the current four active entries, monitor notes for future drops, and an archive for anything that stops working."
+          "answer": "Yes. The site keeps a dedicated codes page with the latest reported entries, monitor notes for future drops, and an archive for anything that stops working."
         }
       ]
     }

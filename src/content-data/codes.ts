@@ -8,10 +8,17 @@ export type CodeEntry = {
 };
 
 const activeCodeDefs = [
-  { code: '!code 30kLikes', rewardKey: '30kLikes' },
-  { code: '!code 100kLikes', rewardKey: '100kLikes' },
-  { code: '!code shutdownwoops', rewardKey: 'shutdownwoops' },
-  { code: '!code 1week', rewardKey: '1week' },
+  { code: 'Delay3', rewardKey: 'Delay3' },
+  { code: 'Delay2', rewardKey: 'Delay2' },
+  { code: 'Delay1', rewardKey: 'Delay1' },
+  { code: 'BizarreLineage1', rewardKey: 'BizarreLineage1' },
+  { code: 'Update1', rewardKey: 'Update1' },
+  { code: 'LikeTheGameForMore1', rewardKey: 'LikeTheGameForMore1' },
+  { code: 'FavoriteTheGame1', rewardKey: 'FavoriteTheGame1' },
+  { code: '750LikesforNextCode', rewardKey: '750LikesforNextCode' },
+  { code: 'Update2=2027', rewardKey: 'Update2_2027' },
+  { code: '250kLikes', rewardKey: '250kLikes' },
+  { code: '500kLikes', rewardKey: '500kLikes' },
 ] as const;
 
 const monitoredCodeDefs: ReadonlyArray<{
@@ -19,7 +26,7 @@ const monitoredCodeDefs: ReadonlyArray<{
   rewardKey: string;
 }> = [];
 
-const lastVerified = '2026-04-05';
+const lastVerified = '2026-04-18';
 
 export function getActiveCodes(t: ContentDataTranslator): CodeEntry[] {
   return activeCodeDefs.map((entry) => ({
